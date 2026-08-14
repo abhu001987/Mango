@@ -1,0 +1,75 @@
+[
+  {
+  "q": "What is the Jeevan Mission?",
+  "keywords": [
+    {"word": "Jal Jeevan Mission", "weight": 2, "synonyms": ["Jal Jeevan Mission", "JJM", "Jal Jeevan"]},
+    {"word": "Jal", "weight": 1, "synonyms": ["Jal", "water"]},
+    {"word": "Jeevan", "weight": 1, "synonyms": ["Jeevan", "life", "jeevan"]},
+    {"word": "Mission", "weight": 1, "synonyms": ["Mission", "scheme", "program", "initiative", "yojana"]},
+    {"word": "2019", "weight": 1, "synonyms": ["2019", "August 2019", "15 August 2019"]},
+    {"word": "launch", "weight": 0.5, "synonyms": ["launch", "launched", "started", "began", "introduced"]},
+    {"word": "Ministry of Jal Shakti", "weight": 1.5, "synonyms": ["Ministry of Jal Shakti", "Jal Shakti", "Ministry", "water ministry"]},
+    {"word": "centrally sponsored", "weight": 0.5, "synonyms": ["centrally sponsored", "central", "government", "central scheme"]},
+    {"word": "rural", "weight": 1, "synonyms": ["rural", "village", "countryside", "gramin", "villages"]},
+    {"word": "water supply", "weight": 1, "synonyms": ["water supply", "supply", "water distribution", "piped water"]},
+    {"word": "tap", "weight": 1, "synonyms": ["tap", "faucet", "piped", "pipeline"]},
+    {"word": "household", "weight": 1, "synonyms": ["household", "home", "family", "house", "households"]},
+    {"word": "55 litres", "weight": 1, "synonyms": ["55 litres", "55 litres per day", "55 lpcd", "55 litres per person"]},
+    {"word": "2028", "weight": 0.5, "synonyms": ["2028", "extended 2028"]},
+    {"word": "water security", "weight": 1, "synonyms": ["water security", "security", "safe water", "clean water"]},
+    {"word": "drinking water", "weight": 1, "synonyms": ["drinking water", "drinking", "potable water", "clean drinking water"]}
+  ],
+  "category": "government schemes",
+  "model": "Jal Jeevan Mission (JJM), launched on 15th August 2019, is a centrally sponsored scheme implemented by the Ministry of Jal Shakti to provide safe and adequate tap water to every rural household. It aims to ensure Functional Household Tap Connections (FHTC) with a service level of 55 litres per person per day, with the target extended till 2028. The mission focuses on universal rural water supply, improving public health, and ensuring water security.",
+  
+  "ai_analysis": "You covered the basic objective but missed rural household coverage, sustainability, and community participation. Try explaining the purpose before jumping to benefits."
+  },
+  {
+  "q": "What is the Jal Jeevan Mission?",
+  "keywords": [
+    {"word": "Jal Jeevan Mission", "weight": 2, "synonyms": ["Jal Jeevan Mission", "JJM", "Jal Jeevan"]},
+    {"word": "Jal", "weight": 1, "synonyms": ["Jal", "water"]},
+    {"word": "Jeevan", "weight": 1, "synonyms": ["Jeevan", "life", "jeevan"]},
+    {"word": "Mission", "weight": 1, "synonyms": ["Mission", "scheme", "program", "initiative", "yojana"]},
+    {"word": "2019", "weight": 1, "synonyms": ["2019", "August 2019", "15 August 2019"]},
+    {"word": "launch", "weight": 0.5, "synonyms": ["launch", "launched", "started", "began", "introduced"]},
+    {"word": "Ministry of Jal Shakti", "weight": 1.5, "synonyms": ["Ministry of Jal Shakti", "Jal Shakti", "Ministry", "water ministry"]},
+    {"word": "centrally sponsored", "weight": 0.5, "synonyms": ["centrally sponsored", "central", "government", "central scheme"]},
+    {"word": "rural", "weight": 1, "synonyms": ["rural", "village", "countryside", "gramin", "villages"]},
+    {"word": "water supply", "weight": 1, "synonyms": ["water supply", "supply", "water distribution", "piped water"]},
+    {"word": "tap", "weight": 1, "synonyms": ["tap", "faucet", "piped", "pipeline"]},
+    {"word": "household", "weight": 1, "synonyms": ["household", "home", "family", "house", "households"]},
+    {"word": "55 litres", "weight": 1, "synonyms": ["55 litres", "55 litres per day", "55 lpcd", "55 litres per person"]},
+    {"word": "2028", "weight": 0.5, "synonyms": ["2028", "extended 2028"]},
+    {"word": "water security", "weight": 1, "synonyms": ["water security", "security", "safe water", "clean water"]},
+    {"word": "drinking water", "weight": 1, "synonyms": ["drinking water", "drinking", "potable water", "clean drinking water"]}
+  ],
+  "category": "government schemes",
+  "model": "Jal Jeevan Mission (JJM), launched on 15th August 2019, is a centrally sponsored scheme implemented by the Ministry of Jal Shakti to provide safe and adequate tap water to every rural household. It aims to ensure Functional Household Tap Connections (FHTC) with a service level of 55 litres per person per day, with the target extended till 2028. The mission focuses on universal rural water supply, improving public health, and ensuring water security.",
+  
+  "ai_analysis": "You covered the basic objective but missed rural household coverage, sustainability, and community participation. Try explaining the purpose before jumping to benefits."
+},
+   {
+    "q": "What is the Mission?",
+    "keywords": [
+      {"word": "Jal Jeevan Mission", "weight": 2, "synonyms": ["Jal Jeevan Mission", "JJM", "Jal Jeevan"]},
+      {"word": "Jal", "weight": 1, "synonyms": ["Jal", "water"]},
+      {"word": "Jeevan", "weight": 1, "synonyms": ["Jeevan", "life", "jeevan"]},
+      {"word": "Mission", "weight": 1, "synonyms": ["Mission", "scheme", "program", "initiative", "yojana"]},
+      {"word": "2019", "weight": 1, "synonyms": ["2019", "August 2019", "15 August 2019"]},
+      {"word": "launch", "weight": 0.5, "synonyms": ["launch", "launched", "started", "began"]},
+      {"word": "Ministry of Jal Shakti", "weight": 1.5, "synonyms": ["Ministry of Jal Shakti", "Jal Shakti", "Ministry"]},
+      {"word": "centrally sponsored", "weight": 0.5, "synonyms": ["centrally sponsored", "central", "government"]},
+      {"word": "rural", "weight": 1, "synonyms": ["rural", "village", "countryside", "gramin"]},
+      {"word": "water supply", "weight": 1, "synonyms": ["water supply", "supply", "water distribution"]},
+      {"word": "tap", "weight": 1, "synonyms": ["tap", "faucet", "piped"]},
+      {"word": "household", "weight": 1, "synonyms": ["household", "home", "family", "house"]},
+      {"word": "55 litres per capita per day", "weight": 1, "synonyms": ["55 litres", "55 litres per day", "55 lpcd"]},
+      {"word": "2028", "weight": 0.5, "synonyms": ["2028", "extended 2028"]},
+      {"word": "water security", "weight": 1, "synonyms": ["water security", "security", "safe water"]},
+      {"word": "drinking water", "weight": 1, "synonyms": ["drinking water", "drinking", "potable water"]}
+    ],
+    "category": "government schemes",
+    "model": "Jal Jeevan Mission (JJM), launched on 15th August 2019, is a centrally sponsored scheme implemented by the Ministry of Jal Shakti to provide safe and adequate tap water to every rural household."
+  }
+]
