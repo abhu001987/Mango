@@ -1,0 +1,628 @@
+{
+  "feedback": {
+    "0": [
+      {
+        "id": 1,
+        "feedback": "Your answer doesn't match the expected topic. None of the key concepts required to answer the question were identified.",
+        "suggestion": "Carefully read the question again, review the available learning resources, and try answering by focusing on the main objective of the topic."
+      },
+      {
+        "id": 2,
+        "feedback": "It looks like your response is unrelated to the question or misses all the essential concepts needed for evaluation.",
+        "suggestion": "Go through the study material once more and make sure you understand what the question is asking before attempting it again."
+      },
+      {
+        "id": 3,
+        "feedback": "No expected keywords were detected in your answer, which suggests that the core topic may have been misunderstood.",
+        "suggestion": "Start by identifying the purpose of the topic, then explain its key features and important points in a structured manner."
+      },
+      {
+        "id": 4,
+        "feedback": "Your response couldn't be matched with the expected answer because the essential concepts are missing.",
+        "suggestion": "Review the reference content and organize your answer by covering the introduction, key points, and conclusion."
+      },
+      {
+        "id": 5,
+        "feedback": "The answer doesn't include any of the expected concepts, making it difficult to assess your understanding of the topic.",
+        "suggestion": "Take another look at the question and ensure your response directly addresses what has been asked."
+      },
+      {
+        "id": 6,
+        "feedback": "It appears your response focuses on a different topic or doesn't include the required information.",
+        "suggestion": "Understand the central theme first and explain it using the important concepts provided in the learning resources."
+      },
+      {
+        "id": 7,
+        "feedback": "None of the expected keywords were found, indicating that the key ideas have not been covered in your response.",
+        "suggestion": "Spend some time revising the topic and try to include the fundamental concepts in your next attempt."
+      },
+      {
+        "id": 8,
+        "feedback": "Your answer could not be associated with the expected topic. The response needs significant improvement.",
+        "suggestion": "Read the question carefully, understand its intent, and write a focused answer covering the essential points."
+      },
+      {
+        "id": 9,
+        "feedback": "The response doesn't contain any recognizable concepts related to the expected answer, which may indicate the question was interpreted incorrectly.",
+        "suggestion": "Revisit the learning resources, understand the topic thoroughly, and answer using relevant concepts and examples where appropriate."
+      },
+      {
+        "id": 10,
+        "feedback": "No matching keywords were detected in your answer. This indicates that the expected concepts have not been addressed.",
+        "suggestion": "Don't be discouraged. Learn from the available resources, strengthen your understanding of the topic, and try again with a well-structured explanation."
+      }
+    ],
+    "1-5": [
+      {
+        "id": 1,
+        "feedback": "You identified a few relevant keywords, which shows you're familiar with the topic. However, your answer is missing most of the important concepts needed for a complete explanation.",
+        "suggestion": "Review the learning resources and focus on understanding the purpose of the topic before writing your answer."
+      },
+      {
+        "id": 2,
+        "feedback": "Your answer includes a small number of expected concepts, but it doesn't provide enough information to fully address the question.",
+        "suggestion": "Try explaining the topic step by step instead of mentioning only a few related points."
+      },
+      {
+        "id": 3,
+        "feedback": "You have made a good start by including a few relevant ideas, but many essential concepts are still missing.",
+        "suggestion": "Read the study material again and include the objective, key features, and outcomes in your next attempt."
+      },
+      {
+        "id": 4,
+        "feedback": "Your response demonstrates an initial understanding of the topic, but it lacks the depth needed for a complete answer.",
+        "suggestion": "Focus on connecting the key concepts into meaningful sentences rather than listing isolated terms."
+      },
+      {
+        "id": 5,
+        "feedback": "Some expected keywords were detected, but the explanation is incomplete and misses several important aspects of the topic.",
+        "suggestion": "Organize your answer with a clear introduction, explanation, and conclusion to improve its completeness."
+      },
+      {
+        "id": 6,
+        "feedback": "Your answer shows potential, but it currently covers only a small portion of what was expected.",
+        "suggestion": "Spend a little more time reviewing the topic and make sure you include all the major concepts in your response."
+      },
+      {
+        "id": 7,
+        "feedback": "You recognized a few important concepts, but the answer needs much more detail to demonstrate a clear understanding.",
+        "suggestion": "Use the available resources to understand the topic thoroughly and explain it in your own words."
+      },
+      {
+        "id": 8,
+        "feedback": "Your response is partially relevant to the question, but it leaves out many of the key points required for a strong answer.",
+        "suggestion": "Before submitting, check whether you've covered the purpose, important features, and overall significance of the topic."
+      },
+      {
+        "id": 9,
+        "feedback": "A few relevant keywords were found, indicating that you have a basic understanding of the topic. However, your explanation needs to be more comprehensive.",
+        "suggestion": "Revise the topic once more and try expanding your answer with supporting details and examples where appropriate."
+      },
+      {
+        "id": 10,
+        "feedback": "You've taken the first step by identifying some relevant concepts, but the answer requires significant improvement to cover the expected content.",
+        "suggestion": "Don't worry if your first attempt wasn't complete. Learn from the provided resources, revise the missing concepts, and try again with a well-structured explanation."
+      }
+    ],
+    "5-10": [
+      {
+        "id": 1,
+        "feedback": "You've covered some important concepts, but there's still room for improvement. Your answer is missing several key points needed for a comprehensive response.",
+        "suggestion": "Read the question again and make a list of all the points you need to cover before writing your answer."
+      },
+      {
+        "id": 2,
+        "feedback": "Your answer shows a basic understanding of the topic, but it needs more depth and coverage of key concepts.",
+        "suggestion": "Review the learning resources carefully and try to understand the topic from different perspectives."
+      },
+      {
+        "id": 3,
+        "feedback": "You're on the right track! You've covered several concepts, but your answer could be more detailed and structured.",
+        "suggestion": "Try organizing your answer with clear headings or bullet points to improve clarity and completeness."
+      },
+      {
+        "id": 4,
+        "feedback": "Good effort! You've included several relevant keywords, but your explanation lacks the detail needed for a complete answer.",
+        "suggestion": "For each concept you mention, try adding a brief explanation to demonstrate your understanding."
+      },
+      {
+        "id": 5,
+        "feedback": "You've covered some important ideas, but your answer is missing key details that would make it more comprehensive.",
+        "suggestion": "Look at the missing keywords and try to understand why they are important to the topic."
+      },
+      {
+        "id": 6,
+        "feedback": "Your answer has some good points, but it needs to cover more concepts and provide more detailed explanations.",
+        "suggestion": "Focus on adding specific examples or data points to strengthen your answer."
+      },
+      {
+        "id": 7,
+        "feedback": "You're making progress! You've identified several key concepts, but your answer needs more depth and breadth.",
+        "suggestion": "Try to explain each concept in your own words to demonstrate your understanding."
+      },
+      {
+        "id": 8,
+        "feedback": "Your response is starting to take shape, but it still needs to cover more essential concepts to be complete.",
+        "suggestion": "Review the available resources and make sure you understand all the important aspects of the topic."
+      },
+      {
+        "id": 9,
+        "feedback": "You have a foundation to build upon! Your answer covers some concepts, but it's incomplete.",
+        "suggestion": "Add more details and examples to each point you've made to create a well-rounded answer."
+      },
+      {
+        "id": 10,
+        "feedback": "Your answer has potential! You've covered some key concepts, but there are still important points missing.",
+        "suggestion": "Spend more time understanding the topic and try to include all the essential elements in your next attempt."
+      }
+    ],
+    "10-20": [
+      {
+        "id": 1,
+        "feedback": "Good work! You've covered a fair number of concepts, but your answer could be more comprehensive.",
+        "suggestion": "Focus on the missing concepts and try to include them in your explanation to create a more complete answer."
+      },
+      {
+        "id": 2,
+        "feedback": "You have a solid understanding of the topic! Your answer covers many important concepts, but there are still some gaps.",
+        "suggestion": "Review the missing keywords and try to understand how they connect to the main topic."
+      },
+      {
+        "id": 3,
+        "feedback": "Great progress! You've covered a good range of concepts. To improve, focus on explaining the points you missed.",
+        "suggestion": "Try using the missing keywords to guide your learning and strengthen your answer."
+      },
+      {
+        "id": 4,
+        "feedback": "Your answer is well on its way! You've covered several important concepts, but a few key points are still missing.",
+        "suggestion": "Think about the overall picture of the topic and try to include any missing elements."
+      },
+      {
+        "id": 5,
+        "feedback": "Nice work! Your answer shows a solid understanding of most key concepts. Consider adding depth to your explanation.",
+        "suggestion": "For the missing concepts, try to research them separately and then incorporate them into your answer."
+      },
+      {
+        "id": 6,
+        "feedback": "You're doing well! Your answer covers many important aspects of the topic, but there's still room for improvement.",
+        "suggestion": "Look at the feedback section and see which concepts you can add to enhance your answer."
+      },
+      {
+        "id": 7,
+        "feedback": "Good job! You've covered most of the key concepts. Your answer is comprehensive but could be more detailed.",
+        "suggestion": "Try adding real-world examples or applications of the concepts you've covered."
+      },
+      {
+        "id": 8,
+        "feedback": "You're making great progress! Your answer covers a wide range of concepts, but some are still missing.",
+        "suggestion": "Pay attention to the missing keywords and try to understand how they fit into the topic."
+      },
+      {
+        "id": 9,
+        "feedback": "Well done! You've covered many important concepts. To reach the next level, focus on the remaining gaps.",
+        "suggestion": "Use the missing keywords as a study guide to strengthen your understanding of the topic."
+      },
+      {
+        "id": 10,
+        "feedback": "Your answer is impressive! You've covered a lot of ground, but there are still a few concepts you can add.",
+        "suggestion": "Review the missing concepts and try to explain them in a way that connects to what you already know."
+      }
+    ],
+    "20-30": [
+      {
+        "id": 1,
+        "feedback": "Good effort! You've covered a significant portion of the key concepts. Your answer shows a strong understanding.",
+        "suggestion": "Focus on the remaining concepts and try to include them to make your answer even more comprehensive."
+      },
+      {
+        "id": 2,
+        "feedback": "You're doing great! Your answer covers most of the important concepts. A few more details would make it excellent.",
+        "suggestion": "Look at the missing keywords and try to understand why they are important to the topic."
+      },
+      {
+        "id": 3,
+        "feedback": "Your answer is comprehensive! You've covered a large number of concepts. Keep working on the remaining ones.",
+        "suggestion": "Try to explain the missing concepts in your own words to demonstrate a deeper understanding."
+      },
+      {
+        "id": 4,
+        "feedback": "Well done! You've demonstrated a solid understanding of the topic. Your answer is very well-structured.",
+        "suggestion": "Consider adding some examples or case studies to make your answer even more impressive."
+      },
+      {
+        "id": 5,
+        "feedback": "Great progress! You've covered most of the key concepts. Your answer is well-organized and clear.",
+        "suggestion": "Focus on the remaining concepts to achieve a complete mastery of the topic."
+      },
+      {
+        "id": 6,
+        "feedback": "You're on the right track! Your answer covers a wide range of concepts and is well-structured.",
+        "suggestion": "Try to include any missing concepts and add more depth to your explanation."
+      },
+      {
+        "id": 7,
+        "feedback": "Impressive work! You've covered a significant number of concepts. Your answer is comprehensive and clear.",
+        "suggestion": "Pay attention to the missing keywords and try to understand how they connect to the main topic."
+      },
+      {
+        "id": 8,
+        "feedback": "Your answer is very good! You've covered most of the important concepts. A few more additions would make it perfect.",
+        "suggestion": "Use the missing keywords as a checklist to ensure your answer is complete."
+      },
+      {
+        "id": 9,
+        "feedback": "Excellent progress! Your answer covers a wide range of concepts and is well-presented.",
+        "suggestion": "Focus on the remaining concepts and try to explain them with clarity and precision."
+      },
+      {
+        "id": 10,
+        "feedback": "Outstanding work! You've covered a vast majority of the concepts. Your answer is thorough and comprehensive.",
+        "suggestion": "Now challenge yourself to write a shorter, more concise version of the same answer."
+      }
+    ],
+    "30-40": [
+      {
+        "id": 1,
+        "feedback": "Excellent! Your answer covers a wide range of concepts and demonstrates a strong understanding of the topic.",
+        "suggestion": "To reach perfection, focus on the few remaining concepts and ensure you can explain them clearly."
+      },
+      {
+        "id": 2,
+        "feedback": "Great work! Your answer is comprehensive and well-structured. You've covered most of the important concepts.",
+        "suggestion": "Look at the missing concepts and try to understand how they connect to the overall topic."
+      },
+      {
+        "id": 3,
+        "feedback": "Your answer is impressive! You've demonstrated a thorough understanding of the topic and covered many concepts.",
+        "suggestion": "Add specific examples or data points to make your answer even stronger."
+      },
+      {
+        "id": 4,
+        "feedback": "Outstanding! You've covered a significant number of concepts and presented them clearly.",
+        "suggestion": "Focus on the remaining concepts to achieve a complete understanding of the topic."
+      },
+      {
+        "id": 5,
+        "feedback": "Excellent work! Your answer shows a deep understanding of the topic. You're very close to mastering it.",
+        "suggestion": "Review the missing concepts and try to incorporate them into your answer."
+      },
+      {
+        "id": 6,
+        "feedback": "Brilliant! Your answer is comprehensive and covers almost all key concepts. Well done!",
+        "suggestion": "For the remaining concepts, try to understand their significance and how they add value to the topic."
+      },
+      {
+        "id": 7,
+        "feedback": "Superb! You've covered a vast majority of the concepts. Your answer is thorough and well-explained.",
+        "suggestion": "Challenge yourself to write a concise version of the answer to test your understanding."
+      },
+      {
+        "id": 8,
+        "feedback": "Fantastic work! Your answer is well-structured and covers most key concepts comprehensively.",
+        "suggestion": "Focus on the missing keywords and try to understand their relevance to the topic."
+      },
+      {
+        "id": 9,
+        "feedback": "Excellent performance! Your answer covers a wide range of concepts and is very well-written.",
+        "suggestion": "Try to add real-world applications or examples for the concepts you've covered."
+      },
+      {
+        "id": 10,
+        "feedback": "Outstanding achievement! Your answer demonstrates a deep and thorough understanding of the topic.",
+        "suggestion": "You're ready for advanced questions on this topic. Keep up the great work!"
+      }
+    ],
+    "40-50": [
+      {
+        "id": 1,
+        "feedback": "Excellent work! Your answer covers a significant number of concepts and is very well-structured.",
+        "suggestion": "Focus on the remaining concepts and try to understand how they enhance the overall understanding of the topic."
+      },
+      {
+        "id": 2,
+        "feedback": "Outstanding! You've covered a vast range of concepts. Your answer is comprehensive and detailed.",
+        "suggestion": "Try to write a summary of the topic in your own words to consolidate your learning."
+      },
+      {
+        "id": 3,
+        "feedback": "Brilliant effort! Your answer is thorough and covers most of the key concepts effectively.",
+        "suggestion": "For the missing concepts, try to understand their importance and how they relate to other concepts."
+      },
+      {
+        "id": 4,
+        "feedback": "Superb performance! Your answer shows a deep understanding of the topic and covers many concepts.",
+        "suggestion": "Consider adding examples or case studies to make your answer even more impressive."
+      },
+      {
+        "id": 5,
+        "feedback": "Exceptional work! Your answer is comprehensive and covers a wide range of concepts.",
+        "suggestion": "Focus on the remaining concepts and try to explain them with clarity and precision."
+      },
+      {
+        "id": 6,
+        "feedback": "Fantastic! Your answer is very well-structured and covers almost all key concepts.",
+        "suggestion": "Review the missing concepts and try to incorporate them into your answer."
+      },
+      {
+        "id": 7,
+        "feedback": "Great achievement! Your answer demonstrates a strong understanding of the topic and covers many concepts.",
+        "suggestion": "Challenge yourself with a timed version of the same question to improve speed."
+      },
+      {
+        "id": 8,
+        "feedback": "Excellent progress! Your answer is thorough and covers a significant portion of the concepts.",
+        "suggestion": "Try to add more detail to your explanation for the remaining concepts."
+      },
+      {
+        "id": 9,
+        "feedback": "Outstanding work! You've covered a vast majority of the concepts and presented them clearly.",
+        "suggestion": "Now try to apply this knowledge to a different but related topic."
+      },
+      {
+        "id": 10,
+        "feedback": "Brilliant! Your answer is comprehensive, detailed, and covers almost all key concepts.",
+        "suggestion": "You've done exceptionally well. Keep practicing to maintain this level of excellence."
+      }
+    ],
+    "50-60": [
+      {
+        "id": 1,
+        "feedback": "Excellent! Your answer is comprehensive and covers a vast majority of the concepts.",
+        "suggestion": "You're very close to mastery. Focus on the remaining concepts to achieve a perfect score."
+      },
+      {
+        "id": 2,
+        "feedback": "Outstanding work! Your answer shows a deep understanding of the topic and covers many concepts.",
+        "suggestion": "Try to write a concise version of your answer to test your ability to summarize effectively."
+      },
+      {
+        "id": 3,
+        "feedback": "Brilliant effort! Your answer is thorough and covers a significant number of concepts.",
+        "suggestion": "For the missing concepts, try to understand how they add value to the overall understanding."
+      },
+      {
+        "id": 4,
+        "feedback": "Superb! Your answer is very well-structured and covers a wide range of concepts.",
+        "suggestion": "Add specific examples or data points to strengthen your answer further."
+      },
+      {
+        "id": 5,
+        "feedback": "Exceptional! Your answer demonstrates a thorough understanding of the topic and covers many concepts.",
+        "suggestion": "Try to explain the missing concepts in your own words to demonstrate complete understanding."
+      },
+      {
+        "id": 6,
+        "feedback": "Fantastic work! Your answer is comprehensive and covers a vast majority of the key concepts.",
+        "suggestion": "Review the missing concepts and try to incorporate them into your answer."
+      },
+      {
+        "id": 7,
+        "feedback": "Great achievement! Your answer shows a deep understanding of the topic and covers many concepts.",
+        "suggestion": "Challenge yourself with a more advanced question on the same topic."
+      },
+      {
+        "id": 8,
+        "feedback": "Excellent performance! Your answer is thorough and covers a significant portion of the concepts.",
+        "suggestion": "Try to add more detail to your explanation for the remaining concepts."
+      },
+      {
+        "id": 9,
+        "feedback": "Outstanding! You've covered a vast majority of the concepts and presented them clearly.",
+        "suggestion": "Now try to apply this knowledge to a different but related topic."
+      },
+      {
+        "id": 10,
+        "feedback": "Brilliant! Your answer is comprehensive, detailed, and covers almost all key concepts.",
+        "suggestion": "You've done exceptionally well. Keep practicing to maintain this level of excellence."
+      }
+    ],
+    "60-70": [
+      {
+        "id": 1,
+        "feedback": "Excellent! Your answer is thorough and covers a vast majority of the concepts.",
+        "suggestion": "You're very close to perfection. Focus on the remaining concepts to achieve a perfect score."
+      },
+      {
+        "id": 2,
+        "feedback": "Outstanding work! Your answer shows a deep understanding of the topic and covers many concepts.",
+        "suggestion": "Try to write a summary of the topic in your own words to consolidate your learning."
+      },
+      {
+        "id": 3,
+        "feedback": "Brilliant effort! Your answer is comprehensive and covers a significant number of concepts.",
+        "suggestion": "For the missing concepts, try to understand their importance and how they relate to other concepts."
+      },
+      {
+        "id": 4,
+        "feedback": "Superb! Your answer is very well-structured and covers a wide range of concepts.",
+        "suggestion": "Consider adding examples or case studies to make your answer even more impressive."
+      },
+      {
+        "id": 5,
+        "feedback": "Exceptional! Your answer demonstrates a thorough understanding of the topic and covers many concepts.",
+        "suggestion": "Try to explain the missing concepts with clarity and precision."
+      },
+      {
+        "id": 6,
+        "feedback": "Fantastic work! Your answer is comprehensive and covers a vast majority of the key concepts.",
+        "suggestion": "Review the missing concepts and try to incorporate them into your answer."
+      },
+      {
+        "id": 7,
+        "feedback": "Great achievement! Your answer shows a deep understanding of the topic and covers many concepts.",
+        "suggestion": "Challenge yourself with a timed version of the same question to improve speed."
+      },
+      {
+        "id": 8,
+        "feedback": "Excellent performance! Your answer is thorough and covers a significant portion of the concepts.",
+        "suggestion": "Try to add more detail to your explanation for the remaining concepts."
+      },
+      {
+        "id": 9,
+        "feedback": "Outstanding! You've covered a vast majority of the concepts and presented them clearly.",
+        "suggestion": "Now try to apply this knowledge to a different but related topic."
+      },
+      {
+        "id": 10,
+        "feedback": "Brilliant! Your answer is comprehensive, detailed, and covers almost all key concepts.",
+        "suggestion": "You've done exceptionally well. Keep practicing to maintain this level of excellence."
+      }
+    ],
+    "70-80": [
+      {
+        "id": 1,
+        "feedback": "Exceptional! Your answer is comprehensive and covers a vast majority of the concepts.",
+        "suggestion": "You're very close to perfection. Focus on the remaining concepts to achieve a perfect score."
+      },
+      {
+        "id": 2,
+        "feedback": "Outstanding! Your answer shows a deep understanding of the topic and covers many concepts.",
+        "suggestion": "Try to write a concise version of your answer to test your ability to summarize effectively."
+      },
+      {
+        "id": 3,
+        "feedback": "Brilliant! Your answer is thorough and covers a significant number of concepts.",
+        "suggestion": "For the missing concepts, try to understand how they add value to the overall understanding."
+      },
+      {
+        "id": 4,
+        "feedback": "Superb! Your answer is very well-structured and covers a wide range of concepts.",
+        "suggestion": "Add specific examples or data points to strengthen your answer further."
+      },
+      {
+        "id": 5,
+        "feedback": "Exceptional! Your answer demonstrates a thorough understanding of the topic and covers many concepts.",
+        "suggestion": "Try to explain the missing concepts in your own words to demonstrate complete understanding."
+      },
+      {
+        "id": 6,
+        "feedback": "Fantastic! Your answer is comprehensive and covers a vast majority of the key concepts.",
+        "suggestion": "Review the missing concepts and try to incorporate them into your answer."
+      },
+      {
+        "id": 7,
+        "feedback": "Great achievement! Your answer shows a deep understanding of the topic and covers many concepts.",
+        "suggestion": "Challenge yourself with a more advanced question on the same topic."
+      },
+      {
+        "id": 8,
+        "feedback": "Excellent! Your answer is thorough and covers a significant portion of the concepts.",
+        "suggestion": "Try to add more detail to your explanation for the remaining concepts."
+      },
+      {
+        "id": 9,
+        "feedback": "Outstanding! You've covered a vast majority of the concepts and presented them clearly.",
+        "suggestion": "Now try to apply this knowledge to a different but related topic."
+      },
+      {
+        "id": 10,
+        "feedback": "Brilliant! Your answer is comprehensive, detailed, and covers almost all key concepts.",
+        "suggestion": "You've done exceptionally well. Keep practicing to maintain this level of excellence."
+      }
+    ],
+    "80-90": [
+      {
+        "id": 1,
+        "feedback": "Exceptional! Your answer is comprehensive and covers a vast majority of the concepts.",
+        "suggestion": "You're very close to perfection. Focus on the remaining concepts to achieve a perfect score."
+      },
+      {
+        "id": 2,
+        "feedback": "Outstanding! Your answer shows a deep understanding of the topic and covers many concepts.",
+        "suggestion": "Try to write a concise version of your answer to test your ability to summarize effectively."
+      },
+      {
+        "id": 3,
+        "feedback": "Brilliant! Your answer is thorough and covers a significant number of concepts.",
+        "suggestion": "For the missing concepts, try to understand how they add value to the overall understanding."
+      },
+      {
+        "id": 4,
+        "feedback": "Superb! Your answer is very well-structured and covers a wide range of concepts.",
+        "suggestion": "Add specific examples or data points to strengthen your answer further."
+      },
+      {
+        "id": 5,
+        "feedback": "Exceptional! Your answer demonstrates a thorough understanding of the topic and covers many concepts.",
+        "suggestion": "Try to explain the missing concepts in your own words to demonstrate complete understanding."
+      },
+      {
+        "id": 6,
+        "feedback": "Fantastic! Your answer is comprehensive and covers a vast majority of the key concepts.",
+        "suggestion": "Review the missing concepts and try to incorporate them into your answer."
+      },
+      {
+        "id": 7,
+        "feedback": "Great achievement! Your answer shows a deep understanding of the topic and covers many concepts.",
+        "suggestion": "Challenge yourself with a more advanced question on the same topic."
+      },
+      {
+        "id": 8,
+        "feedback": "Excellent! Your answer is thorough and covers a significant portion of the concepts.",
+        "suggestion": "Try to add more detail to your explanation for the remaining concepts."
+      },
+      {
+        "id": 9,
+        "feedback": "Outstanding! You've covered a vast majority of the concepts and presented them clearly.",
+        "suggestion": "Now try to apply this knowledge to a different but related topic."
+      },
+      {
+        "id": 10,
+        "feedback": "Brilliant! Your answer is comprehensive, detailed, and covers almost all key concepts.",
+        "suggestion": "You've done exceptionally well. Keep practicing to maintain this level of excellence."
+      }
+    ],
+    "90-100": [
+      {
+        "id": 1,
+        "feedback": "Perfect! Your answer is comprehensive and covers all key concepts thoroughly.",
+        "suggestion": "You've mastered this topic. Challenge yourself with advanced questions or help others learn."
+      },
+      {
+        "id": 2,
+        "feedback": "Outstanding! You've demonstrated complete mastery of the topic with a comprehensive answer.",
+        "suggestion": "Try applying this knowledge to real-world scenarios or case studies."
+      },
+      {
+        "id": 3,
+        "feedback": "Brilliant! Your answer is thorough and covers every important concept perfectly.",
+        "suggestion": "You're ready for more challenging topics. Keep up the excellent work!"
+      },
+      {
+        "id": 4,
+        "feedback": "Superb! Your answer is well-structured and covers all the key concepts flawlessly.",
+        "suggestion": "Consider writing a shorter, crisp version of the answer to test time management."
+      },
+      {
+        "id": 5,
+        "feedback": "Exceptional! You've demonstrated a deep understanding of the topic and covered all concepts.",
+        "suggestion": "You've achieved mastery. Now focus on teaching others to reinforce your learning."
+      },
+      {
+        "id": 6,
+        "feedback": "Fantastic! Your answer is comprehensive and covers all key concepts with clarity.",
+        "suggestion": "Challenge yourself by connecting this topic to other related subjects."
+      },
+      {
+        "id": 7,
+        "feedback": "Great achievement! Your answer shows complete understanding of the topic.",
+        "suggestion": "You're ready to move on to the next topic. Keep up the momentum!"
+      },
+      {
+        "id": 8,
+        "feedback": "Excellent! Your answer is thorough and covers every important concept.",
+        "suggestion": "Try to identify any potential exam questions based on this topic."
+      },
+      {
+        "id": 9,
+        "feedback": "Outstanding! You've covered all concepts perfectly and presented them clearly.",
+        "suggestion": "You've done exceptionally well. Celebrate your achievement and keep learning."
+      },
+      {
+        "id": 10,
+        "feedback": "Brilliant! Your answer is comprehensive, detailed, and covers all key concepts.",
+        "suggestion": "You've achieved mastery. Now help others by sharing your understanding."
+      }
+    ]
+  }
+}
