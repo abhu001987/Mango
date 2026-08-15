@@ -1093,15 +1093,14 @@ function waveIconHtml(color, label){
       <path d="M2 22c3 3 6 3 9 0s6-3 9 0 6 3 9 0" stroke="${color}" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
       <path d="M20 4l6 5-6 5" stroke="${color}" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="m-tag" style="--micon-color:${color}">${label}</span>
   </div>`;
 }
 function waveDivIcon(color, label){
   return L.divIcon({
     className:'',
     html: waveIconHtml(color, label),
-    iconSize:[34,42],
-    iconAnchor:[17,22]
+    iconSize:[34,26],
+    iconAnchor:[17,13]
   });
 }
 
@@ -1334,7 +1333,7 @@ function triggerRoundEffect(cls){
   } else if(cls === 'bad'){
     [mapViewport, feedback].forEach(el=>{
       if(!el) return;
-      el.classList.remove('fx-shake'); void el.offsetWidth;
+      el.classList.remove('fx-shake'); void el.offsetWidth;und.paths.forEach
       el.classList.add('fx-shake');
       setTimeout(()=> el.classList.remove('fx-shake'), 550);
     });
@@ -1393,19 +1392,15 @@ function drawFlowEffect(round, cls){
   const center = centerOfPaths(round.paths);
   const bearing = round.flowDir || 0;
 
-  // Animated flowing outline around the target box
-  round.paths.forEach((path, i)=>{
-    const line = L.polyline(path, { color: color, weight:3.5, opacity:0.9, className:'flow-line', dashArray:'8 10' }).addTo(map);
-    revealLayers.push(line);
-    if(i === 0){
-      const mid = path[Math.floor(path.length/2)];
-      const label = L.marker(mid, {
-        icon: L.divIcon({ className:'', html:`<div class="line-label" style="background:${color}">${round.name}</div>`, iconSize:[0,0] }),
-        interactive:false
-      }).addTo(map);
-      revealLayers.push(label);
-    }
-  });
+  // Label marker at the target's edge — no dashed box outline
+  if(round.paths[0] && round.paths[0].length){
+    const mid = round.paths[0][Math.floor(round.paths[0].length/2)];
+    const label = L.marker(mid, {
+      icon: L.divIcon({ className:'', html:`<div class="line-label" style="background:${color}">${round.name}</div>`, iconSize:[0,0] }),
+      interactive:false
+    }).addTo(map);
+    revealLayers.push(label);
+  }
 
   // Three small pulsing arrows, spaced along the current's real flow direction,
   // simulating water moving through the target point.
