@@ -1,0 +1,2533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- AdSense loader — replace ca-pub-8353010289901005 after approval -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8353010289901005"
+crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Grasslands of the World Geography Quiz | MapiDesk</title>
+<meta name="description" content="Test your knowledge of the world's grasslands with an interactive geography map quiz. Locate major grasslands, discover their countries and regions, and sharpen your world geography skills.">
+<link rel="icon" type="image/png" href="/images/Mapidesk_Icon-removebg-preview.png" />
+<link rel="apple-touch-icon" href="/images/Mapidesk_Icon-removebg-preview.png" />
+
+<meta property="og:title" content="World Grasslands Quiz | MapiDesk" />
+<meta property="og:description" content="Test your knowledge of the world's major grasslands, plains, and their locations with this interactive mapping quiz." />
+<meta property="og:image" content="https://mapidesk.com/images/Mapidesk_Icon-removebg-preview.png" />
+<meta property="og:url" content="https://mapidesk.com/world-grasslands.html" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="World Grasslands Quiz | MapiDesk" />
+<meta name="twitter:description" content="Test your knowledge of the world's major grasslands, plains, and their locations with this interactive mapping quiz." />
+<meta name="twitter:image" content="https://mapidesk.com/images/Mapidesk_Icon-removebg-preview.png" />
+  <!-- Theme: set instantly, before any CSS loads -->
+<script>
+  (function() {
+    try {
+      var theme = localStorage.getItem('terra-site-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+
+<!-- Fonts (matches MapiDesk) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Shared CSS & JS (theme) -->
+<link rel="stylesheet" href="theme.css" />
+<script src="theme.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<link rel="preconnect" href="https://a.basemaps.cartocdn.com">
+<link rel="preconnect" href="https://b.basemaps.cartocdn.com">
+<link rel="preconnect" href="https://c.basemaps.cartocdn.com">
+<link rel="preconnect" href="https://d.basemaps.cartocdn.com">
+
+<style>
+  /* ============================================ */
+  /* PALETTE — MapiDesk gold/deep-blue glass theme */
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.35);
+    --glass-shadow: 0 12px 40px rgba(0, 20, 40, 0.10);
+    --deep-blue: #0B2A3C;
+    --deep-blue-soft: #1A3B4F;
+    --ink: #1A2E3B;
+    --ink-soft: #3A4F5E;
+    --muted: #748A98;
+    --muted-light: #B4C8D4;
+    --gold: #D4A853;
+    --gold-bright: #EAC072;
+    --gold-glow: rgba(212, 168, 83, 0.15);
+    --white-glass: rgba(255, 255, 255, 0.70);
+    --card-bg: rgba(255, 255, 255, 0.80);
+    --border-light: rgba(11, 42, 60, 0.08);
+    --navy: #0D1720;
+    --navy-soft: #182B3A;
+    --navy-softer: #203A4C;
+    --parchment: #EFE7D4;
+    --brass: #DB9A3E;
+    --brass-bright: #F7C177;
+    --moss: #6B8A6D;
+    --rust: #C4623C;
+    --ink-text: #F1EADA;
+    --muted-dark: #6B7981;
+    --line: rgba(237,230,211,0.12);
+    --body-bg: #EAE4F7;
+    --pc-opt-bg: rgba(255,255,255,0.68);
+    --pc-result-bg: rgba(255,255,255,0.8);
+    --danger: #F2545F;
+    --danger-dim: rgba(242, 84, 95, 0.12);
+    --radius: 22px;
+    --radius-sm: 14px;
+    --ease: cubic-bezier(.4, 0, .2, 1);
+    --mint: #3ED598;
+    --blue: #5B7FFF;
+    --violet: #8B7CF6;
+    --amber: #F0B03C;
+    --blue-soft: rgba(91, 127, 255, 0.12);
+    --violet-soft: rgba(139, 124, 246, 0.12);
+    --panel-strong: rgba(255, 255, 255, 0.9);
+    --input-bg: rgba(0, 0, 0, 0.04);
+    --bg-0: var(--body-bg);
+    --panel: var(--card-bg);
+    --border: var(--border-light);
+    --text: var(--deep-blue);
+    --text-dim: var(--muted);
+    --text-dimmer: var(--muted-light);
+    --nav-bg: var(--glass-bg);
+    --glow-1: var(--gold-glow);
+    --glow-2: rgba(139, 124, 246, 0.08);
+    --danger-color: var(--danger);
+    --teal: #4A9E7A;
+    --coral: var(--danger);
+    --glass: var(--card-bg);
+    --glass-brd: var(--border-light);
+    --ink-dim: var(--muted);
+    --grass: #4E9950;
+    --grass-bright: #7CC36A;
+    --grass-dim: rgba(78, 153, 80, 0.16);
+  }
+  /* DARK THEME */
+  [data-theme="dark"] {
+    --glass-bg: rgba(16, 28, 38, 0.55);
+    --glass-border: rgba(237, 230, 211, 0.10);
+    --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    --deep-blue: #F1EADA;
+    --deep-blue-soft: #D9CFB8;
+    --ink: #E7E1D2;
+    --ink-soft: #B9C2C8;
+    --muted: #8494A0;
+    --muted-light: #45535C;
+    --gold: #E3B368;
+    --gold-bright: #F7C177;
+    --gold-glow: rgba(227, 179, 104, 0.16);
+    --white-glass: rgba(255, 255, 255, 0.05);
+    --card-bg: rgba(20, 34, 46, 0.65);
+    --border-light: rgba(237, 230, 211, 0.10);
+    --body-bg: #05060C;
+    --pc-opt-bg: rgba(255,255,255,0.06);
+    --pc-result-bg: rgba(255,255,255,0.06);
+    --panel-strong: rgba(30, 50, 65, 0.8);
+    --input-bg: rgba(255, 255, 255, 0.06);
+    --blue-soft: rgba(91, 127, 255, 0.15);
+    --violet-soft: rgba(139, 124, 246, 0.15);
+    --bg-0: var(--body-bg);
+    --panel: var(--card-bg);
+    --border: var(--border-light);
+    --text: var(--deep-blue);
+    --text-dim: var(--muted);
+    --text-dimmer: var(--muted-light);
+    --nav-bg: var(--glass-bg);
+    --glow-1: var(--gold-glow);
+    --glow-2: rgba(139, 124, 246, 0.10);
+    --danger-color: var(--danger);
+    --teal: #5FC79A;
+    --coral: var(--danger);
+    --glass: var(--card-bg);
+    --glass-brd: var(--border-light);
+    --ink-dim: var(--muted);
+    --grass: #5FB25E;
+    --grass-bright: #8AD478;
+    --grass-dim: rgba(95, 178, 94, 0.20);
+  }
+  /* ============================================ */
+  /* HEADER */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 16px clamp(16px,2.4vw,36px) 0;
+    border-bottom: none;
+    background: transparent;
+    transition: border-color 0.3s ease;
+    margin-bottom: 0;
+  }
+  .nav.header-hidden {
+    display: none;
+  }
+
+  .wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+    border-radius: 22px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    transition: background .35s ease, border-color .35s ease;
+  }
+
+  .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  min-width: 0;
+}
+.logo .mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+.logo .mark svg {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+.logo .brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+}
+.logo .brand-text .name {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  color: var(--deep-blue);
+  white-space: nowrap;
+}
+.logo .brand-text .tag {
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hide tagline on small screens so search/theme buttons never get pushed out */
+@media (max-width: 640px) {
+  .logo .brand-text .tag {
+    display: none;
+  }
+  .logo .mark {
+    width: 34px;
+    height: 34px;
+  }
+  .logo .mark svg {
+    width: 34px;
+    height: 34px;
+  }
+  .logo .brand-text .name {
+    font-size: 16px;
+  }
+}
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .nav-links a:hover {
+    color: var(--deep-blue);
+  }
+
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .exit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 18px 10px 14px;
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    background: var(--white-glass);
+    transition: 0.2s var(--ease), border-color 0.3s ease, color 0.3s ease, background 0.3s ease;
+  }
+
+  .exit-btn .ic {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s var(--ease);
+    flex-shrink: 0;
+  }
+
+  .exit-btn:hover {
+    background: var(--gold-glow);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .exit-btn:hover .ic {
+    transform: translateX(-3px);
+  }
+
+  .theme-toggle {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    background: var(--white-glass);
+    color: var(--deep-blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s var(--ease);
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle:hover {
+    background: var(--gold-glow);
+    border-color: var(--gold);
+    transform: scale(1.06);
+  }
+
+  .theme-toggle .sun-icon,
+  .theme-toggle .moon-icon {
+    position: absolute;
+    display: flex;
+    transition: all 0.45s var(--ease);
+  }
+  .theme-toggle svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+  .theme-toggle .sun-icon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.4);
+  }
+
+  .theme-toggle .moon-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+
+  [data-theme="light"] .theme-toggle .sun-icon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+
+  [data-theme="light"] .theme-toggle .moon-icon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.4);
+  }
+
+  @media (max-width: 600px) {
+    .nav { padding: 12px 14px 0; }
+    .nav-inner { padding: 10px 14px; border-radius: 16px; }
+    .logo { font-size: 22px; gap: 9px; }
+    .logo .mark { width: 40px; height: 40px; }
+    .logo .mark svg { width: 40px; height: 40px; }
+    .nav-links { display: none; }
+    .exit-btn { padding: 6px 12px; font-size: 12px; }
+    .exit-btn span { display: none; }
+    .theme-toggle { width: 34px; height: 34px; }
+  }
+
+  /* ============================================ */
+  /* BASE */
+  /* ============================================ */
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{
+    margin:0;padding:0;
+    height:100%;
+    height:100dvh;
+    overscroll-behavior:none;
+    background:var(--bg-0);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    color:var(--text);
+    transition:background .3s ease, color .3s ease;
+  }
+  body{
+    display:flex;flex-direction:column;
+    overflow:hidden;
+    background: var(--bg-0);
+    background-image:
+      radial-gradient(circle at 15% 0%, var(--glow-1), transparent 45%),
+      radial-gradient(circle at 85% 20%, var(--glow-2), transparent 40%);
+  }
+
+  #app{
+    position:relative;z-index:1;
+    flex:1 1 auto;min-height:0;
+    display:flex;flex-direction:column;
+    padding-bottom:env(safe-area-inset-bottom);
+    padding-left:env(safe-area-inset-left);
+    padding-right:env(safe-area-inset-right);
+  }
+
+  /* ---------- HUD ---------- */
+  #hud-top{
+    display:flex;align-items:center;justify-content:space-between;gap:8px;
+    padding:8px 10px;
+    background:transparent;
+    z-index:500;
+    flex-wrap:nowrap;
+    position:relative;
+  }
+  .brand{
+    font-weight:700;letter-spacing:.1em;font-size:10px;color:var(--gold);
+    text-transform:uppercase;opacity:.9;flex-shrink:0;
+    writing-mode:horizontal-tb;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .hud-back-btn{
+    display:flex;align-items:center;justify-content:center;
+    width:34px;height:34px;border-radius:50%;flex-shrink:0;
+    background:var(--glass);border:1px solid var(--glass-brd);
+    backdrop-filter: blur(10px);
+    color:var(--ink);cursor:pointer;padding:0;
+    transition:border-color .15s ease, color .15s ease, transform .12s ease, background .15s ease;
+  }
+  .hud-back-btn:hover{border-color:var(--gold);color:var(--gold); background: var(--gold-glow);}
+  .hud-back-btn:active{transform:scale(.92);}
+  .hud-back-btn .ic{
+    width:16px;height:16px;fill:none;stroke:currentColor;
+    stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+  }
+  .strait-card{
+    background:var(--glass);
+    border:1px solid var(--glass-brd);
+    backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%);
+    border-radius:14px;
+    padding:7px 14px;
+    text-align:center;
+    box-shadow: 0 6px 20px rgba(0,20,40,0.08);
+    flex:1 1 auto;min-width:0;
+    max-width:min(64vw,460px);
+  }
+  .strait-card .eyebrow{font-size:9px;letter-spacing:.16em;color:var(--ink-dim);text-transform:uppercase;font-weight:600;}
+  .strait-card .title{
+    font-family:'Fraunces',serif;
+    font-size:clamp(12.5px,3.2vw,20px);
+    font-weight:600;color:var(--grass);letter-spacing:.01em;margin-top:2px;
+    white-space:normal;
+    overflow:visible;
+    text-overflow:unset;
+    word-break:break-word;
+    line-height:1.2;
+    max-height:2.6em;
+  }
+  .strait-card .cat-tag{
+    font-size:9px;letter-spacing:.08em;color:var(--ink-dim);text-transform:uppercase;
+    margin-top:2px;font-weight:600;opacity:.8;
+  }
+  #dots{display:flex;gap:4px;justify-content:center;margin-top:6px;flex-wrap:wrap;max-width:220px;}
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--border-light);transition:.2s;flex-shrink:0;}
+  .dot.done{background:var(--teal);box-shadow:0 0 6px var(--teal);}
+  .dot.now{background:var(--gold);box-shadow:0 0 8px var(--gold);transform:scale(1.4);}
+
+  .score-pill{
+    background:var(--glass);border:1px solid var(--glass-brd);border-radius:100px;
+    backdrop-filter: blur(10px);
+    padding:7px 13px;font-size:11px;font-weight:700;color:var(--ink-dim);white-space:nowrap;
+    flex-shrink:0;
+  }
+  .score-pill b{color:var(--teal);}
+
+  #challenge-flag{
+    display:none;
+    align-items:center;gap:6px;
+    background:var(--danger-dim);border:1px solid rgba(242,84,95,0.4);
+    border-radius:100px;padding:6px 12px;font-size:10.5px;font-weight:700;color:var(--coral);
+    white-space:nowrap;flex-shrink:0;letter-spacing:.03em;
+    backdrop-filter: blur(10px);
+  }
+  #challenge-flag.show{display:flex;}
+  #challenge-flag .dotpulse{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulseDot 1.4s ease-in-out infinite;}
+  @keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:.25;}}
+
+  /* ---------- MAP ---------- */
+  #map-viewport{
+    flex:1 1 auto;position:relative;overflow:hidden;
+    margin:0 8px 8px;
+    min-height:0;
+    border-radius:18px;
+    border:1px solid var(--glass-brd);
+    box-shadow: var(--glass-shadow);
+    isolation:isolate;
+    z-index:0;
+  }
+  #map-viewport.screen-covered{visibility:hidden;}
+  #map{
+    position:absolute;inset:0;
+    background:#0e1f30;
+    cursor:crosshair;
+  }
+  #map .leaflet-tile-pane{filter:saturate(1.1) contrast(1.02);}
+  #map .leaflet-container{background:#dfe6ea;}
+  #map-loading{
+    position:absolute;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;
+    background:#0e1f30;color:var(--muted-light);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    pointer-events:none;transition:opacity .3s ease;
+  }
+  #map-loading.hidden{opacity:0;}
+  #map .leaflet-control-attribution{
+    background:rgba(255,255,255,0.82)!important;color:#5C6B73!important;font-size:9px!important;
+  }
+  #map .leaflet-control-attribution a{color:var(--gold)!important;}
+  #map .leaflet-control-zoom a{
+    background:var(--glass)!important;color:var(--ink)!important;border:1px solid var(--glass-brd)!important;
+  }
+
+  .pin-wrap{position:relative;width:22px;height:22px;}
+  .pin-core{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:9px;height:9px;border-radius:50%;
+  }
+  .pin-ring{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:20px;height:20px;border-radius:50%;border:1.6px solid;
+    box-shadow:0 0 0 1.5px rgba(255,255,255,0.85);
+  }
+  .pin-guess .pin-core{background:var(--coral);box-shadow:0 0 0 2px rgba(255,255,255,0.9), 0 0 8px var(--coral);}
+  .pin-guess .pin-ring{border-color:var(--coral);}
+  .pin-ping{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:6px;height:6px;border-radius:50%;
+    border:2px solid var(--coral);
+    animation:ping 1s ease-out forwards;
+  }
+  @keyframes ping{from{width:6px;height:6px;opacity:.9;}to{width:60px;height:60px;opacity:0;}}
+
+  /* ---------- GRASS FIELD ANIMATION ---------- */
+  .grass-tuft{
+    width:20px;height:22px;
+    display:flex;align-items:flex-end;justify-content:center;
+    transform-origin:50% 100%;
+    animation: grassSway 2.2s ease-in-out infinite;
+    pointer-events:none;
+  }
+  .grass-tuft svg{width:18px;height:20px;}
+  @keyframes grassSway{
+    0%{ transform: rotate(-6deg); }
+    50%{ transform: rotate(7deg); }
+    100%{ transform: rotate(-6deg); }
+  }
+  .grass-zone-label{
+    background: rgba(20,50,20,0.62);
+    color:#eafbe6;font-size:10px;font-weight:700;letter-spacing:.04em;
+    padding:3px 8px;border-radius:20px;white-space:nowrap;
+    text-transform:uppercase;
+    box-shadow:0 2px 8px rgba(0,0,0,0.3);
+  }
+
+  /* ---------- BOTTOM PANEL ---------- */
+  #hud-bottom{
+    z-index:500;padding:8px 10px 12px;
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+  }
+  #feedback{
+    width:100%;max-width:640px;
+    background:var(--glass);border:1px solid var(--glass-brd);backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%);
+    border-radius:16px;padding:10px 16px;text-align:center;
+    box-shadow: var(--glass-shadow);
+    display:none;
+  }
+  #feedback.show{display:block;}
+  #feedback .verdict{font-weight:700;font-size:13.5px; display:flex; align-items:center; justify-content:center; gap:7px; flex-wrap:wrap;}
+  #feedback .verdict.good{color:var(--teal);}
+  #feedback .verdict.mid{color:var(--gold);}
+  #feedback .verdict.bad{color:var(--coral);}
+  #feedback .verdict .v-ic{width:16px;height:16px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+  #feedback .fact{font-size:11.5px;color:var(--ink-dim);margin-top:5px;line-height:1.45;}
+  #feedback .rival-line{font-size:11px;color:var(--coral);margin-top:7px;font-weight:700;}
+
+  .btn{
+    border:none;border-radius:40px;padding:12px 28px;font-size:13px;font-weight:700;
+    letter-spacing:.03em;cursor:pointer;transition:transform .12s ease, box-shadow .2s, background .25s ease;
+    text-transform:uppercase;
+    font-family:'Inter',sans-serif;
+  }
+  .btn:active{transform:scale(.96);}
+  .btn:disabled{opacity:.55;cursor:default;}
+  .btn-primary{background:linear-gradient(135deg, var(--deep-blue), var(--deep-blue-soft));color:#fff;box-shadow:0 6px 18px rgba(11,42,60,0.25);}
+  [data-theme="dark"] .btn-primary{background:linear-gradient(135deg,#16394A,#0D2029);}
+  .btn-primary:hover{transform:scale(1.02);box-shadow:0 10px 24px rgba(11,42,60,0.32);}
+  .btn-ghost{background:var(--white-glass);border:1px solid var(--border-light);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold); background: var(--gold-glow);}
+  .btn-teal{background:linear-gradient(135deg,var(--teal),#2f8a68);color:#fff;box-shadow:0 6px 20px rgba(74,158,122,0.3);}
+  .btn-teal:hover{box-shadow:0 8px 26px rgba(74,158,122,0.45);}
+  .btn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
+  .hint-tap{font-size:11px;color:var(--ink-dim);letter-spacing:.05em;opacity:.85;text-align:center; display:flex; align-items:center; gap:6px;}
+  .hint-tap svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ---------- OVERLAY SCREENS ---------- */
+  .screen{
+    position:absolute;inset:0;z-index:5000;display:flex;align-items:flex-start;justify-content:center;
+    background:var(--bg-0);
+    background-image:
+      radial-gradient(circle at 15% 0%, var(--glow-1), transparent 45%),
+      radial-gradient(circle at 85% 20%, var(--glow-2), transparent 40%);
+    text-align:center;
+    padding:calc(var(--nav-height, 92px) + 24px) clamp(16px,2.2vw,30px) 24px;
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-y:contain;
+  }
+  @media (max-width: 768px){
+    .screen{ padding: max(calc(var(--nav-height, 80px) + 28px), 108px) 20px 20px; }
+  }
+  .screen.hidden{display:none;}
+  .panel{
+    max-width:1400px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    min-height:100%;
+    justify-content:center;
+    margin: 0 auto;
+  }
+  .kicker{
+    display:inline-flex; align-items:center; gap:6px;
+    background: var(--grass-dim);
+    border:1px solid rgba(78,153,80,0.3);
+    color: var(--grass);
+    padding:5px 12px; border-radius:20px;
+    font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700;
+    margin-bottom:16px;
+  }
+  @media (max-width:420px){
+    .kicker { font-size:9.5px; letter-spacing:0.08em; }
+  }
+  h1{font-family:'Fraunces', serif;font-weight:600;font-size:clamp(28px,7vw,44px);margin:0 0 12px;color:var(--deep-blue);letter-spacing:-0.01em; line-height:1.08;}
+  h1 span{ font-style:italic; color: var(--grass); }
+  .sub{color:var(--ink-soft);font-size:14.5px;line-height:1.65;margin-bottom:26px;}
+  .final-score{font-family:'Fraunces', serif;font-size:48px;font-weight:700;color:var(--grass);}
+  .final-label{color:var(--ink-dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:-4px;margin-bottom:18px;}
+
+  .feature-card{
+    background:var(--glass);border:1px solid var(--glass-brd);border-radius:14px;
+    backdrop-filter: blur(10px);
+    padding:14px 16px;text-align:left;margin-bottom:22px;
+  }
+  .feature-card .eyebrow2{font-size:10px;letter-spacing:.16em;color:var(--grass);text-transform:uppercase;margin-bottom:8px;font-weight:800;}
+  .feature-card p{color:var(--ink-dim);font-size:13px;line-height:1.6;margin:0;}
+
+  /* ============================================ */
+  /* START / INVITE / END SCREENS — full-bleed layout */
+  /* ============================================ */
+  .panel.wide{ max-width:1400px; width:100%; text-align:left; }
+  .panel.wide .kicker{ justify-content:flex-start; }
+
+  .mode-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background: var(--grass-dim);
+    border:1px solid rgba(78,153,80,0.3);
+    color:var(--grass);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:7px 14px 7px 11px;border-radius:100px;margin-bottom:22px;
+  }
+  .mode-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--grass);box-shadow:0 0 8px var(--grass);flex-shrink:0;}
+
+  .hero-grid{
+    display:block;
+    text-align:left;margin-bottom:8px;margin-top:-4px;
+  }
+  .hero-copy h1{margin-bottom:10px;}
+  .hero-copy .kicker{margin-bottom:14px;}
+  .hero-copy .sub{margin-bottom:0;max-width:720px;}
+
+  .info-cards{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0 0;text-align:left;
+  }
+  @media (max-width:900px){ .info-cards{ grid-template-columns:1fr; } }
+
+  .info-card{
+    position:relative; overflow:hidden;
+    background: var(--card-bg);
+    backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    border:1px solid var(--border-light);border-radius:18px;
+    box-shadow: var(--glass-shadow);
+    padding:22px;display:flex;flex-direction:column;
+    transition: background .35s ease, border-color .35s ease, transform .2s ease;
+  }
+  .info-card:hover{ transform: translateY(-2px); }
+  .info-card.accent{ border-color: rgba(78,153,80,0.35); }
+  .info-card-head{ display:flex; align-items:center; gap:12px; margin-bottom:6px; }
+  .info-card-head h3{
+    font-family:'Fraunces', serif;font-size:17px;font-weight:600;color:var(--deep-blue);margin:0;
+  }
+  .info-card-head p{ margin:1px 0 0; font-size:11.5px; color:var(--ink-dim); }
+  .icon-circle{
+    width:40px;height:40px;border-radius:12px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    background: var(--grass-dim); border:1px solid rgba(78,153,80,0.28);
+    color: var(--grass);
+  }
+  .icon-circle svg{ width:19px; height:19px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .icon-circle.blue{ background:var(--blue-soft);border-color:rgba(91,127,255,0.35);color:var(--blue); }
+  .icon-circle.violet{ background:var(--violet-soft);border-color:rgba(139,124,246,0.35);color:var(--violet); }
+  .icon-circle.coral{ background:var(--danger-dim);border-color:rgba(242,84,95,0.35);color:var(--coral); }
+  .icon-circle.teal{ background:rgba(74,158,122,0.14); border-color: rgba(74,158,122,0.35); color:var(--teal); }
+
+  .mini-stats{ display:flex; gap:20px; margin-top:16px; flex-wrap:wrap; }
+  .mini-stat{ display:flex; align-items:center; gap:10px; }
+  .mini-stat .icon-circle{ width:32px;height:32px;border-radius:9px; }
+  .mini-stat .icon-circle svg{ width:15px;height:15px; }
+  .mini-stat-text{ display:flex; flex-direction:column; }
+  .mini-stat-text .t{ font-size:11.5px; font-weight:700; color:var(--deep-blue); line-height:1.3; }
+  .mini-stat-text .d{ font-size:10px; color:var(--ink-dim); }
+
+  .info-card .info-body{ flex:1; }
+  .info-card textarea{
+    width:100%;min-height:46px;resize:vertical;
+    background:var(--white-glass);border:1px solid var(--border-light);border-radius:12px;
+    color:var(--grass);font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+    padding:11px 13px;outline:none;margin:14px 0 12px;
+    transition: border-color .2s ease, box-shadow .2s ease;
+  }
+  .info-card textarea:focus{border-color:var(--grass);box-shadow:0 0 0 3px var(--grass-dim);}
+  .info-card .btn{ width:100%; }
+
+  .how-block{ margin-top:34px; text-align:left; }
+  .how-title{ display:flex; align-items:center; gap:10px; font-family:'Fraunces', serif; font-weight:600; font-size:17px; color:var(--deep-blue); margin-bottom:20px; }
+  .how-title svg{ width:20px; height:20px; stroke:var(--grass); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .steps-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; position:relative; }
+  @media (max-width:900px){ .steps-row{ grid-template-columns:1fr; } }
+  .step{
+    display:flex; align-items:flex-start; gap:13px;
+    background: var(--card-bg); border:1px solid var(--border-light); border-radius:14px;
+    padding:16px; backdrop-filter: blur(10px);
+  }
+  .step-num{
+    width:32px;height:32px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;
+    background:var(--grass-dim);border:1px solid rgba(78,153,80,0.3);color:var(--grass);
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .step-text .t{ font-size:12.5px; font-weight:700; color:var(--deep-blue); margin-bottom:2px; }
+  .step-text .d{ font-size:11px; color:var(--ink-dim); line-height:1.45; }
+
+  /* ---- results screen: score hero card ---- */
+  .score-hero{
+    display:flex;align-items:center;gap:20px;
+    background:var(--card-bg);border:1px solid var(--border-light);border-radius:20px;
+    backdrop-filter: blur(14px) saturate(160%);
+    box-shadow: var(--glass-shadow);
+    padding:24px 26px;margin-bottom:8px;text-align:left;
+  }
+  .score-hero .icon-circle{ width:56px;height:56px;border-radius:16px; }
+  .score-hero .icon-circle svg{ width:26px;height:26px; }
+  .score-hero .score-meta{ flex:1; min-width:0; }
+  .score-hero .final-score{ font-size:40px; line-height:1; margin-bottom:2px; }
+  .score-hero .final-label{ margin:0; }
+
+  .paste-box{
+    margin-top:24px;text-align:left;
+    border-top:1px solid var(--border-light);padding-top:22px;
+  }
+  .paste-title{font-family:'Fraunces', serif;font-weight:600;font-size:15px;color:var(--deep-blue);margin-bottom:4px;}
+  .paste-sub{font-size:12px;color:var(--ink-dim);margin-bottom:10px;line-height:1.5;}
+  .paste-box textarea{
+    width:100%;min-height:56px;resize:vertical;
+    background:var(--white-glass);border:1px solid var(--border-light);border-radius:14px;
+    color:var(--grass);font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+    padding:11px 13px;outline:none;margin-bottom:10px;
+  }
+  .paste-box textarea:focus{border-color:var(--grass);box-shadow:0 0 0 3px var(--grass-dim);}
+  .paste-err{font-size:11.5px;color:var(--coral);margin-top:8px;display:none;}
+
+  .share-block{
+    margin-top:24px;text-align:left;
+    border-top:1px solid var(--border-light);padding-top:22px;
+  }
+  .share-title{font-family:'Fraunces', serif;font-weight:600;font-size:15px;color:var(--deep-blue);margin-bottom:4px; display:flex; align-items:center; gap:8px;}
+  .share-title svg{width:17px;height:17px;stroke:var(--grass);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+  .share-sub{font-size:12px;color:var(--ink-dim);margin-bottom:14px;line-height:1.5;}
+  .link-box{
+    display:flex;gap:8px;align-items:center;
+    background:var(--white-glass);border:1px solid var(--border-light);border-radius:14px;
+    padding:9px 9px 9px 14px;margin-bottom:12px;
+  }
+  .link-box input{
+    flex:1;min-width:0;background:transparent;border:none;outline:none;
+    color:var(--grass);font-family:'IBM Plex Mono',monospace;font-size:11.5px;
+  }
+  .copy-btn{
+    background:var(--card-bg);border:1px solid var(--border-light);color:var(--deep-blue);
+    font-size:11px;font-weight:700;padding:9px 14px;border-radius:9px;cursor:pointer;
+    white-space:nowrap;transition:.15s;text-transform:uppercase;letter-spacing:.03em;
+  }
+  .copy-btn:hover{border-color:var(--grass);color:var(--grass); background: var(--grass-dim);}
+  .copy-btn.copied{border-color:var(--teal);color:var(--teal);}
+  .copy-btn:disabled{opacity:.6;cursor:default;}
+  .share-icons{display:flex;gap:10px;}
+  .share-icons a{
+    flex:1;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px;border-radius:12px;font-weight:700;font-size:12.5px;
+    border:1px solid var(--border-light);background:var(--card-bg);color:var(--deep-blue);
+    transition:.15s;text-transform:uppercase;letter-spacing:.02em;
+  }
+  .share-icons a svg{ width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .share-icons a:hover{border-color:var(--grass);color:var(--grass);transform:translateY(-2px); box-shadow: 0 8px 20px rgba(78,153,80,0.15);}
+  .share-icons a.disabled{opacity:.55;pointer-events:none;}
+
+  /* ---- VS comparison block ---- */
+  #vs-block{display:none;margin-bottom:8px;}
+  .vs-card{display:flex;align-items:center;border-radius:18px;overflow:hidden;border:1px solid var(--border-light);position:relative;margin-bottom:16px; box-shadow: var(--glass-shadow);}
+  .vs-side{flex:1;padding:20px 12px;text-align:center;backdrop-filter: blur(10px);}
+  .vs-side.rival{background:linear-gradient(160deg, var(--danger-dim), var(--card-bg));}
+  .vs-side.you{background:linear-gradient(200deg, var(--grass-dim), var(--card-bg));}
+  .vs-name{font-size:10px;color:var(--ink-dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;font-weight:700;}
+  .vs-score{font-family:'Fraunces',serif; font-size:34px;font-weight:700;}
+  .vs-side.rival .vs-score{color:var(--coral);}
+  .vs-side.you .vs-score{color:var(--grass);}
+  .vs-badge{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:40px;height:40px;border-radius:50%;background:var(--body-bg);
+    border:2px solid var(--grass);display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:800;color:var(--grass);z-index:2;box-shadow:0 0 18px var(--grass-dim);
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .verdict-box{
+    display:flex; align-items:center; justify-content:center; gap:9px;
+    text-align:center;font-weight:700;font-size:16px;letter-spacing:.01em;
+    padding:14px 12px;border-radius:14px;margin-bottom:18px;
+  }
+  .verdict-box svg{ width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+  .verdict-box.win{background:rgba(74,158,122,0.12);color:var(--teal);border:1px solid rgba(74,158,122,0.35); animation: winnerTextGlow 1.6s ease-in-out infinite;}
+  .verdict-box.lose{background:var(--danger-dim);color:var(--coral);border:1px solid rgba(242,84,95,0.35);}
+  .verdict-box.tie{background:var(--grass-dim);color:var(--grass);border:1px solid rgba(78,153,80,0.35);}
+  @keyframes winnerTextGlow{
+    0%,100%{ box-shadow: 0 0 0 rgba(74,158,122,0); }
+    50%{ box-shadow: 0 0 26px rgba(74,158,122,0.35); }
+  }
+
+  .breakdown{max-height:220px;overflow-y:auto;margin-bottom:6px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
+  .b-row{
+    display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px;
+    background:var(--card-bg);border:1px solid var(--border-light);margin-bottom:7px;font-size:12px;text-align:left;
+    backdrop-filter: blur(8px);
+  }
+  .b-row .b-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-dim); font-weight:500;}
+  .b-row .b-marks{display:flex;gap:6px;flex-shrink:0;}
+  .b-row .b-idx{
+  width:22px;height:22px;border-radius:6px;background:var(--grass-dim);color:var(--grass);
+  font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:'IBM Plex Mono',monospace;
+  }
+  .b-row .b-dist{color:var(--ink-dim);font-size:10.5px;flex-shrink:0;font-family:'IBM Plex Mono',monospace;}
+  .b-row .b-pts{flex-shrink:0;font-weight:800;font-size:11px;padding:3px 9px;border-radius:20px;}
+  .b-pts.good{background:rgba(74,158,122,0.16);color:var(--teal);}
+  .b-pts.mid{background:var(--gold-glow);color:var(--gold);}
+  .b-pts.bad{background:var(--danger-dim);color:var(--coral);}
+  .b-mk{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;font-family:'IBM Plex Mono',monospace;}
+  .b-mk.ok{background:rgba(74,158,122,0.16);color:var(--teal);}
+  .b-mk.no{background:var(--danger-dim);color:var(--coral);}
+
+  /* ---- toast ---- */
+  #toast{
+    position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(16px);
+    background:var(--deep-blue);color:var(--body-bg);font-weight:700;font-size:12.5px;
+    padding:11px 20px;border-radius:30px;opacity:0;pointer-events:none;
+    transition:all .3s cubic-bezier(.34,1.56,.64,1);z-index:2000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  }
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  #confettiCanvas{position:fixed;inset:0;pointer-events:none;z-index:5600;}
+
+  /* ===== Menu footer ===== */
+  .menu-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .menu-footer .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .menu-footer .back-link:hover { color: var(--grass); }
+  .menu-footer .back-link svg {
+    width: 14px; height: 14px; fill: none; stroke: currentColor;
+    stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+  }
+  .menu-footer .copy { color: var(--muted-light); font-size: 10px; }
+
+  /* ===== Exit dialog ===== */
+  #exit-dialog-overlay {
+    position: fixed; inset: 0;
+    background: rgba(11,42,60,0.35);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    display: none; align-items: center; justify-content: center; padding: 24px;
+  }
+  #exit-dialog-overlay.show { display: flex; }
+  #exit-dialog {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid var(--border-light);
+    border-radius: 22px;
+    padding: 32px 28px 24px;
+    max-width: 400px; width: 100%;
+    box-shadow: 0 24px 60px rgba(0,20,40,0.25);
+    text-align: center;
+  }
+  #exit-dialog h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px; font-weight:600;
+    margin: 0 0 8px; color: var(--deep-blue);
+  }
+  #exit-dialog p { color: var(--muted); font-size: 14px; margin: 0 0 24px; line-height: 1.5; }
+  #exit-dialog .btn-row { display: flex; gap: 12px; justify-content: center; margin-top: 0; }
+  #exit-dialog .btn-row .btn { min-width: 100px; }
+  #exit-dialog .btn-secondary { background: var(--white-glass); border: 1px solid var(--border-light); color: var(--deep-blue); }
+  #exit-dialog .btn-secondary:hover { border-color: var(--grass); color: var(--grass); background: var(--grass-dim); }
+  @media (max-width:480px) {
+    #exit-dialog { padding: 24px 18px; }
+    #exit-dialog h3 { font-size: 18px; }
+  }
+
+  @media (max-height:640px){
+    .strait-card{padding:5px 10px;}
+    #dots{margin-top:3px;}
+    .hint-tap{display:none;}
+    .feature-card{padding:11px 13px;margin-bottom:16px;}
+    .menu-footer { margin-top: 16px; padding-top: 12px; }
+  }
+  @media (max-width:420px){
+    .brand{display:none;}
+    #challenge-flag span.flag-text{display:none;}
+    .strait-card{ max-width:72vw; padding:6px 10px; }
+    .strait-card .title{ font-size:clamp(12px,4.4vw,16px); }
+  }
+
+  /* ===== round-feedback micro-effects ===== */
+  @keyframes badShake{
+    10%,90%{transform:translateX(-1px);}
+    20%,80%{transform:translateX(2px);}
+    30%,50%,70%{transform:translateX(-5px);}
+    40%,60%{transform:translateX(5px);}
+  }
+  .fx-shake{animation:badShake .5s ease;}
+
+  @keyframes goodPulse{
+    0%{box-shadow:0 0 0 0 rgba(74,158,122,.5);}
+    70%{box-shadow:0 0 0 16px rgba(74,158,122,0);}
+    100%{box-shadow:0 0 0 0 rgba(74,158,122,0);}
+  }
+  .fx-pulse-good{animation:goodPulse .8s ease;}
+
+  @keyframes midGlow{
+    0%,100%{box-shadow:none;}
+    50%{box-shadow:0 0 16px var(--gold-glow);}
+  }
+  .fx-pulse-mid{animation:midGlow .6s ease;}
+
+  @keyframes badFlash{
+    0%{background:rgba(242,84,95,0);}
+    30%{background:rgba(242,84,95,.10);}
+    100%{background:rgba(242,84,95,0);}
+  }
+  .fx-flash-bad{animation:badFlash .5s ease;}
+
+  @keyframes winnerGlow{
+    0%,100%{box-shadow:0 0 0 rgba(74,158,122,0), 0 0 0 rgba(212,168,83,0);}
+    50%{box-shadow:0 0 30px rgba(74,158,122,.4), 0 0 50px var(--gold-glow);}
+  }
+  .vs-card.fx-winner{animation:winnerGlow 1s ease 3;}
+
+  /* ============================================================ */
+  /* ===== Ambient light + entrance choreography: Invite & Results */
+  /* ============================================================ */
+  #screen-invite, #screen-end { overflow-x: hidden; }
+  #screen-invite::before, #screen-invite::after,
+  #screen-end::before, #screen-end::after{
+    content:"";
+    position:absolute;
+    width:420px;height:420px;
+    border-radius:50%;
+    filter:blur(70px);
+    pointer-events:none;
+    z-index:0;
+    opacity:.55;
+    animation: floatOrb 14s ease-in-out infinite;
+  }
+  #screen-invite::before, #screen-end::before{
+    top:-120px; left:-100px;
+    background: radial-gradient(circle, rgba(78,153,80,0.30), transparent 70%);
+  }
+  #screen-invite::after, #screen-end::after{
+    bottom:-140px; right:-100px;
+    background: radial-gradient(circle, rgba(91,127,255,0.22), transparent 70%);
+    animation-delay: -7s;
+  }
+  @keyframes floatOrb{
+    0%,100%{ transform:translate(0,0) scale(1); }
+    50%{ transform:translate(30px,-20px) scale(1.08); }
+  }
+  #screen-invite .panel, #screen-end .panel{ position:relative; z-index:1; }
+
+  @keyframes fadeSlideUp{
+    from{ opacity:0; transform:translateY(18px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  /* Invite screen stagger */
+  #screen-invite .mode-badge{ animation: fadeSlideUp .6s var(--ease) both .02s; }
+  #screen-invite h1{ animation: fadeSlideUp .6s var(--ease) both .08s; }
+  #screen-invite .sub{ animation: fadeSlideUp .6s var(--ease) both .14s; }
+  #screen-invite .info-cards .info-card:nth-child(1){ animation: fadeSlideUp .6s var(--ease) both .2s; }
+  #screen-invite .info-cards .info-card:nth-child(2){ animation: fadeSlideUp .6s var(--ease) both .28s; }
+  #screen-invite .btn-row{ animation: fadeSlideUp .6s var(--ease) both .36s; }
+
+  /* Results screen stagger */
+  #screen-end .score-hero{ animation: fadeSlideUp .6s var(--ease) both .05s; }
+  #screen-end #final-msg{ animation: fadeSlideUp .6s var(--ease) both .12s; }
+  #screen-end #vs-block{ animation: fadeSlideUp .6s var(--ease) both .18s; }
+  #screen-end .btn-row{ animation: fadeSlideUp .6s var(--ease) both .5s; }
+  #screen-end .share-block{ animation: fadeSlideUp .6s var(--ease) both .58s; }
+
+  /* Sonar ping ring — used on the rival icon in the invite screen */
+  .icon-circle.pulse-ring{ position:relative; }
+  .icon-circle.pulse-ring::before,
+  .icon-circle.pulse-ring::after{
+    content:"";
+    position:absolute; inset:-6px;
+    border-radius:inherit;
+    border:1.5px solid var(--coral);
+    opacity:0;
+    animation: sonarPing 2.4s ease-out infinite;
+  }
+  .icon-circle.pulse-ring::after{ animation-delay:1.2s; }
+  @keyframes sonarPing{
+    0%{ transform:scale(1); opacity:.65; }
+    100%{ transform:scale(1.9); opacity:0; }
+  }
+
+  /* Shimmer sweep — used on the score-hero icon */
+  .icon-circle.shimmer{ position:relative; overflow:hidden; }
+  .icon-circle.shimmer::after{
+    content:"";
+    position:absolute; top:-50%; left:-150%;
+    width:60%; height:200%;
+    background:linear-gradient(75deg, transparent, rgba(255,255,255,0.55), transparent);
+    animation: shimmerSweep 2.6s ease-in-out infinite;
+  }
+  @keyframes shimmerSweep{ 0%{ left:-150%; } 100%{ left:150%; } }
+
+  /* VS card clash-in */
+  .vs-side.rival{ animation: slideInLeft .55s var(--ease) both .2s; }
+  .vs-side.you{ animation: slideInRight .55s var(--ease) both .2s; }
+  .vs-badge{ animation: badgePop .5s var(--ease) both .55s; }
+  @keyframes slideInLeft{ from{ opacity:0; transform:translateX(-30px);} to{opacity:1; transform:translateX(0);} }
+  @keyframes slideInRight{ from{ opacity:0; transform:translateX(30px);} to{opacity:1; transform:translateX(0);} }
+  @keyframes badgePop{
+    0%{ transform:translate(-50%,-50%) scale(0); opacity:0; }
+    60%{ transform:translate(-50%,-50%) scale(1.25); opacity:1; }
+    100%{ transform:translate(-50%,-50%) scale(1); opacity:1; }
+  }
+
+  /* Breakdown rows stagger in via JS-assigned animation-delay */
+  .b-row{ animation: fadeSlideUp .45s var(--ease) both; opacity:0; }
+
+  @media (prefers-reduced-motion: reduce){
+    #screen-invite::before, #screen-invite::after,
+    #screen-end::before, #screen-end::after,
+    #screen-invite .mode-badge, #screen-invite h1, #screen-invite .sub,
+    #screen-invite .info-cards .info-card, #screen-invite .btn-row,
+    #screen-end .score-hero, #screen-end #final-msg, #screen-end #vs-block,
+    #screen-end .btn-row, #screen-end .share-block,
+    .icon-circle.pulse-ring::before, .icon-circle.pulse-ring::after,
+    .icon-circle.shimmer::after, .vs-side.rival, .vs-side.you, .vs-badge, .b-row,
+    .grass-tuft{
+      animation: none !important; opacity:1 !important; transform:none !important;
+    }
+  }
+  .ad-slot{ max-height:0; overflow:hidden; margin:0 !important; transition:max-height .3s ease; }
+.ad-slot.ad-filled{ max-height:400px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<nav class="nav" id="siteNav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+  <span class="mark">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="18" stroke="#D4A853" stroke-width="1.6"/>
+      <path d="M20 5 L23 18 L20 20 L17 18 Z" fill="#EAC072"/>
+      <path d="M20 35 L23 22 L20 20 L17 22 Z" fill="#748A98"/>
+      <circle cx="20" cy="20" r="2.4" fill="#1A2E3B"/>
+    </svg>
+  </span>
+  <span class="brand-text">
+    <span class="name">MapiDesk</span>
+    <span class="tag"></span>
+  </span>
+</a>
+
+      <div class="nav-links">
+        <a href="index.html#why"></a>
+        <a href="index.html#trending"></a>
+        <a href="index.html#subjects"></a>
+        <a href="blog.html"></a>
+      </div>
+
+      <div class="nav-cta">
+        <button class="exit-btn" onclick="showExitDialog()">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          <span>Exit</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="sun-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg></span>
+          <span class="moon-icon"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Custom Exit Dialog -->
+<div id="exit-dialog-overlay">
+  <div id="exit-dialog">
+    <h3>Leave this run?</h3>
+    <p>Your progress on this attempt will be lost.</p>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="closeExitDialog()">Stay</button>
+      <button class="btn btn-primary" onclick="confirmExit()">Leave</button>
+    </div>
+  </div>
+</div>
+
+<div id="app">
+
+  <!-- START SCREEN -->
+  <div class="screen" id="screen-start">
+    <div class="panel wide">
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="kicker">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c0-6 3-9 3-14M12 21c0-7-4-11-4-16M12 21c0-5-2-8-2-12"/></svg>
+            Map the World's Grasslands
+          </div>
+          <h1>Grassland <span>Navigator</span></h1>
+          <p class="sub">Test your knowledge of the world's grasslands by locating major grassland regions on the map, from the Prairies and Pampas to the Steppes, Savanna, Veld, and more.</p>
+        </div>
+      </div>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-card-head">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24"><path d="M12 21c0-6 3-9 3-14M12 21c0-7-4-11-4-16M12 21c0-5-2-8-2-12"/></svg>
+            </div>
+            <div>
+              <h3>Your Mission</h3>
+              <p>Identify all 10 grasslands by tapping their region on the map.</p>
+            </div>
+          </div>
+          <div class="info-body">
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <div class="icon-circle blue"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></div>
+                <div class="mini-stat-text"><span class="t">10 grasslands</span><span class="d">In exact order</span></div>
+              </div>
+              <div class="mini-stat">
+                <div class="icon-circle violet"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div>
+                <div class="mini-stat-text"><span class="t">Private Challenge</span><span class="d">Scores stay hidden</span></div>
+              </div>
+              <div class="mini-stat">
+                <div class="icon-circle"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h5a3 3 0 003-3V9a3 3 0 013-3"/></svg></div>
+                <div class="mini-stat-text"><span class="t">Share &amp; Compare</span><span class="d">Challenge your friends</span></div>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width:100%;margin-top:18px;" onclick="startFreshGame()">Begin →</button>
+          </div>
+        </div>
+
+        <div class="info-card accent">
+          <div class="info-card-head">
+            <div class="icon-circle blue"><svg viewBox="0 0 24 24"><path d="M4 21V4a1 1 0 011-1h11l4 5v13a1 1 0 01-1 1H5a1 1 0 01-1-1z"/><path d="M15 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></div>
+            <div>
+              <h3>Start Challenge</h3>
+              <p>Get your unique challenge link to begin.</p>
+            </div>
+          </div>
+          <div class="info-body">
+            <textarea id="paste-input" placeholder="Paste a challenge link here…"></textarea>
+            <div class="paste-err" id="paste-err"></div>
+            <button class="btn btn-teal" style="width:100%;" onclick="acceptPastedChallenge()">Accept Challenge</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="how-block">
+        <div class="how-title">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>
+          How it Works
+        </div>
+        <div class="steps-row">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-text"><div class="t">Complete the Mission</div><div class="d">Place all 10 grasslands in order</div></div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-text"><div class="t">Get Your Link</div><div class="d">Share your run with a friend</div></div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-text"><div class="t">Compare Results</div><div class="d">See who reads the plains better</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ad-slot" style="margin:24px 0 8px; text-align:center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8353010289901005"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+      <div class="menu-footer">
+        <a href="index.html" class="back-link">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          Back to MapiDesk
+        </a>
+        <span class="copy">© 2026 MapiDesk</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHALLENGE INVITE SCREEN -->
+  <div class="screen hidden" id="screen-invite">
+    <div class="panel wide" style="max-width:900px;">
+      <div class="mode-badge"><span class="dot"></span>Incoming Challenge</div>
+      <h1 style="text-align:left;">You've Been <span>Challenged</span></h1>
+      <p class="sub" style="text-align:left;">A friend already charted these grasslands and dared you to beat them. Same 10 grasslands, same order — their score stays hidden until you finish your own run.</p>
+
+      <div class="info-cards">
+        <div class="info-card accent">
+          <div class="info-card-head">
+            <div class="icon-circle coral pulse-ring">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <h3>From <span id="invite-rival-name">A navigator</span></h3>
+              <p>Locked in a score across all 10 grasslands</p>
+            </div>
+          </div>
+          <div class="info-body">
+            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Accept to take the exact same course and find out who reads the world's grass plains closer, field by field.</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-head">
+            <div class="icon-circle blue"><svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></div>
+            <div>
+              <h3>How it Works</h3>
+              <p>Same map, same order, head-to-head</p>
+            </div>
+          </div>
+          <div class="info-body">
+            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Grasslands cover regions, not single points — tap inside the plain or belt where each one lies. Closer guesses score higher. At the end you'll get a full head-to-head breakdown.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="btn-row" style="justify-content:flex-start;">
+        <button class="btn btn-primary" onclick="acceptChallengeInvite()">Accept Challenge</button>
+        <button class="btn btn-ghost" onclick="declineChallengeInvite()">Not Now</button>
+      </div>
+      <div class="ad-slot" style="margin:24px 0 8px; text-align:center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8353010289901005"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+      <div class="menu-footer">
+        <a href="index.html" class="back-link">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          Back to MapiDesk
+        </a>
+        <span class="copy">© 2026 MapiDesk</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- END SCREEN -->
+  <div class="screen hidden" id="screen-end">
+    <div class="panel" style="max-width:720px;">
+      <div class="score-hero" id="score-hero">
+        <div class="icon-circle blue shimmer" id="score-hero-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>
+        </div>
+        <div class="score-meta">
+          <div class="kicker" id="end-kicker" style="margin-bottom:4px;">Mission Complete</div>
+          <div class="final-score" id="final-score">0%</div>
+          <div class="final-label">Average Reading Accuracy</div>
+        </div>
+      </div>
+      <p class="sub" id="final-msg" style="margin-bottom:16px;"></p>
+
+      <div id="vs-block">
+  <div class="vs-card" id="vs-card">
+    <div class="vs-side rival">
+      <div class="vs-name" id="vs-rival-name">Rival</div>
+      <div class="vs-score" id="vs-rival-score">0%</div>
+    </div>
+    <div class="vs-badge">VS</div>
+    <div class="vs-side you">
+      <div class="vs-name">You</div>
+      <div class="vs-score" id="vs-you-score">0%</div>
+    </div>
+  </div>
+  <div class="verdict-box" id="verdict-box"></div>
+</div>
+<div class="breakdown" id="breakdown-list"></div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="startFreshGame()">Chart Again</button>
+      </div>
+
+      <div class="share-block">
+        <div class="share-title">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.8"/><path d="M12 6.3V20M5 13a7 7 0 0014 0M5 13H3M19 13h2M8.2 18l-3-2M15.8 18l3-2"/></svg>
+          Challenge a Friend
+        </div>
+        <div class="share-sub">Send them this exact run's 10 grasslands and see if they can out-read you.</div>
+        <div class="link-box">
+          <input id="challenge-link" readonly placeholder="Tap Copy to generate your link…">
+          <button class="copy-btn" id="copy-link-btn" onclick="copyChallengeLink()">Copy</button>
+        </div>
+
+        <button class="btn btn-ghost" id="check-reply-btn" style="width:100%;margin:4px 0 12px;display:none;" onclick="checkForReply()">Check if they've replied</button>
+
+        <div class="share-icons">
+          <a id="wa-share" class="disabled" href="#" target="_blank" rel="noopener" onclick="return handleShareIconClick(event, 'wa')">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.07-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.16 14.13c-.22.63-1.28 1.2-1.77 1.24-.45.05-.9.24-3.03-.63-2.57-1.05-4.22-3.63-4.35-3.8-.13-.17-1.04-1.38-1.04-2.63 0-1.25.66-1.86.9-2.12.23-.25.5-.32.67-.32.17 0 .34 0 .48.01.16.01.36-.06.56.42.22.53.75 1.83.82 1.96.07.13.11.29.02.46-.09.17-.14.27-.27.42-.13.15-.28.33-.4.44-.13.13-.27.27-.11.53.15.26.68 1.12 1.46 1.81 1 .89 1.85 1.17 2.11 1.3.27.13.42.11.58-.07.16-.17.66-.77.84-1.04.18-.26.35-.22.6-.13.24.09 1.53.72 1.79.85.27.13.44.2.5.31.07.11.07.65-.15 1.28z"/></svg>
+            WhatsApp
+          </a>
+          <a id="tg-share" class="disabled" href="#" target="_blank" rel="noopener" onclick="return handleShareIconClick(event, 'tg')">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.5 4.5L2.7 11.6c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.7l3-14.1c.3-1.1-.4-1.6-1.3-1.9zM8.3 13.9L17.6 8c.4-.3.8-.1.5.2L9.9 15.8l-.3 3.3z"/></svg>
+            Telegram
+          </a>
+        </div>
+         <div class="share-hint" style="font-size:11px;color:var(--ink-dim);margin-top:12px;text-align:center;line-height:1.5;">
+    Once they've played, come back and open this same link again — or tap "Check if they've replied" above — to see the head-to-head.
+  </div>
+      </div>
+      <div class="ad-slot" style="margin:24px 0 8px; text-align:center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8353010289901005"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+      <div class="menu-footer">
+        <a href="index.html" class="back-link">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          Back to MapiDesk
+        </a>
+        <span class="copy">© 2026 MapiDesk</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME UI -->
+  <div id="hud-top">
+    <button class="hud-back-btn" onclick="showExitDialog()" aria-label="Back to menu" title="Back to menu">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <div class="brand">◆ Grassland Navigator</div>
+    <div class="strait-card" id="strait-card">
+      <div class="eyebrow" id="round-label">Round 1 of 10</div>
+      <div class="title" id="strait-name">—</div>
+      <div class="cat-tag" id="cat-tag"></div>
+      <div id="dots"></div>
+    </div>
+    <div id="challenge-flag"><span class="dotpulse"></span><span class="flag-text">Challenge</span></div>
+    <div class="score-pill">Accuracy <b id="score-live">0%</b></div>
+  </div>
+
+  <div id="map-viewport">
+    <div id="map"></div>
+    <div id="map-loading">Loading chart…</div>
+  </div>
+
+  <div id="hud-bottom">
+    <div id="feedback">
+      <div class="verdict" id="verdict-text"></div>
+      <div class="fact" id="fact-text"></div>
+      <div class="rival-line" id="rival-line" style="display:none;"></div>
+    </div>
+    <div class="hint-tap" id="tap-hint">
+      <svg viewBox="0 0 24 24"><path d="M9 11a3 3 0 116 0c0 2-3 3-3 5"/><circle cx="12" cy="19" r="0.6" style="fill:currentColor"/></svg>
+      Tap where you think this grassland lies — they cover whole plains and regions, not a single spot
+    </div>
+    <button class="btn btn-primary" id="next-btn" style="display:none" onclick="nextRound()">Next Grassland →</button>
+  </div>
+
+</div>
+
+<div id="toast">Copied to clipboard</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+/* ============================================================
+   GAME / API CONFIG
+   ============================================================ */
+const GAME_TYPE = 'grassland-navigator';
+const API_BASE = 'https://game-api.abhikr18996.workers.dev';
+
+/* ---------------- Fixed header height sync ---------------- */
+function syncNavHeight() {
+  var nav = document.getElementById('siteNav');
+  if (!nav) return;
+  if (nav.classList.contains('header-hidden')) return;
+  document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+}
+document.addEventListener('DOMContentLoaded', syncNavHeight);
+window.addEventListener('load', syncNavHeight);
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(function(){ syncNavHeight(); });
+}
+setTimeout(syncNavHeight, 300);
+setTimeout(syncNavHeight, 900);
+
+/* ---------------- Shared header: theme + navigation ---------------- */
+document.addEventListener('DOMContentLoaded', function() {
+  var bg0 = getComputedStyle(document.documentElement).getPropertyValue('--bg-0').trim();
+  if (!bg0) document.documentElement.classList.add('theme-css-missing');
+
+  var themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', function() {
+    var html = document.documentElement;
+    var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    try { localStorage.setItem('terra-site-theme', next); } catch (e) {}
+    setTimeout(function(){ try { map.invalidateSize(); } catch(e){} }, 320);
+  });
+  }
+});
+
+/* ===== Exit Dialog Functions ===== */
+function showExitDialog() {
+  document.getElementById('exit-dialog-overlay').classList.add('show');
+}
+function closeExitDialog() {
+  document.getElementById('exit-dialog-overlay').classList.remove('show');
+}
+function confirmExit() {
+  window.location.href = 'index.html';
+}
+
+function goBack() {
+  if (document.referrer && document.referrer.includes(window.location.host)) {
+    history.back();
+  } else {
+    window.location.href = 'index.html';
+  }
+}
+
+/* ---------------- Header visibility ---------------- */
+function setHeaderVisible(visible){
+  var nav = document.getElementById('siteNav');
+  if (!nav) return;
+  nav.classList.toggle('header-hidden', !visible);
+  if (visible) {
+    syncNavHeight();
+  }
+  requestAnimationFrame(function(){
+    try { map.invalidateSize(); } catch(e){}
+  });
+}
+
+/* ---------------- Grassland data ----------------
+   Each grassland has one or more rectangular zones covering the region
+   it occupies. zone = {latMin, latMax, lonMin, lonMax}.
+------------------------------------------------ */
+const GRASSLANDS = [
+  { name:"Prairies", category:"Temperate Grassland — USA & Canada",
+    zones:[ {latMin:30, latMax:55, lonMin:-105, lonMax:-90} ],
+    fact:"Vast temperate grasslands across the central United States and Canada, once home to immense bison herds and now the heart of North America's wheat and corn farming." },
+  { name:"Pampas", category:"Temperate Grassland — Argentina & Uruguay",
+    zones:[ {latMin:-40, latMax:-30, lonMin:-65, lonMax:-55} ],
+    fact:"Fertile temperate grassland plains stretching across Argentina and Uruguay, famous for cattle ranching and the gauchos who worked them." },
+  { name:"Steppes", category:"Temperate Grassland — Central Eurasia",
+    zones:[ {latMin:45, latMax:55, lonMin:30, lonMax:90} ],
+    fact:"A dry, treeless temperate grassland belt running across Central Asia and southern Russia, historically the route of nomadic herders and the Silk Road." },
+  { name:"Veld", category:"Temperate Grassland — South Africa",
+    zones:[ {latMin:-30, latMax:-22, lonMin:24, lonMax:30} ],
+    fact:"Open temperate grassland and scrubland across the South African interior plateau, used for grazing cattle and sheep." },
+  { name:"Downs", category:"Temperate Grassland — Australia",
+    zones:[ {latMin:-35, latMax:-18, lonMin:138, lonMax:150} ],
+    fact:"Rolling temperate grassland plains found across parts of Queensland and New South Wales, a mainstay of Australia's grazing industry." },
+  { name:"Canterbury Plains", category:"Temperate Grassland — New Zealand",
+    zones:[ {latMin:-44.5, latMax:-43, lonMin:171, lonMax:173} ],
+    fact:"New Zealand's largest area of flat land, a temperate grassland region on the South Island known for sheep and dairy farming." },
+  { name:"Puszta", category:"Temperate Grassland — Hungary",
+    zones:[ {latMin:46, latMax:48, lonMin:19, lonMax:21.5} ],
+    fact:"The great temperate grassland plain of Hungary, once open steppe and now largely farmland, with the Hortobágy remaining one of Europe's last wild grass plains." },
+  { name:"Llanos", category:"Tropical Grassland — Venezuela & Colombia",
+    zones:[ {latMin:3, latMax:9, lonMin:-72, lonMax:-62} ],
+    fact:"Tropical grassland plains along the Orinoco River basin, flooding in the wet season and drying out under the sun in the dry season." },
+  { name:"Campos", category:"Tropical Grassland — Brazil",
+    zones:[ {latMin:-30, latMax:-20, lonMin:-55, lonMax:-45} ],
+    fact:"Tropical and subtropical grasslands across the Brazilian highlands, used for cattle ranching south of the Amazon basin." },
+  { name:"Gran Chaco", category:"Tropical Grassland — Paraguay, Argentina & Bolivia",
+    zones:[ {latMin:-26, latMax:-18, lonMin:-65, lonMax:-57} ],
+    fact:"A vast lowland region of tropical grassland and dry forest shared by Paraguay, Argentina and Bolivia." },
+  { name:"Savanna", category:"Tropical Grassland — Tropical Africa",
+    zones:[ {latMin:-15, latMax:12, lonMin:-10, lonMax:40} ],
+    fact:"Tropical grassland dotted with scattered trees across much of sub-Saharan Africa, home to the continent's great herds of grazing wildlife." },
+  { name:"Sahel", category:"Semi-Arid Grassland — Africa, south of the Sahara",
+    zones:[ {latMin:10, latMax:16, lonMin:-17, lonMax:40} ],
+    fact:"A semi-arid transitional belt of grassland and scrub running across Africa just south of the Sahara, between the desert and the wetter savanna." },
+  { name:"Mongolian Steppe", category:"Temperate Grassland — Mongolia & Northern China",
+  zones:[ {latMin:41, latMax:52, lonMin:87, lonMax:120} ],
+  fact:"One of the world's largest remaining temperate grasslands, supporting nomadic pastoralism and iconic wildlife such as the Przewalski's horse." },
+  { name:"Kazakh Steppe", category:"Temperate Grassland — Kazakhstan",
+  zones:[ {latMin:46, latMax:55, lonMin:46, lonMax:88} ],
+  fact:"The vast grasslands of Kazakhstan form one of Earth's largest continuous steppe ecosystems and are an important migration route for saiga antelope." },
+  { name:"Patagonian Steppe", category:"Temperate Grassland — Argentina & Chile",
+  zones:[ {latMin:-52, latMax:-38, lonMin:-73, lonMax:-65} ],
+  fact:"A cool, windswept grassland and shrub-steppe stretching across southern Argentina and Chile, home to guanacos and rheas." },
+  { name:"Tibetan Plateau Grasslands", category:"Alpine Grassland — China, India & Nepal",
+  zones:[ {latMin:28, latMax:38, lonMin:78, lonMax:101} ],
+  fact:"High-altitude alpine meadows and grasslands covering the Tibetan Plateau, often called the 'Roof of the World' and supporting yak pastoralism." },
+  { name:"Cerrado", category:"Tropical Savanna — Brazil",
+  zones:[ {latMin:-24, latMax:-3, lonMin:-60, lonMax:-42} ],
+  fact:"The world's most biodiverse tropical savanna, combining grasslands, shrublands and woodlands across central Brazil." },
+  { name:"Deccan Grasslands", category:"Tropical Grassland — India",
+  zones:[ {latMin:13, latMax:22, lonMin:73, lonMax:81} ],
+  fact:"Ancient tropical grasslands of peninsular India supporting blackbuck, Indian wolf and the critically endangered Great Indian Bustard." },
+  { name:"East African Savanna", category:"Tropical Grassland — Kenya & Tanzania",
+  zones:[ {latMin:-5, latMax:5, lonMin:33, lonMax:41} ],
+  fact:"Open tropical grasslands famous for the Great Migration of wildebeest, zebras and gazelles across the Serengeti and Maasai Mara." },
+  { name:"Forest-Steppe", category:"Temperate Grassland — Eastern Europe & Western Asia",
+  zones:[ {latMin:47, latMax:56, lonMin:20, lonMax:70} ],
+  fact:"A transition zone between forests and grasslands, characterized by alternating woodland and open steppe across Eastern Europe and western Asia." }
+];
+
+/* ---------------- Map setup ---------------- */
+const map = L.map('map', {
+  worldCopyJump:true,
+  minZoom:2,
+  maxZoom:9,
+  zoomControl:true,
+  attributionControl:true
+}).setView([20,20], 2);
+
+const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> · India boundary: official depiction, Govt. of India',
+  subdomains:'abcd',
+  maxZoom:19,
+  keepBuffer:4,
+  updateWhenZooming:false,
+  crossOrigin:true
+}).addTo(map);
+
+const labelTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+  subdomains:'abcd',
+  minZoom:4,
+  maxZoom:19,
+  keepBuffer:4,
+  updateWhenZooming:false,
+  crossOrigin:true
+}).addTo(map);
+
+let tilesLoaded = false;
+tiles.on('load', ()=>{
+  tilesLoaded = true;
+  document.getElementById('map-loading').classList.add('hidden');
+});
+setTimeout(()=>{ if(!tilesLoaded) document.getElementById('map-loading').classList.add('hidden'); }, 2500);
+
+/* ---------------- India boundary overlay ---------------- */
+let indiaLayer = null;
+const INDIA_BOUNDARY_URLS = [
+  'https://raw.githubusercontent.com/datameet/maps/master/Country/india-land-simplified.geojson',
+  'https://cdn.jsdelivr.net/gh/datameet/maps@master/Country/india-land-simplified.geojson'
+];
+async function loadIndiaBoundary(){
+  for(const url of INDIA_BOUNDARY_URLS){
+    try{
+      const res = await fetch(url);
+      if(!res.ok) continue;
+      const geo = await res.json();
+      indiaLayer = L.geoJSON(geo, {
+        interactive:false,
+        style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#D4A853', fillOpacity:0.06 }
+      }).addTo(map);
+      return;
+    }catch(e){
+      console.warn('India boundary overlay source failed, trying next:', url, e);
+    }
+  }
+  console.warn('India boundary overlay: all sources failed — falling back to base tiles only.');
+}
+loadIndiaBoundary();
+
+let markerLayer = L.layerGroup().addTo(map);
+
+function pinIcon(cls){
+  return L.divIcon({
+    className:'',
+    html:`<div class="pin-wrap ${cls}"><div class="pin-ring"></div><div class="pin-core"></div></div>`,
+    iconSize:[22,22],
+    iconAnchor:[11,11]
+  });
+}
+function pingIcon(){
+  return L.divIcon({ className:'', html:`<div class="pin-ping"></div>`, iconSize:[6,6], iconAnchor:[3,3] });
+}
+const GRASS_BLADE_SVG = '<svg viewBox="0 0 18 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 20V6c0-3-2-5-2-5s1 4 1 7c0-4-3-6-3-6s2 5 2 9" stroke-linecap="round"/><path d="M9 20V4c0-3 2-5 2-5s-1 4-1 7c0-4 3-6 3-6s-2 5-2 9" stroke-linecap="round"/></svg>';
+function grassTuftIcon(delay){
+  return L.divIcon({
+    className:'',
+    html:`<div class="grass-tuft" style="animation-delay:${delay}s;">${GRASS_BLADE_SVG}</div>`,
+    iconSize:[20,22],
+    iconAnchor:[10,20]
+  });
+}
+function zoneLabelIcon(text){
+  return L.divIcon({
+    className:'',
+    html:`<div class="grass-zone-label">${text}</div>`,
+    iconSize:[0,0],
+    iconAnchor:[0,-4]
+  });
+}
+
+/* ---------------- Game state ---------------- */
+let order = [];
+let roundIdx = 0;
+let scores = [];
+let results = [];
+let guessed = false;
+let mode = 'own';
+let rival = null;          // {name, score, pts}
+let currentGameCode = null; // set once a challenge is created OR accepted
+let challengeCreated = false; // guards duplicate /game/create calls this session
+let resultPosted = false;     // guards duplicate /game/update calls this session
+
+const ROUNDS_PER_GAME = 10; // how many grasslands per game
+
+function shuffleIdx(n, count){
+  const a = Array.from({length:n}, (_,i)=>i);
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return typeof count === 'number' ? a.slice(0, count) : a;
+}
+
+function haversine(lat1,lon1,lat2,lon2){
+  const R = 6371;
+  const dLat = (lat2-lat1)*Math.PI/180;
+  const dLon = (lon2-lon1)*Math.PI/180;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)**2;
+  return R * 2*Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+function clamp(v,min,max){ return Math.max(min, Math.min(max, v)); }
+
+/* Nearest point inside (or on the edge of) a rectangular zone */
+function nearestPointInRect(lat, lon, rect){
+  return [ clamp(lat, rect.latMin, rect.latMax), clamp(lon, rect.lonMin, rect.lonMax) ];
+}
+function distToRect(lat, lon, rect){
+  const [latN, lonN] = nearestPointInRect(lat, lon, rect);
+  return haversine(lat, lon, latN, lonN);
+}
+/* Finds the zone (of possibly several) closest to a click, and the distance (0 = inside) */
+function bestZoneMatch(lat, lon, zones){
+  let best = null;
+  zones.forEach(z=>{
+    const d = distToRect(lat, lon, z);
+    if(!best || d < best.dist) best = { zone:z, dist:d };
+  });
+  return best;
+}
+/* A grid of sample points spread across a rectangle, for scattering grass tufts.
+   Grid density scales gently with zone size, capped for performance. */
+function gridPoints(rect){
+  const latSpan = rect.latMax - rect.latMin;
+  const lonSpan = Math.min(rect.lonMax - rect.lonMin, 220); // guard huge belts
+  const cols = clamp(Math.round(lonSpan/14), 3, 7);
+  const rows = clamp(Math.round(latSpan/6), 2, 4);
+  const points = [];
+  for(let r=0;r<rows;r++){
+    for(let c=0;c<cols;c++){
+      const lat = rect.latMin + (latSpan*(r+0.5))/rows;
+      const lon = rect.lonMin + ((rect.lonMax-rect.lonMin)*(c+0.5))/cols;
+      points.push([lat, lon]);
+    }
+  }
+  return points;
+}
+function formatDist(km){
+  return km <= 1 ? 'inside the region' : Math.round(km) + ' km outside the region';
+}
+
+function setupDots(){
+  const dots = document.getElementById('dots');
+  dots.innerHTML = order.map((_,i)=>`<div class="dot" id="dot-${i}"></div>`).join('');
+}
+function updateDots(){
+  order.forEach((_,i)=>{
+    const d = document.getElementById('dot-'+i);
+    d.classList.toggle('done', i < roundIdx);
+    d.classList.toggle('now', i === roundIdx);
+  });
+}
+
+function setMapVisible(visible){
+  document.getElementById('map-viewport').classList.toggle('screen-covered', !visible);
+}
+setMapVisible(false);
+
+function exitToMenu(){
+  showExitDialog();
+}
+
+function startFreshGame(){
+  mode = 'own';
+  rival = null;
+  currentGameCode = null;
+  challengeCreated = false;
+  resultPosted = false;
+  order = shuffleIdx(GRASSLANDS.length, ROUNDS_PER_GAME);
+  beginRound();
+}
+
+function beginRound(){
+  roundIdx = 0; scores = []; results = [];
+  document.getElementById('screen-start').classList.add('hidden');
+  document.getElementById('screen-end').classList.add('hidden');
+  document.getElementById('challenge-flag').classList.toggle('show', mode === 'challenge');
+  setMapVisible(true);
+  setHeaderVisible(false);
+  setupDots();
+  loadRound();
+  setTimeout(()=>map.invalidateSize(), 50);
+}
+
+function loadRound(){
+  guessed = false;
+  markerLayer.clearLayers();
+  document.getElementById('feedback').classList.remove('show');
+  document.getElementById('rival-line').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'none';
+  document.getElementById('tap-hint').style.display = 'flex';
+  document.getElementById('round-label').textContent = `Round ${roundIdx+1} of ${order.length}`;
+  document.getElementById('strait-name').textContent = GRASSLANDS[order[roundIdx]].name;
+  document.getElementById('cat-tag').textContent = GRASSLANDS[order[roundIdx]].category;
+  updateDots();
+  map.setView([20,20], 2);
+}
+
+function verdictFor(km){
+  if(km <= 1) return {label:'Right in the grass — bullseye!', cls:'good', icon:'target'};
+  if(km < 350) return {label:'Excellent reading!', cls:'good', icon:'check'};
+  if(km < 800) return {label:'Close to the region.', cls:'mid', icon:'compass'};
+  if(km < 1700) return {label:'Right area, rough spot.', cls:'mid', icon:'compass'};
+  return {label:'Way off course — but noted.', cls:'bad', icon:'x'};
+}
+
+const VERDICT_ICONS = {
+  target: '<svg class="v-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" style="fill:currentColor"/></svg>',
+  check: '<svg class="v-ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>',
+  compass: '<svg class="v-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M16 8l-5 3-1 5 5-3z"/></svg>',
+  x: '<svg class="v-ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+};
+
+/* Trophy icon used for a strong final score */
+const TROPHY_ICON = '<svg viewBox="0 0 24 24"><path d="M8 4h8v3a4 4 0 01-4 4 4 4 0 01-4-4V4z"/><path d="M8 4H5a3 3 0 003 3M16 4h3a3 3 0 01-3 3"/><path d="M12 11v4"/><path d="M9 20h6"/><path d="M10 17h4v3h-4z"/></svg>';
+
+function scoreFor(km){
+  if(km <= 1) return 100;
+  return Math.max(0, Math.round(90 - km/25));
+}
+
+/* Smooth ease-out count-up used for score numbers */
+function animateCount(el, to, duration){
+  duration = duration || 900;
+  const startTime = performance.now();
+  function tick(now){
+    const p = Math.min(1, (now-startTime)/duration);
+    const eased = 1 - Math.pow(1-p, 3);
+    el.textContent = Math.round(to*eased) + '%';
+    if(p < 1) requestAnimationFrame(tick);
+    else el.textContent = to + '%';
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ===== per-round micro-effect on guess ===== */
+function triggerRoundEffect(cls){
+  const feedback = document.getElementById('feedback');
+  const scorePill = document.querySelector('.score-pill');
+  const mapViewport = document.getElementById('map-viewport');
+
+  if(cls === 'good'){
+    fireConfetti({count:26, maxFrames:90, spread:0.35});
+    [feedback, scorePill].forEach(el=>{
+      if(!el) return;
+      el.classList.remove('fx-pulse-good'); void el.offsetWidth;
+      el.classList.add('fx-pulse-good');
+      setTimeout(()=> el.classList.remove('fx-pulse-good'), 900);
+    });
+  } else if(cls === 'bad'){
+    [mapViewport, feedback].forEach(el=>{
+      if(!el) return;
+      el.classList.remove('fx-shake'); void el.offsetWidth;
+      el.classList.add('fx-shake');
+      setTimeout(()=> el.classList.remove('fx-shake'), 550);
+    });
+    feedback.classList.remove('fx-flash-bad'); void feedback.offsetWidth;
+    feedback.classList.add('fx-flash-bad');
+    setTimeout(()=> feedback.classList.remove('fx-flash-bad'), 550);
+  } else {
+    if(feedback){
+      feedback.classList.remove('fx-pulse-mid'); void feedback.offsetWidth;
+      feedback.classList.add('fx-pulse-mid');
+      setTimeout(()=> feedback.classList.remove('fx-pulse-mid'), 700);
+    }
+  }
+}
+
+map.on('click', onMapClick);
+
+const ZONE_BORDER_COLORS = { good:'#4A9E7A', mid:'#D4A853', bad:'#F2545F' };
+
+/* Draws the target grassland's full extent — a green-tinted region with a
+   scattered field of swaying grass tufts — with the border colored by how
+   close the guess was. The green fill/grass always shows the true region. */
+function drawGrasslandZone(target, cls){
+  const borderColor = ZONE_BORDER_COLORS[cls] || ZONE_BORDER_COLORS.mid;
+  target.zones.forEach((z)=>{
+    const bounds = [[z.latMin, z.lonMin],[z.latMax, z.lonMax]];
+    L.rectangle(bounds, {
+      color: borderColor,
+      weight: 2,
+      dashArray: '6 5',
+      fillColor: '#4E9950',
+      fillOpacity: 0.22,
+      interactive: false
+    }).addTo(markerLayer);
+
+    const pts = gridPoints(z);
+    pts.forEach((p, i)=>{
+      L.marker(p, { icon: grassTuftIcon((i%6)*0.12), interactive:false }).addTo(markerLayer);
+    });
+
+    const labelLat = z.latMax - (z.latMax - z.latMin) * 0.06;
+    const labelLon = (z.lonMin + z.lonMax) / 2;
+    L.marker([labelLat, labelLon], { icon: zoneLabelIcon(target.name), interactive:false }).addTo(markerLayer);
+  });
+}
+
+function onMapClick(evt){
+  if(guessed) return;
+  guessed = true;
+
+  const gLat = evt.latlng.lat;
+  const gLon = evt.latlng.lng;
+  const target = GRASSLANDS[order[roundIdx]];
+  const match = bestZoneMatch(gLat, gLon, target.zones);
+  const km = match.dist;
+  const v = verdictFor(km);
+  const pts = scoreFor(km);
+  scores.push(pts);
+  results.push({name:target.name, dist:Math.round(km), pts, cls:v.cls});
+
+  const guessLatLng = [gLat, gLon];
+  const [nLat, nLon] = nearestPointInRect(gLat, gLon, match.zone);
+
+  markerLayer.clearLayers();
+  drawGrasslandZone(target, v.cls);
+
+  L.marker(guessLatLng, {icon: pingIcon(), interactive:false}).addTo(markerLayer);
+  if(km > 1){
+    L.polyline([guessLatLng, [nLat, nLon]], {color:'#748A98', weight:1.4, dashArray:'4 4', opacity:0.75, interactive:false}).addTo(markerLayer);
+  }
+  L.marker(guessLatLng, {icon: pinIcon('pin-guess'), interactive:false}).addTo(markerLayer);
+
+  const zoneBounds = L.latLngBounds(target.zones.map(z=>[[z.latMin,z.lonMin],[z.latMax,z.lonMax]]).flat());
+  const combinedBounds = L.latLngBounds([guessLatLng]).extend(zoneBounds);
+  map.flyToBounds(combinedBounds, {padding:[70,70], maxZoom:6, duration:0.6});
+
+  document.getElementById('verdict-text').innerHTML = `${VERDICT_ICONS[v.icon]} ${v.label}  (${formatDist(km)} · +${pts} pts)`;
+  document.getElementById('verdict-text').className = 'verdict ' + v.cls;
+  document.getElementById('fact-text').textContent = target.fact;
+
+  const rivalLine = document.getElementById('rival-line');
+  if(mode === 'challenge' && rival && Array.isArray(rival.pts)){
+    const theirPts = rival.pts[roundIdx];
+    if(pts > theirPts){ rivalLine.textContent = `You beat your rival on this one — they scored +${theirPts} pts here.`; }
+    else if(pts < theirPts){ rivalLine.textContent = `Your rival had the edge here — they scored +${theirPts} pts.`; }
+    else{ rivalLine.textContent = `Dead even with your rival on this grassland — +${theirPts} pts each.`; }
+    rivalLine.style.display = 'block';
+  }
+
+  document.getElementById('feedback').classList.add('show');
+  document.getElementById('tap-hint').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'inline-block';
+  document.getElementById('next-btn').textContent = roundIdx === order.length-1 ? 'See Results →' : 'Next Grassland →';
+
+  const avg = Math.round(scores.reduce((a,b)=>a+b,0)/scores.length);
+  document.getElementById('score-live').textContent = avg + '%';
+
+  updateDots();
+  triggerRoundEffect(v.cls);
+}
+
+function nextRound(){
+  roundIdx++;
+  if(roundIdx >= order.length){
+    endGame();
+    return;
+  }
+  loadRound();
+}
+
+let currentAvgScore = 0;
+
+async function endGame(){
+  const avg = Math.round(scores.reduce((a,b)=>a+b,0)/scores.length);
+  currentAvgScore = avg;
+  animateCount(document.getElementById('final-score'), avg);
+
+  const heroIcon = document.getElementById('score-hero-icon');
+  if(heroIcon){
+    heroIcon.innerHTML = avg >= 65
+      ? TROPHY_ICON
+      : '<svg viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>';
+  }
+
+  let msg;
+  if(avg >= 85) msg = "Master of the plains. You could chart the world's grasslands blind.";
+  else if(avg >= 65) msg = "Sharp sense of the grasslands — a seasoned navigator's eye.";
+  else if(avg >= 40) msg = "Solid run. The world's grass plains are tricky — chart again to sharpen your eye.";
+  else msg = "";
+  document.getElementById('final-msg').textContent = msg;
+
+  const vsBlock = document.getElementById('vs-block');
+  const vsCard = document.getElementById('vs-card');
+  vsCard.classList.remove('fx-winner');
+
+  const scoreHeroEl = document.getElementById('score-hero');
+  const endKickerEl = document.getElementById('end-kicker');
+  const finalMsgEl = document.getElementById('final-msg');
+
+  if(mode === 'challenge'){
+    if(scoreHeroEl) scoreHeroEl.style.display = 'none';
+    if(finalMsgEl) finalMsgEl.style.marginTop = '28px';
+  } else {
+    if(scoreHeroEl) scoreHeroEl.style.display = '';
+    endKickerEl.textContent = 'Mission Complete';
+    if(finalMsgEl) finalMsgEl.style.marginTop = '';
+  }
+
+  if(mode === 'challenge' && rival){
+    vsBlock.style.display = 'block';
+    document.getElementById('vs-rival-name').textContent = rival.name;
+    animateCount(document.getElementById('vs-rival-score'), rival.score, 700);
+    setTimeout(()=> animateCount(document.getElementById('vs-you-score'), avg, 700), 250);
+
+    const vb = document.getElementById('verdict-box');
+    vb.classList.remove('win','lose','tie');
+    if(avg > rival.score){
+      vb.innerHTML = TROPHY_ICON + ' You out-navigated your rival!';
+      vb.classList.add('win');
+      vsCard.classList.add('fx-winner');
+      fireConfetti({count:110, maxFrames:230, spread:1});
+    }
+    else if(avg < rival.score){
+      vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> Your rival read the grassland closer. Chart again!';
+      vb.classList.add('lose');
+    }
+    else {
+      vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg> Dead even — perfectly matched navigators.';
+      vb.classList.add('tie');
+    }
+
+    renderBreakdown(scores, rival.pts);
+
+    // Post my result once — this is the ONE write for the "completing a
+    // challenge" event. Guarded so refresh/double-fire never re-writes.
+    postMyResultOnce(currentGameCode, avg, scores);
+  } else {
+    vsBlock.style.display = 'none';
+    renderSoloBreakdown();
+    if(avg >= 85) fireConfetti({count:70, maxFrames:200, spread:1});
+  }
+
+  // Reset the share box to its un-generated state — link is created
+  // on-demand only when the user taps Copy/WhatsApp/Telegram.
+  resetChallengeLinkUI();
+
+  document.getElementById('screen-end').classList.remove('hidden');
+  setMapVisible(false);
+  setHeaderVisible(true);
+}
+
+function renderBreakdown(myPts, theirPts){
+  const box = document.getElementById('breakdown-list');
+  box.innerHTML = '';
+  order.forEach((gIdx, i)=>{
+    const mine = myPts[i], theirs = Array.isArray(theirPts) ? theirPts[i] : null;
+    const row = document.createElement('div');
+    row.className = 'b-row';
+    row.style.animationDelay = (i * 0.06) + 's';
+    if(theirs === null || theirs === undefined){
+      row.innerHTML = `<span class="b-name">${GRASSLANDS[gIdx].name}</span>
+        <span class="b-marks"><span class="b-mk ok">${mine}</span></span>`;
+    } else {
+      row.innerHTML = `<span class="b-name">${GRASSLANDS[gIdx].name}</span>
+        <span class="b-marks">
+          <span class="b-mk ${theirs > mine ? 'ok' : 'no'}" title="Rival">${theirs}</span>
+          <span class="b-mk ${mine >= theirs ? 'ok' : 'no'}" title="You">${mine}</span>
+        </span>`;
+    }
+    box.appendChild(row);
+  });
+}
+
+function renderSoloBreakdown(){
+  const box = document.getElementById('breakdown-list');
+  box.innerHTML = '';
+  results.forEach((r,i)=>{
+    const row = document.createElement('div');
+    row.className = 'b-row';
+    row.style.animationDelay = (i * 0.06) + 's';
+    const distLabel = r.dist <= 1 ? 'in region' : r.dist + ' km out';
+    row.innerHTML = `<span class="b-idx">${i+1}</span>
+      <span class="b-name">${r.name}</span>
+      <span class="b-dist">${distLabel}</span>
+      <span class="b-pts ${r.cls}">+${r.pts}</span>`;
+    box.appendChild(row);
+  });
+}
+
+/* ============================================================
+   API HELPERS — Cloudflare Worker (shared KV across all games)
+   ============================================================ */
+
+function randomCode(){
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  let out = '';
+  for(let i=0;i<6;i++) out += chars[Math.floor(Math.random()*chars.length)];
+  return out;
+}
+
+// gameCode is namespaced per game type so Strait Navigator, Wind Navigator,
+// Grassland Navigator, etc. can all share one Worker + one KV without colliding.
+function namespacedCode(rawCode){
+  return `${GAME_TYPE}:${rawCode}`;
+}
+
+// ---- WRITE #1: creating a shareable challenge (only on Copy/Share tap) ----
+async function createChallengeOnDemand(avgScore, myScores){
+  if(challengeCreated && currentGameCode){
+    return currentGameCode; // already created this run — don't write again
+  }
+  const rawCode = randomCode();
+  const gameCode = namespacedCode(rawCode);
+
+  const res = await fetch(`${API_BASE}/game/create`, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      gameCode,
+      challengerName: 'A navigator',
+      challengerScore: avgScore,
+      challengerResults: myScores,
+      order
+    })
+  });
+  const data = await res.json();
+  if(!res.ok){ throw new Error(data.error || 'Could not create challenge link.'); }
+
+  challengeCreated = true;
+  currentGameCode = gameCode;
+  return gameCode;
+}
+
+// ---- WRITE #2: posting your result against someone's challenge ----
+// Guarded by both an in-memory flag and sessionStorage, so a page refresh
+// on the results screen never re-fires this.
+async function postMyResultOnce(gameCode, avgScore, myScores){
+  if(!gameCode) return;
+  const flagKey = 'posted-' + gameCode;
+  if(resultPosted || sessionStorage.getItem(flagKey)) return;
+  resultPosted = true;
+  sessionStorage.setItem(flagKey, '1');
+
+  try{
+    await fetch(`${API_BASE}/game/update`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        gameCode,
+        challengedName: 'A navigator',
+        challengedScore: avgScore,
+        challengedResults: myScores
+      })
+    });
+  }catch(e){
+    // Non-fatal — the comparison already rendered client-side from `rival`.
+    console.warn('Could not post result:', e);
+  }
+}
+
+// ---- READ: fetching a rival's game, cached in sessionStorage ----
+async function fetchGame(gameCode){
+  const cacheKey = 'game-' + gameCode;
+  const cached = sessionStorage.getItem(cacheKey);
+  if(cached){
+    try{ return JSON.parse(cached); }catch(e){ /* fall through to refetch */ }
+  }
+  const res = await fetch(`${API_BASE}/game/get?gameCode=${encodeURIComponent(gameCode)}`);
+  const data = await res.json();
+  if(!res.ok){ throw new Error(data.error || 'Challenge not found.'); }
+  sessionStorage.setItem(cacheKey, JSON.stringify(data));
+  return data;
+}
+// 🔧 FIX: namespaced per game (was 'hn-my-challenges' shared across all Navigator games)
+const MY_CHALLENGES_KEY = 'my-challenges-' + GAME_TYPE;
+const CHALLENGE_MAX_AGE_MS = 60 * 24 * 60 * 60 * 1000; // matches your worker's 60-day TTL
+
+function myChallenges(){
+  try{ return JSON.parse(localStorage.getItem(MY_CHALLENGES_KEY) || '{}'); }
+  catch(e){ return {}; }
+}
+
+function saveMyChallenge(gameCode, avg, scoreArr){
+  const all = myChallenges();
+
+  // 🔧 FIX: prune anything past the worker's TTL before adding the new one,
+  // so the object can't grow unbounded across a player's history.
+  const now = Date.now();
+  Object.keys(all).forEach(key => {
+    if (!all[key].savedAt || (now - all[key].savedAt) > CHALLENGE_MAX_AGE_MS) {
+      delete all[key];
+    }
+  });
+
+  all[gameCode] = { avg, scores: scoreArr, savedAt: now };
+  try{
+    localStorage.setItem(MY_CHALLENGES_KEY, JSON.stringify(all));
+  }catch(e){
+    // 🔧 FIX: quota errors no longer fail silently — at least surface it
+    console.warn('Could not save challenge locally (storage quota?):', e);
+  }
+}
+
+async function checkForReply(){
+  if(!currentGameCode) return;
+  const btn = document.getElementById('check-reply-btn');
+  btn.disabled = true; btn.textContent = 'Checking…';
+  try{
+    sessionStorage.removeItem('game-' + currentGameCode);
+    const data = await fetchGame(currentGameCode);
+    if(data.status === 'completed' && data.challengedResults){
+      showReplyComparison(data);
+    } else {
+      showToast("They haven't played yet — check back later");
+    }
+  }catch(e){
+    showToast('Could not check right now');
+  }
+  btn.disabled = false; btn.textContent = "Check if they've replied";
+}
+
+function showReplyComparison(data){
+  rival = { name: data.challengedName || 'A navigator', score: data.challengedScore, pts: data.challengedResults };
+  document.getElementById('vs-block').style.display = 'block';
+  document.getElementById('vs-rival-name').textContent = rival.name;
+  animateCount(document.getElementById('vs-rival-score'), rival.score, 700);
+  animateCount(document.getElementById('vs-you-score'), currentAvgScore, 700);
+  const vb = document.getElementById('verdict-box');
+  vb.classList.remove('win','lose','tie');
+  const vsCard = document.getElementById('vs-card');
+  vsCard.classList.remove('fx-winner');
+  if(currentAvgScore > rival.score){
+    vb.innerHTML = TROPHY_ICON + ' You out-navigated them!';
+    vb.classList.add('win'); vsCard.classList.add('fx-winner');
+    fireConfetti({count:110, maxFrames:230, spread:1});
+  } else if(currentAvgScore < rival.score){
+    vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> They read the grassland closer this time.';
+    vb.classList.add('lose');
+  } else {
+    vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg> Dead even!';
+    vb.classList.add('tie');
+  }
+  renderBreakdown(scores, rival.pts);
+  document.getElementById('check-reply-btn').style.display = 'none';
+}
+/* ---------------- Challenge link build / share (on-demand) ---------------- */
+
+function resetChallengeLinkUI(){
+  const linkInput = document.getElementById('challenge-link');
+  const copyBtn = document.getElementById('copy-link-btn');
+  linkInput.value = '';
+  linkInput.placeholder = 'Tap Copy to generate your link…';
+  copyBtn.textContent = 'Copy';
+  copyBtn.classList.remove('copied');
+  copyBtn.disabled = false;
+  ['wa-share','tg-share'].forEach(id=>{
+    document.getElementById(id).classList.add('disabled');
+  });
+}
+
+function buildLinkFromGameCode(gameCode){
+  const base = window.location.origin + window.location.pathname;
+  return base + '?g=' + encodeURIComponent(gameCode);
+}
+
+// Ensures a challenge exists in KV (creating it on first call only),
+// fills the share UI, and returns the link. Used by Copy + both share icons
+// so whichever the user taps first triggers the single write.
+async function ensureChallengeLinkReady(){
+  const linkInput = document.getElementById('challenge-link');
+  if(linkInput.value) return linkInput.value; // already generated this run
+
+  const copyBtn = document.getElementById('copy-link-btn');
+  copyBtn.disabled = true;
+  copyBtn.textContent = '...';
+  try{
+    const gameCode = await createChallengeOnDemand(currentAvgScore, scores);
+    saveMyChallenge(gameCode, currentAvgScore, scores);
+document.getElementById('check-reply-btn').style.display = 'inline-block';
+    const link = buildLinkFromGameCode(gameCode);
+    linkInput.value = link;
+
+    const msg = `🌾 I just charted the Grassland Navigator and scored ${currentAvgScore}%. Think you can read the plains closer? Take the same 10 grasslands: ${link}`;
+    document.getElementById('wa-share').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    document.getElementById('tg-share').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent(`🌾 Think you can beat my Grassland Navigator score of ${currentAvgScore}%?`);
+    ['wa-share','tg-share'].forEach(id=>{
+      document.getElementById(id).classList.remove('disabled');
+    });
+
+    copyBtn.disabled = false;
+    copyBtn.textContent = 'Copy';
+    return link;
+  }catch(e){
+    copyBtn.disabled = false;
+    copyBtn.textContent = 'Copy';
+    showToast('Could not create link — try again');
+    throw e;
+  }
+}
+
+async function copyChallengeLink(){
+  const copyBtn = document.getElementById('copy-link-btn');
+  try{
+    const link = await ensureChallengeLinkReady();
+    const input = document.getElementById('challenge-link');
+    input.select();
+    function done(){
+      showToast('Challenge link copied');
+      copyBtn.textContent = 'Copied ✓';
+      copyBtn.classList.add('copied');
+      setTimeout(()=>{ copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 1800);
+    }
+    navigator.clipboard.writeText(link).then(done).catch(()=>{
+      document.execCommand('copy');
+      done();
+    });
+  }catch(e){ /* error already toasted */ }
+}
+
+// WhatsApp / Telegram icons: generate the link first (if not already done),
+// then open the share URL that was just filled in.
+async function handleShareIconClick(evt, which){
+  evt.preventDefault();
+  try{
+    await ensureChallengeLinkReady();
+    const href = document.getElementById(which === 'wa' ? 'wa-share' : 'tg-share').href;
+    window.open(href, '_blank', 'noopener');
+  }catch(e){ /* error already toasted */ }
+  return false;
+}
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg || 'Copied to clipboard';
+  t.classList.add('show');
+  setTimeout(()=> t.classList.remove('show'), 1800);
+}
+
+/* ---------------- Accepting a challenge ---------------- */
+
+// Parses either a full URL/pasted text containing ?g=CODE, or a bare code.
+function parseChallengeString(raw){
+  raw = (raw || '').trim();
+  if(!raw) throw new Error('Paste a challenge link first.');
+  let g;
+  if(raw.includes('?')){
+    const qs = raw.split('?').slice(1).join('?');
+    const params = new URLSearchParams(qs);
+    g = params.get('g');
+  } else if(/(^|[&?])g=/.test(raw)){
+    const params2 = new URLSearchParams(raw);
+    g = params2.get('g');
+  } else {
+    g = raw; // assume they pasted a bare code
+  }
+  if(!g) throw new Error('This link is missing its challenge code.');
+  return g; // this is the full namespaced gameCode, e.g. "grassland-navigator:ab12cd"
+}
+
+function loadChallengeGame(gameCode, gameData){
+  mode = 'challenge';
+  rival = {
+    name: gameData.challengerName || 'A navigator',
+    score: gameData.challengerScore,
+    pts: gameData.challengerResults
+  };
+  order = gameData.order;
+  currentGameCode = gameCode;
+  resultPosted = false;
+  beginRound();
+}
+
+let pendingChallenge = null; // { gameCode, gameData }
+
+function showChallengeInvite(gameCode, gameData){
+  pendingChallenge = { gameCode, gameData };
+  document.getElementById('screen-start').classList.add('hidden');
+  document.getElementById('screen-end').classList.add('hidden');
+  document.getElementById('invite-rival-name').textContent = gameData.challengerName || 'A navigator';
+  document.getElementById('screen-invite').classList.remove('hidden');
+  setMapVisible(false);
+  setHeaderVisible(true);
+}
+
+function acceptChallengeInvite(){
+  if(!pendingChallenge) return;
+  const { gameCode, gameData } = pendingChallenge;
+  pendingChallenge = null;
+  document.getElementById('screen-invite').classList.add('hidden');
+  loadChallengeGame(gameCode, gameData);
+}
+
+function declineChallengeInvite(){
+  pendingChallenge = null;
+  document.getElementById('screen-invite').classList.add('hidden');
+  document.getElementById('screen-start').classList.remove('hidden');
+  setHeaderVisible(true);
+  try{
+    const url = new URL(window.location.href);
+    url.searchParams.delete('g');
+    window.history.replaceState({}, '', url.toString());
+  }catch(e){}
+}
+
+async function acceptPastedChallenge(){
+  const raw = document.getElementById('paste-input').value;
+  const errBox = document.getElementById('paste-err');
+  errBox.style.display = 'none';
+  try{
+    const gameCode = parseChallengeString(raw);
+    const gameData = await fetchGame(gameCode); // READ (cached after first fetch)
+    showChallengeInvite(gameCode, gameData);
+  }catch(e){
+    errBox.textContent = e.message || 'Could not read that challenge link.';
+    errBox.style.display = 'block';
+  }
+}
+
+(function autoDetectChallenge(){
+  try{
+    const params = new URLSearchParams(window.location.search);
+    const g = params.get('g');
+    if(!g) return;
+    const mine = myChallenges();
+    if(mine[g]){
+      fetchGame(g).then(data=>{
+        currentGameCode = g;
+        currentAvgScore = mine[g].avg;
+        scores = mine[g].scores;
+        mode = 'challenge';
+        document.getElementById('screen-start').classList.add('hidden');
+        document.getElementById('score-hero').style.display = 'none';
+        document.getElementById('final-score').textContent = currentAvgScore + '%';
+        document.getElementById('final-msg').textContent = '';
+        document.getElementById('screen-end').classList.remove('hidden');
+        setMapVisible(false);
+        setHeaderVisible(true);
+        if(data.status === 'completed' && data.challengedResults){
+          showReplyComparison(data);
+        } else {
+          document.getElementById('check-reply-btn').style.display = 'inline-block';
+          showToast("Still waiting on your friend to play");
+        }
+      }).catch(e=>console.warn('Could not load your challenge:', e));
+      return;
+    }
+    fetchGame(g).then(gameData=>{
+      showChallengeInvite(g, gameData);
+    }).catch(e=>{
+      console.warn('Could not load challenge from URL:', e);
+    });
+  }catch(e){ /* ignore malformed links, fall back to start screen */ }
+})();
+
+/* ---------------- Confetti ---------------- */
+function fireConfetti(opts){
+  opts = opts || {};
+  const count = opts.count || 70;
+  const maxFrames = opts.maxFrames || 200;
+  const spread = opts.spread || 1;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const colors = ['#D4A853', '#7CC36A', '#4A9E7A', '#F2545F'];
+  const canvas = document.createElement('canvas');
+  canvas.id = 'confettiCanvas';
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  const midX = canvas.width/2;
+  const halfSpread = (canvas.width*spread)/2;
+  const pieces = Array.from({length:count}, ()=>({
+    x: midX + (Math.random()*2-1)*halfSpread,
+    y: -20 - Math.random()*canvas.height*0.3,
+    w: 5+Math.random()*4, h: 7+Math.random()*5,
+    color: colors[Math.floor(Math.random()*colors.length)],
+    vx: (Math.random()-0.5)*3, vy: 2+Math.random()*3,
+    rot: Math.random()*Math.PI, vrot: (Math.random()-0.5)*0.3
+  }));
+  let frame = 0;
+  function loop(){
+    frame++;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+      p.x += p.vx; p.y += p.vy; p.vy += 0.03; p.rot += p.vrot;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+      ctx.fillStyle = p.color; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      ctx.restore();
+    });
+    if(frame < maxFrames) requestAnimationFrame(loop);
+    else canvas.remove();
+  }
+  requestAnimationFrame(loop);
+}
+
+/* ---------------- Responsive resize handling ---------------- */
+let lastKnownWidth = window.innerWidth;
+let resizeSettleTimer = null;
+function handleViewportSettle(){
+  clearTimeout(resizeSettleTimer);
+  resizeSettleTimer = setTimeout(function(){
+    const widthChanged = window.innerWidth !== lastKnownWidth;
+    lastKnownWidth = window.innerWidth;
+    if (widthChanged) syncNavHeight();
+    try { map.invalidateSize(); } catch(e){}
+  }, 150);
+}
+window.addEventListener('resize', handleViewportSettle);
+window.visualViewport && window.visualViewport.addEventListener('resize', handleViewportSettle);
+setTimeout(()=> { try { map.invalidateSize(); } catch(e){} }, 200);
+
+/* ---------------- AdSense: push once per real page load ---------------- */
+window.addEventListener('load', function() {
+  try {
+    document.querySelectorAll('.ad-slot .adsbygoogle').forEach(function() {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+  } catch (e) { console.warn('AdSense not ready yet:', e); }
+});
+  /* Reveal an ad slot's space only once Google actually fills it — keeps the
+   push() call (and thus the real ad request Google's reviewer sees) fully
+   intact, just avoids reserving visible space for a blank/unfilled slot. */
+document.querySelectorAll('.ad-slot').forEach(function(slot){
+  const ins = slot.querySelector('.adsbygoogle');
+  if(!ins) return;
+  const check = () => {
+    if(ins.getAttribute('data-ad-status') === 'filled'){
+      slot.classList.add('ad-filled');
+    }
+  };
+  check();
+  new MutationObserver(check).observe(ins, { attributes:true, attributeFilter:['data-ad-status'] });
+});
+</script>
+</body>
+</html>
