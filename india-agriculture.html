@@ -459,9 +459,8 @@ crossorigin="anonymous"></script>
       animation: none !important; opacity:1 !important; transform:none !important;
     }
   }
-  .ad-slot .adsbygoogle{ display:block; min-height:0; }
-.ad-slot .adsbygoogle[data-ad-status="unfilled"]{ display:none; }
-.ad-slot:has(.adsbygoogle[data-ad-status="unfilled"]){ margin:0 !important; }
+  .ad-slot{ max-height:0; overflow:hidden; margin:0 !important; transition:max-height .3s ease; }
+.ad-slot.ad-filled{ max-height:400px; }
 </style>
 </head>
 <body>
@@ -2219,6 +2218,20 @@ window.addEventListener('load', function() {
       (adsbygoogle = window.adsbygoogle || []).push({});
     });
   } catch (e) { console.warn('AdSense not ready yet:', e); }
+});
+  /* Reveal an ad slot's space only once Google actually fills it — keeps the
+   push() call (and thus the real ad request Google's reviewer sees) fully
+   intact, just avoids reserving visible space for a blank/unfilled slot. */
+document.querySelectorAll('.ad-slot').forEach(function(slot){
+  const ins = slot.querySelector('.adsbygoogle');
+  if(!ins) return;
+  const check = () => {
+    if(ins.getAttribute('data-ad-status') === 'filled'){
+      slot.classList.add('ad-filled');
+    }
+  };
+  check();
+  new MutationObserver(check).observe(ins, { attributes:true, attributeFilter:['data-ad-status'] });
 });
 </script>
 </body>
