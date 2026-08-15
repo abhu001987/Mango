@@ -1222,19 +1222,18 @@ function highlightStates(names, cls){
 /* ---------------- Island icon (shown over the reveal location, on top of the highlighted state) ---------------- */
 function islandIconHtml(color, label){
   return `<div class="island-icon-wrap">
-    <svg width="34" height="28" viewBox="0 0 34 28" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2 20c3-9 8-15 15-15s12 6 15 15c-5 3-10-2-15-2S7 23 2 20z" fill="${color}" stroke="#1A2E3B" stroke-width="1" stroke-linejoin="round"/>
-      <path d="M1 22c4 3 8 4 16 4s12-1 16-4" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" opacity="0.55"/>
+    <svg width="36" height="26" viewBox="0 0 36 26" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 9c3-4 6-4 9 0s6 4 9 0 6-4 9 0 6 4 7 4" fill="none" stroke="${color}" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M1 16c3-4 6-4 9 0s6 4 9 0 6-4 9 0 6 4 7 4" fill="none" stroke="${color}" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>
     </svg>
-    <span class="i-tag" style="--iicon-color:${color}">${label}</span>
   </div>`;
 }
 function islandDivIcon(color, label){
   return L.divIcon({
     className:'',
-    html: islandIconHtml(color, label),
-    iconSize:[34,48],
-    iconAnchor:[17,25]
+    html: coastIconHtml(color, label),
+    iconSize:[36,26],
+    iconAnchor:[18,13]
   });
 }
 
