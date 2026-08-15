@@ -2561,6 +2561,7 @@ const ICONS = {
   wetland: `<svg viewBox="0 0 24 24"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M6 16V9M12 16V6M18 16v-5"/></svg>`,
   map: `<svg viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>`,
   newsflag: `<svg viewBox="0 0 24 24"><path d="M5 3v18"/><path d="M5 4h13l-3 4 3 4H5z"/></svg>`,
+  windbelts: `<svg viewBox="0 0 24 24"><path d="M5 3v18"/><path d="M5 5h14l-3 3 3 3-3 3 3 3H5z"/></svg>`,
   orgglobe: `<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 6 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-6-3.8-9s1.3-6.5 3.8-9z"/><circle cx="12" cy="12" r="2" style="fill:currentColor"/></svg>`,
   wonder: `<svg viewBox="0 0 24 24"><path d="M12 2l2.6 5.9L21 9l-4.6 4.3L17.6 20 12 16.8 6.4 20l1.2-6.7L3 9l6.4-1.1z"/></svg>`,
   rocket: `<svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>`,
@@ -2570,46 +2571,45 @@ function ic(name){ return ICONS[name] || ICONS.map; }
 
 // ---------- DATA ----------
 const WORLD_TOPICS = [
-  { name:"Ramsar Sites", icon:"wetland", count:100, keywords:"ramsar wetland site india convention chilika sundarban", url:"https://abhu001987.github.io/Test/ramsar" },
-  { name:"Biosphere Reserves", icon:"biosphere", count:18, keywords:"nilgiri sundarban biosphere reserve india", url:"https://abhu001987.github.io/Test/ramsar" },
-  { name:"Tiger Reserves", icon:"tiger", count:58, keywords:"tiger reserve project tiger corbett bandhavgarh ntca", url:"https://abhu001987.github.io/Test/ramsar" },
-  { name:"National Park", icon:"park", count:106, keywords:"sundarbans forest western ghats mangrove india", url:"#" },
-  { name:"Pass", icon:"Pass", count:75, keywords:"sundarbans forest western ghats mangrove india", url:"#" },
+  { name:"Ramsar Sites", icon:"wetland", count:100, keywords:"ramsar wetland site india convention chilika sundarban", url:"/ramsar-sites-of-india" },
+  { name:"Biosphere Reserves", icon:"biosphere", count:18, keywords:"nilgiri sundarban biosphere reserve india", url:"/biosphere-reserves-of-india" },
+  { name:"Tiger Reserves", icon:"tiger", count:58, keywords:"tiger reserve project tiger corbett bandhavgarh ntca", url:"/tiger-reserves-of-india" },
+  { name:"National Park", icon:"park", count:106, keywords:"sundarbans forest western ghats mangrove india", url:"/Forests-of-india" },
+  { name:"Pass", icon:"Pass", count:75, keywords:"mountain pass india himalaya western ghats rohtang zoji la nathu la", url:"/mountain-passes-of-india" },
+  { name:"Dams", icon:"Dams", count:150, keywords:"river basin tributary water", url:"/dams-of-india" },
   { name:"Rivers", icon:"river", count:150, keywords:"ganga yamuna narmada godavari river india", url:"https://abhu001987.github.io/Test/Strait" },
-  { name:"Mountains", icon:"mountain", count:35, keywords:"himalaya western ghats eastern ghats aravalli vindhya satpura", url:"https://abhu001987.github.io/Test/newpa" },
-  { name:"Canals", icon:"route", count:40, keywords:"indira gandhi canal sardar sarovar canal india", url:"#" },
-  { name:"World Heritage Site", icon:"landmark", count:44, keywords:"taj mahal qutub minar hampi khajuraho unesco india", url:"#" },
-  { name:"Plateaus", icon:"plateau", count:18, keywords:"deccan plateau chota nagpur malwa plateau", url:"#" },
-  { name:"Lakes", icon:"lake", count:120, keywords:"wular chilika dal lake pulicat", url:"#" },
-  { name:"Agriculture", icon:"Agriculture", count:45, keywords:"wular chilika dal lake pulicat", url:"#" },
-  { name:"Minerals & Mining", icon:"mineral", count:60, keywords:"jharkhand odisha coal iron ore mineral india", url:"#" },
-  { name:"Population & Cities", icon:"population", count:100, keywords:"mumbai delhi bengaluru population density india", url:"#" },
-  { name:"Coastlines", icon:"waves", count:15, keywords:"konkan coromandel malabar coast india", url:"#" },
-  { name:"Islands", icon:"island", count:238, keywords:"andaman nicobar lakshadweep island", url:"#" },
-  { name:"Dams", icon:"Dams", count:150, keywords:"river basin tributary water", url:"https://abhu001987.github.io/Test/strait" }
+  { name:"Mountains", icon:"mountain", count:35, keywords:"himalaya western ghats eastern ghats aravalli vindhya satpura", url:"/mountains-of-india" },
+  { name:"Canals", icon:"route", count:40, keywords:"indira gandhi canal sardar sarovar canal india", url:"/canals-of-india" },
+  { name:"World Heritage Site", icon:"landmark", count:44, keywords:"taj mahal qutub minar hampi khajuraho unesco india", url:"/heritage-sites-of-india" },
+  { name:"Plateaus", icon:"plateau", count:18, keywords:"deccan plateau chota nagpur malwa plateau", url:"/plateaus-of-india" },
+  { name:"Lakes", icon:"lake", count:120, keywords:"wular chilika dal lake pulicat", url:"/lakes-of-india" },
+  { name:"Agriculture", icon:"Agriculture", count:45, keywords:"wular chilika dal lake pulicat", url:"/india-agriculture" },
+  { name:"Minerals & Mining", icon:"mineral", count:60, keywords:"jharkhand odisha coal iron ore mineral india", url:"/minerals-of-india" },
+  { name:"Population & Cities", icon:"population", count:100, keywords:"mumbai delhi bengaluru population density india", url:"/census-of-india" },
+  { name:"Coastlines", icon:"waves", count:15, keywords:"konkan coromandel malabar coast india", url:"/coastline-of-india" },
+  { name:"Islands", icon:"island", count:238, keywords:"andaman nicobar lakshadweep island", url:"/islands-of-india" },
 ];
   
 const INDIA_TOPICS = [
-  { name:"Ocean Currents", icon:"waves", count:25, keywords:"current ocean gulf stream circulation", url:"#" },
-  { name:"Straits", icon:"route", count:70, keywords:"strait channel waterway narrow passage", url:"#" },
-  { name:"Deserts", icon:"desert", count:45, keywords:"desert dune arid sand", url:"https://abhu001987.github.io/Test/Strait" },
-  { name:"Lakes", icon:"lake", count:120, keywords:"lake lagoon wetland freshwater", url:"#" },
-  { name:"Volcanoes", icon:"volcano", count:100, keywords:"volcano lava eruption magma ring of fire", url:"#" },
-  { name:"Seas", icon:"waves", count:65, keywords:"sea ocean water body", url:"#" },
-  { name:"Gulfs", icon:"waves", count:50, keywords:"gulf bay coastal water body", url:"#" },
-  { name:"Canals", icon:"route", count:30, keywords:"canal waterway artificial channel", url:"#" },
-  { name:"Pass", icon:"Pass", count:80, keywords:"sundarbans forest western ghats mangrove india", url:"#" },
+  { name:"Ocean Currents", icon:"waves", count:25, keywords:"current ocean gulf stream circulation", url:"/world-ocean-currents" },
+  { name:"Straits", icon:"route", count:70, keywords:"strait channel waterway narrow passage", url:"/world-straits" },
+  { name:"Deserts", icon:"desert", count:45, keywords:"desert dune arid sand", url:"/major-world-deserts" },
+  { name:"Lakes", icon:"lake", count:120, keywords:"lake lagoon wetland freshwater", url:"/world-lakes" },
+  { name:"Volcanoes", icon:"volcano", count:100, keywords:"volcano lava eruption magma ring of fire", url:"/world-volcanoes" },
+  { name:"Seas", icon:"waves", count:65, keywords:"sea ocean water body", url:"/world-seas" },
+  { name:"Gulfs", icon:"waves", count:50, keywords:"gulf bay coastal water body", url:"/world-gulfs" },
+  { name:"Canals", icon:"route", count:30, keywords:"canal waterway artificial channel", url:"/world-canals" },
+  { name:"Pass", icon:"Pass", count:80, keywords:"mountain pass of world", url:"/world-passes" },
   { name:"Rivers", icon:"river", count:180, keywords:"river basin tributary water", url:"https://abhu001987.github.io/Test/strait" },
-  { name:"Mountains", icon:"mountain", count:80, keywords:"mountain peak range highland summit", url:"https://abhu001987.github.io/Test/Strait" },
-  { name:"Glaciers", icon:"glacier", count:50, keywords:"glacier ice snow polar", url:"#" },
-  { name:"Plateaus", icon:"plateau", count:40, keywords:"plateau tableland highland terrace", url:"#" },
-  { name:"Forests", icon:"park", count:50, keywords:"forest rainforest jungle woodland", url:"#" },
-  { name:"Minerals & Mining", icon:"mineral", count:70, keywords:"mineral mining ore coal metal", url:"#" },
-  { name:"Agriculture", icon:"Agriculture", count:50, keywords:"wular chilika dal lake pulicat", url:"#" },
-  { name:"Ramsar Sites", icon:"wetland", count:100, keywords:"ramsar wetland convention international", url:"https://abhu001987.github.io/Test/ramsar" },
-  { name:"Trade Winds", icon:"wind", count:20, keywords:"trade winds wind pattern jet stream", url:"#" },
-  { name:"World Heritage Site", icon:"landmark", count:130, keywords:"heritage unesco monument ancient", url:"#" },
-  { name:"Population & Cities", icon:"population", count:58, keywords:"population city urban density migration", url:"#" }
+  { name:"Mountains", icon:"mountain", count:80, keywords:"mountain peak range highland summit", url:"/world-mountains" },
+  { name:"Glaciers", icon:"glacier", count:50, keywords:"glacier ice snow polar", url:"/world-glaciers" },
+  { name:"Forests", icon:"park", count:50, keywords:"forest rainforest jungle woodland", url:"/world-forests" },
+  { name:"Minerals & Mining", icon:"mineral", count:70, keywords:"mineral mining ore coal metal", url:"/world-mineral-locations" },
+  { name:"Agriculture", icon:"Agriculture", count:50, keywords:"wular chilika dal lake pulicat", url:"/world-crop-production" },
+  { name:"Ramsar Sites", icon:"wetland", count:100, keywords:"ramsar wetland convention international", url:"/ramsar-sites-of-india" },
+  { name:"Winds Belts", icon:"wind", count:20, keywords:"trade winds wind pattern jet stream", url:"/major-windbelts" },
+  { name:"Population & Cities", icon:"population", count:58, keywords:"population city urban density migration", url:"/world-population-and-cities" },
+  { name:"Latitude Lines & Wind Belts", icon:"windbelts", count:40, keywords:"latitude lines wind belts earth equator", url:"/latitude-lines-and-wind-belts" }
   
 ];
 
@@ -2618,10 +2618,10 @@ const REGION_TOPICS = { world: WORLD_TOPICS, india: INDIA_TOPICS };
 let currentRegion = 'world';
 
 const QUICKBAR = [
-  { icon:"newsflag", t:"Places in News", s:"Current affairs", url:"https://abhu001987.github.io/Test/straits" },
-  { icon:"orgglobe", t:"International Organization", s:"UN, WTO, IMF & more", url:"https://abhu001987.github.io/Test/straits" },
-  { icon:"wonder", t:"Schemes", s:"States", url:"https://abhu001987.github.io/Test/straits" },
-  { icon:"pilgrimage", t:"Major Pilgrimage Sites", s:"Sacred places", url:"https://abhu001987.github.io/Test/straits" }
+  { icon:"newsflag", t:"Places in News", s:"Current affairs", url:"/places-in-news" },
+  { icon:"orgglobe", t:"International Organization", s:"UN, WTO, IMF & more", url:"/world-organizations-headquarters" },
+  { icon:"wonder", t:"Schemes", s:"States", url:"/state-schemes-of-india" },
+  { icon:"pilgrimage", t:"Major Pilgrimage Sites", s:"Sacred places", url:"/temple-of-india" }
 ];
 
 function renderTopicsGrid(region){
