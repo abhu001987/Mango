@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- AdSense loader — replace ca-pub-8353010289901005 after approval -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8353010289901005"
+crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>World Seas — Global Seas Quiz | MapiDesk</title>
+<meta name="description" content="Test your knowledge of the world's seas with an interactive geography map quiz. Locate major seas, discover their surrounding countries and oceans, and sharpen your world geography skills.">
+<link rel="icon" type="image/png" href="/images/Mapidesk_Icon-removebg-preview.png" />
+<link rel="apple-touch-icon" href="/images/Mapidesk_Icon-removebg-preview.png" />
+
+<meta property="og:title" content="World Seas Quiz | MapiDesk" />
+<meta property="og:description" content="Test your knowledge of the world's major seas and their locations with this interactive mapping quiz." />
+<meta property="og:image" content="https://mapidesk.com/images/Mapidesk_Icon-removebg-preview.png" />
+<meta property="og:url" content="https://mapidesk.com/world-seas.html" />
+<meta property="og:type" content="website" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="World Seas Quiz | MapiDesk" />
+<meta name="twitter:description" content="Test your knowledge of the world's major seas and their locations with this interactive mapping quiz." />
+<meta name="twitter:image" content="https://mapidesk.com/images/Mapidesk_Icon-removebg-preview.png" />
+  <!-- Theme: set instantly, before any CSS loads -->
+<script>
+  (function() {
+    try {
+      var theme = localStorage.getItem('terra-site-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+
+<!-- Fonts (matches MapiDesk) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" />
+
+<!-- Shared CSS & JS (theme) -->
+<link rel="stylesheet" href="theme.css" />
+<script src="theme.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<link rel="preconnect" href="https://a.basemaps.cartocdn.com">
+<link rel="preconnect" href="https://b.basemaps.cartocdn.com">
+<link rel="preconnect" href="https://c.basemaps.cartocdn.com">
+<link rel="preconnect" href="https://d.basemaps.cartocdn.com">
+
+<style>
+  /* ============================================ */
+  /* PALETTE — MapiDesk gold/deep-blue glass theme (same as Lake / Heritage / Gulf / Forest / Plateau / Coast / Island / Mineral / Pass / Current / Seas Navigator) */
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.35);
+    --glass-shadow: 0 12px 40px rgba(0, 20, 40, 0.10);
+    --deep-blue: #0B2A3C;
+    --deep-blue-soft: #1A3B4F;
+    --ink: #1A2E3B;
+    --ink-soft: #3A4F5E;
+    --muted: #748A98;
+    --muted-light: #B4C8D4;
+    --gold: #D4A853;
+    --gold-bright: #EAC072;
+    --gold-glow: rgba(212, 168, 83, 0.15);
+    --white-glass: rgba(255, 255, 255, 0.70);
+    --card-bg: rgba(255, 255, 255, 0.80);
+    --border-light: rgba(11, 42, 60, 0.08);
+    --body-bg: #EAE4F7;
+    --danger: #F2545F;
+    --danger-dim: rgba(242, 84, 95, 0.12);
+    --radius: 22px;
+    --radius-sm: 14px;
+    --ease: cubic-bezier(.4, 0, .2, 1);
+    --blue: #5B7FFF;
+    --violet: #8B7CF6;
+    --blue-soft: rgba(91, 127, 255, 0.12);
+    --violet-soft: rgba(139, 124, 246, 0.12);
+    --bg-0: var(--body-bg);
+    --panel: var(--card-bg);
+    --border: var(--border-light);
+    --text: var(--deep-blue);
+    --text-dim: var(--muted);
+    --nav-bg: var(--glass-bg);
+    --glow-1: var(--gold-glow);
+    --glow-2: rgba(139, 124, 246, 0.08);
+    --teal: #4A9E7A;
+    --coral: var(--danger);
+    --glass: var(--card-bg);
+    --glass-brd: var(--border-light);
+    --ink-dim: var(--muted);
+    --flow-blue: #4E9BD8;
+    --flow-blue-soft: rgba(78, 155, 216, 0.16);
+  }
+  [data-theme="dark"] {
+    --glass-bg: rgba(16, 28, 38, 0.55);
+    --glass-border: rgba(237, 230, 211, 0.10);
+    --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    --deep-blue: #F1EADA;
+    --deep-blue-soft: #D9CFB8;
+    --ink: #E7E1D2;
+    --ink-soft: #B9C2C8;
+    --muted: #8494A0;
+    --muted-light: #45535C;
+    --gold: #E3B368;
+    --gold-bright: #F7C177;
+    --gold-glow: rgba(227, 179, 104, 0.16);
+    --white-glass: rgba(255, 255, 255, 0.05);
+    --card-bg: rgba(20, 34, 46, 0.65);
+    --border-light: rgba(237, 230, 211, 0.10);
+    --body-bg: #05060C;
+    --blue-soft: rgba(91, 127, 255, 0.15);
+    --violet-soft: rgba(139, 124, 246, 0.15);
+    --bg-0: var(--body-bg);
+    --panel: var(--card-bg);
+    --border: var(--border-light);
+    --text: var(--deep-blue);
+    --text-dim: var(--muted);
+    --nav-bg: var(--glass-bg);
+    --glow-1: var(--gold-glow);
+    --glow-2: rgba(139, 124, 246, 0.10);
+    --teal: #5FC79A;
+    --coral: var(--danger);
+    --glass: var(--card-bg);
+    --glass-brd: var(--border-light);
+    --ink-dim: var(--muted);
+    --flow-blue: #6FB6E8;
+    --flow-blue-soft: rgba(111, 182, 232, 0.18);
+  }
+  /* ============================================ */
+  /* HEADER */
+  .nav { position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; padding: 16px clamp(16px,2.4vw,36px) 0; border-bottom: none; background: transparent; transition: border-color 0.3s ease; margin-bottom: 0; }
+  .nav.header-hidden { display: none; }
+  .wrap { max-width: 1400px; margin: 0 auto; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; border-radius: 22px; background: var(--glass-bg); backdrop-filter: blur(18px) saturate(160%); -webkit-backdrop-filter: blur(18px) saturate(160%); box-shadow: var(--glass-shadow); border: 1px solid var(--glass-border); transition: background .35s ease, border-color .35s ease; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; transition: color 0.3s ease; min-width: 0; }
+  .logo .mark { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; flex-shrink: 0; }
+  .logo .mark svg { width: 40px; height: 40px; display: block; }
+  .logo .brand-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
+  .logo .brand-text .name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; letter-spacing: 0.01em; color: var(--deep-blue); white-space: nowrap; }
+  .logo .brand-text .tag { font-size: 10px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @media (max-width: 640px) { .logo .brand-text .tag { display: none; } .logo .mark { width: 34px; height: 34px; } .logo .mark svg { width: 34px; height: 34px; } .logo .brand-text .name { font-size: 16px; } }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s ease; font-family: 'Inter', sans-serif; }
+  .nav-links a:hover { color: var(--deep-blue); }
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  .exit-btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px 10px 14px; border: 1px solid var(--border-light); border-radius: 10px; color: var(--muted); font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; cursor: pointer; background: var(--white-glass); transition: 0.2s var(--ease), border-color 0.3s ease, color 0.3s ease, background 0.3s ease; }
+  .exit-btn .ic { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.2s var(--ease); flex-shrink: 0; }
+  .exit-btn:hover { background: var(--gold-glow); border-color: var(--gold); color: var(--gold); }
+  .exit-btn:hover .ic { transform: translateX(-3px); }
+  .theme-toggle { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border-light); background: var(--white-glass); color: var(--deep-blue); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s var(--ease); position: relative; flex-shrink: 0; }
+  .theme-toggle:hover { background: var(--gold-glow); border-color: var(--gold); transform: scale(1.06); }
+  .theme-toggle .sun-icon, .theme-toggle .moon-icon { position: absolute; display: flex; transition: all 0.45s var(--ease); }
+  .theme-toggle svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .theme-toggle .sun-icon { opacity: 0; transform: rotate(-90deg) scale(0.4); }
+  .theme-toggle .moon-icon { opacity: 1; transform: rotate(0) scale(1); }
+  [data-theme="light"] .theme-toggle .sun-icon { opacity: 1; transform: rotate(0) scale(1); }
+  [data-theme="light"] .theme-toggle .moon-icon { opacity: 0; transform: rotate(90deg) scale(0.4); }
+  @media (max-width: 600px) { .nav { padding: 12px 14px 0; } .nav-inner { padding: 10px 14px; border-radius: 16px; } .logo { font-size: 22px; gap: 9px; } .logo .mark { width: 40px; height: 40px; } .logo .mark svg { width: 40px; height: 40px; } .nav-links { display: none; } .exit-btn { padding: 6px 12px; font-size: 12px; } .exit-btn span { display: none; } .theme-toggle { width: 34px; height: 34px; } }
+
+  /* ============================================ */
+  /* BASE */
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{ margin:0;padding:0; height:100%; height:100dvh; overscroll-behavior:none; background:var(--bg-0);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--text);
+    transition:background .3s ease, color .3s ease; }
+  body{ display:flex;flex-direction:column; overflow:hidden; background: var(--bg-0);
+    background-image: radial-gradient(circle at 15% 0%, var(--glow-1), transparent 45%), radial-gradient(circle at 85% 20%, var(--glow-2), transparent 40%); }
+  #app{ position:relative;z-index:1; flex:1 1 auto;min-height:0; display:flex;flex-direction:column;
+    padding-bottom:env(safe-area-inset-bottom); padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); }
+
+  /* ---------- HUD ---------- */
+  #hud-top{ display:flex;align-items:center;justify-content:space-between;gap:8px; padding:8px 10px; background:transparent; z-index:500; flex-wrap:nowrap; position:relative; }
+  .brand{ font-weight:700;letter-spacing:.1em;font-size:10px;color:var(--gold); text-transform:uppercase;opacity:.9;flex-shrink:0; font-family:'IBM Plex Mono',monospace; }
+  .hud-back-btn{ display:flex;align-items:center;justify-content:center; width:34px;height:34px;border-radius:50%;flex-shrink:0;
+    background:var(--glass);border:1px solid var(--glass-brd); backdrop-filter: blur(10px); color:var(--ink);cursor:pointer;padding:0;
+    transition:border-color .15s ease, color .15s ease, transform .12s ease, background .15s ease; }
+  .hud-back-btn:hover{border-color:var(--gold);color:var(--gold); background: var(--gold-glow);}
+  .hud-back-btn:active{transform:scale(.92);}
+  .hud-back-btn .ic{ width:16px;height:16px;fill:none;stroke:currentColor; stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round; }
+  .strait-card{ background:var(--glass); border:1px solid var(--glass-brd); backdrop-filter:blur(14px) saturate(160%); -webkit-backdrop-filter:blur(14px) saturate(160%);
+    border-radius:14px; padding:7px 14px; text-align:center; box-shadow: 0 6px 20px rgba(0,20,40,0.08); flex:1 1 auto;min-width:0; }
+  .strait-card .eyebrow{font-size:9px;letter-spacing:.16em;color:var(--ink-dim);text-transform:uppercase;font-weight:600;}
+  .strait-card .title{font-family:'Fraunces',serif; font-size:clamp(12.5px,3.2vw,18px);font-weight:600;color:var(--gold);letter-spacing:.01em;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .strait-card .subtitle{font-size:10px;color:var(--ink-dim);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  #dots{display:flex;gap:4px;justify-content:center;margin-top:6px;flex-wrap:wrap;max-width:260px;}
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--border-light);transition:.2s;flex-shrink:0;}
+  .dot.done{background:var(--teal);box-shadow:0 0 6px var(--teal);}
+  .dot.now{background:var(--gold);box-shadow:0 0 8px var(--gold);transform:scale(1.4);}
+  .score-pill{ background:var(--glass);border:1px solid var(--glass-brd);border-radius:100px; backdrop-filter: blur(10px);
+    padding:7px 13px;font-size:11px;font-weight:700;color:var(--ink-dim);white-space:nowrap; flex-shrink:0; }
+  .score-pill b{color:var(--teal);}
+  #challenge-flag{ display:none; align-items:center;gap:6px; background:var(--danger-dim);border:1px solid rgba(242,84,95,0.4);
+    border-radius:100px;padding:6px 12px;font-size:10.5px;font-weight:700;color:var(--coral); white-space:nowrap;flex-shrink:0;letter-spacing:.03em;
+    backdrop-filter: blur(10px); }
+  #challenge-flag.show{display:flex;}
+  #challenge-flag .dotpulse{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulseDot 1.4s ease-in-out infinite;}
+  @keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:.25;}}
+
+  /* ---------- MAP ---------- */
+  #map-viewport{ flex:1 1 auto;position:relative;overflow:hidden; margin:0 8px 8px; min-height:0; border-radius:18px;
+    border:1px solid var(--glass-brd); box-shadow: var(--glass-shadow); isolation:isolate; z-index:0; }
+  #map-viewport.screen-covered{visibility:hidden;}
+  #map{ position:absolute;inset:0; background:#0e1f30; }
+  #map .leaflet-tile-pane{filter:saturate(1.1) contrast(1.02);}
+  #map .leaflet-container{background:#dfe6ea;}
+  #map-loading{ position:absolute;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;
+    background:#0e1f30;color:var(--muted-light);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    pointer-events:none;transition:opacity .3s ease; }
+  #map-loading.hidden{opacity:0;}
+  #map .leaflet-control-attribution{ background:rgba(255,255,255,0.82)!important;color:#5C6B73!important;font-size:9px!important; }
+  #map .leaflet-control-attribution a{color:var(--gold)!important;}
+  #map .leaflet-control-zoom a{ background:var(--glass)!important;color:var(--ink)!important;border:1px solid var(--glass-brd)!important; }
+
+  .line-label{ transform:translate(-50%,-150%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
+    font-size:10.5px; padding:4px 9px; border-radius:20px; background:var(--flow-blue); color:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.18); }
+  .guess-label{ transform:translate(-50%,-150%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
+    font-size:10.5px; padding:4px 9px; border-radius:20px; background:var(--coral); color:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.18); }
+  .mineral-icon-wrap{ display:flex;flex-direction:column;align-items:center;gap:2px;pointer-events:none; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.28)); }
+  .mineral-icon-wrap .m-tag{ font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:9.5px; background:var(--micon-color, var(--flow-blue));
+    color:#fff; padding:2px 8px;border-radius:20px;white-space:nowrap;box-shadow:0 4px 10px rgba(0,0,0,0.2); }
+
+  /* ---------- water reveal effect ---------- */
+  .flow-line{ animation: flowDash 1.1s linear infinite; }
+  @keyframes flowDash{ to{ stroke-dashoffset:-20; } }
+  .flow-fill{ animation: fillPulse 2.2s ease-in-out infinite; }
+  @keyframes fillPulse{ 0%,100%{ fill-opacity:0.10; } 50%{ fill-opacity:0.22; } }
+
+  /* ---------- BOTTOM PANEL ---------- */
+  #hud-bottom{ z-index:500;padding:8px 10px 12px; display:flex;flex-direction:column;align-items:center;gap:8px; }
+  #feedback{ width:100%;max-width:640px; background:var(--glass);border:1px solid var(--glass-brd);backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%); border-radius:16px;padding:10px 16px;text-align:center;
+    box-shadow: var(--glass-shadow); display:none; }
+  #feedback.show{display:block;}
+  #feedback .verdict{font-weight:700;font-size:13.5px; display:flex; align-items:center; justify-content:center; gap:7px;}
+  #feedback .verdict.good{color:var(--teal);}
+  #feedback .verdict.mid{color:var(--gold);}
+  #feedback .verdict.bad{color:var(--coral);}
+  #feedback .verdict .v-ic{width:16px;height:16px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+  #feedback .fact{font-size:11.5px;color:var(--ink-dim);margin-top:5px;line-height:1.45;}
+  #feedback .detail-line{font-size:11px;color:var(--violet);margin-top:7px;font-weight:600; display:flex; align-items:center; justify-content:center; gap:6px;}
+  #feedback .detail-line svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+  #feedback .rival-line{font-size:11px;color:var(--coral);margin-top:7px;font-weight:700;}
+
+  .btn{ border:none;border-radius:40px;padding:12px 28px;font-size:13px;font-weight:700; letter-spacing:.03em;cursor:pointer;
+    transition:transform .12s ease, box-shadow .2s, background .25s ease; text-transform:uppercase; font-family:'Inter',sans-serif; }
+  .btn:active{transform:scale(.96);}
+  .btn:disabled{opacity:.55;cursor:default;}
+  .btn-primary{background:linear-gradient(135deg, var(--deep-blue), var(--deep-blue-soft));color:#fff;box-shadow:0 6px 18px rgba(11,42,60,0.25);}
+  [data-theme="dark"] .btn-primary{background:linear-gradient(135deg,#16394A,#0D2029);}
+  .btn-primary:hover{transform:scale(1.02);box-shadow:0 10px 24px rgba(11,42,60,0.32);}
+  .btn-ghost{background:var(--white-glass);border:1px solid var(--border-light);color:var(--ink);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold); background: var(--gold-glow);}
+  .btn-teal{background:linear-gradient(135deg,var(--teal),#2f8a68);color:#fff;box-shadow:0 6px 20px rgba(74,158,122,0.3);}
+  .btn-teal:hover{box-shadow:0 8px 26px rgba(74,158,122,0.45);}
+  .btn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
+  .hint-tap{font-size:11px;color:var(--ink-dim);letter-spacing:.05em;opacity:.85;text-align:center; display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:center;}
+  .hint-tap svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* ---------- OVERLAY SCREENS ---------- */
+  .screen{ position:absolute;inset:0;z-index:5000;display:flex;align-items:flex-start;justify-content:center;
+    background:var(--bg-0);
+    background-image: radial-gradient(circle at 15% 0%, var(--glow-1), transparent 45%), radial-gradient(circle at 85% 20%, var(--glow-2), transparent 40%);
+    text-align:center; padding:calc(var(--nav-height, 92px) + 24px) clamp(16px,2.2vw,30px) 24px; overflow-y:auto;
+    -webkit-overflow-scrolling:touch; overscroll-behavior-y:contain; }
+  @media (max-width: 768px){ .screen{ padding: max(calc(var(--nav-height, 80px) + 28px), 108px) 20px 20px; } }
+  .screen.hidden{display:none;}
+  .panel{ max-width:1400px; width:100%; display:flex; flex-direction:column; min-height:100%; justify-content:flex-start; margin: 0 auto; }
+  .kicker{ display:inline-flex; align-items:center; gap:6px; background: var(--gold-glow); border:1px solid rgba(212,168,83,0.3); color: var(--gold);
+    padding:5px 12px; border-radius:20px; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-bottom:16px; }
+  @media (max-width:420px){ .kicker { font-size:9.5px; letter-spacing:0.08em; } }
+  h1{font-family:'Fraunces', serif;font-weight:600;font-size:clamp(28px,7vw,44px);margin:0 0 12px;color:var(--deep-blue);letter-spacing:-0.01em; line-height:1.08;}
+  h1 span{ font-style:italic; color: var(--gold); }
+  .sub{color:var(--ink-soft);font-size:14.5px;line-height:1.65;margin-bottom:26px;}
+  .final-score{font-family:'Fraunces', serif;font-size:48px;font-weight:700;color:var(--gold);}
+  .final-label{color:var(--ink-dim);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:-4px;margin-bottom:18px;}
+  .panel.wide{ max-width:1400px; width:100%; text-align:left; }
+  .panel.wide .kicker{ justify-content:flex-start; }
+  .mode-badge{ display:inline-flex;align-items:center;gap:8px; background: var(--gold-glow); border:1px solid rgba(212,168,83,0.3);
+    color:var(--gold);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase; padding:7px 14px 7px 11px;border-radius:100px;margin-bottom:22px; }
+  .mode-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);flex-shrink:0;}
+  .hero-grid{ display:block; text-align:left;margin-bottom:8px;margin-top:-4px; }
+  .hero-copy h1{margin-bottom:10px;}
+  .hero-copy .kicker{margin-bottom:14px;}
+  .hero-copy .sub{margin-bottom:0;max-width:720px;}
+  .info-cards{ display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0 0;text-align:left; }
+  @media (max-width:900px){ .info-cards{ grid-template-columns:1fr; } }
+  .info-card{ position:relative; overflow:hidden; background: var(--card-bg); backdrop-filter: blur(14px) saturate(160%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%); border:1px solid var(--border-light);border-radius:18px;
+    box-shadow: var(--glass-shadow); padding:22px;display:flex;flex-direction:column;
+    transition: background .35s ease, border-color .35s ease, transform .2s ease; }
+  .info-card:hover{ transform: translateY(-2px); }
+  .info-card.accent{ border-color: rgba(212,168,83,0.35); }
+  .info-card-head{ display:flex; align-items:center; gap:12px; margin-bottom:6px; }
+  .info-card-head h3{ font-family:'Fraunces', serif;font-size:17px;font-weight:600;color:var(--deep-blue);margin:0; }
+  .info-card-head p{ margin:1px 0 0; font-size:11.5px; color:var(--ink-dim); }
+  .icon-circle{ width:40px;height:40px;border-radius:12px;flex-shrink:0; display:flex;align-items:center;justify-content:center;
+    background: var(--gold-glow); border:1px solid rgba(212,168,83,0.28); color: var(--gold); }
+  .icon-circle svg{ width:19px; height:19px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .icon-circle.blue{ background:var(--blue-soft);border-color:rgba(91,127,255,0.35);color:var(--blue); }
+  .icon-circle.violet{ background:var(--violet-soft);border-color:rgba(139,124,246,0.35);color:var(--violet); }
+  .icon-circle.coral{ background:var(--danger-dim);border-color:rgba(242,84,95,0.35);color:var(--coral); }
+  .icon-circle.teal{ background:rgba(74,158,122,0.14); border-color: rgba(74,158,122,0.35); color:var(--teal); }
+  .icon-circle.flow{ background:var(--flow-blue-soft); border-color:rgba(78,155,216,0.35); color:var(--flow-blue); }
+  .mini-stats{ display:flex; gap:20px; margin-top:16px; flex-wrap:wrap; }
+  .mini-stat{ display:flex; align-items:center; gap:10px; }
+  .mini-stat .icon-circle{ width:32px;height:32px;border-radius:9px; }
+  .mini-stat .icon-circle svg{ width:15px;height:15px; }
+  .mini-stat-text{ display:flex; flex-direction:column; }
+  .mini-stat-text .t{ font-size:11.5px; font-weight:700; color:var(--deep-blue); line-height:1.3; }
+  .mini-stat-text .d{ font-size:10px; color:var(--ink-dim); }
+  .info-card .info-body{ flex:1; }
+  .info-card textarea{ width:100%;min-height:46px;resize:vertical; background:var(--white-glass);border:1px solid var(--border-light);border-radius:12px;
+    color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:11.5px; padding:11px 13px;outline:none;margin:14px 0 12px;
+    transition: border-color .2s ease, box-shadow .2s ease; }
+  .info-card textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-glow);}
+  .info-card .btn{ width:100%; }
+  .how-block{ margin-top:34px; text-align:left; }
+  .how-title{ display:flex; align-items:center; gap:10px; font-family:'Fraunces', serif; font-weight:600; font-size:17px; color:var(--deep-blue); margin-bottom:20px; }
+  .how-title svg{ width:20px; height:20px; stroke:var(--gold); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .steps-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; position:relative; }
+  @media (max-width:900px){ .steps-row{ grid-template-columns:1fr; } }
+  .step{ display:flex; align-items:flex-start; gap:13px; background: var(--card-bg); border:1px solid var(--border-light); border-radius:14px;
+    padding:16px; backdrop-filter: blur(10px); }
+  .step-num{ width:32px;height:32px;border-radius:50%;flex-shrink:0; display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;
+    background:var(--gold-glow);border:1px solid rgba(212,168,83,0.3);color:var(--gold); font-family:'IBM Plex Mono',monospace; }
+  .step-text .t{ font-size:12.5px; font-weight:700; color:var(--deep-blue); margin-bottom:2px; }
+  .step-text .d{ font-size:11px; color:var(--ink-dim); line-height:1.45; }
+  .score-hero{ display:flex;align-items:center;gap:20px; background:var(--card-bg);border:1px solid var(--border-light);border-radius:20px;
+    backdrop-filter: blur(14px) saturate(160%); box-shadow: var(--glass-shadow); padding:24px 26px;margin-bottom:8px;text-align:left; }
+  .score-hero .icon-circle{ width:56px;height:56px;border-radius:16px; }
+  .score-hero .icon-circle svg{ width:26px;height:26px; }
+  .score-hero .score-meta{ flex:1; min-width:0; }
+  .score-hero .final-score{ font-size:40px; line-height:1; margin-bottom:2px; }
+  .score-hero .final-label{ margin:0; }
+  .paste-err{font-size:11.5px;color:var(--coral);margin-top:8px;display:none;}
+  .share-block{ margin-top:24px;text-align:left; border-top:1px solid var(--border-light);padding-top:22px; }
+  .share-title{font-family:'Fraunces', serif;font-weight:600;font-size:15px;color:var(--deep-blue);margin-bottom:4px; display:flex; align-items:center; gap:8px;}
+  .share-title svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;}
+  .share-sub{font-size:12px;color:var(--ink-dim);margin-bottom:14px;line-height:1.5;}
+  .link-box{ display:flex;gap:8px;align-items:center; background:var(--white-glass);border:1px solid var(--border-light);border-radius:14px;
+    padding:9px 9px 9px 14px;margin-bottom:12px; }
+  .link-box input{ flex:1;min-width:0;background:transparent;border:none;outline:none; color:var(--gold);font-family:'IBM Plex Mono',monospace;font-size:11.5px; }
+  .copy-btn{ background:var(--card-bg);border:1px solid var(--border-light);color:var(--deep-blue); font-size:11px;font-weight:700;padding:9px 14px;border-radius:9px;cursor:pointer;
+    white-space:nowrap;transition:.15s;text-transform:uppercase;letter-spacing:.03em; }
+  .copy-btn:hover{border-color:var(--gold);color:var(--gold); background: var(--gold-glow);}
+  .copy-btn.copied{border-color:var(--teal);color:var(--teal);}
+  .copy-btn:disabled{opacity:.6;cursor:default;}
+  .share-icons{display:flex;gap:10px;}
+  .share-icons a{ flex:1;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px; padding:12px;border-radius:12px;font-weight:700;font-size:12.5px;
+    border:1px solid var(--border-light);background:var(--card-bg);color:var(--deep-blue); transition:.15s;text-transform:uppercase;letter-spacing:.02em; }
+  .share-icons a svg{ width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .share-icons a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px); box-shadow: 0 8px 20px rgba(212,168,83,0.15);}
+  .share-icons a.disabled{opacity:.55;pointer-events:none;}
+  #vs-block{display:none;margin-bottom:8px;}
+  .vs-card{display:flex;align-items:center;border-radius:18px;overflow:hidden;border:1px solid var(--border-light);position:relative;margin-bottom:16px; box-shadow: var(--glass-shadow);}
+  .vs-side{flex:1;padding:20px 12px;text-align:center;backdrop-filter: blur(10px);}
+  .vs-side.rival{background:linear-gradient(160deg, var(--danger-dim), var(--card-bg));}
+  .vs-side.you{background:linear-gradient(200deg, var(--gold-glow), var(--card-bg));}
+  .vs-name{font-size:10px;color:var(--ink-dim);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;font-weight:700;}
+  .vs-score{font-family:'Fraunces',serif; font-size:34px;font-weight:700;}
+  .vs-side.rival .vs-score{color:var(--coral);}
+  .vs-side.you .vs-score{color:var(--gold);}
+  .vs-badge{ position:absolute;left:50%;top:50%;transform:translate(-50%,-50%); width:40px;height:40px;border-radius:50%;background:var(--body-bg);
+    border:2px solid var(--gold);display:flex;align-items:center;justify-content:center; font-size:11px;font-weight:800;color:var(--gold);z-index:2;box-shadow:0 0 18px var(--gold-glow);
+    font-family:'IBM Plex Mono',monospace; }
+  .verdict-box{ display:flex; align-items:center; justify-content:center; gap:9px; text-align:center;font-weight:700;font-size:16px;letter-spacing:.01em;
+    padding:14px 12px;border-radius:14px;margin-bottom:18px; }
+  .verdict-box svg{ width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+  .verdict-box.win{background:rgba(74,158,122,0.12);color:var(--teal);border:1px solid rgba(74,158,122,0.35); animation: winnerTextGlow 1.6s ease-in-out infinite;}
+  .verdict-box.lose{background:var(--danger-dim);color:var(--coral);border:1px solid rgba(242,84,95,0.35);}
+  .verdict-box.tie{background:var(--gold-glow);color:var(--gold);border:1px solid rgba(212,168,83,0.35);}
+  @keyframes winnerTextGlow{ 0%,100%{ box-shadow: 0 0 0 rgba(74,158,122,0); } 50%{ box-shadow: 0 0 26px rgba(74,158,122,0.35); } }
+  .breakdown{max-height:260px;overflow-y:auto;margin-bottom:6px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;}
+  .b-row{ display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:10px; background:var(--card-bg);border:1px solid var(--border-light);margin-bottom:7px;font-size:12px;text-align:left;
+    backdrop-filter: blur(8px); }
+  .b-row .b-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink-dim); font-weight:500;}
+  .b-row .b-marks{display:flex;gap:6px;flex-shrink:0;}
+  .b-row .b-idx{ width:22px;height:22px;border-radius:6px;background:var(--gold-glow);color:var(--gold); font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  font-family:'IBM Plex Mono',monospace; }
+  .b-row .b-dist{color:var(--ink-dim);font-size:10.5px;flex-shrink:0;font-family:'IBM Plex Mono',monospace;}
+  .b-row .b-pts{flex-shrink:0;font-weight:800;font-size:11px;padding:3px 9px;border-radius:20px;}
+  .b-pts.good{background:rgba(74,158,122,0.16);color:var(--teal);}
+  .b-pts.mid{background:var(--gold-glow);color:var(--gold);}
+  .b-pts.bad{background:var(--danger-dim);color:var(--coral);}
+  .b-mk{width:24px;height:24px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;font-family:'IBM Plex Mono',monospace;}
+  .b-mk.ok{background:rgba(74,158,122,0.16);color:var(--teal);}
+  .b-mk.no{background:var(--danger-dim);color:var(--coral);}
+  #toast{ position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(16px); background:var(--deep-blue);color:var(--body-bg);font-weight:700;font-size:12.5px;
+    padding:11px 20px;border-radius:30px;opacity:0;pointer-events:none; transition:all .3s cubic-bezier(.34,1.56,.64,1);z-index:2000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  #confettiCanvas{position:fixed;inset:0;pointer-events:none;z-index:5600;}
+  .menu-footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-light); display: flex; justify-content: space-between;
+    align-items: center; font-size: 11px; color: var(--muted); letter-spacing: 0.02em; font-weight: 500; flex-wrap: wrap; gap: 8px; flex-shrink: 0; }
+  .menu-footer .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+  .menu-footer .back-link:hover { color: var(--gold); }
+  .menu-footer .back-link svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .menu-footer .copy { color: var(--muted-light); font-size: 10px; }
+  #exit-dialog-overlay { position: fixed; inset: 0; background: rgba(11,42,60,0.35); backdrop-filter: blur(6px); z-index: 9999;
+    display: none; align-items: center; justify-content: center; padding: 24px; }
+  #exit-dialog-overlay.show { display: flex; }
+  #exit-dialog { background: var(--card-bg); backdrop-filter: blur(18px) saturate(160%); border: 1px solid var(--border-light); border-radius: 22px;
+    padding: 32px 28px 24px; max-width: 400px; width: 100%; box-shadow: 0 24px 60px rgba(0,20,40,0.25); text-align: center; }
+  #exit-dialog h3 { font-family: 'Fraunces', serif; font-size: 20px; font-weight:600; margin: 0 0 8px; color: var(--deep-blue); }
+  #exit-dialog p { color: var(--muted); font-size: 14px; margin: 0 0 24px; line-height: 1.5; }
+  #exit-dialog .btn-row { display: flex; gap: 12px; justify-content: center; margin-top: 0; }
+  #exit-dialog .btn-row .btn { min-width: 100px; }
+  #exit-dialog .btn-secondary { background: var(--white-glass); border: 1px solid var(--border-light); color: var(--deep-blue); }
+  #exit-dialog .btn-secondary:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-glow); }
+  @media (max-width:480px) { #exit-dialog { padding: 24px 18px; } #exit-dialog h3 { font-size: 18px; } }
+  @media (max-height:640px){
+    .strait-card{padding:5px 10px;} #dots{margin-top:3px;} .hint-tap{display:none;}
+    .info-card{padding:11px 13px;margin-bottom:16px;} .menu-footer { margin-top: 16px; padding-top: 12px; }
+  }
+  @media (max-width:420px){ .brand{display:none;} #challenge-flag span.flag-text{display:none;} }
+  @keyframes badShake{ 10%,90%{transform:translateX(-1px);} 20%,80%{transform:translateX(2px);} 30%,50%,70%{transform:translateX(-5px);} 40%,60%{transform:translateX(5px);} }
+  .fx-shake{animation:badShake .5s ease;}
+  @keyframes goodPulse{ 0%{box-shadow:0 0 0 0 rgba(74,158,122,.5);} 70%{box-shadow:0 0 0 16px rgba(74,158,122,0);} 100%{box-shadow:0 0 0 0 rgba(74,158,122,0);} }
+  .fx-pulse-good{animation:goodPulse .8s ease;}
+  @keyframes midGlow{ 0%,100%{box-shadow:none;} 50%{box-shadow:0 0 16px var(--gold-glow);} }
+  .fx-pulse-mid{animation:midGlow .6s ease;}
+  @keyframes badFlash{ 0%{background:rgba(242,84,95,0);} 30%{background:rgba(242,84,95,.10);} 100%{background:rgba(242,84,95,0);} }
+  .fx-flash-bad{animation:badFlash .5s ease;}
+  @keyframes winnerGlow{ 0%,100%{box-shadow:0 0 0 rgba(74,158,122,0), 0 0 0 rgba(212,168,83,0);} 50%{box-shadow:0 0 30px rgba(74,158,122,.4), 0 0 50px var(--gold-glow);} }
+  .vs-card.fx-winner{animation:winnerGlow 1s ease 3;}
+  #screen-invite, #screen-end { overflow-x: hidden; }
+  #screen-invite::before, #screen-invite::after, #screen-end::before, #screen-end::after{
+    content:""; position:absolute; width:420px;height:420px; border-radius:50%; filter:blur(70px); pointer-events:none; z-index:0; opacity:.55;
+    animation: floatOrb 14s ease-in-out infinite; }
+  #screen-invite::before, #screen-end::before{ top:-120px; left:-100px; background: radial-gradient(circle, rgba(212,168,83,0.35), transparent 70%); }
+  #screen-invite::after, #screen-end::after{ bottom:-140px; right:-100px; background: radial-gradient(circle, rgba(78,155,216,0.24), transparent 70%); animation-delay: -7s; }
+  @keyframes floatOrb{ 0%,100%{ transform:translate(0,0) scale(1); } 50%{ transform:translate(30px,-20px) scale(1.08); } }
+  #screen-invite .panel, #screen-end .panel{ position:relative; z-index:1; }
+  @keyframes fadeSlideUp{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:translateY(0); } }
+  #screen-invite .mode-badge{ animation: fadeSlideUp .6s var(--ease) both .02s; }
+  #screen-invite h1{ animation: fadeSlideUp .6s var(--ease) both .08s; }
+  #screen-invite .sub{ animation: fadeSlideUp .6s var(--ease) both .14s; }
+  #screen-invite .info-cards .info-card:nth-child(1){ animation: fadeSlideUp .6s var(--ease) both .2s; }
+  #screen-invite .info-cards .info-card:nth-child(2){ animation: fadeSlideUp .6s var(--ease) both .28s; }
+  #screen-invite .btn-row{ animation: fadeSlideUp .6s var(--ease) both .36s; }
+  #screen-end .score-hero{ animation: fadeSlideUp .6s var(--ease) both .05s; }
+  #screen-end #final-msg{ animation: fadeSlideUp .6s var(--ease) both .12s; }
+  #screen-end #vs-block{ animation: fadeSlideUp .6s var(--ease) both .18s; }
+  #screen-end .btn-row{ animation: fadeSlideUp .6s var(--ease) both .5s; }
+  #screen-end .share-block{ animation: fadeSlideUp .6s var(--ease) both .58s; }
+  .icon-circle.pulse-ring{ position:relative; }
+  .icon-circle.pulse-ring::before, .icon-circle.pulse-ring::after{ content:""; position:absolute; inset:-6px; border-radius:inherit;
+    border:1.5px solid var(--coral); opacity:0; animation: sonarPing 2.4s ease-out infinite; }
+  .icon-circle.pulse-ring::after{ animation-delay:1.2s; }
+  @keyframes sonarPing{ 0%{ transform:scale(1); opacity:.65; } 100%{ transform:scale(1.9); opacity:0; } }
+  .icon-circle.shimmer{ position:relative; overflow:hidden; }
+  .icon-circle.shimmer::after{ content:""; position:absolute; top:-50%; left:-150%; width:60%; height:200%;
+    background:linear-gradient(75deg, transparent, rgba(255,255,255,0.55), transparent); animation: shimmerSweep 2.6s ease-in-out infinite; }
+  @keyframes shimmerSweep{ 0%{ left:-150%; } 100%{ left:150%; } }
+  .vs-side.rival{ animation: slideInLeft .55s var(--ease) both .2s; }
+  .vs-side.you{ animation: slideInRight .55s var(--ease) both .2s; }
+  .vs-badge{ animation: badgePop .5s var(--ease) both .55s; }
+  @keyframes slideInLeft{ from{ opacity:0; transform:translateX(-30px);} to{opacity:1; transform:translateX(0);} }
+  @keyframes slideInRight{ from{ opacity:0; transform:translateX(30px);} to{opacity:1; transform:translateX(0);} }
+  @keyframes badgePop{ 0%{ transform:translate(-50%,-50%) scale(0); opacity:0; } 60%{ transform:translate(-50%,-50%) scale(1.25); opacity:1; } 100%{ transform:translate(-50%,-50%) scale(1); opacity:1; } }
+  .b-row{ animation: fadeSlideUp .45s var(--ease) both; opacity:0; }
+  @media (prefers-reduced-motion: reduce){
+    #screen-invite::before, #screen-invite::after, #screen-end::before, #screen-end::after,
+    #screen-invite .mode-badge, #screen-invite h1, #screen-invite .sub, #screen-invite .info-cards .info-card, #screen-invite .btn-row,
+    #screen-end .score-hero, #screen-end #final-msg, #screen-end #vs-block, #screen-end .btn-row, #screen-end .share-block,
+    .icon-circle.pulse-ring::before, .icon-circle.pulse-ring::after, .icon-circle.shimmer::after,
+    .vs-side.rival, .vs-side.you, .vs-badge, .b-row, .flow-line, .flow-fill{
+      animation: none !important; opacity:1 !important; transform:none !important;
+    }
+  }
+  .ad-slot{ max-height:0; overflow:hidden; margin:0 !important; transition:max-height .3s ease; }
+.ad-slot.ad-filled{ max-height:400px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<nav class="nav" id="siteNav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+  <span class="mark">
+    <svg viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="18" stroke="#D4A853" stroke-width="1.6"/>
+      <path d="M20 5 L23 18 L20 20 L17 18 Z" fill="#EAC072"/>
+      <path d="M20 35 L23 22 L20 20 L17 22 Z" fill="#748A98"/>
+      <circle cx="20" cy="20" r="2.4" fill="#1A2E3B"/>
+    </svg>
+  </span>
+  <span class="brand-text">
+    <span class="name">MapiDesk</span>
+    <span class="tag"></span>
+  </span>
+</a>
+      <div class="nav-links">
+        <a href="index.html#why"></a>
+        <a href="index.html#trending"></a>
+        <a href="index.html#subjects"></a>
+        <a href="blog.html"></a>
+      </div>
+      <div class="nav-cta">
+        <button class="exit-btn" onclick="showExitDialog()">
+          <svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          <span>Exit</span>
+        </button>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="sun-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg></span>
+          <span class="moon-icon"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Custom Exit Dialog -->
+<div id="exit-dialog-overlay">
+  <div id="exit-dialog">
+    <h3>Leave this run?</h3>
+    <p>Your progress on this attempt will be lost.</p>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="closeExitDialog()">Stay</button>
+      <button class="btn btn-primary" onclick="confirmExit()">Leave</button>
+    </div>
+  </div>
+</div>
+
+<div id="app">
+
+  <!-- START SCREEN -->
+  <div class="screen" id="screen-start">
+    <div class="panel wide">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="kicker">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M2 18c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M2 6c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/></svg>
+            Chart the World's Seas
+          </div>
+          <h1> World Seas <span>Navigator</span></h1>
+<p class="sub">Drop a pin on the sea you think each target belongs to — from the Mediterranean and Black Sea to the Caspian, Red Sea, Caribbean, Baltic, North Sea, Yellow Sea, South China Sea and more. Lock in your guess and watch the map reveal the sea's real extent with an animated water outline. Built for competitive-exam physical geography practice — the world's key seas and the coasts and straits that connect them. Finish a run and get a link with the exact same targets, in the exact same order — challenge a friend and see who knows world seas better.</p>        </div>
+      </div>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-card-head">
+            <div class="icon-circle flow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M2 18c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/><path d="M2 6c2 2 4 2 6 0s4-2 6 0 4 2 6 0"/></svg>
+            </div>
+            <div>
+              <h3>Your Mission</h3>
+              <p>Pin each sea where it actually lies.</p>
+            </div>
+          </div>
+          <div class="info-body">
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <div class="icon-circle blue"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4"/></svg></div>
+                <div class="mini-stat-text"><span class="t">10 targets</span><span class="d">Shuffled each run</span></div>
+              </div>
+              <div class="mini-stat">
+                <div class="icon-circle violet"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div>
+                <div class="mini-stat-text"><span class="t">Private Challenge</span><span class="d">Scores stay hidden</span></div>
+              </div>
+              <div class="mini-stat">
+                <div class="icon-circle"><svg viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8 18h5a3 3 0 003-3V9a3 3 0 013-3"/></svg></div>
+                <div class="mini-stat-text"><span class="t">Share &amp; Compare</span><span class="d">Challenge your friends</span></div>
+              </div>
+            </div>
+            <button class="btn btn-primary" style="width:100%;margin-top:18px;" onclick="startFreshGame()">Begin →</button>
+          </div>
+        </div>
+
+        <div class="info-card accent">
+          <div class="info-card-head">
+            <div class="icon-circle blue"><svg viewBox="0 0 24 24"><path d="M4 21V4a1 1 0 011-1h11l4 5v13a1 1 0 01-1 1H5a1 1 0 01-1-1z"/><path d="M15 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></div>
+            <div>
+              <h3>Start Challenge</h3>
+              <p>Get your unique challenge link to begin.</p>
+            </div>
+          </div>
+          <div class="info-body">
+            <textarea id="paste-input" placeholder="Paste a challenge link here…"></textarea>
+            <div class="paste-err" id="paste-err"></div>
+            <button class="btn btn-teal" style="width:100%;" onclick="acceptPastedChallenge()">Accept Challenge</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="how-block">
+        <div class="how-title">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>
+          How it Works
+        </div>
+        <div class="steps-row">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-text"><div class="t">Drop a Pin</div><div class="d">Tap where you think it lies — drag the pin to fine-tune, drag elsewhere to pan</div></div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-text"><div class="t">Lock It In</div><div class="d">Watch the map fly to the real sea, its extent outlined in flowing water</div></div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-text"><div class="t">Compare Results</div><div class="d">Share and see who read it closer</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="ad-slot" style="margin:24px 0 8px; text-align:center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8353010289901005"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+      <div class="menu-footer">
+        <a href="index.html" class="back-link">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          Back to MapiDesk
+        </a>
+        <span class="copy">© 2026 MapiDesk</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHALLENGE INVITE SCREEN -->
+  <div class="screen hidden" id="screen-invite">
+    <div class="panel wide" style="max-width:900px;">
+      <div class="mode-badge"><span class="dot"></span>Incoming Challenge</div>
+      <h1 style="text-align:left;">You've Been <span>Challenged</span></h1>
+      <p class="sub" style="text-align:left;">A friend already pinned all the seas and dared you to beat them. Same targets, same order — their score stays hidden until you finish your own run.</p>
+      <div class="info-cards">
+        <div class="info-card accent">
+          <div class="info-card-head">
+            <div class="icon-circle coral pulse-ring">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <h3>From <span id="invite-rival-name">A navigator</span></h3>
+              <p>Locked in a score across all targets</p>
+            </div>
+          </div>
+          <div class="info-body">
+            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Accept to take the exact same course and find out who reads world seas closer, sea by sea.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-head">
+            <div class="icon-circle blue"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4"/></svg></div>
+            <div>
+              <h3>How it Works</h3>
+              <p>Same map, same order, head-to-head</p>
+            </div>
+          </div>
+          <div class="info-body">
+            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Drop your pin as close to each real sea as you can — closer placements score higher. At the end you'll get a full head-to-head breakdown.</p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-row" style="justify-content:flex-start;">
+        <button class="btn btn-primary" onclick="acceptChallengeInvite()">Accept Challenge</button>
+        <button class="btn btn-ghost" onclick="declineChallengeInvite()">Not Now</button>
+      </div>
+      <div class="ad-slot" style="margin:24px 0 8px; text-align:center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8353010289901005"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+      <div class="menu-footer">
+        <a href="index.html" class="back-link">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          Back to MapiDesk
+        </a>
+        <span class="copy">© 2026 MapiDesk</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- END SCREEN -->
+  <div class="screen hidden" id="screen-end">
+    <div class="panel" style="max-width:720px;">
+      <div class="score-hero" id="score-hero">
+        <div class="icon-circle blue shimmer" id="score-hero-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>
+        </div>
+        <div class="score-meta">
+          <div class="kicker" id="end-kicker" style="margin-bottom:4px;">Mission Complete</div>
+          <div class="final-score" id="final-score">0%</div>
+          <div class="final-label">Average Placement Accuracy</div>
+        </div>
+      </div>
+      <p class="sub" id="final-msg" style="margin-bottom:16px;"></p>
+
+      <div id="vs-block">
+  <div class="vs-card" id="vs-card">
+    <div class="vs-side rival">
+      <div class="vs-name" id="vs-rival-name">Rival</div>
+      <div class="vs-score" id="vs-rival-score">0%</div>
+    </div>
+    <div class="vs-badge">VS</div>
+    <div class="vs-side you">
+      <div class="vs-name">You</div>
+      <div class="vs-score" id="vs-you-score">0%</div>
+    </div>
+  </div>
+  <div class="verdict-box" id="verdict-box"></div>
+</div>
+<div class="breakdown" id="breakdown-list"></div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="startFreshGame()">Chart Again</button>
+      </div>
+
+      <div class="share-block">
+        <div class="share-title">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.8"/><path d="M12 6.3V20M5 13a7 7 0 0014 0M5 13H3M19 13h2M8.2 18l-3-2M15.8 18l3-2"/></svg>
+          Challenge a Friend
+        </div>
+        <div class="share-sub">Send them this exact run's targets and see if they can out-pin your world seas score.</div>
+        <div class="link-box">
+          <input id="challenge-link" readonly placeholder="Tap Copy to generate your link…">
+          <button class="copy-btn" id="copy-link-btn" onclick="copyChallengeLink()">Copy</button>
+        </div>
+        <button class="btn btn-ghost" id="check-reply-btn" style="width:100%;margin:4px 0 12px;display:none;" onclick="checkForReply()">Check if they've replied</button>
+        <div class="share-icons">
+          <a id="wa-share" class="disabled" href="#" target="_blank" rel="noopener" onclick="return handleShareIconClick(event, 'wa')">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.07-1.32A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.16 14.13c-.22.63-1.28 1.2-1.77 1.24-.45.05-.9.24-3.03-.63-2.57-1.05-4.22-3.63-4.35-3.8-.13-.17-1.04-1.38-1.04-2.63 0-1.25.66-1.86.9-2.12.23-.25.5-.32.67-.32.17 0 .34 0 .48.01.16.01.36-.06.56.42.22.53.75 1.83.82 1.96.07.13.11.29.02.46-.09.17-.14.27-.27.42-.13.15-.28.33-.4.44-.13.13-.27.27-.11.53.15.26.68 1.12 1.46 1.81 1 .89 1.85 1.17 2.11 1.3.27.13.42.11.58-.07.16-.17.66-.77.84-1.04.18-.26.35-.22.6-.13.24.09 1.53.72 1.79.85.27.13.44.2.5.31.07.11.07.65-.15 1.28z"/></svg>
+            WhatsApp
+          </a>
+          <a id="tg-share" class="disabled" href="#" target="_blank" rel="noopener" onclick="return handleShareIconClick(event, 'tg')">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.5 4.5L2.7 11.6c-1.2.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.5l2.2-2.1 4.6 3.4c.8.5 1.4.2 1.6-.7l3-14.1c.3-1.1-.4-1.6-1.3-1.9zM8.3 13.9L17.6 8c.4-.3.8-.1.5.2L9.9 15.8l-.3 3.3z"/></svg>
+            Telegram
+          </a>
+        </div>
+        <div class="share-hint" style="font-size:11px;color:var(--ink-dim);margin-top:12px;text-align:center;line-height:1.5;">
+          Once they've played, come back and open this same link again — or tap "Check if they've replied" above — to see the head-to-head.
+        </div>
+      </div>
+      <div class="ad-slot" style="margin:24px 0 8px; text-align:center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8353010289901005"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+      </div>
+      <div class="menu-footer">
+        <a href="index.html" class="back-link">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+          Back to MapiDesk
+        </a>
+        <span class="copy">© 2026 MapiDesk</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME UI -->
+  <div id="hud-top">
+    <button class="hud-back-btn" onclick="showExitDialog()" aria-label="Back to menu" title="Back to menu">
+      <svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <div class="brand">◆ World Seas Navigator</div>
+    <div class="strait-card" id="strait-card">
+      <div class="eyebrow" id="round-label">Round 1 of 10</div>
+      <div class="title" id="strait-name">—</div>
+      <div class="subtitle" id="strait-region"></div>
+      <div id="dots"></div>
+    </div>
+    <div id="challenge-flag"><span class="dotpulse"></span><span class="flag-text">Challenge</span></div>
+    <div class="score-pill">Accuracy <b id="score-live">0%</b></div>
+  </div>
+
+  <div id="map-viewport">
+    <div id="map"></div>
+    <div id="map-loading">Loading chart…</div>
+  </div>
+
+  <div id="hud-bottom">
+    <div id="feedback">
+      <div class="verdict" id="verdict-text"></div>
+      <div class="fact" id="fact-text"></div>
+      <div class="detail-line" id="legend-line" style="display:none;">
+        <svg viewBox="0 0 24 24"><path d="M9 20l-5.5 2 2-5.5L17 5l3 3-11.5 11.5z"/><path d="M15 3l6 6"/></svg>
+        Red pin = your guess · Blue outline = the real sea's area
+      </div>
+      <div class="rival-line" id="rival-line" style="display:none;"></div>
+    </div>
+    <div class="hint-tap" id="tap-hint">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+      Tap to drop your pin, then drag it to fine-tune — drag elsewhere to pan the map
+    </div>
+    <button class="btn btn-teal" id="lock-btn" style="display:none" onclick="lockGuess()">Lock In Pin</button>
+    <button class="btn btn-primary" id="next-btn" style="display:none" onclick="nextRound()">Next Target →</button>
+  </div>
+
+</div>
+
+<div id="toast">Copied to clipboard</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+/* ============================================================
+   GAME / API CONFIG
+   ============================================================ */
+const GAME_TYPE = 'sea-navigator-world';
+const API_BASE = 'https://game-api.abhikr18996.workers.dev';
+
+/* ---------------- Fixed header height sync ---------------- */
+function syncNavHeight() {
+  var nav = document.getElementById('siteNav');
+  if (!nav) return;
+  if (nav.classList.contains('header-hidden')) return;
+  document.documentElement.style.setProperty('--nav-height', nav.offsetHeight + 'px');
+}
+document.addEventListener('DOMContentLoaded', syncNavHeight);
+window.addEventListener('load', syncNavHeight);
+if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function(){ syncNavHeight(); }); }
+setTimeout(syncNavHeight, 300);
+setTimeout(syncNavHeight, 900);
+
+/* ---------------- Shared header: theme + navigation ---------------- */
+document.addEventListener('DOMContentLoaded', function() {
+  var bg0 = getComputedStyle(document.documentElement).getPropertyValue('--bg-0').trim();
+  if (!bg0) document.documentElement.classList.add('theme-css-missing');
+  var themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      var html = document.documentElement;
+      var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', next);
+      try { localStorage.setItem('terra-site-theme', next); } catch (e) {}
+      setTimeout(function(){ try { map.invalidateSize(); } catch(e){} }, 320);
+    });
+  }
+});
+
+function showExitDialog() { document.getElementById('exit-dialog-overlay').classList.add('show'); }
+function closeExitDialog() { document.getElementById('exit-dialog-overlay').classList.remove('show'); }
+function confirmExit() { window.location.href = 'index.html'; }
+
+function setHeaderVisible(visible){
+  var nav = document.getElementById('siteNav');
+  if (!nav) return;
+  nav.classList.toggle('header-hidden', !visible);
+  if (visible) { syncNavHeight(); }
+  requestAnimationFrame(function(){ try { map.invalidateSize(); } catch(e){} });
+}
+
+/* ============================================================
+   WORLD SEAS DATA
+   Each entry is placed at (and boxed around) its real location,
+   sized roughly to the sea's actual extent. There's no country
+   or flow direction to show here — the reveal draws the sea's
+   own area as an animated, gently pulsing water outline instead.
+   The map stays at world scale throughout — it never zooms to a
+   single country.
+   ============================================================ */
+function siteBox(lat, lng, half){
+  half = half || 0.3;
+  return [[
+    [lat+half, lng-half],
+    [lat+half, lng+half],
+    [lat-half, lng+half],
+    [lat-half, lng-half],
+    [lat+half, lng-half]
+  ]];
+}
+/* Average the corner points of a round's boxes to get its display centre (for the icon marker) */
+function centerOfPaths(paths){
+  let latSum = 0, lngSum = 0, n = 0;
+  paths.forEach(ring=>{
+    for(let i=0;i<ring.length-1;i++){ latSum += ring[i][0]; lngSum += ring[i][1]; n++; }
+  });
+  return n ? [latSum/n, lngSum/n] : [0,0];
+}
+
+const ROUNDS = [
+
+  { id:'mediterranean_sea', name:'Mediterranean Sea', region:'',
+    fact:"The Mediterranean Sea lies between Europe, North Africa and the Levant, connected to the Atlantic Ocean through the narrow Strait of Gibraltar and to the Black Sea through the Bosporus and Dardanelles.",
+    paths: siteBox(35.0, 18.0, 6.0)
+  },
+
+  { id:'black_sea', name:'Black Sea', region:'',
+    fact:"The Black Sea sits between southeastern Europe and Asia Minor, bordered by Turkey, Bulgaria, Romania, Ukraine, Russia and Georgia, and connects to the Mediterranean through the Bosporus Strait.",
+    paths: siteBox(43.5, 34.5, 3.0)
+  },
+
+  { id:'caspian_sea', name:'Caspian Sea', region:'',
+    fact:"The Caspian Sea is the world's largest inland body of water, a landlocked sea bordered by Russia, Kazakhstan, Turkmenistan, Iran and Azerbaijan.",
+    paths: siteBox(41.5, 51.0, 3.5)
+  },
+
+  { id:'red_sea', name:'Red Sea', region:'',
+    fact:"The Red Sea is a narrow sea between northeast Africa and the Arabian Peninsula, linked to the Mediterranean via the Suez Canal and to the Indian Ocean through the Bab-el-Mandeb strait and Gulf of Aden.",
+    paths: siteBox(20.0, 38.0, 3.5)
+  },
+
+  { id:'arabian_sea', name:'Arabian Sea', region:'',
+    fact:"The Arabian Sea is a section of the northern Indian Ocean bounded by the Arabian Peninsula to the west and the Indian subcontinent to the east.",
+    paths: siteBox(15.0, 65.0, 6.0)
+  },
+
+  { id:'caribbean_sea', name:'Caribbean Sea', region:'',
+    fact:"The Caribbean Sea is part of the Atlantic Ocean, bordered by Central America, northern South America and the arc of Caribbean islands known as the Antilles.",
+    paths: siteBox(15.0, -75.0, 5.0)
+  },
+
+  { id:'baltic_sea', name:'Baltic Sea', region:'',
+    fact:"The Baltic Sea is a largely enclosed sea in northern Europe, bordered by Scandinavia, the Baltic states, Germany, Poland and Russia, and connects to the North Sea through the Danish straits.",
+    paths: siteBox(58.5, 19.5, 3.0)
+  },
+
+  { id:'north_sea', name:'North Sea', region:'',
+    fact:"The North Sea lies between Great Britain and continental Europe, bordered by the Netherlands, Germany, Denmark and Norway, and forms part of the Atlantic Ocean.",
+    paths: siteBox(56.0, 3.5, 3.0)
+  },
+
+  { id:'yellow_sea', name:'Yellow Sea', region:'',
+    fact:"The Yellow Sea is a part of the Pacific Ocean lying between mainland China and the Korean Peninsula, named for the pale silt carried into it by rivers such as the Yellow River.",
+    paths: siteBox(35.0, 123.0, 2.5)
+  },
+
+  { id:'south_china_sea', name:'South China Sea', region:'',
+    fact:"The South China Sea is a marginal sea of the Pacific Ocean bordered by China, Vietnam, the Philippines, Malaysia, Brunei and Indonesia, and is one of the world's busiest shipping regions.",
+    paths: siteBox(12.0, 114.0, 6.0)
+  },
+
+  { id:'sea_of_japan', name:'Sea of Japan (East Sea)', region:'',
+    fact:"The Sea of Japan, also known as the East Sea, lies between the Japanese archipelago and the Korean Peninsula and Russian mainland.",
+    paths: siteBox(40.0, 135.0, 3.0)
+  },
+
+  { id:'tasman_sea', name:'Tasman Sea', region:'',
+    fact:"The Tasman Sea separates Australia from New Zealand, forming part of the South Pacific Ocean between the two countries.",
+    paths: siteBox(-40.0, 160.0, 5.0)
+  },
+
+  { id:'andaman_sea', name:'Andaman Sea', region:'',
+    fact:"The Andaman Sea is part of the Indian Ocean lying between the Andaman Islands and the coasts of Myanmar, Thailand and northern Sumatra.",
+    paths: siteBox(10.0, 96.0, 2.5)
+  },
+  { id:'adriatic_sea', name:'Adriatic Sea', region:'',
+  fact:"The Adriatic Sea is a northern arm of the Mediterranean Sea lying between the Italian Peninsula and the Balkan Peninsula, bordered by Italy, Slovenia, Croatia, Bosnia and Herzegovina, Montenegro and Albania.",
+  paths: siteBox(43.5, 16.5, 2.5)
+},
+
+{ id:'aegean_sea', name:'Aegean Sea', region:'',
+  fact:"The Aegean Sea is part of the eastern Mediterranean lying between Greece and Turkey, containing thousands of islands including the Cyclades and Dodecanese.",
+  paths: siteBox(38.5, 25.0, 2.5)
+},
+
+{ id:'ionian_sea', name:'Ionian Sea', region:'',
+  fact:"The Ionian Sea is part of the Mediterranean Sea lying south of the Adriatic, bordered by southern Italy, Albania and western Greece.",
+  paths: siteBox(37.5, 19.5, 3.0)
+},
+
+{ id:'tyrrhenian_sea', name:'Tyrrhenian Sea', region:'',
+  fact:"The Tyrrhenian Sea is part of the western Mediterranean lying between mainland Italy and the islands of Corsica, Sardinia and Sicily.",
+  paths: siteBox(40.0, 12.0, 3.0)
+},
+
+{ id:'sea_of_marmara', name:'Sea of Marmara', region:'',
+  fact:"The Sea of Marmara is an inland sea in northwestern Turkey connecting the Black Sea to the Aegean Sea through the Bosporus and Dardanelles straits.",
+  paths: siteBox(40.8, 28.5, 1.5)
+},
+
+{ id:'norwegian_sea', name:'Norwegian Sea', region:'',
+  fact:"The Norwegian Sea is a marginal sea of the North Atlantic Ocean lying between Norway, Iceland and the island of Jan Mayen.",
+  paths: siteBox(67.0, 3.0, 5.0)
+},
+
+{ id:'barents_sea', name:'Barents Sea', region:'',
+  fact:"The Barents Sea is an Arctic Ocean sea north of Norway and Russia, remaining largely ice-free year-round due to the warm North Atlantic Current.",
+  paths: siteBox(74.0, 40.0, 5.0)
+},
+
+{ id:'bering_sea', name:'Bering Sea', region:'',
+  fact:"The Bering Sea is a northern Pacific sea lying between Alaska and Russia, connected to the Arctic Ocean by the Bering Strait.",
+  paths: siteBox(58.0, -178.0, 6.0)
+},
+
+{ id:'sea_of_okhotsk', name:'Sea of Okhotsk', region:'',
+  fact:"The Sea of Okhotsk is a marginal sea of the northwest Pacific Ocean bordered by Russia's Kamchatka Peninsula, the Kuril Islands, Sakhalin Island and Hokkaido, Japan.",
+  paths: siteBox(53.0, 150.0, 5.0)
+},
+
+{ id:'east_china_sea', name:'East China Sea', region:'',
+  fact:"The East China Sea is a marginal sea of the western Pacific Ocean lying between eastern China, Taiwan, Japan's Ryukyu Islands and South Korea.",
+  paths: siteBox(29.5, 126.5, 4.0)
+},
+
+{ id:'philippine_sea', name:'Philippine Sea', region:'',
+  fact:"The Philippine Sea is the largest sea in the world, lying east of the Philippines and south of Japan in the western Pacific Ocean.",
+  paths: siteBox(20.0, 135.0, 8.0)
+},
+
+{ id:'coral_sea', name:'Coral Sea', region:'',
+  fact:"The Coral Sea lies off northeastern Australia and is home to the Great Barrier Reef, extending toward Papua New Guinea and the Solomon Islands.",
+  paths: siteBox(-18.0, 154.0, 7.0)
+},
+
+{ id:'java_sea', name:'Java Sea', region:'',
+  fact:"The Java Sea is a shallow sea of the western Pacific lying between the Indonesian islands of Java, Borneo, Sumatra and Sulawesi.",
+  paths: siteBox(-5.5, 112.0, 4.0)
+},
+
+{ id:'timor_sea', name:'Timor Sea', region:'',
+  fact:"The Timor Sea lies between northern Australia and the island of Timor, forming part of the eastern Indian Ocean.",
+  paths: siteBox(-11.0, 127.0, 4.0)
+},
+
+{ id:'arafura_sea', name:'Arafura Sea', region:'',
+  fact:"The Arafura Sea lies between northern Australia and southern New Guinea, connecting the Coral Sea with the Timor Sea.",
+  paths: siteBox(-10.0, 136.0, 5.0)
+},
+
+{ id:'sulu_sea', name:'Sulu Sea', region:'',
+  fact:"The Sulu Sea lies in the southwestern Philippines, bordered by the islands of Palawan, Mindoro, Panay and the Sulu Archipelago.",
+  paths: siteBox(9.5, 120.5, 2.5)
+},
+
+{ id:'celebes_sea', name:'Celebes Sea', region:'',
+  fact:"The Celebes Sea, also known as the Sulawesi Sea, lies between the southern Philippines and the Indonesian island of Sulawesi.",
+  paths: siteBox(4.5, 123.5, 3.0)
+},
+
+{ id:'bismarck_sea', name:'Bismarck Sea', region:'',
+  fact:"The Bismarck Sea lies northeast of Papua New Guinea, bounded by New Britain Island and the Admiralty Islands in the southwestern Pacific.",
+  paths: siteBox(-3.0, 148.5, 3.5)
+},
+
+{ id:'solomon_sea', name:'Solomon Sea', region:'',
+  fact:"The Solomon Sea lies between Papua New Guinea and the Solomon Islands, forming part of the southwestern Pacific Ocean.",
+  paths: siteBox(-9.5, 153.0, 4.0)
+},
+
+{ id:'labrador_sea', name:'Labrador Sea', region:'',
+  fact:"The Labrador Sea is a northern Atlantic sea lying between Greenland and the Labrador Peninsula of Canada.",
+  paths: siteBox(59.0, -55.0, 5.0)
+},
+
+{ id:'greenland_sea', name:'Greenland Sea', region:'',
+  fact:"The Greenland Sea is an Arctic Ocean sea lying east of Greenland and west of Svalbard and Iceland.",
+  paths: siteBox(75.0, -5.0, 6.0)
+},
+
+{ id:'sargasso_sea', name:'Sargasso Sea', region:'',
+  fact:"The Sargasso Sea is a unique region of the North Atlantic Ocean defined by ocean currents rather than land, famous for its floating mats of Sargassum seaweed.",
+  paths: siteBox(30.0, -55.0, 7.0)
+},
+
+{ id:'weddell_sea', name:'Weddell Sea', region:'',
+  fact:"The Weddell Sea is a large embayment of the Southern Ocean lying east of the Antarctic Peninsula, noted for its extensive sea ice.",
+  paths: siteBox(-73.0, -40.0, 7.0)
+},
+
+{ id:'ross_sea', name:'Ross Sea', region:'',
+  fact:"The Ross Sea is a deep bay of the Southern Ocean south of New Zealand, renowned for its rich marine ecosystems and the Ross Ice Shelf.",
+  paths: siteBox(-75.0, 175.0, 8.0)
+}
+
+];
+const ROUNDS_PER_GAME = 10; // solo runs pick min(this, ROUNDS.length) at random each time. Challenge mode always uses the exact order sent by the challenger.
+
+/* ---------------- Map setup (world scale — never zoomed to a single country) ---------------- */
+const map = L.map('map', {
+  worldCopyJump:false,
+  dragging:true,
+  touchZoom:true,
+  doubleClickZoom:false,
+  scrollWheelZoom:true,
+  minZoom:2,
+  maxZoom:9,
+  zoomControl:true,
+  attributionControl:true
+}).setView([25, 60], 2.3);
+
+const WORLD_HOME_VIEW = { center:[25, 60], zoom:2.3 };
+
+const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  subdomains:'abcd',
+  maxZoom:19,
+  keepBuffer:4,
+  updateWhenZooming:false,
+  crossOrigin:true
+}).addTo(map);
+
+const labelTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+  subdomains:'abcd', minZoom:4, maxZoom:19, keepBuffer:4, updateWhenZooming:false, crossOrigin:true
+}).addTo(map);
+
+let tilesLoaded = false;
+tiles.on('load', ()=>{ tilesLoaded = true; document.getElementById('map-loading').classList.add('hidden'); });
+setTimeout(()=>{ if(!tilesLoaded) document.getElementById('map-loading').classList.add('hidden'); }, 2500);
+
+/* ---------------- Target icon (shown over the reveal location) ---------------- */
+function waveIconHtml(color, label){
+  return `<div class="mineral-icon-wrap">
+    <svg width="34" height="26" viewBox="0 0 34 26" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2 16c3 3 6 3 9 0s6-3 9 0 6 3 9 0" stroke="${color}" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M2 22c3 3 6 3 9 0s6-3 9 0 6 3 9 0" stroke="${color}" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+    </svg>
+    <span class="m-tag" style="--micon-color:${color}">${label}</span>
+  </div>`;
+}
+function waveDivIcon(color, label){
+  return L.divIcon({
+    className:'',
+    html: waveIconHtml(color, label),
+    iconSize:[34,42],
+    iconAnchor:[17,22]
+  });
+}
+
+/* ---------------- Pin icons ---------------- */
+function pinIcon(color){
+  return L.divIcon({
+    className:'',
+    html:`<svg width="26" height="34" viewBox="0 0 26 34" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.35));">
+      <path d="M13 0C5.8 0 0 5.8 0 13c0 9.5 13 21 13 21s13-11.5 13-21C26 5.8 20.2 0 13 0z" fill="${color}"/>
+      <circle cx="13" cy="13" r="5" fill="#fff"/>
+    </svg>`,
+    iconSize:[26,34],
+    iconAnchor:[13,34]
+  });
+}
+const GUESS_ICON = pinIcon('#F2545F');
+
+/* ---------------- Game state ---------------- */
+let order = [];
+let roundIdx = 0;
+let scores = [];
+let results = [];
+let guessed = false;
+let guessMarker = null;
+let revealLayers = [];
+let mode = 'own';
+let rival = null;
+let currentGameCode = null;
+let challengeCreated = false;
+let resultPosted = false;
+
+function shuffleIdx(n, count){
+  const a = Array.from({length:n}, (_,i)=>i);
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return typeof count === 'number' ? a.slice(0, count) : a;
+}
+
+function setupDots(){
+  const dots = document.getElementById('dots');
+  dots.innerHTML = order.map((_,i)=>`<div class="dot" id="dot-${i}"></div>`).join('');
+}
+function updateDots(){
+  order.forEach((_,i)=>{
+    const d = document.getElementById('dot-'+i);
+    d.classList.toggle('done', i < roundIdx);
+    d.classList.toggle('now', i === roundIdx);
+  });
+}
+
+function setMapVisible(visible){
+  document.getElementById('map-viewport').classList.toggle('screen-covered', !visible);
+}
+setMapVisible(false);
+
+function startFreshGame(){
+  mode = 'own'; rival = null; currentGameCode = null; challengeCreated = false; resultPosted = false;
+  order = shuffleIdx(ROUNDS.length, Math.min(ROUNDS_PER_GAME, ROUNDS.length));
+  beginRound();
+}
+
+function beginRound(){
+  roundIdx = 0; scores = []; results = [];
+  document.getElementById('screen-start').classList.add('hidden');
+  document.getElementById('screen-end').classList.add('hidden');
+  document.getElementById('challenge-flag').classList.toggle('show', mode === 'challenge');
+  setMapVisible(true);
+  setHeaderVisible(false);
+  setupDots();
+  loadRound();
+  setTimeout(()=>{ map.invalidateSize(); }, 50);
+}
+
+function clearRevealLayers(){
+  revealLayers.forEach(l=>{ try{ map.removeLayer(l); }catch(e){} });
+  revealLayers = [];
+}
+
+function loadRound(){
+  guessed = false;
+  clearRevealLayers();
+  if(guessMarker){ map.removeLayer(guessMarker); guessMarker = null; }
+  map.stop();
+  map.flyTo(WORLD_HOME_VIEW.center, WORLD_HOME_VIEW.zoom, { duration: 0.6, easeLinearity: 0.25 });
+  document.getElementById('feedback').classList.remove('show');
+  document.getElementById('legend-line').style.display = 'none';
+  document.getElementById('rival-line').style.display = 'none';
+  document.getElementById('lock-btn').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'none';
+  document.getElementById('tap-hint').style.display = 'flex';
+  document.getElementById('round-label').textContent = `Round ${roundIdx+1} of ${order.length}`;
+  document.getElementById('strait-name').textContent = ROUNDS[order[roundIdx]].name;
+  document.getElementById('strait-region').textContent = ROUNDS[order[roundIdx]].region;
+  updateDots();
+}
+
+/* ---------------- Tap-to-drop / drag-to-adjust pin (native Leaflet marker dragging keeps map panning conflict-free) ---------------- */
+function onMapClick(e){
+  if(guessed) return;
+  if(!guessMarker){
+    guessMarker = L.marker(e.latlng, { icon: GUESS_ICON, draggable: true, autoPan: true }).addTo(map);
+  } else {
+    guessMarker.setLatLng(e.latlng);
+  }
+  document.getElementById('tap-hint').style.display = 'none';
+  document.getElementById('lock-btn').style.display = 'inline-block';
+}
+map.on('click', onMapClick);
+
+/* ---------------- Distance math (equirectangular approximation, fine at this scale) ---------------- */
+function toXY(lat, lng, refLat){
+  const R = 6371;
+  const x = (lng * Math.PI/180) * R * Math.cos(refLat*Math.PI/180);
+  const y = (lat * Math.PI/180) * R;
+  return {x,y};
+}
+function nearestOnSegment(p, a, b){
+  const refLat = (p[0]+a[0]+b[0])/3;
+  const P = toXY(p[0], p[1], refLat), A = toXY(a[0], a[1], refLat), B = toXY(b[0], b[1], refLat);
+  const ABx = B.x-A.x, ABy = B.y-A.y, APx = P.x-A.x, APy = P.y-A.y;
+  const len2 = ABx*ABx+ABy*ABy;
+  let t = len2 === 0 ? 0 : (APx*ABx+APy*ABy)/len2;
+  t = Math.max(0, Math.min(1, t));
+  const Cx = A.x+t*ABx, Cy = A.y+t*ABy;
+  const dx = P.x-Cx, dy = P.y-Cy;
+  return { dist: Math.sqrt(dx*dx+dy*dy), latlng:[ a[0]+t*(b[0]-a[0]), a[1]+t*(b[1]-a[1]) ] };
+}
+/* Ray-casting point-in-polygon test on [lat,lng] pairs */
+function pointInPolygon(point, vs){
+  const x = point[1], y = point[0];
+  let inside = false;
+  for(let i = 0, j = vs.length - 1; i < vs.length; j = i++){
+    const xi = vs[i][1], yi = vs[i][0];
+    const xj = vs[j][1], yj = vs[j][0];
+    const intersect = ((yi > y) !== (yj > y)) &&
+      (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+    if(intersect) inside = !inside;
+  }
+  return inside;
+}
+function nearestOnPaths(p, paths){
+  // Inside the target's marker box? Full credit — distance 0.
+  for(const path of paths){
+    if(pointInPolygon(p, path)){
+      return { dist: 0, latlng: p };
+    }
+  }
+  // Otherwise, distance to the nearest edge (existing near-miss logic).
+  let best = null;
+  paths.forEach(path=>{
+    for(let i=0;i<path.length-1;i++){
+      const r = nearestOnSegment(p, path[i], path[i+1]);
+      if(!best || r.dist < best.dist) best = r;
+    }
+  });
+  return best;
+}
+
+/* ---------------- Scoring (scaled up for world-level distances) ---------------- */
+function scoreFor(km){ return Math.max(0, Math.round(100 - km/40)); }
+function verdictFor(km){
+  if(km <= 80) return {label:'Bullseye — right on it!', cls:'good', icon:'target'};
+  if(km < 250) return {label:'Excellent placement!', cls:'good', icon:'check'};
+  if(km < 700) return {label:'Nearby — solid instinct.', cls:'mid', icon:'compass'};
+  if(km < 1800) return {label:'Right general region.', cls:'mid', icon:'compass'};
+  return {label:'Way off course — but noted.', cls:'bad', icon:'x'};
+}
+
+const VERDICT_ICONS = {
+  target: '<svg class="v-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" style="fill:currentColor"/></svg>',
+  check: '<svg class="v-ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>',
+  compass: '<svg class="v-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M16 8l-5 3-1 5 5-3z"/></svg>',
+  x: '<svg class="v-ic" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>'
+};
+const TROPHY_ICON = '<svg viewBox="0 0 24 24"><path d="M8 4h8v3a4 4 0 01-4 4 4 4 0 01-4-4V4z"/><path d="M8 4H5a3 3 0 003 3M16 4h3a3 3 0 01-3 3"/><path d="M12 11v4"/><path d="M9 20h6"/><path d="M10 17h4v3h-4z"/></svg>';
+
+/* Verdict → color used for the water reveal (same palette as the rest of the UI) */
+const VERDICT_FLOW_COLOR = { good:'#4A9E7A', mid:'#D4A853', bad:'#F2545F' };
+
+function animateCount(el, to, duration){
+  duration = duration || 900;
+  const startTime = performance.now();
+  function tick(now){
+    const p = Math.min(1, (now-startTime)/duration);
+    const eased = 1 - Math.pow(1-p, 3);
+    el.textContent = Math.round(to*eased) + '%';
+    if(p < 1) requestAnimationFrame(tick);
+    else el.textContent = to + '%';
+  }
+  requestAnimationFrame(tick);
+}
+
+function triggerRoundEffect(cls){
+  const feedback = document.getElementById('feedback');
+  const scorePill = document.querySelector('.score-pill');
+  const mapViewport = document.getElementById('map-viewport');
+  if(cls === 'good'){
+    fireConfetti({count:26, maxFrames:90, spread:0.35});
+    [feedback, scorePill].forEach(el=>{
+      if(!el) return;
+      el.classList.remove('fx-pulse-good'); void el.offsetWidth;
+      el.classList.add('fx-pulse-good');
+      setTimeout(()=> el.classList.remove('fx-pulse-good'), 900);
+    });
+  } else if(cls === 'bad'){
+    [mapViewport, feedback].forEach(el=>{
+      if(!el) return;
+      el.classList.remove('fx-shake'); void el.offsetWidth;
+      el.classList.add('fx-shake');
+      setTimeout(()=> el.classList.remove('fx-shake'), 550);
+    });
+    feedback.classList.remove('fx-flash-bad'); void feedback.offsetWidth;
+    feedback.classList.add('fx-flash-bad');
+    setTimeout(()=> feedback.classList.remove('fx-flash-bad'), 550);
+  } else {
+    if(feedback){
+      feedback.classList.remove('fx-pulse-mid'); void feedback.offsetWidth;
+      feedback.classList.add('fx-pulse-mid');
+      setTimeout(()=> feedback.classList.remove('fx-pulse-mid'), 700);
+    }
+  }
+}
+
+function lockGuess(){
+  if(guessed || !guessMarker) return;
+  guessed = true;
+
+  const round = ROUNDS[order[roundIdx]];
+  const gll = guessMarker.getLatLng();
+  const gLatLng = [gll.lat, gll.lng];
+  const nearest = nearestOnPaths(gLatLng, round.paths);
+  const km = Math.round(nearest.dist);
+
+  const v = verdictFor(km);
+  const pts = scoreFor(km);
+  scores.push(pts);
+  results.push({name:round.name, km, pts, cls:v.cls});
+
+  document.getElementById('lock-btn').style.display = 'none';
+
+  // Fly the map to fit both the guess and the real sea, so the
+  // player actually sees where it lies — even if they'd panned elsewhere.
+  const boundsPoints = [gLatLng];
+  round.paths.forEach(path=> path.forEach(pt=> boundsPoints.push(pt)));
+  const bounds = L.latLngBounds(boundsPoints);
+
+  let revealed = false;
+  function fireReveal(){
+    if(revealed) return;
+    revealed = true;
+    revealResult(round, gLatLng, nearest, km, v, pts);
+  }
+  map.once('moveend', fireReveal);
+  map.flyToBounds(bounds, { padding:[80,80], maxZoom:7, duration:1.1, easeLinearity:0.25 });
+  setTimeout(fireReveal, 1600); // fallback in case flyToBounds doesn't fire moveend
+}
+
+/* ---------------- Water reveal (replaces country highlighting) ----------------
+   Draws the sea's marker box as a gently pulsing, filled water outline —
+   an animated dashed border plus a soft fill wash — so the player sees the
+   sea's real extent without any political boundary being drawn around it. */
+function drawFlowEffect(round, cls){
+  const color = VERDICT_FLOW_COLOR[cls] || '#4E9BD8';
+  const center = centerOfPaths(round.paths);
+
+  round.paths.forEach((path, i)=>{
+    const fill = L.polygon(path, { color: color, weight:0, fillColor: color, fillOpacity:0.14, className:'flow-fill', interactive:false }).addTo(map);
+    revealLayers.push(fill);
+    const line = L.polyline(path, { color: color, weight:3.5, opacity:0.9, className:'flow-line', dashArray:'8 10' }).addTo(map);
+    revealLayers.push(line);
+    if(i === 0){
+      const mid = path[Math.floor(path.length/2)];
+      const label = L.marker(mid, {
+        icon: L.divIcon({ className:'', html:`<div class="line-label" style="background:${color}">${round.name}</div>`, iconSize:[0,0] }),
+        interactive:false
+      }).addTo(map);
+      revealLayers.push(label);
+    }
+  });
+
+  // Target icon marker, placed directly over the sea's location.
+  const targetMarker = L.marker(center, {
+    icon: waveDivIcon(color, round.name),
+    interactive:false
+  }).addTo(map);
+  revealLayers.push(targetMarker);
+}
+
+function revealResult(round, gLatLng, nearest, km, v, pts){
+  clearRevealLayers();
+
+  drawFlowEffect(round, v.cls);
+
+  const connector = L.polyline([gLatLng, nearest.latlng], { color:'#F2545F', weight:2, opacity:0.85, dashArray:'6,6' }).addTo(map);
+  revealLayers.push(connector);
+
+  document.getElementById('verdict-text').innerHTML = `${VERDICT_ICONS[v.icon]} ${v.label}  (${km===0?'right on it':km+' km off'} · +${pts} pts)`;
+  document.getElementById('verdict-text').className = 'verdict ' + v.cls;
+  document.getElementById('fact-text').textContent = round.fact;
+  document.getElementById('legend-line').style.display = 'flex';
+
+  const rivalLine = document.getElementById('rival-line');
+  if(mode === 'challenge' && rival && Array.isArray(rival.pts)){
+    const theirPts = rival.pts[roundIdx];
+    if(pts > theirPts){ rivalLine.textContent = `You beat your rival on this one — they scored +${theirPts} pts here.`; }
+    else if(pts < theirPts){ rivalLine.textContent = `Your rival had the edge here — they scored +${theirPts} pts.`; }
+    else{ rivalLine.textContent = `Dead even with your rival on this target — +${theirPts} pts each.`; }
+    rivalLine.style.display = 'block';
+  }
+
+  document.getElementById('feedback').classList.add('show');
+  document.getElementById('next-btn').style.display = 'inline-block';
+  document.getElementById('next-btn').textContent = roundIdx === order.length-1 ? 'See Results →' : 'Next Target →';
+
+  const avg = Math.round(scores.reduce((a,b)=>a+b,0)/scores.length);
+  document.getElementById('score-live').textContent = avg + '%';
+
+  updateDots();
+  triggerRoundEffect(v.cls);
+}
+
+function nextRound(){
+  roundIdx++;
+  if(roundIdx >= order.length){ endGame(); return; }
+  loadRound();
+}
+
+let currentAvgScore = 0;
+
+async function endGame(){
+  const avg = Math.round(scores.reduce((a,b)=>a+b,0)/scores.length);
+  currentAvgScore = avg;
+  animateCount(document.getElementById('final-score'), avg);
+
+  const heroIcon = document.getElementById('score-hero-icon');
+  if(heroIcon){
+    heroIcon.innerHTML = avg >= 65
+      ? TROPHY_ICON
+      : '<svg viewBox="0 0 24 24"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>';
+  }
+
+  let msg;
+  if(avg >= 85) msg = "Master of world seas geography. Exam-style map questions won't stand a chance.";
+  else if(avg >= 65) msg = "Sharp sense of the map — a seasoned reading of the world's key seas and the coasts they border.";
+  else if(avg >= 40) msg = "Solid run. These seas span a lot of coastline — chart again to sharpen your eye.";
+  else msg = "";
+  document.getElementById('final-msg').textContent = msg;
+
+  const vsBlock = document.getElementById('vs-block');
+  const vsCard = document.getElementById('vs-card');
+  vsCard.classList.remove('fx-winner');
+
+  const scoreHeroEl = document.getElementById('score-hero');
+  const endKickerEl = document.getElementById('end-kicker');
+  const finalMsgEl = document.getElementById('final-msg');
+
+  if(mode === 'challenge'){
+    if(scoreHeroEl) scoreHeroEl.style.display = 'none';
+    if(finalMsgEl) finalMsgEl.style.marginTop = '28px';
+  } else {
+    if(scoreHeroEl) scoreHeroEl.style.display = '';
+    endKickerEl.textContent = 'Mission Complete';
+    if(finalMsgEl) finalMsgEl.style.marginTop = '';
+  }
+
+  if(mode === 'challenge' && rival){
+    vsBlock.style.display = 'block';
+    document.getElementById('vs-rival-name').textContent = rival.name;
+    animateCount(document.getElementById('vs-rival-score'), rival.score, 700);
+    setTimeout(()=> animateCount(document.getElementById('vs-you-score'), avg, 700), 250);
+
+    const vb = document.getElementById('verdict-box');
+    vb.classList.remove('win','lose','tie');
+    if(avg > rival.score){
+      vb.innerHTML = TROPHY_ICON + ' You out-read your rival!';
+      vb.classList.add('win');
+      vsCard.classList.add('fx-winner');
+      fireConfetti({count:110, maxFrames:230, spread:1});
+    }
+    else if(avg < rival.score){
+      vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> Your rival read the map closer. Chart again!';
+      vb.classList.add('lose');
+    }
+    else {
+      vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg> Dead even — perfectly matched navigators.';
+      vb.classList.add('tie');
+    }
+
+    renderBreakdown(scores, rival.pts);
+    postMyResultOnce(currentGameCode, avg, scores);
+  } else {
+    vsBlock.style.display = 'none';
+    renderSoloBreakdown();
+    if(avg >= 85) fireConfetti({count:70, maxFrames:200, spread:1});
+  }
+
+  resetChallengeLinkUI();
+
+  document.getElementById('screen-end').classList.remove('hidden');
+  setMapVisible(false);
+  setHeaderVisible(true);
+}
+
+function renderBreakdown(myPts, theirPts){
+  const box = document.getElementById('breakdown-list');
+  box.innerHTML = '';
+  order.forEach((rIdx, i)=>{
+    const mine = myPts[i], theirs = Array.isArray(theirPts) ? theirPts[i] : null;
+    const row = document.createElement('div');
+    row.className = 'b-row';
+    row.style.animationDelay = (i * 0.05) + 's';
+    if(theirs === null || theirs === undefined){
+      row.innerHTML = `<span class="b-name">${ROUNDS[rIdx].name}</span>
+        <span class="b-marks"><span class="b-mk ok">${mine}</span></span>`;
+    } else {
+      row.innerHTML = `<span class="b-name">${ROUNDS[rIdx].name}</span>
+        <span class="b-marks">
+          <span class="b-mk ${theirs > mine ? 'ok' : 'no'}" title="Rival">${theirs}</span>
+          <span class="b-mk ${mine >= theirs ? 'ok' : 'no'}" title="You">${mine}</span>
+        </span>`;
+    }
+    box.appendChild(row);
+  });
+}
+
+function renderSoloBreakdown(){
+  const box = document.getElementById('breakdown-list');
+  box.innerHTML = '';
+  results.forEach((r,i)=>{
+    const row = document.createElement('div');
+    row.className = 'b-row';
+    row.style.animationDelay = (i * 0.05) + 's';
+    row.innerHTML = `<span class="b-idx">${i+1}</span>
+      <span class="b-name">${r.name}</span>
+      <span class="b-dist">${r.km} km off</span>
+      <span class="b-pts ${r.cls}">+${r.pts}</span>`;
+    box.appendChild(row);
+  });
+}
+
+/* ============================================================
+   API HELPERS — Cloudflare Worker (shared KV across all games)
+   ============================================================ */
+function randomCode(){
+  const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+  let out = '';
+  for(let i=0;i<6;i++) out += chars[Math.floor(Math.random()*chars.length)];
+  return out;
+}
+function namespacedCode(rawCode){ return `${GAME_TYPE}:${rawCode}`; }
+
+async function createChallengeOnDemand(avgScore, myScores){
+  if(challengeCreated && currentGameCode){ return currentGameCode; }
+  const rawCode = randomCode();
+  const gameCode = namespacedCode(rawCode);
+  const res = await fetch(`${API_BASE}/game/create`, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      gameCode,
+      challengerName: 'A navigator',
+      challengerScore: avgScore,
+      challengerResults: myScores,
+      order
+    })
+  });
+  const data = await res.json();
+  if(!res.ok){ throw new Error(data.error || 'Could not create challenge link.'); }
+  challengeCreated = true;
+  currentGameCode = gameCode;
+  return gameCode;
+}
+
+async function postMyResultOnce(gameCode, avgScore, myScores){
+  if(!gameCode) return;
+  const flagKey = 'posted-' + gameCode;
+  if(resultPosted || sessionStorage.getItem(flagKey)) return;
+  resultPosted = true;
+  sessionStorage.setItem(flagKey, '1');
+  try{
+    await fetch(`${API_BASE}/game/update`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        gameCode,
+        challengedName: 'A navigator',
+        challengedScore: avgScore,
+        challengedResults: myScores
+      })
+    });
+  }catch(e){ console.warn('Could not post result:', e); }
+}
+
+async function fetchGame(gameCode){
+  const cacheKey = 'game-' + gameCode;
+  const cached = sessionStorage.getItem(cacheKey);
+  if(cached){ try{ return JSON.parse(cached); }catch(e){} }
+  const res = await fetch(`${API_BASE}/game/get?gameCode=${encodeURIComponent(gameCode)}`);
+  const data = await res.json();
+  if(!res.ok){ throw new Error(data.error || 'Challenge not found.'); }
+  sessionStorage.setItem(cacheKey, JSON.stringify(data));
+  return data;
+}
+// 🔧 FIX: namespaced per game (was 'hn-my-challenges' shared across all Navigator games)
+const MY_CHALLENGES_KEY = 'my-challenges-' + GAME_TYPE;
+const CHALLENGE_MAX_AGE_MS = 60 * 24 * 60 * 60 * 1000; // matches your worker's 60-day TTL
+
+function myChallenges(){
+  try{ return JSON.parse(localStorage.getItem(MY_CHALLENGES_KEY) || '{}'); }
+  catch(e){ return {}; }
+}
+
+function saveMyChallenge(gameCode, avg, scoreArr){
+  const all = myChallenges();
+
+  // 🔧 FIX: prune anything past the worker's TTL before adding the new one,
+  // so the object can't grow unbounded across a player's history.
+  const now = Date.now();
+  Object.keys(all).forEach(key => {
+    if (!all[key].savedAt || (now - all[key].savedAt) > CHALLENGE_MAX_AGE_MS) {
+      delete all[key];
+    }
+  });
+
+  all[gameCode] = { avg, scores: scoreArr, savedAt: now };
+  try{
+    localStorage.setItem(MY_CHALLENGES_KEY, JSON.stringify(all));
+  }catch(e){
+    // 🔧 FIX: quota errors no longer fail silently — at least surface it
+    console.warn('Could not save challenge locally (storage quota?):', e);
+  }
+}
+
+async function checkForReply(){
+  if(!currentGameCode) return;
+  const btn = document.getElementById('check-reply-btn');
+  btn.disabled = true; btn.textContent = 'Checking…';
+  try{
+    sessionStorage.removeItem('game-' + currentGameCode);
+    const data = await fetchGame(currentGameCode);
+    if(data.status === 'completed' && data.challengedResults){
+      showReplyComparison(data);
+    } else {
+      showToast("They haven't played yet — check back later");
+    }
+  }catch(e){ showToast('Could not check right now'); }
+  btn.disabled = false; btn.textContent = "Check if they've replied";
+}
+
+function showReplyComparison(data){
+  rival = { name: data.challengedName || 'A navigator', score: data.challengedScore, pts: data.challengedResults };
+  document.getElementById('vs-block').style.display = 'block';
+  document.getElementById('vs-rival-name').textContent = rival.name;
+  animateCount(document.getElementById('vs-rival-score'), rival.score, 700);
+  animateCount(document.getElementById('vs-you-score'), currentAvgScore, 700);
+  const vb = document.getElementById('verdict-box');
+  vb.classList.remove('win','lose','tie');
+  const vsCard = document.getElementById('vs-card');
+  vsCard.classList.remove('fx-winner');
+  if(currentAvgScore > rival.score){
+    vb.innerHTML = TROPHY_ICON + ' You out-read them!';
+    vb.classList.add('win'); vsCard.classList.add('fx-winner');
+    fireConfetti({count:110, maxFrames:230, spread:1});
+  } else if(currentAvgScore < rival.score){
+    vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> They read the map closer this time.';
+    vb.classList.add('lose');
+  } else {
+    vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg> Dead even!';
+    vb.classList.add('tie');
+  }
+  renderBreakdown(scores, rival.pts);
+  document.getElementById('check-reply-btn').style.display = 'none';
+}
+
+/* ---------------- Challenge link build / share (on-demand) ---------------- */
+function resetChallengeLinkUI(){
+  const linkInput = document.getElementById('challenge-link');
+  const copyBtn = document.getElementById('copy-link-btn');
+  linkInput.value = '';
+  linkInput.placeholder = 'Tap Copy to generate your link…';
+  copyBtn.textContent = 'Copy';
+  copyBtn.classList.remove('copied');
+  copyBtn.disabled = false;
+  ['wa-share','tg-share'].forEach(id=>{ document.getElementById(id).classList.add('disabled'); });
+}
+function buildLinkFromGameCode(gameCode){
+  const base = window.location.origin + window.location.pathname;
+  return base + '?g=' + encodeURIComponent(gameCode);
+}
+
+async function ensureChallengeLinkReady(){
+  const linkInput = document.getElementById('challenge-link');
+  if(linkInput.value) return linkInput.value;
+  const copyBtn = document.getElementById('copy-link-btn');
+  copyBtn.disabled = true;
+  copyBtn.textContent = '...';
+  try{
+    const gameCode = await createChallengeOnDemand(currentAvgScore, scores);
+    saveMyChallenge(gameCode, currentAvgScore, scores);
+    document.getElementById('check-reply-btn').style.display = 'inline-block';
+    const link = buildLinkFromGameCode(gameCode);
+    linkInput.value = link;
+    const msg = `🌊 I just charted the World Seas Navigator and scored ${currentAvgScore}%. Think you can pin the world's seas closer? Take the same targets: ${link}`;
+    document.getElementById('wa-share').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
+    document.getElementById('tg-share').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent(`🌊 Think you can beat my World Seas Navigator score of ${currentAvgScore}%?`);
+    ['wa-share','tg-share'].forEach(id=>{ document.getElementById(id).classList.remove('disabled'); });
+    copyBtn.disabled = false;
+    copyBtn.textContent = 'Copy';
+    return link;
+  }catch(e){
+    copyBtn.disabled = false;
+    copyBtn.textContent = 'Copy';
+    showToast('Could not create link — try again');
+    throw e;
+  }
+}
+
+async function copyChallengeLink(){
+  const copyBtn = document.getElementById('copy-link-btn');
+  try{
+    const link = await ensureChallengeLinkReady();
+    const input = document.getElementById('challenge-link');
+    input.select();
+    function done(){
+      showToast('Challenge link copied');
+      copyBtn.textContent = 'Copied ✓';
+      copyBtn.classList.add('copied');
+      setTimeout(()=>{ copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 1800);
+    }
+    navigator.clipboard.writeText(link).then(done).catch(()=>{ document.execCommand('copy'); done(); });
+  }catch(e){ /* error already toasted */ }
+}
+
+async function handleShareIconClick(evt, which){
+  evt.preventDefault();
+  try{
+    await ensureChallengeLinkReady();
+    const href = document.getElementById(which === 'wa' ? 'wa-share' : 'tg-share').href;
+    window.open(href, '_blank', 'noopener');
+  }catch(e){ /* error already toasted */ }
+  return false;
+}
+
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.textContent = msg || 'Copied to clipboard';
+  t.classList.add('show');
+  setTimeout(()=> t.classList.remove('show'), 1800);
+}
+
+/* ---------------- Accepting a challenge ---------------- */
+function parseChallengeString(raw){
+  raw = (raw || '').trim();
+  if(!raw) throw new Error('Paste a challenge link first.');
+  let g;
+  if(raw.includes('?')){
+    const qs = raw.split('?').slice(1).join('?');
+    const params = new URLSearchParams(qs);
+    g = params.get('g');
+  } else if(/(^|[&?])g=/.test(raw)){
+    const params2 = new URLSearchParams(raw);
+    g = params2.get('g');
+  } else { g = raw; }
+  if(!g) throw new Error('This link is missing its challenge code.');
+  return g;
+}
+
+function loadChallengeGame(gameCode, gameData){
+  mode = 'challenge';
+  rival = { name: gameData.challengerName || 'A navigator', score: gameData.challengerScore, pts: gameData.challengerResults };
+  order = gameData.order;
+  currentGameCode = gameCode;
+  resultPosted = false;
+  beginRound();
+}
+
+let pendingChallenge = null;
+
+function showChallengeInvite(gameCode, gameData){
+  pendingChallenge = { gameCode, gameData };
+  document.getElementById('screen-start').classList.add('hidden');
+  document.getElementById('screen-end').classList.add('hidden');
+  document.getElementById('invite-rival-name').textContent = gameData.challengerName || 'A navigator';
+  document.getElementById('screen-invite').classList.remove('hidden');
+  setMapVisible(false);
+  setHeaderVisible(true);
+}
+
+function acceptChallengeInvite(){
+  if(!pendingChallenge) return;
+  const { gameCode, gameData } = pendingChallenge;
+  pendingChallenge = null;
+  document.getElementById('screen-invite').classList.add('hidden');
+  loadChallengeGame(gameCode, gameData);
+}
+
+function declineChallengeInvite(){
+  pendingChallenge = null;
+  document.getElementById('screen-invite').classList.add('hidden');
+  document.getElementById('screen-start').classList.remove('hidden');
+  setHeaderVisible(true);
+  try{
+    const url = new URL(window.location.href);
+    url.searchParams.delete('g');
+    window.history.replaceState({}, '', url.toString());
+  }catch(e){}
+}
+
+async function acceptPastedChallenge(){
+  const raw = document.getElementById('paste-input').value;
+  const errBox = document.getElementById('paste-err');
+  errBox.style.display = 'none';
+  try{
+    const gameCode = parseChallengeString(raw);
+    const gameData = await fetchGame(gameCode);
+    showChallengeInvite(gameCode, gameData);
+  }catch(e){
+    errBox.textContent = e.message || 'Could not read that challenge link.';
+    errBox.style.display = 'block';
+  }
+}
+
+(function autoDetectChallenge(){
+  try{
+    const params = new URLSearchParams(window.location.search);
+    const g = params.get('g');
+    if(!g) return;
+    const mine = myChallenges();
+    if(mine[g]){
+      fetchGame(g).then(data=>{
+        currentGameCode = g;
+        currentAvgScore = mine[g].avg;
+        scores = mine[g].scores;
+        mode = 'challenge';
+        document.getElementById('screen-start').classList.add('hidden');
+        document.getElementById('score-hero').style.display = 'none';
+        document.getElementById('final-score').textContent = currentAvgScore + '%';
+        document.getElementById('final-msg').textContent = '';
+        document.getElementById('screen-end').classList.remove('hidden');
+        setMapVisible(false);
+        setHeaderVisible(true);
+        if(data.status === 'completed' && data.challengedResults){
+          showReplyComparison(data);
+        } else {
+          document.getElementById('check-reply-btn').style.display = 'inline-block';
+          showToast("Still waiting on your friend to play");
+        }
+      }).catch(e=>console.warn('Could not load your challenge:', e));
+      return;
+    }
+    fetchGame(g).then(gameData=>{ showChallengeInvite(g, gameData); })
+      .catch(e=>{ console.warn('Could not load challenge from URL:', e); });
+  }catch(e){ /* ignore malformed links, fall back to start screen */ }
+})();
+
+/* ---------------- Confetti ---------------- */
+function fireConfetti(opts){
+  opts = opts || {};
+  const count = opts.count || 70;
+  const maxFrames = opts.maxFrames || 200;
+  const spread = opts.spread || 1;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const colors = ['#D4A853', '#EAC072', '#4A9E7A', '#4E9BD8'];
+  const canvas = document.createElement('canvas');
+  canvas.id = 'confettiCanvas';
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  document.body.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  const midX = canvas.width/2;
+  const halfSpread = (canvas.width*spread)/2;
+  const pieces = Array.from({length:count}, ()=>({
+    x: midX + (Math.random()*2-1)*halfSpread,
+    y: -20 - Math.random()*canvas.height*0.3,
+    w: 5+Math.random()*4, h: 7+Math.random()*5,
+    color: colors[Math.floor(Math.random()*colors.length)],
+    vx: (Math.random()-0.5)*3, vy: 2+Math.random()*3,
+    rot: Math.random()*Math.PI, vrot: (Math.random()-0.5)*0.3
+  }));
+  let frame = 0;
+  function loop(){
+    frame++;
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pieces.forEach(p=>{
+      p.x += p.vx; p.y += p.vy; p.vy += 0.03; p.rot += p.vrot;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+      ctx.fillStyle = p.color; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+      ctx.restore();
+    });
+    if(frame < maxFrames) requestAnimationFrame(loop);
+    else canvas.remove();
+  }
+  requestAnimationFrame(loop);
+}
+
+/* ---------------- Responsive resize handling ---------------- */
+let lastKnownWidth = window.innerWidth;
+let resizeSettleTimer = null;
+function handleViewportSettle(){
+  clearTimeout(resizeSettleTimer);
+  resizeSettleTimer = setTimeout(function(){
+    const widthChanged = window.innerWidth !== lastKnownWidth;
+    lastKnownWidth = window.innerWidth;
+    if (widthChanged) syncNavHeight();
+    try { map.invalidateSize(); } catch(e){}
+  }, 150);
+}
+window.addEventListener('resize', handleViewportSettle);
+window.visualViewport && window.visualViewport.addEventListener('resize', handleViewportSettle);
+setTimeout(()=> { try { map.invalidateSize(); } catch(e){} }, 200);
+/* ---------------- AdSense: push once per real page load ---------------- */
+window.addEventListener('load', function() {
+  try {
+    document.querySelectorAll('.ad-slot .adsbygoogle').forEach(function() {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    });
+  } catch (e) { console.warn('AdSense not ready yet:', e); }
+});
+  /* Reveal an ad slot's space only once Google actually fills it — keeps the
+   push() call (and thus the real ad request Google's reviewer sees) fully
+   intact, just avoids reserving visible space for a blank/unfilled slot. */
+document.querySelectorAll('.ad-slot').forEach(function(slot){
+  const ins = slot.querySelector('.adsbygoogle');
+  if(!ins) return;
+  const check = () => {
+    if(ins.getAttribute('data-ad-status') === 'filled'){
+      slot.classList.add('ad-filled');
+    }
+  };
+  check();
+  new MutationObserver(check).observe(ins, { attributes:true, attributeFilter:['data-ad-status'] });
+});
+</script>
+</body>
+</html>
