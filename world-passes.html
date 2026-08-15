@@ -1053,6 +1053,25 @@ let tilesLoaded = false;
 tiles.on('load', ()=>{ tilesLoaded = true; document.getElementById('map-loading').classList.add('hidden'); });
 setTimeout(()=>{ if(!tilesLoaded) document.getElementById('map-loading').classList.add('hidden'); }, 2500);
 
+  /* ---------------- India boundary overlay ---------------- */
+const INDIA_BOUNDARY_URLS = [
+  'https://raw.githubusercontent.com/datameet/maps/master/Country/india-land-simplified.geojson',
+  'https://cdn.jsdelivr.net/gh/datameet/maps@master/Country/india-land-simplified.geojson'
+];
+async function loadIndiaBoundary(){
+  for(const url of INDIA_BOUNDARY_URLS){
+    try{
+      const res = await fetch(url);
+      if(!res.ok) continue;
+      const geo = await res.json();
+      L.geoJSON(geo, { interactive:false, style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#D4A853', fillOpacity:0.06 } }).addTo(map);
+      return;
+    }catch(e){ console.warn('India boundary overlay source failed, trying next:', url, e); }
+  }
+  console.warn('India boundary overlay: all sources failed — falling back to base tiles only.');
+}
+loadIndiaBoundary();
+
 /* ---------------- World countries overlay (for round-result highlighting) ----------------
    Highlights just the COUNTRY (or countries) a pass/crossing lies in — mirrors the state
    highlighting used by the India-only Navigator games, but against a world boundary set. */
