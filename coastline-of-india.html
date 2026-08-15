@@ -1093,15 +1093,14 @@ function coastIconHtml(color, label){
       <path d="M1 9c3-4 6-4 9 0s6 4 9 0 6-4 9 0 6 4 7 4" fill="none" stroke="${color}" stroke-width="2.6" stroke-linecap="round"/>
       <path d="M1 16c3-4 6-4 9 0s6 4 9 0 6-4 9 0 6 4 7 4" fill="none" stroke="${color}" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>
     </svg>
-    <span class="c-tag" style="--cicon-color:${color}">${label}</span>
   </div>`;
 }
 function coastDivIcon(color, label){
   return L.divIcon({
     className:'',
     html: coastIconHtml(color, label),
-    iconSize:[36,46],
-    iconAnchor:[18,23]
+    iconSize:[36,26],
+    iconAnchor:[18,13]
   });
 }
 
