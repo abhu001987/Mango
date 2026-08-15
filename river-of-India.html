@@ -7,7 +7,7 @@
 crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>River Navigator — India Rivers Quiz | MapiDesk</title>
-<meta name="description" content="Test your knowledge of India's rivers with an interactive geography map quiz. Pick out the real course of the Ganga, Yamuna, Brahmaputra, Godavari and more, and sharpen your Indian geography skills.">
+<meta name="description" content="Test your knowledge of India's rivers with an interactive geography map quiz. Pick out the real course of the Ganga, Yamuna, Brahmaputra, Godavari, Krishna, Narmada and more, and sharpen your Indian geography skills.">
 <link rel="icon" type="image/png" href="/images/Mapidesk_Icon-removebg-preview.png" />
 <link rel="apple-touch-icon" href="/images/Mapidesk_Icon-removebg-preview.png" />
 
@@ -528,7 +528,7 @@ crossorigin="anonymous"></script>
             Chart the Waters
           </div>
           <h1> River <span>Navigator</span></h1>
-<p class="sub">Test your knowledge of India's rivers. Two courses are drawn on the map — pick out the real path of the Ganga, Yamuna, Brahmaputra, Godavari and more.</p>        </div>
+<p class="sub">Test your knowledge of India's rivers. Four courses are drawn on the map — pick out the real path of the Ganga, Yamuna, Brahmaputra, Godavari and more.</p>        </div>
       </div>
 
       <div class="info-cards">
@@ -589,7 +589,7 @@ crossorigin="anonymous"></script>
           </div>
           <div class="step">
             <div class="step-num">2</div>
-            <div class="step-text"><div class="t">Tap the Line</div><div class="d">Two river courses are drawn — pick the one you think is right</div></div>
+            <div class="step-text"><div class="t">Tap the Line</div><div class="d">Four river courses are drawn — pick the one you think is right</div></div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
@@ -645,7 +645,7 @@ crossorigin="anonymous"></script>
             </div>
           </div>
           <div class="info-body">
-            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Two river courses are drawn for each round — tap the one that matches the name shown. At the end you'll get a full head-to-head breakdown.</p>
+            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Four river courses are drawn for each round — tap the one that matches the name shown. At the end you'll get a full head-to-head breakdown.</p>
           </div>
         </div>
       </div>
@@ -782,7 +782,7 @@ crossorigin="anonymous"></script>
     </div>
     <div class="hint-tap" id="tap-hint">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
-      Tap either river line on the map to make your pick
+      Tap the river line you think is right to make your pick
     </div>
     <button class="btn btn-teal" id="lock-btn" style="display:none" onclick="lockGuess()">Lock In Pick</button>
     <button class="btn btn-primary" id="next-btn" style="display:none" onclick="nextRound()">Next Target →</button>
@@ -845,19 +845,18 @@ function setHeaderVisible(visible){
    INDIA RIVERS DATA
    Each entry is a named river with an approximate course (an array
    of [lat,lng] points, roughly following its real path) and the
-   states it flows through. `decoy` names another entry's id — that's
-   the "wrong" river drawn alongside this one when this river comes up
-   as the target. To add more rivers later, just push a new object
-   into ROUNDS with its own path/states/fact, and point a `decoy` at
-   it from whichever existing river should pair against it (and vice
-   versa, if you want it to show up as a target too).
+   states it flows through. On each round, the target river is drawn
+   alongside 3 randomly-picked decoy rivers from the rest of the list
+   — so with 6 rivers total, every round now shows 4 candidate lines
+   on the map. To add more rivers later, just push a new object into
+   ROUNDS with its own path/states/fact — no manual decoy wiring
+   needed, decoys are chosen automatically at random each round.
    ============================================================ */
 const ROUNDS = [
 
   { id:'ganga', name:'Ganga', region:'',
     fact:"India's most sacred river, rising at Gangotri in the Himalayas and flowing across the Gangetic Plain before meeting the Bay of Bengal through the Sundarbans delta — the largest river basin in the country.",
     states:['Uttarakhand','Uttar Pradesh','Bihar','Jharkhand','West Bengal'],
-    decoy:'yamuna',
     path:[
       [30.99,78.93],[29.95,78.16],[28.65,79.30],[27.15,79.95],[26.45,80.35],
       [25.90,81.25],[25.43,81.85],[25.32,83.00],[25.61,85.14],[25.24,86.97],
@@ -868,7 +867,6 @@ const ROUNDS = [
   { id:'yamuna', name:'Yamuna', region:'',
     fact:"The largest tributary of the Ganga, rising at Yamunotri glacier and flowing past Delhi, Mathura and Agra before merging with the Ganga at the Triveni Sangam in Prayagraj.",
     states:['Uttarakhand','Himachal Pradesh','Haryana','Delhi','Uttar Pradesh'],
-    decoy:'ganga',
     path:[
       [31.02,78.45],[30.55,77.90],[30.13,77.65],[29.45,77.60],[28.95,77.45],
       [28.60,77.23],[27.90,77.55],[27.49,77.67],[27.18,78.02],[26.75,79.15],
@@ -879,7 +877,6 @@ const ROUNDS = [
   { id:'brahmaputra', name:'Brahmaputra', region:'',
     fact:"One of Asia's great rivers, entering India from Tibet through Arunachal Pradesh and flowing the length of the Assam valley before crossing into Bangladesh — known for its immense width and seasonal flooding.",
     states:['Arunachal Pradesh','Assam'],
-    decoy:'godavari',
     path:[
       [28.70,96.90],[28.15,95.85],[27.48,95.02],[27.05,94.55],[26.75,94.20],
       [26.60,93.40],[26.20,91.75],[26.05,90.70],[25.95,90.10],[25.90,89.85]
@@ -889,15 +886,33 @@ const ROUNDS = [
   { id:'godavari', name:'Godavari', region:'',
     fact:"The longest river in peninsular India, sometimes called the 'Dakshin Ganga'. It rises at Trimbakeshwar near Nashik and flows southeast across the Deccan Plateau to the Bay of Bengal near Rajahmundry.",
     states:['Maharashtra','Telangana','Andhra Pradesh'],
-    decoy:'brahmaputra',
     path:[
       [19.93,73.53],[19.70,74.60],[19.50,75.55],[19.10,77.20],[18.90,79.00],
       [18.60,80.05],[18.05,80.75],[17.60,81.20],[17.25,81.78],[16.95,82.25]
+    ]
+  },
+
+  { id:'krishna', name:'Krishna', region:'',
+    fact:"India's fourth-longest river, rising near Mahabaleshwar in Maharashtra and cutting east across the Deccan Plateau through Karnataka, Telangana and Andhra Pradesh before reaching the Bay of Bengal.",
+    states:['Maharashtra','Karnataka','Telangana','Andhra Pradesh'],
+    path:[
+      [17.92,73.66],[17.35,74.15],[16.85,74.57],[16.60,75.60],[16.50,76.60],
+      [16.30,77.50],[16.15,78.50],[16.20,79.50],[16.35,80.30],[16.05,80.90],[15.95,81.10]
+    ]
+  },
+
+  { id:'narmada', name:'Narmada', region:'',
+    fact:"The largest west-flowing river of peninsular India, rising at Amarkantak and running through a rift valley between the Vindhya and Satpura ranges before emptying into the Arabian Sea near Bharuch.",
+    states:['Madhya Pradesh','Maharashtra','Gujarat'],
+    path:[
+      [22.72,81.75],[22.85,80.50],[22.90,79.50],[22.70,78.50],[22.35,77.50],
+      [22.15,76.30],[22.00,75.30],[21.90,74.20],[21.85,73.50],[21.70,72.97],[21.60,72.60]
     ]
   }
 
 ];
 const ROUNDS_PER_GAME = 10; // solo runs pick up to 10 at random each time; with only a handful of rivers so far, every round gets used.
+const CANDIDATES_PER_ROUND = 4; // how many river-line options (1 correct + decoys) are shown each round.
 
 /* ---------------- Map setup (India in focus) ---------------- */
 const map = L.map('map', {
@@ -1040,6 +1055,14 @@ function shuffleIdx(n, count){
   }
   return typeof count === 'number' ? a.slice(0, count) : a;
 }
+function shuffleArr(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
 
 function setupDots(){
   const dots = document.getElementById('dots');
@@ -1090,17 +1113,24 @@ function clearRevealLayers(){
 
 function findRound(id){ return ROUNDS.find(r=>r.id===id); }
 
-/* ---------------- Draw the two candidate river lines for a round ---------------- */
+/* Pick `count` random decoy rivers (excluding the target) to pair alongside it. */
+function getDecoysFor(targetRound, count){
+  const others = ROUNDS.filter(r => r.id !== targetRound.id);
+  return shuffleArr(others).slice(0, count);
+}
+
+/* ---------------- Draw the candidate river lines for a round ---------------- */
+const CANDIDATE_COLORS = ['#5B7FFF','#8B7CF6','#3AA0A0','#B4739E','#E08E45','#5C9BD1'];
+
 function renderCandidates(targetRound){
   candidates = [];
   selectedId = null;
-  const decoyRound = findRound(targetRound.decoy) || ROUNDS.find(r=>r.id!==targetRound.id);
-  let pair = [targetRound, decoyRound];
-  if(Math.random() < 0.5) pair = [decoyRound, targetRound]; // randomize which color goes first, not which is "correct"
+  const decoyCount = Math.min(CANDIDATES_PER_ROUND - 1, ROUNDS.length - 1);
+  const decoys = getDecoysFor(targetRound, decoyCount);
+  const pair = shuffleArr([targetRound, ...decoys]); // randomize which color/position is correct
 
-  const colors = ['#5B7FFF','#8B7CF6'];
   pair.forEach((round, i)=>{
-    const color = colors[i % colors.length];
+    const color = CANDIDATE_COLORS[i % CANDIDATE_COLORS.length];
     const latlngs = round.path;
     const hit = L.polyline(latlngs, { color:color, weight:22, opacity:0 }).addTo(map);
     const line = L.polyline(latlngs, { color:color, weight:5, opacity:0.85, lineCap:'round', lineJoin:'round' }).addTo(map);
@@ -1211,7 +1241,7 @@ function lockGuess(){
 
   document.getElementById('lock-btn').style.display = 'none';
 
-  // Fly the map to fit both candidate courses so the player sees the full picture.
+  // Fly the map to fit all candidate courses so the player sees the full picture.
   const boundsPoints = [];
   candidates.forEach(c=> c.line.getLatLngs().forEach(pt=> boundsPoints.push(pt)));
   const bounds = L.latLngBounds(boundsPoints);
@@ -1257,7 +1287,7 @@ function revealResult(round, correct, pts, pickedId){
 
   const v = correct
     ? { label:'Correct — well navigated!', cls:'good', icon:'check' }
-    : { label:'Not quite — that was the other river.', cls:'bad', icon:'x' };
+    : { label:'Not quite — that was a different river.', cls:'bad', icon:'x' };
 
   document.getElementById('verdict-text').innerHTML = `${VERDICT_ICONS[v.icon]} ${v.label}  (+${pts} pts)`;
   document.getElementById('verdict-text').className = 'verdict ' + v.cls;
