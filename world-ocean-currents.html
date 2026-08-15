@@ -1093,15 +1093,14 @@ function waveIconHtml(color, label){
       <path d="M2 22c3 3 6 3 9 0s6-3 9 0 6 3 9 0" stroke="${color}" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
       <path d="M20 4l6 5-6 5" stroke="${color}" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="m-tag" style="--micon-color:${color}">${label}</span>
   </div>`;
 }
 function waveDivIcon(color, label){
   return L.divIcon({
     className:'',
     html: waveIconHtml(color, label),
-    iconSize:[34,42],
-    iconAnchor:[17,22]
+    iconSize:[34,26],
+    iconAnchor:[17,13]
   });
 }
 
