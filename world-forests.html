@@ -1166,7 +1166,76 @@ const ROUNDS = [
     fact:"Temperate forests dominated by southern beech species across much of New Zealand's South Island, especially in the mountainous west and south.",
     countries:['New Zealand'],
     paths:[[[-40.5,167.0],[-41.5,174.0],[-44.0,171.5],[-47.5,168.0],[-46.5,165.0],[-43.0,166.0],[-40.5,167.0]]]
-  }
+  },
+  { id:'european_temperate', name:'European Temperate Broadleaf Forests', region:'Western and Central Europe',
+  fact:"A vast temperate broadleaf and mixed forest region extending across much of Western and Central Europe, dominated by oak, beech, maple and hornbeam, and supporting diverse wildlife despite centuries of human land use.",
+  countries:['Germany','France','Poland','Belgium','Netherlands','Luxembourg','Czech Republic','Austria','Switzerland','Denmark'],
+  paths:[[[55.0,5.0],[55.0,18.0],[51.0,24.0],[46.0,19.0],[45.0,7.0],[48.0,-1.0],[55.0,5.0]]]
+},
+
+{ id:'carpathian', name:'Carpathian Forests', region:'Central and Eastern Europe',
+  fact:"A major mountain forest system centered on the Carpathian Mountains, dominated by beech, fir and spruce forests and providing habitat for Europe's largest populations of brown bears, wolves and lynx.",
+  countries:['Romania','Slovakia','Poland','Ukraine','Czech Republic','Hungary','Serbia'],
+  paths:[[[50.0,17.0],[50.0,25.0],[47.0,26.5],[44.5,24.0],[46.0,18.0],[50.0,17.0]]]
+},
+
+{ id:'caucasus', name:'Caucasus Forests', region:'Georgia – Armenia – Azerbaijan – Southern Russia',
+  fact:"A biodiversity hotspot located between the Black and Caspian Seas, containing temperate broadleaf, mixed and montane forests with many endemic plant and animal species.",
+  countries:['Georgia','Armenia','Azerbaijan','Russia'],
+  paths:[[[45.0,38.0],[45.5,49.0],[41.0,49.5],[40.0,43.0],[42.5,38.0],[45.0,38.0]]]
+},
+
+{ id:'korean', name:'Korean Forests', region:'Korean Peninsula',
+  fact:"Temperate forests covering much of the Korean Peninsula, characterized by mixed deciduous and coniferous woodlands with rich seasonal biodiversity.",
+  countries:['South Korea','North Korea'],
+  paths:[[[43.5,124.0],[43.5,131.0],[34.0,129.5],[34.0,125.0],[43.5,124.0]]]
+},
+
+{ id:'china_temperate', name:'Chinese Temperate and Subtropical Forests', region:'Eastern and Southern China',
+  fact:"An extensive forest region ranging from temperate deciduous forests in northern China to evergreen subtropical forests in the south, supporting giant pandas and many endemic species.",
+  countries:['China'],
+  paths:[[[42.0,105.0],[42.0,123.0],[33.0,123.5],[21.0,112.0],[23.0,100.0],[33.0,98.0],[42.0,105.0]]]
+},
+
+{ id:'taiwan', name:'Taiwan Forests', region:'Taiwan',
+  fact:"Mountainous subtropical and temperate forests covering much of Taiwan, containing exceptionally high endemism due to the island's isolation and varied elevations.",
+  countries:['Taiwan'],
+  paths:[[[25.5,121.0],[25.5,122.2],[21.8,121.8],[21.8,120.5],[25.5,121.0]]]
+},
+
+{ id:'balkan', name:'Balkan Forests', region:'Southeastern Europe',
+  fact:"A diverse temperate forest region extending across the Balkan Peninsula, containing broadleaf, mixed and montane forests with many relict and endemic species.",
+  countries:['Slovenia','Croatia','Bosnia and Herzegovina','Serbia','Montenegro','Kosovo','North Macedonia','Albania','Bulgaria','Greece'],
+  paths:[[[46.5,13.0],[46.0,28.0],[39.0,28.5],[39.0,19.0],[46.5,13.0]]]
+},
+
+{ id:'mexican_tropical', name:'Mexican Tropical Forests', region:'Southern Mexico',
+  fact:"Tropical rainforests and seasonal forests of southern Mexico, forming the northernmost extension of the Neotropical rainforest biome and supporting exceptional biodiversity.",
+  countries:['Mexico'],
+  paths:[[[20.5,-98.0],[20.0,-86.5],[14.0,-86.5],[14.0,-95.5],[20.5,-98.0]]]
+},
+
+{ id:'afromontane', name:'Afromontane Forests', region:'Eastern and Southern African Highlands',
+  fact:"A chain of mountain forests scattered across Africa's highlands, characterized by cool, moist conditions and high levels of endemism.",
+  countries:['Ethiopia','Kenya','Uganda','Tanzania','Malawi','Mozambique','Zimbabwe','South Africa','Cameroon'],
+  paths:[[[14.0,37.0],[8.0,40.0],[-5.0,39.0],[-16.0,35.0],[-30.0,30.0],[-5.0,28.0],[14.0,37.0]]]
+},
+
+{ id:'andean_cloud', name:'Andean and Central American Cloud Forests', region:'Central America – Andes',
+  fact:"High-elevation cloud forests characterized by persistent mist, abundant epiphytes and exceptional biodiversity, forming one of the world's richest montane ecosystems.",
+  countries:['Mexico','Guatemala','Costa Rica','Panama','Colombia','Ecuador','Peru','Bolivia','Venezuela'],
+  paths:[[[20.0,-99.0],[10.0,-84.0],[7.0,-78.0],[-5.0,-77.0],[-18.0,-68.0],[-15.0,-74.0],[2.0,-79.0],[12.0,-74.0],[20.0,-99.0]]]
+},
+
+{ id:'island_forests', name:'Oceanic Island Forests', region:'Hawaii – Canary Islands – Azores',
+  fact:"A collection of ecologically important island forests featuring high endemism, unique evolutionary histories and diverse subtropical to tropical ecosystems.",
+  countries:['United States of America','Spain','Portugal'],
+  paths:[
+    [[[22.0,-160.5],[22.0,-154.0],[18.5,-154.0],[18.5,-160.5],[22.0,-160.5]]],
+    [[[29.8,-18.5],[29.8,-13.0],[27.5,-13.0],[27.5,-18.5],[29.8,-18.5]]],
+    [[[40.5,-32.5],[40.5,-24.0],[36.0,-24.0],[36.0,-32.5],[40.5,-32.5]]]
+  ]
+},
 ];
 const ROUNDS_PER_GAME = 10; // solo runs pick 10 at random each time. Challenge mode always uses the exact order sent by the challenger.
 
