@@ -256,7 +256,7 @@ crossorigin="anonymous"></script>
     -webkit-overflow-scrolling:touch; overscroll-behavior-y:contain; }
   @media (max-width: 768px){ .screen{ padding: max(calc(var(--nav-height, 80px) + 28px), 108px) 20px 20px; } }
   .screen.hidden{display:none;}
-  .panel{ max-width:1400px; width:100%; display:flex; flex-direction:column; min-height:100%; justify-content:center; margin: 0 auto; }
+  .panel{ max-width:1400px; width:100%; display:flex; flex-direction:column; min-height:100%; justify-content:flex-start; margin: 0 auto; }
   .kicker{ display:inline-flex; align-items:center; gap:6px; background: var(--gold-glow); border:1px solid rgba(212,168,83,0.3); color: var(--gold);
     padding:5px 12px; border-radius:20px; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; margin-bottom:16px; }
   @media (max-width:420px){ .kicker { font-size:9.5px; letter-spacing:0.08em; } }
@@ -459,6 +459,9 @@ crossorigin="anonymous"></script>
       animation: none !important; opacity:1 !important; transform:none !important;
     }
   }
+  .ad-slot .adsbygoogle{ display:block; min-height:0; }
+.ad-slot .adsbygoogle[data-ad-status="unfilled"]{ display:none; }
+.ad-slot:has(.adsbygoogle[data-ad-status="unfilled"]){ margin:0 !important; }
 </style>
 </head>
 <body>
