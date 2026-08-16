@@ -858,129 +858,129 @@ function setHeaderVisible(visible){
    GIS data.
    ============================================================ */
 const ROUNDS = [
-  { id:'aden', name:'Gulf of Aden', region:'Yemen – Somalia – Djibouti',
+  { id:'aden', name:'Gulf of Aden', region:'',
     fact:"A strategic body of water connecting the Red Sea to the Arabian Sea via the Bab-el-Mandeb strait, carrying a huge share of the world's shipping traffic.",
     countries:['Yemen','Somalia','Djibouti'],
     paths:[[[14.0,43.0],[14.0,51.0],[10.5,51.0],[10.5,45.0],[11.5,43.0],[14.0,43.0]]]
   },
 
-  { id:'oman', name:'Gulf of Oman', region:'Iran – Oman – Pakistan',
+  { id:'oman', name:'Gulf of Oman', region:'',
     fact:"Links the Arabian Sea to the Strait of Hormuz and the Persian Gulf, making it one of the most important oil-shipping corridors on Earth.",
     countries:['Iran','Oman','Pakistan'],
     paths:[[[26.0,56.0],[25.5,60.0],[24.0,62.0],[22.0,61.0],[23.0,58.0],[25.0,56.0],[26.0,56.0]]]
   },
 
-  { id:'persian', name:'Persian Gulf', region:'Iran – Arabian Peninsula',
+  { id:'persian', name:'Persian Gulf', region:'',
     fact:"Home to some of the world's largest oil and gas reserves, this shallow sea is bordered by Iran on one side and the Arabian Peninsula states on the other.",
     countries:['Iran','Iraq','Kuwait','Saudi Arabia','Bahrain','Qatar','United Arab Emirates','Oman'],
     paths:[[[30.0,48.0],[29.5,50.0],[27.0,56.0],[24.0,56.5],[24.0,52.0],[26.0,48.5],[30.0,48.0]]]
   },
 
-  { id:'suez', name:'Gulf of Suez', region:'Egypt',
+  { id:'suez', name:'Gulf of Suez', region:'',
     fact:"The northwestern arm of the Red Sea, leading to the Suez Canal, one of the world's most heavily used shipping shortcuts between Europe and Asia.",
     countries:['Egypt'],
     paths:[[[30.0,32.5],[29.0,32.8],[28.0,33.2],[27.7,33.8],[28.5,33.5],[29.5,33.0],[30.0,32.5]]]
   },
 
-  { id:'aqaba', name:'Gulf of Aqaba', region:'Egypt – Israel – Jordan – Saudi Arabia',
+  { id:'aqaba', name:'Gulf of Aqaba', region:'',
     fact:"A narrow northeastern arm of the Red Sea bordered by four countries, and the only sea access for both Jordan and Israel.",
     countries:['Egypt','Israel','Jordan','Saudi Arabia'],
     paths:[[[29.6,34.7],[29.0,34.9],[28.0,34.7],[27.7,34.5],[28.5,34.6],[29.6,34.7]]]
   },
 
-  { id:'mannar', name:'Gulf of Mannar', region:'India – Sri Lanka',
+  { id:'mannar', name:'Gulf of Mannar', region:'',
     fact:"Separates southeastern India from Sri Lanka and is known for its coral reefs, seagrass beds and rich marine biodiversity.",
     countries:['India','Sri Lanka'],
     paths:[[[9.5,78.2],[9.3,79.3],[8.5,79.5],[8.0,79.0],[8.3,78.3],[9.0,78.0],[9.5,78.2]]]
   },
 
-  { id:'kutch', name:'Gulf of Kutch', region:'Gujarat, India',
+  { id:'kutch', name:'Gulf of Kutch', region:'',
     fact:"An inlet of the Arabian Sea on India's Gujarat coast, known for its extreme tidal range and the Marine National Park within it.",
     countries:['India','Pakistan'],
     paths:[[[23.3,68.5],[23.0,70.2],[22.3,70.0],[22.2,68.8],[22.7,68.3],[23.3,68.5]]]
   },
 
-  { id:'khambhat', name:'Gulf of Khambhat', region:'Gujarat, India',
+  { id:'khambhat', name:'Gulf of Khambhat', region:'',
     fact:"Also called the Gulf of Cambay, this inlet on India's west coast is known for having one of the highest tidal ranges in the world.",
     countries:['India'],
     paths:[[[22.3,72.2],[21.7,72.8],[20.7,72.6],[20.6,72.1],[21.5,71.9],[22.3,72.2]]]
   },
 
-  { id:'thailand', name:'Gulf of Thailand', region:'Thailand – Vietnam – Cambodia – Malaysia',
+  { id:'thailand', name:'Gulf of Thailand', region:'',
     fact:"A shallow gulf of the South China Sea bordered by four Southeast Asian countries, important for fishing and offshore energy.",
     countries:['Thailand','Cambodia','Vietnam','Malaysia'],
     paths:[[[13.5,100.5],[12.5,102.5],[10.0,104.0],[7.0,103.5],[5.5,102.0],[6.5,100.0],[9.0,99.5],[13.5,100.5]]]
   },
 
-  { id:'tonkin', name:'Gulf of Tonkin', region:'Vietnam – China',
+  { id:'tonkin', name:'Gulf of Tonkin', region:'',
     fact:"Located between northern Vietnam and southern China, this gulf was the site of the 1964 incident that escalated U.S. involvement in the Vietnam War.",
     countries:['Vietnam','China'],
     paths:[[[21.5,106.5],[21.0,108.0],[19.0,109.0],[17.0,108.5],[17.5,106.5],[19.5,105.5],[21.5,106.5]]]
   },
 
-  { id:'guinea', name:'Gulf of Guinea', region:'West-Central Africa',
+  { id:'guinea', name:'Gulf of Guinea', region:'',
     fact:"A large bight of the Atlantic Ocean along the West African coast, spanning the point where the equator meets the prime meridian.",
     countries:['Nigeria','Benin','Togo','Ghana','Ivory Coast','Cameroon','Gabon','Equatorial Guinea','Sao Tome and Principe'],
     paths:[[[5.5,-5.0],[6.0,3.0],[4.0,8.0],[0.0,9.0],[-2.0,8.0],[-3.0,3.0],[0.0,-3.0],[5.5,-5.0]]]
   },
 
-  { id:'mexico', name:'Gulf of Mexico', region:'United States – Mexico – Cuba',
+  { id:'mexico', name:'Gulf of Mexico', region:'',
     fact:"A large ocean basin bordered by the United States, Mexico and Cuba, and a major hub for oil production and hurricane formation.",
     countries:['United States of America','Mexico','Cuba'],
     paths:[[[30.0,-97.0],[29.0,-90.0],[25.0,-82.0],[21.0,-83.0],[18.5,-94.0],[21.0,-97.5],[26.0,-97.0],[30.0,-97.0]]]
   },
 
-  { id:'california', name:'Gulf of California', region:'Mexico',
+  { id:'california', name:'Gulf of California', region:'',
     fact:"Also called the Sea of Cortez, this narrow sea separates the Baja California peninsula from mainland Mexico and is famed for its marine biodiversity.",
     countries:['Mexico'],
     paths:[[[31.8,-114.7],[31.0,-113.0],[27.0,-111.5],[23.5,-108.9],[24.0,-110.0],[27.0,-112.0],[30.0,-114.0],[31.8,-114.7]]]
   },
-  { id:'alaska', name:'Gulf of Alaska', region:'Alaska, United States',
+  { id:'alaska', name:'Gulf of Alaska', region:'',
   fact:"A vast arm of the North Pacific Ocean along southern Alaska, known for powerful storms, glaciers and rich fisheries.",
   countries:['United States of America'],
   paths:[[[61.5,-152.0],[60.0,-140.0],[55.0,-133.0],[54.0,-145.0],[57.0,-153.0],[61.5,-152.0]]]
   },
-  { id:'st_lawrence', name:'Gulf of St. Lawrence', region:'Canada',
+  { id:'st_lawrence', name:'Gulf of St. Lawrence', region:'',
   fact:"The world's largest estuary, connecting the Great Lakes to the Atlantic Ocean and supporting abundant marine life.",
   countries:['Canada'],
   paths:[[[51.5,-66.5],[50.0,-57.0],[46.0,-57.0],[45.5,-66.5],[48.0,-69.5],[51.5,-66.5]]]
 },
-  { id:'carpentaria', name:'Gulf of Carpentaria', region:'Northern Australia',
+  { id:'carpentaria', name:'Gulf of Carpentaria', region:'',
   fact:"A large shallow gulf on Australia's northern coast, bordered by Queensland and the Northern Territory and known for rich fisheries.",
   countries:['Australia'],
   paths:[[[17.0,136.0],[17.0,142.5],[11.0,142.0],[10.5,136.5],[17.0,136.0]]]
 },
-  { id:'riga', name:'Gulf of Riga', region:'Latvia – Estonia',
+  { id:'riga', name:'Gulf of Riga', region:'',
   fact:"A large bay of the Baltic Sea bordered mainly by Latvia and Estonia.",
   countries:['Latvia','Estonia'],
   paths:[[[59.0,22.0],[59.0,25.5],[56.5,25.5],[56.5,22.5],[59.0,22.0]]]
 },
-  { id:'bothnia', name:'Gulf of Bothnia', region:'Sweden – Finland',
+  { id:'bothnia', name:'Gulf of Bothnia', region:'',
   fact:"The northernmost arm of the Baltic Sea, separating Sweden and Finland.",
   countries:['Sweden','Finland'],
   paths:[[[66.5,20.0],[66.5,25.5],[60.0,24.5],[60.0,18.0],[66.5,20.0]]]
 },
-  { id:'finland', name:'Gulf of Finland', region:'Finland – Estonia – Russia',
+  { id:'finland', name:'Gulf of Finland', region:'',
   fact:"The easternmost arm of the Baltic Sea, leading to Saint Petersburg.",
   countries:['Finland','Estonia','Russia'],
   paths:[[[60.8,23.0],[60.5,30.5],[59.0,29.5],[59.0,22.5],[60.8,23.0]]]
 },
-  { id:'sidra', name:'Gulf of Sidra', region:'Libya',
+  { id:'sidra', name:'Gulf of Sidra', region:'',
   fact:"The largest gulf on Libya's Mediterranean coast, also known as the Gulf of Sirte.",
   countries:['Libya'],
   paths:[[[32.5,15.0],[32.5,20.5],[30.5,20.0],[30.5,16.0],[32.5,15.0]]]
 },
-  { id:'gabes', name:'Gulf of Gabes', region:'Tunisia',
+  { id:'gabes', name:'Gulf of Gabes', region:'',
   fact:"A gulf on Tunisia's Mediterranean coast known for one of the Mediterranean's largest tidal ranges.",
   countries:['Tunisia'],
   paths:[[[35.5,10.0],[35.0,11.5],[33.5,11.0],[33.5,9.5],[35.5,10.0]]]
 },
-  { id:'lion', name:'Gulf of Lion', region:'France',
+  { id:'lion', name:'Gulf of Lion', region:'',
   fact:"A broad Mediterranean gulf along southern France between the Pyrenees and Provence.",
   countries:['France'],
   paths:[[[43.8,2.5],[43.8,6.5],[42.3,4.5],[42.3,2.5],[43.8,2.5]]]
 },
-  { id:'papua', name:'Gulf of Papua', region:'Papua New Guinea',
+  { id:'papua', name:'Gulf of Papua', region:'',
   fact:"A large gulf on Papua New Guinea's southern coast, receiving major rivers and supporting extensive mangrove forests.",
   countries:['Papua New Guinea'],
   paths:[[[-7.0,141.0],[-7.0,148.5],[-10.5,148.5],[-10.5,142.0],[-7.0,141.0]]]
