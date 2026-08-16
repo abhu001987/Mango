@@ -1206,7 +1206,6 @@ function highlightStates(names, cls){
 /* ---------------- Target icon (shown over the reveal location, on top of the highlighted state) ---------------- */
 function mineralIconHtml(color, label){
   return `<div class="mineral-icon-wrap">
-    return `<div class="coast-icon-wrap">
     <svg width="36" height="26" viewBox="0 0 36 26" xmlns="http://www.w3.org/2000/svg">
       <path d="M1 9c3-4 6-4 9 0s6 4 9 0 6-4 9 0 6 4 7 4" fill="none" stroke="${color}" stroke-width="2.6" stroke-linecap="round"/>
       <path d="M1 16c3-4 6-4 9 0s6 4 9 0 6-4 9 0 6 4 7 4" fill="none" stroke="${color}" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>
@@ -1216,12 +1215,11 @@ function mineralIconHtml(color, label){
 function mineralDivIcon(color, label){
   return L.divIcon({
     className:'',
-    html: coastIconHtml(color, label),
+    html: mineralIconHtml(color, label),   // ✅ matches the function you actually defined above it
     iconSize:[36,26],
     iconAnchor:[18,13]
   });
 }
-
 /* ---------------- Pin icons ---------------- */
 function pinIcon(color){
   return L.divIcon({
