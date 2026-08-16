@@ -2948,7 +2948,13 @@ function initGalaxy(){
   let w = 0, h = 0, dpr = 1, stars = [], dust = [], planets = [], speckles = [], shootingStars = [], raf;
   let isLight = false;
   let layoutSeeded = false;
-
+  document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    cancelAnimationFrame(raf);
+  } else {
+    raf = requestAnimationFrame(draw);
+  }
+});
   // FIXED: Now reads data-theme attribute directly
   function detectTheme(){
     const theme = document.documentElement.getAttribute('data-theme');
