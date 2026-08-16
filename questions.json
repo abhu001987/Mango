@@ -45,6 +45,8 @@
     ],
   "category": "government schemes",
   "model": "Jal Jeevan Mission (JJM), launched on 15th August 2019, is a centrally sponsored scheme implemented by the Ministry of Jal Shakti to provide safe and adequate tap water to every rural household. It aims to ensure Functional Household Tap Connections (FHTC) with a service level of 55 litres per person per day, with the target extended till 2028. The mission focuses on universal rural water supply, improving public health, and ensuring water security.",
+   
+  "ai_analysis": "You covered the basic objective but missed rural household coverage, sustainability, and community participation. Try explaining the purpose before jumping to benefits."
   },
   {
     "q": "What is the Know India Programme (KIP)?",
@@ -69,7 +71,9 @@
     ],
   "category": "government schemes",
   "model": "Know India Programme (KIP) is a three-week orientation by MEA for diaspora youth (18-30, Indian origin) to showcase India's progress. Targets graduates, prefers Girmitiya countries (Mauritius, Fiji, Suriname, Guyana, Trinidad & Tobago, South Africa, Jamaica), excludes NRIs, requires English.",
-   },
+  "ai_analysis": "You covered the basic objective but missed rural household coverage, sustainability, and community participation. Try explaining the purpose before jumping to benefits."
+  },
+  },
    {
     "q": "What is the Pradhan Mantri Shram Yogi Maan-dhan (PM-SYM) Scheme?",
     "keywords": [
