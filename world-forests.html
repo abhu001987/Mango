@@ -859,389 +859,389 @@ function setHeaderVisible(visible){
    ============================================================ */
 const ROUNDS = [
 
-  { id:'amazon', name:'Amazon Rainforest', region:'Brazil – Peru – Colombia – Bolivia – Venezuela – Ecuador – Guyana – Suriname – French Guiana',
+  { id:'amazon', name:'Amazon Rainforest', region:'',
     fact:"The world's largest tropical rainforest, covering much of the Amazon Basin. It contains exceptional biodiversity and plays a major role in the global carbon and water cycles.",
     countries:['Brazil','Peru','Colombia','Bolivia','Venezuela','Ecuador','Guyana','Suriname','France'],
     paths:[[[-5.0,-78.0],[-1.0,-73.0],[3.5,-67.0],[4.0,-55.0],[-1.0,-48.0],[-7.5,-50.0],[-12.0,-60.0],[-14.0,-70.0],[-10.0,-76.0],[-5.0,-78.0]]]
   },
 
-  { id:'congo', name:'Congo Rainforest', region:'Central Africa',
+  { id:'congo', name:'Congo Rainforest', region:'',
     fact:"The Congo Basin contains the world's second-largest tropical rainforest after the Amazon and is a major carbon sink with exceptionally rich wildlife.",
     countries:['Democratic Republic of the Congo','Republic of the Congo','Cameroon','Central African Republic','Gabon','Equatorial Guinea'],
     paths:[[[5.5,9.0],[5.0,18.0],[3.0,27.0],[-5.0,29.0],[-8.5,24.0],[-5.0,14.0],[-2.0,9.0],[5.5,9.0]]]
   },
 
-  { id:'guiana', name:'Guiana Shield Forests', region:'Guyana – Suriname – French Guiana – Venezuela – Brazil',
+  { id:'guiana', name:'Guiana Shield Forests', region:'',
     fact:"One of the world's largest blocks of relatively intact tropical forest, covering the Guiana Shield north of the Amazon Basin and containing exceptionally high biodiversity.",
     countries:['Guyana','Suriname','France','Venezuela','Brazil'],
     paths:[[[8.5,-67.5],[8.5,-58.0],[6.0,-51.0],[2.0,-50.0],[0.0,-55.0],[1.0,-63.0],[3.5,-68.0],[8.5,-67.5]]]
   },
 
-  { id:'atlantic', name:'Atlantic Forest', region:'Brazil – Argentina – Paraguay',
+  { id:'atlantic', name:'Atlantic Forest', region:'',
     fact:"A major tropical and subtropical forest along Brazil's Atlantic coast, recognized as a global biodiversity hotspot with very high levels of endemism.",
     countries:['Brazil','Argentina','Paraguay'],
     paths:[[[8.0,-35.0],[2.0,-40.0],[-5.0,-42.0],[-15.0,-40.0],[-25.0,-48.0],[-30.0,-52.0],[-25.0,-58.0],[-15.0,-55.0],[-5.0,-48.0],[8.0,-35.0]]]
   },
 
-  { id:'choco', name:'Chocó–Darién Rainforest', region:'Panama – Colombia – Ecuador',
+  { id:'choco', name:'Chocó–Darién Rainforest', region:'',
     fact:"One of the wettest tropical forest regions on Earth, extending along the Pacific coast of Panama, Colombia and Ecuador and known for exceptional biodiversity.",
     countries:['Panama','Colombia','Ecuador'],
     paths:[[[9.5,-78.0],[8.5,-75.0],[5.0,-77.0],[1.0,-79.0],[-3.0,-80.0],[0.0,-82.0],[5.0,-81.0],[9.5,-78.0]]]
   },
 
-  { id:'central_america', name:'Central American Rainforests', region:'Southern Mexico – Central America',
+  { id:'central_america', name:'Central American Rainforests', region:'',
     fact:"Tropical forests extending from southern Mexico through Central America, forming an important biological corridor between North and South America.",
     countries:['Mexico','Guatemala','Belize','Honduras','El Salvador','Nicaragua','Costa Rica','Panama'],
     paths:[[[21.5,-89.0],[19.0,-92.0],[16.0,-91.0],[13.0,-88.0],[10.0,-85.0],[8.0,-82.0],[10.0,-78.0],[15.0,-84.0],[18.0,-88.0],[21.5,-89.0]]]
   },
 
-  { id:'sundaland', name:'Sundaland Rainforest', region:'Malay Peninsula – Sumatra – Java – Borneo',
+  { id:'sundaland', name:'Sundaland Rainforest', region:'',
     fact:"A biodiversity-rich tropical forest region covering the Malay Peninsula and much of the Sunda Islands, including Sumatra, Java and Borneo.",
     countries:['Indonesia','Malaysia','Brunei','Thailand','Singapore'],
     paths:[[[7.0,95.0],[8.0,105.0],[5.0,115.0],[2.0,119.0],[-5.0,117.0],[-9.0,105.0],[-7.0,96.0],[0.0,94.0],[7.0,95.0]]]
   },
 
-  { id:'borneo', name:'Borneo Rainforest', region:'Indonesia – Malaysia – Brunei',
+  { id:'borneo', name:'Borneo Rainforest', region:'',
     fact:"One of the world's oldest tropical rainforest regions, famous for orangutans, proboscis monkeys and exceptional plant diversity.",
     countries:['Indonesia','Malaysia','Brunei'],
     paths:[[[7.0,109.0],[7.0,118.0],[3.0,119.5],[-4.0,117.5],[-4.5,110.0],[0.0,108.0],[7.0,109.0]]]
   },
 
-  { id:'sumatra', name:'Sumatra Rainforest', region:'Indonesia – Sumatra',
+  { id:'sumatra', name:'Sumatra Rainforest', region:'',
     fact:"Sumatra's tropical forests contain some of the world's most endangered species, including the Sumatran tiger, rhinoceros and orangutan.",
     countries:['Indonesia'],
     paths:[[[5.8,95.0],[5.5,101.5],[1.0,104.0],[-5.5,105.0],[-5.8,100.0],[-2.0,96.0],[5.8,95.0]]]
   },
 
-  { id:'new_guinea', name:'New Guinea Rainforest', region:'Indonesia – Papua New Guinea',
+  { id:'new_guinea', name:'New Guinea Rainforest', region:'',
     fact:"The forests of New Guinea are among the world's most biologically diverse, with many species found nowhere else on Earth.",
     countries:['Indonesia','Papua New Guinea'],
     paths:[[[-1.5,131.0],[-1.0,142.0],[-3.0,151.5],[-7.0,153.5],[-10.0,146.0],[-9.0,136.0],[-5.0,130.0],[-1.5,131.0]]]
   },
 
-  { id:'southeast_asia', name:'Southeast Asian Rainforests', region:'Myanmar – Thailand – Laos – Cambodia – Vietnam',
+  { id:'southeast_asia', name:'Southeast Asian Rainforests', region:'',
     fact:"A major tropical forest zone of mainland Southeast Asia containing evergreen, monsoon and seasonal forests and important habitats for Asian elephants and other wildlife.",
     countries:['Myanmar','Thailand','Laos','Cambodia','Vietnam'],
     paths:[[[28.5,92.0],[27.0,100.0],[23.0,105.0],[18.0,109.0],[10.0,105.0],[11.0,99.0],[16.0,94.0],[22.0,91.0],[28.5,92.0]]]
   },
 
-  { id:'western_ghats', name:'Western Ghats Forests', region:'India – Western Ghats',
+  { id:'western_ghats', name:'Western Ghats Forests', region:'',
     fact:"A global biodiversity hotspot running parallel to India's western coast, containing tropical evergreen forests and many endemic species while strongly influencing the Indian monsoon.",
     countries:['India'],
     paths:[[[21.0,73.0],[18.0,74.0],[15.0,75.0],[12.0,76.0],[9.0,77.0],[8.0,76.5],[10.0,74.5],[15.0,73.0],[21.0,73.0]]]
   },
 
-  { id:'eastern_ghats', name:'Eastern Ghats Forests', region:'India – Eastern Ghats',
+  { id:'eastern_ghats', name:'Eastern Ghats Forests', region:'',
     fact:"Discontinuous hill forests along eastern India, containing dry deciduous, moist deciduous and patches of evergreen vegetation and important wildlife habitats.",
     countries:['India'],
     paths:[[[20.5,82.5],[19.0,84.5],[17.0,82.5],[14.0,80.5],[12.5,79.5],[15.0,79.0],[18.0,80.0],[20.5,82.5]]]
   },
 
-  { id:'himalayan', name:'Himalayan Forests', region:'India – Nepal – Bhutan – Pakistan – China',
+  { id:'himalayan', name:'Himalayan Forests', region:'',
     fact:"A major mountain forest system ranging from subtropical forests to temperate conifers and alpine vegetation, with enormous biodiversity and importance for Asian river systems.",
     countries:['India','Nepal','Bhutan','Pakistan','China'],
     paths:[[[35.0,70.0],[35.5,78.0],[31.5,89.0],[27.0,92.0],[26.0,84.0],[29.0,76.0],[35.0,70.0]]]
   },
 
-  { id:'northeast_india', name:'Northeast Indian Forests', region:'Northeastern India',
+  { id:'northeast_india', name:'Northeast Indian Forests', region:'',
     fact:"One of India's richest forest and biodiversity regions, containing tropical evergreen, semi-evergreen and bamboo forests influenced by very high rainfall.",
     countries:['India'],
     paths:[[[29.5,89.5],[29.5,96.5],[27.0,97.5],[22.0,94.0],[22.0,91.0],[25.0,88.5],[29.5,89.5]]]
   },
 
-  { id:'andaman', name:'Andaman and Nicobar Forests', region:'Andaman and Nicobar Islands, India',
+  { id:'andaman', name:'Andaman and Nicobar Forests', region:'',
     fact:"Tropical evergreen and mangrove forests covering the Andaman and Nicobar Islands, noted for high endemism and rich island biodiversity.",
     countries:['India'],
     paths:[[[13.8,92.2],[13.0,93.5],[10.0,93.0],[7.0,93.5],[6.5,92.5],[10.0,92.0],[13.8,92.2]]]
   },
 
-  { id:'siberian_taiga', name:'Siberian Taiga', region:'Russia – Siberia',
+  { id:'siberian_taiga', name:'Siberian Taiga', region:'',
     fact:"One of the world's largest continuous forest regions, forming a huge part of the Eurasian boreal forest belt and dominated by conifers such as larch, pine and spruce.",
     countries:['Russia'],
     paths:[[[68.0,30.0],[69.0,70.0],[67.0,110.0],[64.0,145.0],[56.0,150.0],[52.0,120.0],[54.0,80.0],[55.0,45.0],[68.0,30.0]]]
   },
 
-  { id:'russian_far_east', name:'Russian Far East Taiga', region:'Russia – Far East',
+  { id:'russian_far_east', name:'Russian Far East Taiga', region:'',
     fact:"A vast boreal and temperate forest region extending across the Russian Far East, known for species such as the Siberian tiger and Amur leopard.",
     countries:['Russia'],
     paths:[[[62.0,120.0],[65.0,145.0],[62.0,170.0],[52.0,170.0],[45.0,150.0],[48.0,130.0],[55.0,120.0],[62.0,120.0]]]
   },
 
-  { id:'scandinavian_boreal', name:'Scandinavian Boreal Forest', region:'Norway – Sweden – Finland',
+  { id:'scandinavian_boreal', name:'Scandinavian Boreal Forest', region:'',
     fact:"Part of the Eurasian boreal forest belt, dominated by conifers such as spruce and pine and extending across much of Scandinavia.",
     countries:['Norway','Sweden','Finland'],
     paths:[[[70.0,18.0],[69.5,30.0],[65.0,31.5],[60.0,30.0],[58.0,20.0],[60.0,12.0],[65.0,14.0],[70.0,18.0]]]
   },
 
-  { id:'canadian_boreal', name:'Canadian Boreal Forest', region:'Canada – Alaska',
+  { id:'canadian_boreal', name:'Canadian Boreal Forest', region:'',
     fact:"A vast belt of coniferous and mixed forests stretching across Canada and Alaska, forming one of Earth's largest terrestrial ecosystems and an important carbon store.",
     countries:['Canada','United States of America'],
     paths:[[[68.0,-140.0],[68.0,-100.0],[66.0,-65.0],[58.0,-55.0],[48.0,-70.0],[48.0,-95.0],[50.0,-120.0],[55.0,-140.0],[68.0,-140.0]]]
   },
 
-  { id:'alaska_boreal', name:'Alaskan Boreal Forest', region:'Alaska, United States',
+  { id:'alaska_boreal', name:'Alaskan Boreal Forest', region:'',
     fact:"A major North American boreal forest region dominated by spruce and other cold-adapted trees, extending across much of interior Alaska.",
     countries:['United States of America'],
     paths:[[[69.0,-165.0],[69.0,-140.0],[65.0,-135.0],[60.0,-140.0],[58.0,-155.0],[60.0,-165.0],[65.0,-170.0],[69.0,-165.0]]]
   },
 
-  { id:'pacific_northwest', name:'Pacific Northwest Temperate Rainforest', region:'Canada – United States',
+  { id:'pacific_northwest', name:'Pacific Northwest Temperate Rainforest', region:'',
     fact:"A cool, extremely wet temperate rainforest along the Pacific coast of British Columbia, Washington and Oregon, famous for giant conifers.",
     countries:['Canada','United States of America'],
     paths:[[[54.0,-130.0],[53.0,-123.0],[49.0,-122.0],[45.0,-123.0],[42.0,-124.0],[46.0,-130.0],[54.0,-130.0]]]
   },
 
-  { id:'valdivian', name:'Valdivian Temperate Rainforest', region:'Chile – Argentina',
+  { id:'valdivian', name:'Valdivian Temperate Rainforest', region:'',
     fact:"A temperate rainforest of southern Chile and parts of Argentina, known for ancient forests, high rainfall and distinctive Gondwanan flora.",
     countries:['Chile','Argentina'],
     paths:[[[-37.0,-73.5],[-40.0,-72.0],[-44.0,-72.0],[-48.0,-74.0],[-44.0,-76.0],[-39.0,-75.0],[-37.0,-73.5]]]
   },
 
-  { id:'tasmanian', name:'Tasmanian Temperate Forests', region:'Tasmania, Australia',
+  { id:'tasmanian', name:'Tasmanian Temperate Forests', region:'',
     fact:"Tasmania contains extensive temperate forests, including cool temperate rainforests and ancient Gondwanan vegetation such as myrtle beech and Huon pine.",
     countries:['Australia'],
     paths:[[[-40.5,144.5],[-40.5,148.5],[-42.0,148.8],[-43.7,146.5],[-43.5,144.5],[-40.5,144.5]]]
   },
 
-  { id:'new_zealand', name:'New Zealand Temperate Rainforests', region:'New Zealand',
+  { id:'new_zealand', name:'New Zealand Temperate Rainforests', region:'',
     fact:"New Zealand's temperate forests include podocarp-broadleaf forests and southern beech forests, with many unique species shaped by long geographic isolation.",
     countries:['New Zealand'],
     paths:[[[-34.5,172.0],[-36.0,178.0],[-41.0,176.5],[-47.0,167.0],[-46.0,165.0],[-39.0,167.0],[-34.5,172.0]]]
   },
 
-  { id:'japanese', name:'Japanese Temperate Forests', region:'Japan',
+  { id:'japanese', name:'Japanese Temperate Forests', region:'',
     fact:"Japan has extensive temperate and subtropical forests ranging from evergreen forests in the south to deciduous and coniferous forests in the north.",
     countries:['Japan'],
     paths:[[[45.5,140.0],[43.5,145.5],[38.0,141.0],[34.0,135.0],[31.0,130.0],[34.0,129.0],[39.0,135.0],[45.5,140.0]]]
   },
 
-  { id:'mediterranean', name:'Mediterranean Forests and Woodlands', region:'Mediterranean Basin',
+  { id:'mediterranean', name:'Mediterranean Forests and Woodlands', region:'',
     fact:"A fire-adapted forest and shrubland biome surrounding the Mediterranean Sea, characterized by hot dry summers and mild wet winters.",
     countries:['Spain','France','Italy','Greece','Turkey','Croatia','Albania','Morocco','Algeria','Tunisia','Lebanon','Israel'],
     paths:[[[44.5,-6.0],[45.0,10.0],[42.0,25.0],[36.0,35.0],[30.0,35.0],[32.0,10.0],[35.0,-5.0],[44.5,-6.0]]]
   },
 
-  { id:'california_chaparral', name:'California Chaparral and Woodlands', region:'California, United States',
+  { id:'california_chaparral', name:'California Chaparral and Woodlands', region:'',
     fact:"A Mediterranean-type vegetation region with drought-resistant shrubs and woodland, adapted to dry summers, wet winters and periodic wildfires.",
     countries:['United States of America'],
     paths:[[[42.0,-124.5],[40.0,-120.0],[35.0,-117.0],[32.5,-116.0],[32.0,-120.0],[35.0,-123.0],[42.0,-124.5]]]
   },
 
-  { id:'chilean_matorral', name:'Chilean Matorral', region:'Central Chile',
+  { id:'chilean_matorral', name:'Chilean Matorral', region:'',
     fact:"A Mediterranean-type forest and shrubland ecosystem of central Chile, characterized by dry summers, winter rainfall and high levels of plant endemism.",
     countries:['Chile'],
     paths:[[[-30.0,-72.0],[-32.0,-70.0],[-36.0,-70.5],[-38.0,-73.0],[-35.0,-74.0],[-30.0,-72.0]]]
   },
 
-  { id:'cape_floristic', name:'Cape Floristic Region', region:'South Africa',
+  { id:'cape_floristic', name:'Cape Floristic Region', region:'',
     fact:"A globally important Mediterranean-type biodiversity hotspot in southwestern South Africa, famous for extraordinary plant diversity and fynbos vegetation.",
     countries:['South Africa'],
     paths:[[[-30.0,17.0],[-31.0,25.0],[-34.0,28.0],[-35.5,22.0],[-34.5,17.0],[-30.0,17.0]]]
   },
 
-  { id:'southwest_australia', name:'Southwest Australian Forests', region:'Western Australia',
+  { id:'southwest_australia', name:'Southwest Australian Forests', region:'',
     fact:"A Mediterranean-climate biodiversity hotspot containing eucalyptus forests, woodlands and shrublands with exceptionally high plant endemism.",
     countries:['Australia'],
     paths:[[[-30.0,114.0],[-30.0,123.0],[-35.0,123.5],[-35.5,115.0],[-32.0,113.0],[-30.0,114.0]]]
   },
 
-  { id:'sundarbans', name:'Sundarbans Mangrove Forest', region:'India – Bangladesh',
+  { id:'sundarbans', name:'Sundarbans Mangrove Forest', region:'',
     fact:"The world's largest contiguous mangrove forest, located in the Ganges–Brahmaputra–Meghna delta and famous as a habitat of the Bengal tiger.",
     countries:['India','Bangladesh'],
     paths:[[[22.5,88.0],[22.5,90.5],[21.5,92.0],[20.0,91.0],[21.0,88.0],[22.5,88.0]]]
   },
 
-  { id:'niger_delta', name:'Niger Delta Mangrove Forests', region:'Nigeria – Cameroon',
+  { id:'niger_delta', name:'Niger Delta Mangrove Forests', region:'',
     fact:"One of Africa's largest mangrove regions, occupying the vast Niger Delta and providing important coastal wetlands and fish nurseries.",
     countries:['Nigeria','Cameroon'],
     paths:[[[6.5,3.5],[7.0,8.0],[5.5,9.5],[4.0,8.0],[4.0,5.0],[6.5,3.5]]]
   },
 
-  { id:'mekong_mangroves', name:'Mekong Delta Mangroves', region:'Vietnam – Cambodia',
+  { id:'mekong_mangroves', name:'Mekong Delta Mangroves', region:'',
     fact:"Important mangrove and wetland ecosystems around the Mekong Delta, protecting coastlines and providing breeding grounds for fish and other aquatic species.",
     countries:['Vietnam','Cambodia'],
     paths:[[[11.0,103.5],[11.5,106.5],[9.0,107.5],[8.0,105.0],[9.0,103.5],[11.0,103.5]]]
   },
 
-  { id:'florida_mangroves', name:'Florida Mangrove Forests', region:'Florida, United States',
+  { id:'florida_mangroves', name:'Florida Mangrove Forests', region:'',
     fact:"Extensive mangrove ecosystems along southern Florida and the Florida Keys, providing coastal protection and important nursery habitats for marine life.",
     countries:['United States of America'],
     paths:[[[27.0,-83.0],[26.0,-80.0],[24.0,-80.0],[24.0,-82.5],[25.0,-83.5],[27.0,-83.0]]]
   },
 
-  { id:'guiana_mangroves', name:'Guiana Mangrove Forests', region:'Guyana – Suriname – French Guiana',
+  { id:'guiana_mangroves', name:'Guiana Mangrove Forests', region:'',
     fact:"Mangrove forests along the low-lying Atlantic coast of the Guianas, strongly influenced by sediment carried from the Amazon and other South American rivers.",
     countries:['Guyana','Suriname','France'],
     paths:[[[8.5,-61.0],[8.5,-53.0],[6.0,-50.0],[4.0,-52.0],[5.0,-58.0],[8.5,-61.0]]]
   },
 
-  { id:'queensland_wet_tropics', name:'Queensland Wet Tropics', region:'Northeastern Australia',
+  { id:'queensland_wet_tropics', name:'Queensland Wet Tropics', region:'',
     fact:"A World Heritage tropical rainforest region in northeastern Queensland containing ancient rainforest ecosystems and exceptional biodiversity.",
     countries:['Australia'],
     paths:[[[-15.0,143.5],[-15.0,146.5],[-18.5,147.0],[-19.0,145.0],[-17.0,143.5],[-15.0,143.5]]]
   },
 
-  { id:'daintree', name:'Daintree Rainforest', region:'Queensland, Australia',
+  { id:'daintree', name:'Daintree Rainforest', region:'',
     fact:"One of the world's oldest tropical rainforest regions, located in northeastern Queensland and part of the Wet Tropics World Heritage Area.",
     countries:['Australia'],
     paths:[[[-15.0,145.0],[-15.5,146.0],[-17.0,146.0],[-17.5,145.0],[-16.5,144.5],[-15.0,145.0]]]
   },
-  { id:'miombo', name:'Miombo Woodlands', region:'Tanzania – Zambia – Zimbabwe – Mozambique – Malawi – Angola – DR Congo',
+  { id:'miombo', name:'Miombo Woodlands', region:'',
     fact:"One of Africa's largest tropical woodland systems, dominated by miombo trees and important for wildlife, local livelihoods and carbon storage.",
     countries:['Tanzania','Zambia','Zimbabwe','Mozambique','Malawi','Angola','Democratic Republic of the Congo'],
     paths:[[[-5.0,20.0],[-4.0,30.0],[-8.0,36.0],[-18.0,36.0],[-23.0,30.0],[-20.0,23.0],[-12.0,20.0],[-5.0,20.0]]]
   },
 
-  { id:'east_african_montane', name:'East African Montane Forests', region:'Kenya – Tanzania – Uganda – Rwanda – Burundi – Ethiopia',
+  { id:'east_african_montane', name:'East African Montane Forests', region:'',
     fact:"Mountain forests of eastern Africa occurring around highland areas such as Mount Kenya, Mount Kilimanjaro and the Ethiopian Highlands, with strong altitudinal variation in vegetation.",
     countries:['Kenya','Tanzania','Uganda','Rwanda','Burundi','Ethiopia'],
     paths:[[[15.0,34.0],[12.0,42.0],[5.0,43.0],[-5.0,41.0],[-8.0,34.0],[-2.0,29.0],[5.0,30.0],[15.0,34.0]]]
   },
 
-  { id:'albertine_rift', name:'Albertine Rift Forests', region:'Uganda – Rwanda – Burundi – DR Congo – Tanzania',
+  { id:'albertine_rift', name:'Albertine Rift Forests', region:'',
     fact:"A biodiversity-rich mountain forest region along the Albertine Rift in East-Central Africa, containing many endemic species and important highland habitats.",
     countries:['Uganda','Rwanda','Burundi','Democratic Republic of the Congo','Tanzania'],
     paths:[[[-1.0,28.0],[3.0,31.0],[2.0,34.0],[-5.0,35.0],[-7.0,31.0],[-5.0,28.0],[-1.0,28.0]]]
   },
 
-  { id:'madagascar_rainforest', name:'Madagascar Eastern Rainforests', region:'Madagascar',
+  { id:'madagascar_rainforest', name:'Madagascar Eastern Rainforests', region:'',
     fact:"Madagascar's eastern forests contain extraordinary levels of endemism, with many plants and animals found nowhere else on Earth.",
     countries:['Madagascar'],
     paths:[[[ -11.0,49.0],[-12.0,51.0],[-18.0,50.5],[-25.0,50.0],[-26.0,47.5],[-20.0,47.0],[-14.0,48.0],[-11.0,49.0]]]
   },
 
-  { id:'upper_guinea', name:'Upper Guinean Forests', region:'Guinea – Sierra Leone – Liberia – Côte d’Ivoire – Ghana',
+  { id:'upper_guinea', name:'Upper Guinean Forests', region:'',
     fact:"A major West African tropical forest region and biodiversity hotspot, now highly fragmented by agriculture, logging and settlement.",
     countries:['Guinea','Sierra Leone','Liberia',"Côte d'Ivoire",'Ghana'],
     paths:[[[12.0,-15.0],[11.0,-8.0],[10.0,-3.0],[6.0,1.0],[4.0,-2.0],[5.0,-10.0],[7.0,-15.0],[12.0,-15.0]]]
   },
 
-  { id:'lower_guinea', name:'Lower Guinean Forests', region:'Nigeria – Cameroon – Gabon – Equatorial Guinea – Congo',
+  { id:'lower_guinea', name:'Lower Guinean Forests', region:'',
     fact:"Tropical forests along the Gulf of Guinea and western Congo Basin, forming one of Africa's major rainforest regions.",
     countries:['Nigeria','Cameroon','Gabon','Equatorial Guinea','Republic of the Congo'],
     paths:[[[8.0,3.0],[8.0,14.0],[5.0,18.0],[-5.0,16.0],[-5.0,8.0],[0.0,5.0],[8.0,3.0]]]
   },
 
-  { id:'mesoamerican_pine_oak', name:'Mesoamerican Pine–Oak Forests', region:'Mexico – Central America',
+  { id:'mesoamerican_pine_oak', name:'Mesoamerican Pine–Oak Forests', region:'',
     fact:"Mountain forests extending from Mexico into Central America, dominated by pine and oak and supporting high biodiversity across varied elevations.",
     countries:['Mexico','Guatemala','Honduras','El Salvador','Nicaragua'],
     paths:[[[24.0,-105.0],[22.0,-97.0],[18.0,-89.0],[13.0,-87.0],[12.0,-91.0],[16.0,-96.0],[20.0,-105.0],[24.0,-105.0]]]
   },
 
-  { id:'appalachian', name:'Appalachian Forests', region:'Eastern United States – Canada',
+  { id:'appalachian', name:'Appalachian Forests', region:'',
     fact:"Extensive temperate forests of the Appalachian Mountains, containing exceptionally diverse hardwood communities and some of the oldest mountain ecosystems in North America.",
     countries:['United States of America','Canada'],
     paths:[[[48.0,-82.0],[45.0,-76.0],[40.0,-75.0],[35.0,-79.0],[32.0,-84.0],[35.0,-87.0],[42.0,-83.0],[48.0,-82.0]]]
   },
 
-  { id:'eastern_deciduous', name:'Eastern Deciduous Forests', region:'Eastern United States – Southern Canada',
+  { id:'eastern_deciduous', name:'Eastern Deciduous Forests', region:'',
     fact:"A vast temperate forest region dominated by deciduous trees such as oak, maple, beech and hickory, covering much of eastern North America.",
     countries:['United States of America','Canada'],
     paths:[[[50.0,-95.0],[48.0,-82.0],[42.0,-70.0],[34.0,-75.0],[29.0,-88.0],[32.0,-100.0],[40.0,-100.0],[50.0,-95.0]]]
   },
 
-  { id:'rocky_mountain', name:'Rocky Mountain Conifer Forests', region:'Canada – United States',
+  { id:'rocky_mountain', name:'Rocky Mountain Conifer Forests', region:'',
     fact:"Mountain conifer forests extending along the Rocky Mountains, dominated by species such as spruce, fir, pine and Douglas fir.",
     countries:['Canada','United States of America'],
     paths:[[[60.0,-140.0],[55.0,-125.0],[49.0,-114.0],[40.0,-105.0],[32.0,-108.0],[35.0,-115.0],[45.0,-120.0],[55.0,-135.0],[60.0,-140.0]]]
   },
 
-  { id:'cerrado', name:'Cerrado Woodlands and Savanna', region:'Brazil – Central South America',
+  { id:'cerrado', name:'Cerrado Woodlands and Savanna', region:'',
     fact:"Brazil's vast tropical savanna region, containing woodland, grassland and shrub vegetation. It is one of the world's major biodiversity hotspots and an important source region for several South American rivers.",
     countries:['Brazil'],
     paths:[[[-5.0,-48.0],[-5.0,-42.0],[-12.0,-40.0],[-20.0,-44.0],[-24.0,-52.0],[-20.0,-58.0],[-10.0,-56.0],[-5.0,-48.0]]]
   },
 
-  { id:'caatinga', name:'Caatinga', region:'Northeastern Brazil',
+  { id:'caatinga', name:'Caatinga', region:'',
     fact:"A semi-arid tropical vegetation region unique to Brazil, dominated by drought-adapted thorny woodland, shrubs and seasonal vegetation.",
     countries:['Brazil'],
     paths:[[[-3.0,-44.0],[-3.0,-37.0],[-8.0,-35.0],[-15.0,-39.0],[-17.0,-45.0],[-12.0,-48.0],[-5.0,-47.0],[-3.0,-44.0]]]
   },
 
-  { id:'pantanal', name:'Pantanal Wetland Forests and Woodlands', region:'Brazil – Bolivia – Paraguay',
+  { id:'pantanal', name:'Pantanal Wetland Forests and Woodlands', region:'',
     fact:"One of the world's largest tropical wetlands, containing seasonally flooded forests, grasslands and savannas and supporting exceptional wildlife diversity.",
     countries:['Brazil','Bolivia','Paraguay'],
     paths:[[[-14.0,-59.0],[-14.0,-54.0],[-17.0,-54.0],[-20.0,-57.0],[-22.0,-59.0],[-19.0,-62.0],[-15.0,-62.0],[-14.0,-59.0]]]
   },
 
-  { id:'llanos', name:'Llanos', region:'Venezuela – Colombia',
+  { id:'llanos', name:'Llanos', region:'',
     fact:"A vast tropical savanna plain of the Orinoco Basin, characterized by seasonally flooded grasslands with patches of gallery forest.",
     countries:['Venezuela','Colombia'],
     paths:[[[10.0,-73.0],[10.0,-66.0],[8.0,-61.0],[4.0,-62.0],[3.0,-68.0],[5.0,-72.0],[10.0,-73.0]]]
   },
 
-  { id:'murray_darling', name:'Murray–Darling Woodlands', region:'Southeastern Australia',
+  { id:'murray_darling', name:'Murray–Darling Woodlands', region:'',
     fact:"A major woodland and dry forest region associated with the Murray–Darling Basin, dominated by eucalyptus species and adapted to Australia's variable rainfall.",
     countries:['Australia'],
     paths:[[[-28.0,137.0],[-28.0,150.0],[-33.0,151.5],[-38.0,147.0],[-37.0,140.0],[-33.0,135.0],[-28.0,137.0]]]
   },
 
-  { id:'south_island_beech', name:'South Island Beech Forests', region:'New Zealand – South Island',
+  { id:'south_island_beech', name:'South Island Beech Forests', region:'',
     fact:"Temperate forests dominated by southern beech species across much of New Zealand's South Island, especially in the mountainous west and south.",
     countries:['New Zealand'],
     paths:[[[-40.5,167.0],[-41.5,174.0],[-44.0,171.5],[-47.5,168.0],[-46.5,165.0],[-43.0,166.0],[-40.5,167.0]]]
   },
-  { id:'european_temperate', name:'European Temperate Broadleaf Forests', region:'Western and Central Europe',
+  { id:'european_temperate', name:'European Temperate Broadleaf Forests', region:'',
   fact:"A vast temperate broadleaf and mixed forest region extending across much of Western and Central Europe, dominated by oak, beech, maple and hornbeam, and supporting diverse wildlife despite centuries of human land use.",
   countries:['Germany','France','Poland','Belgium','Netherlands','Luxembourg','Czech Republic','Austria','Switzerland','Denmark'],
   paths:[[[55.0,5.0],[55.0,18.0],[51.0,24.0],[46.0,19.0],[45.0,7.0],[48.0,-1.0],[55.0,5.0]]]
 },
 
-{ id:'carpathian', name:'Carpathian Forests', region:'Central and Eastern Europe',
+{ id:'carpathian', name:'Carpathian Forests', region:'',
   fact:"A major mountain forest system centered on the Carpathian Mountains, dominated by beech, fir and spruce forests and providing habitat for Europe's largest populations of brown bears, wolves and lynx.",
   countries:['Romania','Slovakia','Poland','Ukraine','Czech Republic','Hungary','Serbia'],
   paths:[[[50.0,17.0],[50.0,25.0],[47.0,26.5],[44.5,24.0],[46.0,18.0],[50.0,17.0]]]
 },
 
-{ id:'caucasus', name:'Caucasus Forests', region:'Georgia – Armenia – Azerbaijan – Southern Russia',
+{ id:'caucasus', name:'Caucasus Forests', region:'',
   fact:"A biodiversity hotspot located between the Black and Caspian Seas, containing temperate broadleaf, mixed and montane forests with many endemic plant and animal species.",
   countries:['Georgia','Armenia','Azerbaijan','Russia'],
   paths:[[[45.0,38.0],[45.5,49.0],[41.0,49.5],[40.0,43.0],[42.5,38.0],[45.0,38.0]]]
 },
 
-{ id:'korean', name:'Korean Forests', region:'Korean Peninsula',
+{ id:'korean', name:'Korean Forests', region:'',
   fact:"Temperate forests covering much of the Korean Peninsula, characterized by mixed deciduous and coniferous woodlands with rich seasonal biodiversity.",
   countries:['South Korea','North Korea'],
   paths:[[[43.5,124.0],[43.5,131.0],[34.0,129.5],[34.0,125.0],[43.5,124.0]]]
 },
 
-{ id:'china_temperate', name:'Chinese Temperate and Subtropical Forests', region:'Eastern and Southern China',
+{ id:'china_temperate', name:'Chinese Temperate and Subtropical Forests', region:'',
   fact:"An extensive forest region ranging from temperate deciduous forests in northern China to evergreen subtropical forests in the south, supporting giant pandas and many endemic species.",
   countries:['China'],
   paths:[[[42.0,105.0],[42.0,123.0],[33.0,123.5],[21.0,112.0],[23.0,100.0],[33.0,98.0],[42.0,105.0]]]
 },
 
-{ id:'taiwan', name:'Taiwan Forests', region:'Taiwan',
+{ id:'taiwan', name:'Taiwan Forests', region:'',
   fact:"Mountainous subtropical and temperate forests covering much of Taiwan, containing exceptionally high endemism due to the island's isolation and varied elevations.",
   countries:['Taiwan'],
   paths:[[[25.5,121.0],[25.5,122.2],[21.8,121.8],[21.8,120.5],[25.5,121.0]]]
 },
 
-{ id:'balkan', name:'Balkan Forests', region:'Southeastern Europe',
+{ id:'balkan', name:'Balkan Forests', region:'',
   fact:"A diverse temperate forest region extending across the Balkan Peninsula, containing broadleaf, mixed and montane forests with many relict and endemic species.",
   countries:['Slovenia','Croatia','Bosnia and Herzegovina','Serbia','Montenegro','Kosovo','North Macedonia','Albania','Bulgaria','Greece'],
   paths:[[[46.5,13.0],[46.0,28.0],[39.0,28.5],[39.0,19.0],[46.5,13.0]]]
 },
 
-{ id:'mexican_tropical', name:'Mexican Tropical Forests', region:'Southern Mexico',
+{ id:'mexican_tropical', name:'Mexican Tropical Forests', region:'',
   fact:"Tropical rainforests and seasonal forests of southern Mexico, forming the northernmost extension of the Neotropical rainforest biome and supporting exceptional biodiversity.",
   countries:['Mexico'],
   paths:[[[20.5,-98.0],[20.0,-86.5],[14.0,-86.5],[14.0,-95.5],[20.5,-98.0]]]
 },
 
-{ id:'afromontane', name:'Afromontane Forests', region:'Eastern and Southern African Highlands',
+{ id:'afromontane', name:'Afromontane Forests', region:'',
   fact:"A chain of mountain forests scattered across Africa's highlands, characterized by cool, moist conditions and high levels of endemism.",
   countries:['Ethiopia','Kenya','Uganda','Tanzania','Malawi','Mozambique','Zimbabwe','South Africa','Cameroon'],
   paths:[[[14.0,37.0],[8.0,40.0],[-5.0,39.0],[-16.0,35.0],[-30.0,30.0],[-5.0,28.0],[14.0,37.0]]]
 },
 
-{ id:'andean_cloud', name:'Andean and Central American Cloud Forests', region:'Central America – Andes',
+{ id:'andean_cloud', name:'Andean and Central American Cloud Forests', region:'',
   fact:"High-elevation cloud forests characterized by persistent mist, abundant epiphytes and exceptional biodiversity, forming one of the world's richest montane ecosystems.",
   countries:['Mexico','Guatemala','Costa Rica','Panama','Colombia','Ecuador','Peru','Bolivia','Venezuela'],
   paths:[[[20.0,-99.0],[10.0,-84.0],[7.0,-78.0],[-5.0,-77.0],[-18.0,-68.0],[-15.0,-74.0],[2.0,-79.0],[12.0,-74.0],[20.0,-99.0]]]
 },
 
-{ id:'island_forests', name:'Oceanic Island Forests', region:'Hawaii – Canary Islands – Azores',
+{ id:'island_forests', name:'Oceanic Island Forests', region:'',
   fact:"A collection of ecologically important island forests featuring high endemism, unique evolutionary histories and diverse subtropical to tropical ecosystems.",
   countries:['United States of America','Spain','Portugal'],
   paths:[
