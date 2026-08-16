@@ -2807,8 +2807,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.
 }).addTo(map);
 
 const INDIA_BOUNDARY_URLS = [
-  'https://raw.githubusercontent.com/datameet/maps/master/Country/india-land-simplified.geojson',
-  'https://cdn.jsdelivr.net/gh/datameet/maps@master/Country/india-land-simplified.geojson'
+  '/data/india-boundary.geojson'
 ];
 (async () => {
   for (const url of INDIA_BOUNDARY_URLS) {
