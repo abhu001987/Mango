@@ -1,8 +1,5 @@
 [
   {
-  "q": "What is the Jeevan Mission?",
-  "keywords": [
-  {
     "q": "What is the Jal Jeevan Mission (JJM)?",
     "keywords": [
       {"word": "Jal Jeevan Mission", "weight": 2, "synonyms": ["Jal Jeevan Mission", "JJM", "Jal Jeevan", "water life mission", "JJM scheme"]},
@@ -49,9 +46,6 @@
   "category": "government schemes",
   "model": "Jal Jeevan Mission (JJM), launched on 15th August 2019, is a centrally sponsored scheme implemented by the Ministry of Jal Shakti to provide safe and adequate tap water to every rural household. It aims to ensure Functional Household Tap Connections (FHTC) with a service level of 55 litres per person per day, with the target extended till 2028. The mission focuses on universal rural water supply, improving public health, and ensuring water security.",
   },
-  {
-  "q": "What is the Know India Programme (KIP)?",
-  "keywords": [
   {
     "q": "What is the Know India Programme (KIP)?",
     "keywords": [
