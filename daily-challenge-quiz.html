@@ -1249,19 +1249,18 @@ function highlightAnswer(round, cls){
 /* ---------------- Record marker icon (shown over the reveal location, on top of the highlighted region) ---------------- */
 function mineralIconHtml(color, label){
   return `<div class="mineral-icon-wrap">
-    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15 2 L26 10 L22 26 L8 26 L4 10 Z" fill="${color}" stroke="#1A2E3B" stroke-width="1" stroke-linejoin="round"/>
-      <path d="M15 2 L15 26 M4 10 L26 10 M15 2 L8 26 M15 2 L22 26" stroke="#ffffff" stroke-width="0.9" opacity="0.45"/>
+    <svg width="36" height="26" viewBox="0 0 36 26" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 9c3-4 6-4 9 0s6 4 9 0 6-4 9 0 6 4 7 4" fill="none" stroke="${color}" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M1 16c3-4 6-4 9 0s6 4 9 0 6-4 9 0 6 4 7 4" fill="none" stroke="${color}" stroke-width="2.6" stroke-linecap="round" opacity="0.55"/>
     </svg>
-    <span class="m-tag" style="--micon-color:${color}">${label}</span>
   </div>`;
 }
 function mineralDivIcon(color, label){
   return L.divIcon({
     className:'',
-    html: mineralIconHtml(color, label),
-    iconSize:[30,46],
-    iconAnchor:[15,25]
+    html: mineralIconHtml(color, label),   // ✅ matches the function you actually defined above it
+    iconSize:[36,26],
+    iconAnchor:[18,13]
   });
 }
 
