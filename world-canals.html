@@ -859,228 +859,228 @@ function setHeaderVisible(visible){
    ============================================================ */
 const ROUNDS = [
 
-  { id:'suez', name:'Suez Canal', region:'Egypt – Mediterranean Sea to Red Sea',
+  { id:'suez', name:'Suez Canal', region:'',
     fact:"Opened in 1869, the Suez Canal connects the Mediterranean Sea with the Red Sea and provides the shortest maritime route between Europe and the Indian Ocean without sailing around Africa.",
     countries:['Egypt'],
     paths:[[[31.25,32.35],[30.80,32.35],[30.50,32.30],[30.10,32.35],[29.50,32.55],[28.90,32.60],[29.20,32.55],[30.00,32.40],[30.80,32.35],[31.25,32.35]]]
   },
 
-  { id:'panama', name:'Panama Canal', region:'Panama – Atlantic Ocean to Pacific Ocean',
+  { id:'panama', name:'Panama Canal', region:'',
     fact:"Opened in 1914, the Panama Canal crosses the Isthmus of Panama and connects the Atlantic and Pacific Oceans, dramatically shortening maritime routes between them.",
     countries:['Panama'],
     paths:[[[9.35,-79.92],[9.15,-79.78],[9.05,-79.60],[8.98,-79.55],[9.02,-79.45],[8.98,-79.25],[9.10,-79.15]]]
   },
 
-  { id:'kiel', name:'Kiel Canal', region:'Germany – North Sea to Baltic Sea',
+  { id:'kiel', name:'Kiel Canal', region:'',
     fact:"The Kiel Canal crosses northern Germany and connects the North Sea with the Baltic Sea, allowing ships to avoid sailing around the Jutland Peninsula.",
     countries:['Germany'],
     paths:[[[54.38,9.43],[54.32,9.55],[54.25,9.65],[54.15,9.75],[54.05,9.85],[53.95,9.95],[53.87,10.00]]]
   },
 
-  { id:'corinth', name:'Corinth Canal', region:'Greece – Gulf of Corinth to Saronic Gulf',
+  { id:'corinth', name:'Corinth Canal', region:'',
     fact:"Cut through the Isthmus of Corinth in Greece, the canal connects the Gulf of Corinth with the Saronic Gulf and separates the Peloponnese from mainland Greece.",
     countries:['Greece'],
     paths:[[[37.95,22.98],[37.93,22.99],[37.92,23.00],[37.90,23.01]]]
   },
 
-  { id:'white_sea_baltic', name:'White Sea–Baltic Canal', region:'Russia – White Sea to Lake Onega',
+  { id:'white_sea_baltic', name:'White Sea–Baltic Canal', region:'',
     fact:"A canal system in northwestern Russia linking the White Sea with Lake Onega and ultimately the Baltic waterway network.",
     countries:['Russia'],
     paths:[[[64.50,34.80],[64.30,35.50],[63.50,36.00],[62.50,36.50],[61.50,35.50],[61.00,34.50]]]
   },
 
-  { id:'volga_don', name:'Volga–Don Canal', region:'Russia – Volga River to Don River',
+  { id:'volga_don', name:'Volga–Don Canal', region:'',
     fact:"Opened in 1952, the Volga–Don Canal links the Volga and Don rivers, creating a navigable connection between the Caspian Sea and the Sea of Azov.",
     countries:['Russia'],
     paths:[[[48.70,44.00],[48.50,43.80],[48.20,43.60],[47.90,43.70],[47.50,43.90]]]
   },
 
-  { id:'moscow_canal', name:'Moscow Canal', region:'Russia – Moscow River to Volga',
+  { id:'moscow_canal', name:'Moscow Canal', region:'',
     fact:"Opened in 1937, the Moscow Canal connects the Moskva River with the Volga and provides Moscow with a navigable waterway and an important source of water supply.",
     countries:['Russia'],
     paths:[[[55.95,37.20],[56.00,36.90],[56.05,36.60],[56.10,36.30],[56.20,36.00]]]
   },
 
-  { id:'grand_canal_china', name:'Grand Canal of China', region:'China – Beijing to Hangzhou',
+  { id:'grand_canal_china', name:'Grand Canal of China', region:'',
     fact:"The Grand Canal of China is the world's longest and oldest artificial waterway system, linking northern and southern China and historically connecting the Yellow and Yangtze river systems.",
     countries:['China'],
     paths:[[[39.90,116.40],[38.70,116.10],[36.70,116.50],[35.00,117.00],[34.00,118.00],[32.50,119.00],[31.00,120.20],[30.25,120.15]]]
   },
 
-  { id:'yangtze_grand_canal', name:'Beijing–Hangzhou Grand Canal', region:'China – Beijing to Hangzhou',
+  { id:'yangtze_grand_canal', name:'Beijing–Hangzhou Grand Canal', region:'',
     fact:"The historic Grand Canal route links Beijing with Hangzhou and forms the backbone of China's north–south inland waterway network.",
     countries:['China'],
     paths:[[[39.90,116.40],[37.50,116.20],[35.50,116.80],[33.50,118.00],[31.80,119.00],[30.25,120.15]]]
   },
 
-  { id:'irrigation_canal_indus', name:'Indus Basin Irrigation Canals', region:'Pakistan – Indus Basin',
+  { id:'irrigation_canal_indus', name:'Indus Basin Irrigation Canals', region:'',
     fact:"Pakistan has one of the world's largest contiguous irrigation systems, supplied by an extensive network of canals drawing water from the Indus and its tributaries.",
     countries:['Pakistan'],
     paths:[[[34.00,72.50],[32.00,72.00],[30.50,71.00],[29.00,70.50],[27.00,69.50],[25.50,68.50]]]
   },
 
-  { id:'upper_bari_doab', name:'Upper Bari Doab Canal', region:'India – Punjab',
+  { id:'upper_bari_doab', name:'Upper Bari Doab Canal', region:'',
     fact:"One of the major historic canal systems of Punjab, carrying water from the Ravi River to irrigate agricultural lands in the Bari Doab.",
     countries:['India'],
     paths:[[[32.10,74.80],[31.50,74.60],[31.00,74.30],[30.50,74.00],[30.00,73.70]]]
   },
 
-  { id:'indira_gandhi', name:'Indira Gandhi Canal', region:'India – Punjab – Haryana – Rajasthan',
+  { id:'indira_gandhi', name:'Indira Gandhi Canal', region:'',
     fact:"One of India's longest irrigation canals, carrying water from the Sutlej–Beas system into the arid regions of Rajasthan and transforming agriculture in the Thar Desert.",
     countries:['India'],
     paths:[[[31.15,74.80],[30.50,74.20],[29.50,73.80],[28.50,73.50],[27.50,73.00],[27.00,72.00]]]
   },
 
-  { id:'sirhind', name:'Sirhind Canal', region:'India – Punjab',
+  { id:'sirhind', name:'Sirhind Canal', region:'',
     fact:"A major irrigation canal system of Punjab drawing water from the Sutlej River and serving agricultural areas of Punjab and adjoining regions.",
     countries:['India'],
     paths:[[[30.95,75.85],[30.60,75.50],[30.30,75.00],[30.00,74.50],[29.60,74.00]]]
   },
 
-  { id:'western_yamuna', name:'Western Yamuna Canal', region:'India – Haryana – Delhi',
+  { id:'western_yamuna', name:'Western Yamuna Canal', region:'',
     fact:"An ancient and extensively modified irrigation canal drawing water from the Yamuna River and supplying agricultural and urban areas of Haryana and Delhi.",
     countries:['India'],
     paths:[[[30.20,77.30],[29.80,76.90],[29.20,76.70],[28.70,76.80],[28.40,77.00]]]
   },
 
-  { id:'eastern_yamuna', name:'Eastern Yamuna Canal', region:'India – Uttar Pradesh – Haryana',
+  { id:'eastern_yamuna', name:'Eastern Yamuna Canal', region:'',
     fact:"A major irrigation canal system originating from the Yamuna near the foothills and supplying agricultural areas of western Uttar Pradesh and Haryana.",
     countries:['India'],
     paths:[[[30.15,77.70],[29.70,77.60],[29.20,77.50],[28.70,77.45],[28.30,77.50]]]
   },
 
-  { id:'upper_ganga', name:'Upper Ganga Canal', region:'India – Uttar Pradesh',
+  { id:'upper_ganga', name:'Upper Ganga Canal', region:'',
     fact:"One of India's major irrigation canals, constructed in the 19th century to carry Ganga water from Haridwar across the agricultural plains of western Uttar Pradesh.",
     countries:['India'],
     paths:[[[29.95,78.15],[29.50,77.90],[29.00,77.60],[28.50,77.30],[28.00,77.00],[27.50,76.80]]]
   },
 
-  { id:'lower_ganga', name:'Lower Ganga Canal', region:'India – Uttar Pradesh',
+  { id:'lower_ganga', name:'Lower Ganga Canal', region:'',
     fact:"A major irrigation canal system of Uttar Pradesh that distributes Ganga water across the fertile plains and supports intensive agriculture.",
     countries:['India'],
     paths:[[[28.80,78.00],[28.40,78.20],[28.00,78.50],[27.50,78.80],[27.00,79.00]]]
   },
 
-  { id:'narmada_main', name:'Narmada Main Canal', region:'India – Gujarat – Rajasthan',
+  { id:'narmada_main', name:'Narmada Main Canal', region:'',
     fact:"A major component of the Sardar Sarovar Project, carrying Narmada water through Gujarat and toward parts of Rajasthan for irrigation and drinking water.",
     countries:['India'],
     paths:[[[23.20,73.00],[23.00,72.50],[23.10,72.00],[23.50,71.50],[24.00,71.00],[24.50,70.50]]]
   },
 
-  { id:'telugu_ganga', name:'Telugu Ganga Canal', region:'India – Andhra Pradesh – Tamil Nadu',
+  { id:'telugu_ganga', name:'Telugu Ganga Canal', region:'',
     fact:"A major inter-state water-transfer project carrying Krishna River water toward the Chennai region for drinking-water supply and irrigation.",
     countries:['India'],
     paths:[[[16.50,79.50],[15.50,79.80],[14.50,79.50],[13.50,79.00],[13.00,80.00]]]
   },
 
-  { id:'link_canal', name:'Sardar Sarovar Canal Network', region:'India – Gujarat – Rajasthan',
+  { id:'link_canal', name:'Sardar Sarovar Canal Network', region:'',
     fact:"A large irrigation and water-distribution network associated with the Narmada project, extending water supplies across Gujarat and into southern Rajasthan.",
     countries:['India'],
     paths:[[[22.30,73.50],[22.50,72.50],[23.00,71.50],[24.00,71.00],[25.00,70.50]]]
   },
 
-  { id:'karakum', name:'Karakum Canal', region:'Turkmenistan – Amu Darya',
+  { id:'karakum', name:'Karakum Canal', region:'',
     fact:"One of the world's longest irrigation canals, carrying water from the Amu Darya across the Karakum Desert to support agriculture and settlements in Turkmenistan.",
     countries:['Turkmenistan'],
     paths:[[[37.50,65.00],[38.00,61.00],[38.50,57.00],[39.00,54.00],[39.50,52.00]]]
   },
 
-  { id:'qaraqum', name:'Karakum Irrigation Network', region:'Turkmenistan',
+  { id:'qaraqum', name:'Karakum Irrigation Network', region:'',
     fact:"An extensive irrigation network based around the Karakum Canal that transfers Amu Darya water across one of Central Asia's driest regions.",
     countries:['Turkmenistan'],
     paths:[[[39.00,54.00],[39.00,58.00],[39.00,62.00],[38.50,66.00]]]
   },
 
-  { id:'nicaragua_canal', name:'Nicaragua Canal Route', region:'Nicaragua – Caribbean Sea to Pacific Ocean',
+  { id:'nicaragua_canal', name:'Nicaragua Canal Route', region:'',
     fact:"A proposed interoceanic canal route across Nicaragua using Lake Nicaragua and the San Juan River, intended to provide an alternative connection between the Atlantic and Pacific.",
     countries:['Nicaragua'],
     paths:[[[11.25,-85.90],[11.00,-85.50],[10.70,-85.00],[10.50,-84.80],[10.20,-84.70]]]
   },
 
-  { id:'caledonian', name:'Caledonian Canal', region:'Scotland – North Sea to Atlantic',
+  { id:'caledonian', name:'Caledonian Canal', region:'',
     fact:"A historic canal across the Great Glen of Scotland, connecting the North Sea and the Atlantic through a chain of lochs including Loch Ness.",
     countries:['United Kingdom'],
     paths:[[[57.50,-5.00],[57.35,-4.90],[57.15,-4.80],[56.90,-4.80],[56.70,-5.00]]]
   },
 
-  { id:'welland', name:'Welland Canal', region:'Canada – Lake Ontario to Lake Erie',
+  { id:'welland', name:'Welland Canal', region:'',
     fact:"A major Canadian ship canal bypassing Niagara Falls and connecting Lake Ontario with Lake Erie as part of the Great Lakes–St. Lawrence Seaway.",
     countries:['Canada'],
     paths:[[[43.25,-79.25],[43.00,-79.20],[42.75,-79.20],[42.40,-79.20]]]
   },
 
-  { id:'st_lawrence', name:'St. Lawrence Seaway', region:'Canada – United States',
+  { id:'st_lawrence', name:'St. Lawrence Seaway', region:'',
     fact:"A deep-water navigation system connecting the Great Lakes with the Atlantic Ocean through the St. Lawrence River, allowing ocean-going vessels to reach the interior of North America.",
     countries:['Canada','United States of America'],
     paths:[[[45.00,-74.00],[44.50,-75.50],[44.00,-77.00],[43.50,-79.00],[45.50,-81.00]]]
   },
 
-  { id:'rideau', name:'Rideau Canal', region:'Canada – Ottawa to Kingston',
+  { id:'rideau', name:'Rideau Canal', region:'',
     fact:"A historic Canadian canal linking Ottawa with Lake Ontario at Kingston, built in the 19th century and now a UNESCO World Heritage Site.",
     countries:['Canada'],
     paths:[[[45.42,-75.70],[45.10,-75.80],[44.70,-76.00],[44.40,-76.50],[44.25,-76.50]]]
   },
 
-  { id:'erie_canal', name:'Erie Canal', region:'United States – New York',
+  { id:'erie_canal', name:'Erie Canal', region:'',
     fact:"A historic canal connecting the Hudson River with Lake Erie, opening a major transportation route between the Atlantic coast and the interior of North America.",
     countries:['United States of America'],
     paths:[[[42.65,-73.75],[43.00,-74.50],[43.10,-76.00],[43.10,-77.50],[42.90,-78.90]]]
   },
 
-  { id:'gothenburg', name:'Göta Canal', region:'Sweden – Baltic Sea to Kattegat',
+  { id:'gothenburg', name:'Göta Canal', region:'',
     fact:"A historic Swedish canal connecting the Baltic Sea with the Kattegat through a network of lakes and waterways across southern Sweden.",
     countries:['Sweden'],
     paths:[[[58.60,16.20],[58.50,15.50],[58.40,14.50],[58.30,13.50],[58.00,11.95]]]
   },
 
-  { id:'nord_ostsee', name:'Nord-Ostsee-Kanal', region:'Germany – North Sea to Baltic Sea',
+  { id:'nord_ostsee', name:'Nord-Ostsee-Kanal', region:'',
     fact:"The German name for the Kiel Canal, one of Europe's busiest artificial waterways, connecting the North Sea and Baltic Sea.",
     countries:['Germany'],
     paths:[[[54.38,9.43],[54.30,9.60],[54.15,9.75],[54.00,9.90],[53.87,10.00]]]
   },
 
-  { id:'danube_black_sea', name:'Danube–Black Sea Canal', region:'Romania – Danube to Black Sea',
+  { id:'danube_black_sea', name:'Danube–Black Sea Canal', region:'',
     fact:"A major Romanian navigation canal connecting the Danube near Cernavodă with the Black Sea near Constanța, shortening the river route to the sea.",
     countries:['Romania'],
     paths:[[[44.35,28.05],[44.20,28.20],[44.15,28.50],[44.10,28.70],[44.15,28.65]]]
   },
 
-  { id:'rhine_main_danube', name:'Rhine–Main–Danube Canal', region:'Germany – Rhine to Danube',
+  { id:'rhine_main_danube', name:'Rhine–Main–Danube Canal', region:'',
     fact:"A major European inland waterway connecting the Rhine and Danube river systems and creating a navigable route between the North Sea and the Black Sea.",
     countries:['Germany'],
     paths:[[[49.00,10.00],[49.10,10.50],[49.20,11.00],[49.00,11.50],[48.80,11.80]]]
   },
 
-  { id:'manchester', name:'Manchester Ship Canal', region:'United Kingdom – Liverpool to Manchester',
+  { id:'manchester', name:'Manchester Ship Canal', region:'',
     fact:"A major British ship canal opened in 1894, connecting Manchester directly to the Irish Sea and allowing ocean-going vessels to reach the industrial city.",
     countries:['United Kingdom'],
     paths:[[[53.40,-3.00],[53.45,-2.80],[53.45,-2.50],[53.48,-2.25],[53.48,-2.10]]]
   },
 
-  { id:'göta', name:'Göta Canal', region:'Sweden – Vänern – Baltic Sea',
+  { id:'göta', name:'Göta Canal', region:'',
     fact:"A historic Swedish waterway connecting the Baltic Sea with Lake Vänern and forming part of an inland route across southern Sweden.",
     countries:['Sweden'],
     paths:[[[58.60,16.20],[58.50,15.50],[58.40,14.50],[58.30,13.50],[58.00,11.95]]]
   },
 
-  { id:'santa_marta', name:'Magdalena Canal System', region:'Colombia – Magdalena River Basin',
+  { id:'santa_marta', name:'Magdalena Canal System', region:'',
     fact:"Colombia's historic inland navigation network is centered on the Magdalena River, linking the interior of the country with the Caribbean coast.",
     countries:['Colombia'],
     paths:[[[11.00,-74.80],[9.00,-74.70],[7.00,-74.70],[5.00,-74.80],[3.00,-75.00]]]
   },
 
-  { id:'canal_du_midi', name:'Canal du Midi', region:'France – Toulouse to Mediterranean',
+  { id:'canal_du_midi', name:'Canal du Midi', region:'',
     fact:"A historic French canal connecting the Garonne River near Toulouse with the Mediterranean Sea, completed in the 17th century and recognized as a UNESCO World Heritage Site.",
     countries:['France'],
     paths:[[[43.60,1.45],[43.50,1.80],[43.45,2.20],[43.35,2.80],[43.30,3.20]]]
   },
 
-  { id:'languedoc', name:'Canal de Garonne', region:'France – Toulouse to Bordeaux',
+  { id:'languedoc', name:'Canal de Garonne', region:'',
     fact:"A major French canal forming the western continuation of the Canal du Midi and connecting Toulouse with the Gironde estuary near Bordeaux.",
     countries:['France'],
     paths:[[[43.60,1.45],[43.80,1.20],[44.00,0.80],[44.30,0.40],[44.85,-0.55]]]
   },
-    { id:'nicaragua_canal', name:'Nicaragua Interoceanic Canal (Proposed)', region:'Nicaragua – Caribbean Sea to Pacific Ocean',
+    { id:'nicaragua_canal', name:'Nicaragua Interoceanic Canal (Proposed)', region:'',
     fact:"A proposed interoceanic canal project intended to connect the Caribbean Sea and Pacific Ocean across Nicaragua. Earlier plans envisioned a route through Lake Nicaragua, but the major HKND concession was canceled in 2024 after construction never began; Nicaragua has since discussed reviving the idea with a different proposed route.",
     countries:['Nicaragua'],
     paths:[[[11.25,-85.90],[11.00,-85.50],[10.75,-85.00],[10.50,-84.80],[10.20,-84.70]]]
