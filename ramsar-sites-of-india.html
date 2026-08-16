@@ -1708,12 +1708,11 @@ function mineralIconHtml(color, label){
 function mineralDivIcon(color, label){
   return L.divIcon({
     className:'',
-    html: coastIconHtml(color, label),
+    html: mineralIconHtml(color, label),   // ✅ matches the function you actually defined above it
     iconSize:[36,26],
     iconAnchor:[18,13]
   });
 }
-
 /* ---------------- Pin icons ---------------- */
 function pinIcon(color){
   return L.divIcon({
