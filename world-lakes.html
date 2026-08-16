@@ -844,91 +844,91 @@ function setHeaderVisible(visible){
    GIS data.
    ============================================================ */
 const ROUNDS = [
-  { id:'caspian', name:'Caspian Sea', region:'Russia – Kazakhstan – Turkmenistan – Iran – Azerbaijan',
+  { id:'caspian', name:'Caspian Sea', region:'',
     fact:"The world's largest inland body of water by area. Despite its name, it is classified as the world's biggest lake, bordered by five countries.",
     countries:['Russia','Kazakhstan','Turkmenistan','Iran','Azerbaijan'],
     paths:[[[47.0,49.0],[46.0,53.0],[42.0,52.5],[39.0,53.0],[36.5,52.0],[37.0,48.5],[40.0,47.5],[44.0,47.0],[47.0,49.0]]]
   },
 
-  { id:'superior', name:'Lake Superior', region:'United States – Canada',
+  { id:'superior', name:'Lake Superior', region:'',
     fact:"The largest of the Great Lakes by surface area and the largest freshwater lake in the world by surface area.",
     countries:['United States of America','Canada'],
     paths:[[[49.0,-90.0],[48.5,-85.0],[46.5,-84.3],[46.3,-87.0],[47.0,-92.0],[49.0,-90.0]]]
   },
 
-  { id:'victoria', name:'Lake Victoria', region:'Uganda – Kenya – Tanzania',
+  { id:'victoria', name:'Lake Victoria', region:'',
     fact:"Africa's largest lake by area and the primary source of the Nile River, shared by three East African countries.",
     countries:['Uganda','Kenya','Tanzania'],
     paths:[[[0.5,33.0],[0.0,34.5],[-2.0,34.0],[-3.0,32.5],[-1.5,31.5],[0.5,33.0]]]
   },
 
-  { id:'huron', name:'Lake Huron', region:'United States – Canada',
+  { id:'huron', name:'Lake Huron', region:'',
     fact:"One of the five Great Lakes, connected to Lake Michigan by the Straits of Mackinac and known for its many islands.",
     countries:['United States of America','Canada'],
     paths:[[[46.0,-83.5],[45.5,-80.0],[43.5,-79.8],[43.0,-82.0],[44.0,-84.5],[46.0,-83.5]]]
   },
 
-  { id:'michigan', name:'Lake Michigan', region:'United States',
+  { id:'michigan', name:'Lake Michigan', region:'',
     fact:"The only one of the five Great Lakes located entirely within the United States, bordered by four U.S. states.",
     countries:['United States of America'],
     paths:[[[46.0,-86.5],[45.0,-85.0],[43.0,-86.0],[41.7,-87.2],[42.5,-88.0],[45.0,-87.8],[46.0,-86.5]]]
   },
 
-  { id:'tanganyika', name:'Lake Tanganyika', region:'Tanzania – DR Congo – Burundi – Zambia',
+  { id:'tanganyika', name:'Lake Tanganyika', region:'',
     fact:"The world's longest freshwater lake and the second-deepest, holding roughly one-sixth of the world's available fresh surface water.",
     countries:['Tanzania','Democratic Republic of the Congo','Burundi','Zambia'],
     paths:[[[-3.3,29.3],[-4.0,30.8],[-6.0,30.5],[-8.7,30.7],[-8.0,29.5],[-5.0,29.0],[-3.3,29.3]]]
   },
 
-  { id:'baikal', name:'Lake Baikal', region:'Siberia, Russia',
+  { id:'baikal', name:'Lake Baikal', region:'',
     fact:"The world's deepest and oldest freshwater lake, holding roughly a fifth of the planet's unfrozen fresh water.",
     countries:['Russia'],
     paths:[[[55.8,109.5],[54.0,109.9],[52.5,107.5],[51.5,104.5],[53.0,103.5],[55.0,105.0],[55.8,109.5]]]
   },
 
-  { id:'greatbear', name:'Great Bear Lake', region:'Northwest Territories, Canada',
+  { id:'greatbear', name:'Great Bear Lake', region:'',
     fact:"The largest lake located entirely within Canada and one of the largest lakes in the world, mostly undeveloped and ice-covered much of the year.",
     countries:['Canada'],
     paths:[[[67.0,-120.0],[66.5,-117.0],[65.0,-118.5],[65.3,-121.5],[66.0,-122.0],[67.0,-120.0]]]
   },
 
-  { id:'malawi', name:'Lake Malawi', region:'Malawi – Mozambique – Tanzania',
+  { id:'malawi', name:'Lake Malawi', region:'',
     fact:"Also known as Lake Nyasa, it is home to more fish species than any other lake on Earth, mostly colorful cichlids.",
     countries:['Malawi','Mozambique','Tanzania'],
     paths:[[[-9.5,34.0],[-10.0,35.3],[-12.0,34.9],[-14.5,34.8],[-14.0,34.0],[-12.0,33.9],[-9.5,34.0]]]
   },
 
-  { id:'greatslave', name:'Great Slave Lake', region:'Northwest Territories, Canada',
+  { id:'greatslave', name:'Great Slave Lake', region:'',
     fact:"North America's deepest lake, named after the Slavey Dene people, and the source of the Mackenzie River.",
     countries:['Canada'],
     paths:[[[62.9,-114.0],[62.0,-110.0],[60.9,-110.5],[61.2,-113.5],[62.0,-114.5],[62.9,-114.0]]]
   },
 
-  { id:'erie', name:'Lake Erie', region:'United States – Canada',
+  { id:'erie', name:'Lake Erie', region:'',
     fact:"The shallowest and smallest by volume of the Great Lakes, making it also the warmest and most biologically productive.",
     countries:['United States of America','Canada'],
     paths:[[[42.9,-81.5],[42.5,-79.0],[41.4,-78.8],[41.5,-82.7],[42.3,-83.5],[42.9,-81.5]]]
   },
 
-  { id:'winnipeg', name:'Lake Winnipeg', region:'Manitoba, Canada',
+  { id:'winnipeg', name:'Lake Winnipeg', region:'',
     fact:"One of the largest freshwater lakes in the world by area, though relatively shallow, and a key part of the Nelson River drainage system.",
     countries:['Canada'],
     paths:[[[53.9,-97.8],[53.0,-96.5],[51.0,-96.7],[50.3,-97.5],[51.0,-98.6],[53.0,-98.3],[53.9,-97.8]]]
   },
 
-  { id:'ontario', name:'Lake Ontario', region:'United States – Canada',
+  { id:'ontario', name:'Lake Ontario', region:'',
     fact:"The smallest of the Great Lakes by surface area but the last stop for water flowing through the entire Great Lakes system before Niagara Falls and the St. Lawrence River.",
     countries:['United States of America','Canada'],
     paths:[[[44.2,-77.5],[43.9,-76.1],[43.2,-77.0],[43.3,-79.9],[44.0,-79.0],[44.2,-77.5]]]
   },
 
-  { id:'titicaca', name:'Lake Titicaca', region:'Peru – Bolivia',
+  { id:'titicaca', name:'Lake Titicaca', region:'',
     fact:"The highest navigable lake in the world by large vessels, sitting high in the Andes and shared between Peru and Bolivia.",
     countries:['Peru','Bolivia'],
     paths:[[[-14.9,-69.2],[-15.3,-68.6],[-16.2,-68.5],[-16.6,-69.2],[-16.1,-70.0],[-15.2,-69.9],[-14.9,-69.2]]]
   },
 
-  { id:'chad', name:'Lake Chad', region:'Chad – Niger – Nigeria – Cameroon',
+  { id:'chad', name:'Lake Chad', region:'',
     fact:"A vital water source for millions of people in the Sahel region, though its surface area has shrunk dramatically over the last several decades.",
     countries:['Chad','Niger','Nigeria','Cameroon'],
     paths:[[[14.5,14.0],[14.0,15.2],[13.0,14.9],[12.3,13.9],[13.0,13.0],[14.0,13.3],[14.5,14.0]]]
@@ -937,7 +937,7 @@ const ROUNDS = [
   {
   id:'aral',
   name:'Aral Sea',
-  region:'Kazakhstan – Uzbekistan',
+  region:'',
   fact:"Once the world's fourth-largest lake, it has shrunk dramatically since the 1960s due to river diversion for irrigation, becoming one of the world's worst environmental disasters.",
   countries:['Kazakhstan','Uzbekistan'],
   paths:[[[46.5,58.8],[45.8,61.5],[44.5,60.8],[43.2,59.5],[44.0,57.8],[45.8,57.5],[46.5,58.8]]]
@@ -946,7 +946,7 @@ const ROUNDS = [
 {
   id:'deadsea',
   name:'Dead Sea',
-  region:'Israel – Jordan – West Bank',
+  region:'',
   fact:"The lowest exposed land surface on Earth and one of the world's saltiest lakes, allowing swimmers to float easily.",
   countries:['Israel','Jordan','State of Palestine'],
   paths:[[[31.9,35.5],[31.5,35.6],[31.0,35.6],[30.7,35.5],[31.1,35.4],[31.6,35.4],[31.9,35.5]]]
@@ -955,7 +955,7 @@ const ROUNDS = [
 {
   id:'balkhash',
   name:'Lake Balkhash',
-  region:'Kazakhstan',
+  region:'',
   fact:"One of the few lakes in the world with both freshwater and saltwater sections, separated by a narrow strait.",
   countries:['Kazakhstan'],
   paths:[[[46.8,73.0],[46.3,76.8],[45.4,79.5],[45.0,77.0],[45.2,73.5],[46.0,72.8],[46.8,73.0]]]
@@ -964,7 +964,7 @@ const ROUNDS = [
 {
   id:'ladoga',
   name:'Lake Ladoga',
-  region:'Russia',
+  region:'',
   fact:"The largest lake in Europe by surface area, located northwest of Saint Petersburg.",
   countries:['Russia'],
   paths:[[[61.9,30.5],[61.5,32.6],[60.7,32.0],[60.3,30.8],[60.8,29.8],[61.9,30.5]]]
@@ -973,7 +973,7 @@ const ROUNDS = [
 {
   id:'onega',
   name:'Lake Onega',
-  region:'Russia',
+  region:'',
   fact:"Europe's second-largest lake, known for Kizhi Island and its historic wooden churches.",
   countries:['Russia'],
   paths:[[[62.4,35.2],[61.8,37.5],[60.8,36.8],[60.5,34.8],[61.3,34.0],[62.4,35.2]]]
@@ -982,7 +982,7 @@ const ROUNDS = [
 {
   id:'turkana',
   name:'Lake Turkana',
-  region:'Kenya – Ethiopia',
+  region:'',
   fact:"The world's largest permanent desert lake and the world's largest alkaline lake, often called the Jade Sea.",
   countries:['Kenya','Ethiopia'],
   paths:[[[4.8,35.8],[4.0,36.3],[2.0,36.2],[0.5,36.0],[1.5,35.3],[3.8,35.2],[4.8,35.8]]]
@@ -991,7 +991,7 @@ const ROUNDS = [
 {
   id:'athabasca',
   name:'Lake Athabasca',
-  region:'Alberta – Saskatchewan, Canada',
+  region:'',
   fact:"One of Canada's largest lakes and an important source of the Slave River, lying on the edge of the Canadian Shield.",
   countries:['Canada'],
   paths:[[[59.9,-111.8],[59.2,-108.2],[58.6,-107.8],[58.5,-110.8],[59.2,-112.2],[59.9,-111.8]]]
@@ -1000,7 +1000,7 @@ const ROUNDS = [
 {
   id:'greatsalt',
   name:'Great Salt Lake',
-  region:'Utah, United States',
+  region:'',
   fact:"The largest saltwater lake in the Western Hemisphere and a remnant of the prehistoric Lake Bonneville.",
   countries:['United States of America'],
   paths:[[[41.8,-113.0],[41.7,-111.8],[40.8,-111.2],[40.7,-112.8],[41.3,-113.3],[41.8,-113.0]]]
@@ -1009,7 +1009,7 @@ const ROUNDS = [
 {
   id:'nicaragua',
   name:'Lake Nicaragua',
-  region:'Nicaragua',
+  region:'',
   fact:"The largest lake in Central America and one of the few freshwater lakes containing sharks.",
   countries:['Nicaragua'],
   paths:[[[11.8,-85.9],[11.6,-84.8],[10.9,-84.8],[10.7,-85.8],[11.2,-86.2],[11.8,-85.9]]]
@@ -1018,7 +1018,7 @@ const ROUNDS = [
 {
   id:'maracaibo',
   name:'Lake Maracaibo',
-  region:'Venezuela',
+  region:'',
   fact:"A large brackish bay connected to the Caribbean Sea, famous for the Catatumbo lightning phenomenon.",
   countries:['Venezuela'],
   paths:[[[10.9,-71.8],[10.8,-71.0],[9.7,-70.8],[8.8,-71.3],[9.0,-72.1],[10.2,-72.2],[10.9,-71.8]]]
@@ -1027,7 +1027,7 @@ const ROUNDS = [
 {
   id:'issykkul',
   name:'Issyk-Kul',
-  region:'Kyrgyzstan',
+  region:'',
   fact:"One of the world's largest alpine lakes, remaining ice-free through most winters despite its high altitude.",
   countries:['Kyrgyzstan'],
   paths:[[[43.2,76.0],[43.1,78.8],[42.3,78.8],[42.2,76.3],[42.7,75.8],[43.2,76.0]]]
@@ -1036,7 +1036,7 @@ const ROUNDS = [
 {
   id:'van',
   name:'Lake Van',
-  region:'Türkiye',
+  region:'',
   fact:"Türkiye's largest lake and one of the world's largest soda lakes, with highly alkaline water.",
   countries:['Türkiye'],
   paths:[[[39.0,42.3],[38.9,43.5],[38.3,43.6],[38.1,42.4],[38.5,42.0],[39.0,42.3]]]
@@ -1045,7 +1045,7 @@ const ROUNDS = [
 {
   id:'albert',
   name:'Lake Albert',
-  region:'Uganda – DR Congo',
+  region:'',
   fact:"One of Africa's Great Lakes and part of the Albertine Rift, connected to the White Nile.",
   countries:['Uganda','Democratic Republic of the Congo'],
   paths:[[[2.5,30.8],[2.3,31.6],[1.3,31.6],[1.0,30.9],[1.7,30.6],[2.5,30.8]]]
@@ -1054,7 +1054,7 @@ const ROUNDS = [
 {
   id:'edward',
   name:'Lake Edward',
-  region:'Uganda – DR Congo',
+  region:'',
   fact:"A smaller African Great Lake located between Lakes Albert and Kivu within the East African Rift.",
   countries:['Uganda','Democratic Republic of the Congo'],
   paths:[[[0.5,29.6],[0.3,30.0],[-0.8,29.9],[-1.1,29.5],[-0.4,29.3],[0.5,29.6]]]
@@ -1063,7 +1063,7 @@ const ROUNDS = [
 {
   id:'kivu',
   name:'Lake Kivu',
-  region:'Rwanda – DR Congo',
+  region:'',
   fact:"A deep rift lake containing large amounts of dissolved methane and carbon dioxide beneath its surface.",
   countries:['Rwanda','Democratic Republic of the Congo'],
   paths:[[[-1.3,29.0],[-1.6,29.4],[-2.6,29.3],[-2.5,28.9],[-1.8,28.8],[-1.3,29.0]]]
@@ -1072,7 +1072,7 @@ const ROUNDS = [
 {
   id:'mweru',
   name:'Lake Mweru',
-  region:'Zambia – DR Congo',
+  region:'',
   fact:"A freshwater lake on the Luapula River, forming part of the border between Zambia and the DR Congo.",
   countries:['Zambia','Democratic Republic of the Congo'],
   paths:[[[-8.6,28.5],[-8.8,29.4],[-9.5,29.3],[-9.6,28.6],[-9.0,28.2],[-8.6,28.5]]]
