@@ -2680,10 +2680,10 @@ function setRegion(region, highlightName){
   track.classList.toggle('india', region === 'india');
   worldBtn.classList.toggle('active', region === 'world');
   indiaBtn.classList.toggle('active', region === 'india');
-  document.getElementById('tmTitle').textContent = region === 'india' ? 'All topics · India' : 'All topics · World';
+  document.getElementById('tmTitle').textContent = region === 'india' ? 'All topics · World' : 'All topics · India';
   document.getElementById('tmSub').textContent = region === 'india'
-    ? '30+ India-specific categories — rivers, mountains, parks and more mapped to the subcontinent.'
-    : '30+ categories mapped across rivers, ranges, climate systems, trade and more — tap one to start practicing.';
+    ? '30+ categories mapped across rivers, ranges, climate systems, trade and more — tap one to start practicing.'
+    : '30+ India-specific categories — rivers, mountains, parks and more mapped to the subcontinent.';
   renderTopicsGrid(region);
   if(highlightName){
     setTimeout(()=>{
