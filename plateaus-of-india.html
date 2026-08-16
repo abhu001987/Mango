@@ -1091,7 +1091,7 @@ function plateauIconHtml(color, label){
 function plateauDivIcon(color, label){
   return L.divIcon({
     className:'',
-    html: coastIconHtml(color, label),
+    html: plateauIconHtml(color, label),   // ✅
     iconSize:[36,26],
     iconAnchor:[18,13]
   });
