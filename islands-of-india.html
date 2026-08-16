@@ -1231,7 +1231,7 @@ function islandIconHtml(color, label){
 function islandDivIcon(color, label){
   return L.divIcon({
     className:'',
-    html: mineralIconHtml(color, label),   // ✅ matches the function you actually defined above it
+    html: islandIconHtml(color, label),   // ✅ matches the function you actually defined above it
     iconSize:[36,26],
     iconAnchor:[18,13]
   });
