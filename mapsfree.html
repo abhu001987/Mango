@@ -209,7 +209,7 @@ crossorigin="anonymous"></script>
   #map-viewport{ flex:1 1 auto;position:relative;overflow:hidden; margin:0 8px 8px; min-height:0; border-radius:18px;
     border:1px solid var(--glass-brd); box-shadow: var(--glass-shadow); isolation:isolate; z-index:0; }
   #map-viewport.screen-covered{visibility:hidden;}
-  #map{ position:absolute;inset:0; background:#BEE0F5; }
+  #map{ position:absolute;inset:0; background:#B4C8D4; }
   #map .leaflet-tile-pane{filter:saturate(1.1) contrast(1.02);}
   #map .leaflet-container{background:#dfe6ea;}
   #map .leaflet-overlay-pane path { filter: drop-shadow(0 1px 1px rgba(0,0,0,0.08)); }
@@ -967,13 +967,13 @@ async function loadBaseMapLayers(){
 
     if(worldGeo){
       L.geoJSON(worldGeo, {
-        style: { color: '#8FB89C', weight: 0.6, fillColor: '#CFE8C9', fillOpacity: 1 }
+      style: { color: '#D9B8B8', weight: 0.6, fillColor: '#FAFAF8', fillOpacity: 1 }
       }).addTo(map);
     }
     if(indiaGeo){
       L.geoJSON(indiaGeo, {
-        interactive:false,
-        style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#CFE8C9', fillOpacity:1 }
+       interactive:false,
+      style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#FAFAF8', fillOpacity:1 }
       }).addTo(map);
     }
   }catch(e){
