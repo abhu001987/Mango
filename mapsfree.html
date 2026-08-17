@@ -226,6 +226,11 @@ crossorigin="anonymous"></script>
   .guess-label{ transform:translate(-50%,-150%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
     font-size:10.5px; padding:4px 9px; border-radius:20px; background:var(--coral); color:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.18); }
   .country-label{ transform:translate(-50%,-50%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
+  .world-label{
+  transform:translate(-50%,-50%); white-space:nowrap; font-family:'IBM Plex Mono',monospace;
+  font-weight:600; font-size:9px; color:var(--ink-dim); text-shadow:0 1px 2px rgba(255,255,255,0.8);
+  pointer-events:none;
+   };
     font-size:10px; padding:3px 9px; border-radius:20px; background:var(--clabel-color, var(--gold)); color:#fff;
     box-shadow:0 4px 12px rgba(0,0,0,0.22); letter-spacing:.02em; pointer-events:none; }
 
@@ -966,10 +971,25 @@ async function loadBaseMapLayers(){
     const indiaGeo = indiaRes.ok ? await indiaRes.json() : null;
 
     if(worldGeo){
-      L.geoJSON(worldGeo, {
-      style: { color: '#D9B8B8', weight: 0.6, fillColor: '#FAFAF8', fillOpacity: 1 }
-      }).addTo(map);
-    }
+  L.geoJSON(worldGeo, {
+    style: { color: '#D9B8B8', weight: 0.6, fillColor: '#FAFAF8', fillOpacity: 1 }
+  }).addTo(map);
+
+  worldGeo.features.forEach(f=>{
+  const name = (f.properties && (f.properties.ADMIN || f.properties.NAME || f.properties.name)) || null;
+  if(!name) return;
+  try{
+    const layer = L.geoJSON(f);
+    const center = layer.getBounds().getCenter();
+    const marker = L.marker(center, {
+      icon: L.divIcon({ className:'', html:`<div class="world-label">${name}</div>`, iconSize:[0,0] }),
+      interactive:false
+    });
+    worldLabelMarkers.push(marker);
+  }catch(e){ /* skip if geometry is malformed */ }
+});
+updateWorldLabels();
+
     if(indiaGeo){
       L.geoJSON(indiaGeo, {
        interactive:false,
@@ -1058,6 +1078,7 @@ function highlightCountriesMulti(names){
 
 /* ---------------- Game state ---------------- */
 let order = [];
+let worldLabelMarkers = [];
 let roundIdx = 0;
 let scores = [];
 let results = [];
@@ -1280,6 +1301,17 @@ function lockGuess(){
   map.flyToBounds(bounds, { padding:[80,80], maxZoom:8, duration:1.1, easeLinearity:0.25 });
   setTimeout(fireReveal, 1600); // fallback in case flyToBounds doesn't fire moveend
 }
+
+const LABEL_MIN_ZOOM = 4; // raise/lower this to tune when names appear
+function updateWorldLabels(){
+  const shouldShow = map.getZoom() >= LABEL_MIN_ZOOM;
+  worldLabelMarkers.forEach(m=>{
+    const onMap = map.hasLayer(m);
+    if(shouldShow && !onMap) m.addTo(map);
+    else if(!shouldShow && onMap) map.removeLayer(m);
+  });
+}
+map.on('zoomend', updateWorldLabels);
 
 function revealResult(round, correct, pts, pickedId){
   clearRevealLayers();
