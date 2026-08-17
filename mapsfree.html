@@ -930,6 +930,7 @@ const CANDIDATES_PER_ROUND = 4; // how many river-line options (1 correct + deco
 
 /* ---------------- Map setup (whole world in focus) ---------------- */
 const map = L.map('map', {
+  renderer: L.canvas(),
   worldCopyJump:false,
   dragging:true,
   touchZoom:true,
