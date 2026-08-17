@@ -40,7 +40,6 @@ crossorigin="anonymous"></script>
 <script src="theme.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
 <link rel="preconnect" href="https://a.basemaps.cartocdn.com">
 <link rel="preconnect" href="https://b.basemaps.cartocdn.com">
 <link rel="preconnect" href="https://c.basemaps.cartocdn.com">
@@ -808,8 +807,6 @@ crossorigin="anonymous"></script>
 <div id="toast">Copied to clipboard</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-<script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.20/leaflet-maplibre-gl.js"></script>
 <script>
 /* ============================================================
    GAME / API CONFIG
@@ -841,7 +838,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       html.setAttribute('data-theme', next);
       try { localStorage.setItem('terra-site-theme', next); } catch (e) {}
-      setTimeout(function(){ try { map.invalidateSize(); tiles.getMaplibreMap().resize(); } catch(e){} }, 320);
+      setTimeout(function(){ try { map.invalidateSize(); } catch(e){} }, 320);
     });
   }
 });
@@ -855,7 +852,7 @@ function setHeaderVisible(visible){
   if (!nav) return;
   nav.classList.toggle('header-hidden', !visible);
   if (visible) { syncNavHeight(); }
-  requestAnimationFrame(function(){ try { map.invalidateSize(); tiles.getMaplibreMap().resize(); } catch(e){} });
+  requestAnimationFrame(function(){ try { map.invalidateSize(); } catch(e){} });
 }
 
 /* ============================================================
@@ -943,14 +940,15 @@ const map = L.map('map', {
   attributionControl:true
 }).setView([15, 10], 2.3);
 
-const tiles = L.maplibreGL({
-  style: 'https://tiles.openfreemap.org/styles/positron',
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://openfreemap.org">OpenFreeMap</a> · India boundary: official depiction, Govt. of India'
-}).addTo(map);
-
-let tilesLoaded = false;
-tiles.getMaplibreMap().on('load', ()=>{ tilesLoaded = true; document.getElementById('map-loading').classList.add('hidden'); });
-setTimeout(()=>{ if(!tilesLoaded) document.getElementById('map-loading').classList.add('hidden'); }, 2500);
+fetch('/data/world-boundaries.geojson')
+  .then(res => res.json())
+  .then(geo => {
+    L.geoJSON(geo, {
+      style: { color: '#B4C8D4', weight: 0.6, fillColor: '#EAE4F7', fillOpacity: 1 }
+    }).addTo(map);
+    document.getElementById('map-loading').classList.add('hidden');
+  })
+  .catch(()=>{ document.getElementById('map-loading').classList.add('hidden'); });
 
 /* ---------------- India boundary overlay (kept even on the world map, per official-depiction requirement) ---------------- */
 const INDIA_BOUNDARY_URLS = [
@@ -1114,7 +1112,7 @@ function beginRound(){
   setHeaderVisible(false);
   setupDots();
   loadRound();
-  setTimeout(()=>{ map.invalidateSize(); try { tiles.getMaplibreMap().resize(); } catch(e){} }, 50);
+  setTimeout(()=>{ map.invalidateSize(); }, 50);
 }
 
 function clearRevealLayers(){
@@ -1806,12 +1804,12 @@ function handleViewportSettle(){
     const widthChanged = window.innerWidth !== lastKnownWidth;
     lastKnownWidth = window.innerWidth;
     if (widthChanged) syncNavHeight();
-    try { map.invalidateSize(); tiles.getMaplibreMap().resize(); } catch(e){}
+    try { map.invalidateSize(); } catch(e){}
   }, 150);
 }
 window.addEventListener('resize', handleViewportSettle);
 window.visualViewport && window.visualViewport.addEventListener('resize', handleViewportSettle);
-setTimeout(()=> { try { map.invalidateSize(); tiles.getMaplibreMap().resize(); } catch(e){} }, 200);
+setTimeout(()=> { try { map.invalidateSize(); } catch(e){} }, 200);
 
 /* ---------------- AdSense: push once per real page load ---------------- */
 window.addEventListener('load', function() {
