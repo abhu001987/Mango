@@ -945,11 +945,13 @@ const map = L.map('map', {
   touchZoom:true,
   doubleClickZoom:false,
   scrollWheelZoom:true,
-  minZoom:2,
+  minZoom:3,
   maxZoom:9,
+  maxBounds: [[-85, -180], [85, 180]],
+  maxBoundsViscosity: 1.0,
   zoomControl:true,
   attributionControl:true
-}).setView([15, 10], 2.3);
+}).setView([15, 10], 2.7);
 
 fetch('/data/world-boundaries.geojson')
   .then(res => res.json())
