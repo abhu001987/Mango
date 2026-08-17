@@ -209,7 +209,7 @@ crossorigin="anonymous"></script>
   #map-viewport{ flex:1 1 auto;position:relative;overflow:hidden; margin:0 8px 8px; min-height:0; border-radius:18px;
     border:1px solid var(--glass-brd); box-shadow: var(--glass-shadow); isolation:isolate; z-index:0; }
   #map-viewport.screen-covered{visibility:hidden;}
-  #map{ position:absolute;inset:0; background:#0e1f30; }
+  #map{ position:absolute;inset:0; background:#BEE0F5; }
   #map .leaflet-tile-pane{filter:saturate(1.1) contrast(1.02);}
   #map .leaflet-container{background:#dfe6ea;}
   #map-loading{ position:absolute;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;
@@ -948,8 +948,8 @@ fetch('/data/world-boundaries.geojson')
       features: geo.features.filter(f => !countryFeatureMatches(f, 'India'))
     };
     L.geoJSON(filtered, {
-      style: { color: '#B4C8D4', weight: 0.6, fillColor: '#EAE4F7', fillOpacity: 1 }
-    }).addTo(map);
+     style: { color: '#8FB89C', weight: 0.6, fillColor: '#CFE8C9', fillOpacity: 1 }
+     }).addTo(map);
     document.getElementById('map-loading').classList.add('hidden');
   })
   .catch(()=>{ document.getElementById('map-loading').classList.add('hidden'); });
@@ -964,7 +964,7 @@ async function loadIndiaBoundary(){
       const res = await fetch(url);
       if(!res.ok) continue;
       const geo = await res.json();
-      L.geoJSON(geo, { interactive:false, style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#D4A853', fillOpacity:0.06 } }).addTo(map);
+      L.geoJSON(geo, { interactive:false, style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#CFE8C9', fillOpacity:1 } }).addTo(map);
       return;
     }catch(e){ console.warn('India boundary overlay source failed, trying next:', url, e); }
   }
