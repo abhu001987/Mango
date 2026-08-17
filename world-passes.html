@@ -1090,6 +1090,7 @@ loadIndiaBoundary();
    highlighting used by the India-only Navigator games, but against a world boundary set. */
 let worldCountriesGeo = null;
 const WORLD_COUNTRIES_URLS = [
+  '/data/world-boundaries.geojson',
   'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json',
   'https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json'
 ];
@@ -1109,9 +1110,12 @@ loadWorldCountries();
 /* Alias table for the few country names that differ between our round data and the
    source dataset's name property. */
 const COUNTRY_NAME_ALIASES = {
-  'united states of america': ['united states of america', 'united states', 'usa', 'united states of america (the)'],
-  'china': ['china', "people's republic of china"],
-  'russia': ['russia', 'russian federation']
+  'united states': ['united states', 'united states of america', 'usa', 'us'],
+  'south sudan': ['south sudan', 's. sudan'],
+  'myanmar': ['myanmar', 'burma'],
+  'vietnam': ['vietnam', 'viet nam'],
+  'laos': ['laos', "lao people's democratic republic", 'lao pdr'],
+  'serbia': ['serbia', 'republic of serbia']   // add this
 };
 function countryFeatureMatches(feature, targetName){
   const props = (feature && feature.properties) || {};
