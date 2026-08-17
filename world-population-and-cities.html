@@ -1373,6 +1373,7 @@ loadIndiaBoundary();
 /* ---------------- World countries overlay (for round-result highlighting) ---------------- */
 let worldCountriesGeo = null;
 const WORLD_BOUNDARY_URLS = [
+  '/data/world-boundaries.geojson',
   'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json',
   'https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json'
 ];
@@ -1392,11 +1393,12 @@ loadWorldCountries();
 /* Alias table for the few names that differ between our round data and the
    Natural-Earth-derived dataset's `name` property. */
 const COUNTRY_NAME_ALIASES = {
-  'united states of america': ['united states of america','united states','usa','us'],
-  'south korea': ['south korea','republic of korea','korea, south'],
-  'north korea': ['north korea','democratic people\'s republic of korea','korea, north','dem. rep. korea'],
-  'russia': ['russia','russian federation'],
-  'taiwan': ['taiwan','republic of china']
+  'united states': ['united states', 'united states of america', 'usa', 'us'],
+  'south sudan': ['south sudan', 's. sudan'],
+  'myanmar': ['myanmar', 'burma'],
+  'vietnam': ['vietnam', 'viet nam'],
+  'laos': ['laos', "lao people's democratic republic", 'lao pdr'],
+  'serbia': ['serbia', 'republic of serbia']   // add this
 };
 function countryFeatureMatches(feature, targetName){
   const props = (feature && feature.properties) || {};
