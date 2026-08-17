@@ -944,13 +944,9 @@ const map = L.map('map', {
 fetch('/data/world-boundaries.geojson')
   .then(res => res.json())
   .then(geo => {
-    const filtered = {
-      ...geo,
-      features: geo.features.filter(f => !countryFeatureMatches(f, 'India'))
-    };
-    L.geoJSON(filtered, {
-     style: { color: '#8FB89C', weight: 0.6, fillColor: '#CFE8C9', fillOpacity: 1 }
-     }).addTo(map);
+    L.geoJSON(geo, {
+      style: { color: '#8FB89C', weight: 0.6, fillColor: '#CFE8C9', fillOpacity: 1 }
+    }).addTo(map);
     document.getElementById('map-loading').classList.add('hidden');
   })
   .catch(()=>{ document.getElementById('map-loading').classList.add('hidden'); });
