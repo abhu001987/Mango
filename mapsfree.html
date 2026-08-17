@@ -962,7 +962,7 @@ async function loadIndiaBoundary(){
       if(!res.ok) continue;
       const geo = await res.json();
       const indiaLayer = L.geoJSON(geo, { interactive:false, style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#CFE8C9', fillOpacity:1 } }).addTo(map);
-indiaLayer.bringToFront();
+      indiaLayer.bringToFront();
       return;
     }catch(e){ console.warn('India boundary overlay source failed, trying next:', url, e); }
   }
