@@ -943,7 +943,11 @@ const map = L.map('map', {
 fetch('/data/world-boundaries.geojson')
   .then(res => res.json())
   .then(geo => {
-    L.geoJSON(geo, {
+    const filtered = {
+      ...geo,
+      features: geo.features.filter(f => !countryFeatureMatches(f, 'India'))
+    };
+    L.geoJSON(filtered, {
       style: { color: '#B4C8D4', weight: 0.6, fillColor: '#EAE4F7', fillOpacity: 1 }
     }).addTo(map);
     document.getElementById('map-loading').classList.add('hidden');
