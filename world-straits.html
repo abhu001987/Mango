@@ -1038,6 +1038,7 @@ loadIndiaBoundary();
 /* ---------------- World countries overlay (for round-result highlighting) ---------------- */
 let worldCountriesGeo = null;
 const WORLD_BOUNDARY_URLS = [
+  '/data/world-boundaries.geojson',
   'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json',
   'https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json'
 ];
@@ -1062,7 +1063,8 @@ const COUNTRY_NAME_ALIASES = {
   'north korea': ['north korea','democratic people\'s republic of korea','korea, north','dem. rep. korea'],
   'russia': ['russia','russian federation'],
   'taiwan': ['taiwan','republic of china'],
-  'democratic republic of the congo': ['democratic republic of the congo','dem. rep. congo','congo, dem. rep.','dr congo']
+  'democratic republic of the congo': ['democratic republic of the congo','dem. rep. congo','congo, dem. rep.','dr congo'],
+  'serbia': ['serbia', 'republic of serbia']
 };
 function countryFeatureMatches(feature, targetName){
   const props = (feature && feature.properties) || {};
