@@ -955,20 +955,32 @@ fetch('/data/world-boundaries.geojson')
 const INDIA_BOUNDARY_URLS = [
   '/data/india-boundary.geojson'
 ];
-async function loadIndiaBoundary(){
-  for(const url of INDIA_BOUNDARY_URLS){
-    try{
-      const res = await fetch(url);
-      if(!res.ok) continue;
-      const geo = await res.json();
-      const indiaLayer = L.geoJSON(geo, { interactive:false, style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#CFE8C9', fillOpacity:1 } }).addTo(map);
-      indiaLayer.bringToFront();
-      return;
-    }catch(e){ console.warn('India boundary overlay source failed, trying next:', url, e); }
+async function loadBaseMapLayers(){
+  try{
+    const [worldRes, indiaRes] = await Promise.all([
+      fetch('/data/world-boundaries.geojson'),
+      fetch('/data/india-boundary.geojson')
+    ]);
+    const worldGeo = worldRes.ok ? await worldRes.json() : null;
+    const indiaGeo = indiaRes.ok ? await indiaRes.json() : null;
+
+    if(worldGeo){
+      L.geoJSON(worldGeo, {
+        style: { color: '#8FB89C', weight: 0.6, fillColor: '#CFE8C9', fillOpacity: 1 }
+      }).addTo(map);
+    }
+    if(indiaGeo){
+      L.geoJSON(indiaGeo, {
+        interactive:false,
+        style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#CFE8C9', fillOpacity:1 }
+      }).addTo(map);
+    }
+  }catch(e){
+    console.warn('Base map layers failed to load:', e);
   }
-  console.warn('India boundary overlay: all sources failed — falling back to base tiles only.');
+  document.getElementById('map-loading').classList.add('hidden');
 }
-loadIndiaBoundary();
+loadBaseMapLayers();
 
 /* ---------------- World countries overlay (for round-result highlighting) ----------------
    Highlights each COUNTRY a river flows through in its own distinct color — more useful
