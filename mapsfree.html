@@ -210,18 +210,18 @@ crossorigin="anonymous"></script>
   #map .leaflet-control-attribution a{color:var(--gold)!important;}
   #map .leaflet-control-zoom a{ background:var(--glass)!important;color:var(--ink)!important;border:1px solid var(--glass-brd)!important; }
 
-  /* Country Label Styling on Satellite */
+  /* Country Label Styling on Satellite - FIXED GHOSTING */
   .world-label {
     transform: translate(-50%, -50%);
     white-space: nowrap;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 700;
     font-size: 9px;
-    color: #0A0A0A !important;
-    -webkit-text-stroke: 0.4px #fff;
-    text-shadow:
-      -1px -1px 0 #fff, 1px -1px 0 #fff,
-      -1px 1px 0 #fff, 1px 1px 0 #fff;
+    color: #000 !important;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2px 4px;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
     pointer-events: none;
   }
   .line-label{ transform:translate(-50%,-150%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
@@ -924,7 +924,7 @@ const ROUNDS_PER_GAME = 10;
 const CANDIDATES_PER_ROUND = 4;
 
 /* ============================================================
-   MAP SETUP — Satellite + Borders + Country Names
+   MAP SETUP — Satellite + Borders + Labels (Clean fixed CSS)
    ============================================================ */
 const map = L.map('map', {
   renderer: L.canvas(),
@@ -961,7 +961,7 @@ fetch('https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geo
       }
     }).addTo(map);
 
-    // Add Country Labels
+    // Add Country Labels (With fixed readable CSS)
     geo.features.forEach(f => {
       const name = (f.properties && (f.properties.ADMIN || f.properties.NAME || f.properties.name)) || null;
       if (!name) return;
