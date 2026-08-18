@@ -958,12 +958,14 @@ const map = L.map('map', {
    ============================================================ */
 
 // Load the main world boundaries from Natural Earth
+// Load world boundaries ONCE
 fetch('/data/world-boundaries1.geojson')
   .then(res => {
     if (!res.ok) throw new Error('Failed to load world boundaries');
     return res.json();
   })
   .then(geo => {
+    // Add the world map with clean styling
     L.geoJSON(geo, {
       style: {
         color: '#8FB89C',
@@ -993,7 +995,7 @@ fetch('/data/world-boundaries1.geojson')
       }
     }).addTo(map);
     
-    // Also add country labels from the same data
+    // Add country labels from the same data (appear at zoom level 4+)
     geo.features.forEach(f => {
       const name = (f.properties && (f.properties.ADMIN || f.properties.NAME || f.properties.name)) || null;
       if (!name) return;
@@ -1020,26 +1022,22 @@ fetch('/data/world-boundaries1.geojson')
     document.getElementById('map-loading').classList.add('hidden');
   });
 
-/* ---------------- India boundary overlay ---------------- */
-const INDIA_BOUNDARY_URLS = [
-  '/data/india-boundary.geojson'
-];
-async function loadBaseMapLayers(){
+/* ---------------- India boundary overlay (only if you have this file) ---------------- */
+async function loadIndiaBoundary(){
   try{
     const indiaRes = await fetch('/data/india-boundary.geojson');
     const indiaGeo = indiaRes.ok ? await indiaRes.json() : null;
     if(indiaGeo){
       L.geoJSON(indiaGeo, {
-       interactive:false,
-      style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#FAFAF8', fillOpacity:1 }
+        interactive:false,
+        style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#FAFAF8', fillOpacity:1 }
       }).addTo(map);
     }
   }catch(e){
     console.warn('India boundary failed to load:', e);
   }
-  document.getElementById('map-loading').classList.add('hidden');
 }
-loadBaseMapLayers();
+loadIndiaBoundary();
 
 /* ---------------- World countries overlay (for round-result highlighting) ---------------- */
 let worldCountriesGeo = null;
