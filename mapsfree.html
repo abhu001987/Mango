@@ -942,7 +942,7 @@ const map = L.map('map', {
 }).setView([15, 10], 2.7);
 
 // 1. Load Satellite Tiles via Cloudflare Proxy
-L.tileLayer('https://blue-flower-map.abhikr18996.workers.dev/?z={z}&x={x}&y={y}', {
+L.tileLayer('https://maps.mapidesk.com/?z={z}&x={x}&y={y}', {
     maxZoom: 20,
     attribution: 'Google Satellite'
 }).addTo(map);
