@@ -947,8 +947,8 @@ L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
     attribution: 'Google Satellite'
 }).addTo(map);
 
-// 2. Load Country Borders + Labels (FIXED SYNTAX HERE)
-fetch('/ne_110m_admin_0_countries.geojson')
+// 2. Load Country Borders + Labels (FIXED to look in /data/ folder)
+fetch('/data/ne_110m_admin_0_countries.geojson')
   .then(res => res.json())
   .then(geo => {
     // Draw the borders
@@ -1019,7 +1019,7 @@ loadIndiaBoundary();
 let worldCountriesGeo = null;
 const WORLD_COUNTRIES_URLS = [
   '/data/world-boundaries1.geojson',
-  '/ne_110m_admin_0_countries.geojson'
+  '/data/ne_110m_admin_0_countries.geojson'
 ];
 async function loadWorldCountries(){
   for(const url of WORLD_COUNTRIES_URLS){
