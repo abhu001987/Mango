@@ -941,8 +941,8 @@ const map = L.map('map', {
   attributionControl:true
 }).setView([15, 10], 2.7);
 
-// 1. Load RELIABLE Satellite Tiles (Google - no CORS errors)
-L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+// 1. Load Satellite Tiles via Cloudflare Proxy
+L.tileLayer('https://wispy-wildflower-ce87.abhikr18996.workers.dev/?z={z}&x={x}&y={y}', {
     maxZoom: 20,
     attribution: 'Google Satellite'
 }).addTo(map);
