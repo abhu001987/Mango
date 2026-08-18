@@ -934,10 +934,10 @@ const ROUNDS = [
   }
 
 ];
-const ROUNDS_PER_GAME = 10; // solo runs pick up to 10 at random each time; with only a handful of rivers so far, every round gets used.
-const CANDIDATES_PER_ROUND = 4; // how many river-line options (1 correct + decoys) are shown each round.
+const ROUNDS_PER_GAME = 10;
+const CANDIDATES_PER_ROUND = 4;
 
-/* ---------------- Map setup (whole world in focus) ---------------- */
+/* ---------------- Map setup (world view) ---------------- */
 const map = L.map('map', {
   renderer: L.canvas(),
   worldCopyJump:false,
@@ -953,49 +953,81 @@ const map = L.map('map', {
   attributionControl:true
 }).setView([15, 10], 2.7);
 
-fetch('/data/world-boundaries.geojson')
-  .then(res => res.json())
+/* ============================================================
+   IMPROVED MAP LOADING — Using Natural Earth data
+   ============================================================ */
+
+// Load the main world boundaries from Natural Earth
+fetch('/data/world-boundaries1.geojson')
+  .then(res => {
+    if (!res.ok) throw new Error('Failed to load world boundaries');
+    return res.json();
+  })
   .then(geo => {
     L.geoJSON(geo, {
-      style: { color: '#8FB89C', weight: 0.6, fillColor: '#CFE8C9', fillOpacity: 1 }
+      style: {
+        color: '#8FB89C',
+        weight: 0.8,
+        fillColor: '#E8F0E6',
+        fillOpacity: 0.6,
+        opacity: 0.8
+      },
+      // Add hover effect for better UX
+      onEachFeature: function(feature, layer) {
+        layer.on('mouseover', function() {
+          this.setStyle({
+            fillColor: '#D4A853',
+            fillOpacity: 0.3,
+            weight: 1.5,
+            color: '#D4A853'
+          });
+        });
+        layer.on('mouseout', function() {
+          this.setStyle({
+            fillColor: '#E8F0E6',
+            fillOpacity: 0.6,
+            weight: 0.8,
+            color: '#8FB89C'
+          });
+        });
+      }
     }).addTo(map);
+    
+    // Also add country labels from the same data
+    geo.features.forEach(f => {
+      const name = (f.properties && (f.properties.ADMIN || f.properties.NAME || f.properties.name)) || null;
+      if (!name) return;
+      try {
+        const layer = L.geoJSON(f);
+        const center = layer.getBounds().getCenter();
+        const marker = L.marker(center, {
+          icon: L.divIcon({ 
+            className: '', 
+            html: `<div class="world-label">${name}</div>`, 
+            iconSize: [0, 0] 
+          }),
+          interactive: false
+        });
+        worldLabelMarkers.push(marker);
+      } catch(e) { /* skip if geometry is malformed */ }
+    });
+    updateWorldLabels();
+    
     document.getElementById('map-loading').classList.add('hidden');
   })
-  .catch(()=>{ document.getElementById('map-loading').classList.add('hidden'); });
+  .catch(err => {
+    console.warn('World boundaries failed to load:', err);
+    document.getElementById('map-loading').classList.add('hidden');
+  });
 
-/* ---------------- India boundary overlay (kept even on the world map, per official-depiction requirement) ---------------- */
+/* ---------------- India boundary overlay ---------------- */
 const INDIA_BOUNDARY_URLS = [
   '/data/india-boundary.geojson'
 ];
 async function loadBaseMapLayers(){
   try{
-    const [worldRes, indiaRes] = await Promise.all([
-      fetch('/data/world-boundaries.geojson'),
-      fetch('/data/india-boundary.geojson')
-    ]);
-    const worldGeo = worldRes.ok ? await worldRes.json() : null;
+    const indiaRes = await fetch('/data/india-boundary.geojson');
     const indiaGeo = indiaRes.ok ? await indiaRes.json() : null;
-
-    if(worldGeo){
-  L.geoJSON(worldGeo, {
-    style: { color: '#D9B8B8', weight: 0.6, fillColor: '#FAFAF8', fillOpacity: 1 }
-  }).addTo(map);
-
-  worldGeo.features.forEach(f=>{
-  const name = (f.properties && (f.properties.ADMIN || f.properties.NAME || f.properties.name)) || null;
-  if(!name) return;
-  try{
-    const layer = L.geoJSON(f);
-    const center = layer.getBounds().getCenter();
-    const marker = L.marker(center, {
-      icon: L.divIcon({ className:'', html:`<div class="world-label">${name}</div>`, iconSize:[0,0] }),
-      interactive:false
-    });
-    worldLabelMarkers.push(marker);
-  }catch(e){ /* skip if geometry is malformed */ }
-});
-updateWorldLabels();
-}
     if(indiaGeo){
       L.geoJSON(indiaGeo, {
        interactive:false,
@@ -1003,20 +1035,16 @@ updateWorldLabels();
       }).addTo(map);
     }
   }catch(e){
-    console.warn('Base map layers failed to load:', e);
+    console.warn('India boundary failed to load:', e);
   }
   document.getElementById('map-loading').classList.add('hidden');
 }
 loadBaseMapLayers();
 
-/* ---------------- World countries overlay (for round-result highlighting) ----------------
-   Highlights each COUNTRY a river flows through in its own distinct color — more useful
-   for world map geography practice than one blanket color. Tries a couple of mirrors of a
-   standard world-countries GeoJSON. */
+/* ---------------- World countries overlay (for round-result highlighting) ---------------- */
 let worldCountriesGeo = null;
 const WORLD_COUNTRIES_URLS = [
- '/data/world-boundaries.geojson',
-  'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json',
+  '/data/world-boundaries1.geojson',
   'https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson'
 ];
 async function loadWorldCountries(){
@@ -1032,15 +1060,14 @@ async function loadWorldCountries(){
 }
 loadWorldCountries();
 
-/* Alias table for the few country names that differ between our round data and the
-   source dataset's name property (e.g. "United States" vs "United States of America"). */
+/* Alias table for country name matching */
 const COUNTRY_NAME_ALIASES = {
   'united states': ['united states', 'united states of america', 'usa', 'us'],
   'south sudan': ['south sudan', 's. sudan'],
   'myanmar': ['myanmar', 'burma'],
   'vietnam': ['vietnam', 'viet nam'],
   'laos': ['laos', "lao people's democratic republic", 'lao pdr'],
-  'serbia': ['serbia', 'republic of serbia']   // add this
+  'serbia': ['serbia', 'republic of serbia']
 };
 function countryFeatureMatches(feature, targetName){
   const props = (feature && feature.properties) || {};
@@ -1053,8 +1080,6 @@ function countryFeatureMatches(feature, targetName){
   return false;
 }
 
-/* Distinct palette cycled across the countries a river passes through — deliberately NOT
-   tied to correct/incorrect, since every one of these countries is part of the answer. */
 const COUNTRY_HIGHLIGHT_PALETTE = ['#4A9E7A','#5B7FFF','#8B7CF6','#D4A853','#F2545F','#EAC072','#3AA0A0','#B4739E'];
 
 function highlightCountriesMulti(names){
@@ -1132,7 +1157,6 @@ function setMapVisible(visible){
 }
 setMapVisible(false);
 
-/* Fill the "N targets" mini-stat on the start screen from the live round count. */
 document.addEventListener('DOMContentLoaded', function(){
   const n = Math.min(ROUNDS_PER_GAME, ROUNDS.length);
   const el = document.getElementById('targets-count-label');
@@ -1164,13 +1188,12 @@ function clearRevealLayers(){
 
 function findRound(id){ return ROUNDS.find(r=>r.id===id); }
 
-/* Pick `count` random decoy rivers (excluding the target) to pair alongside it. */
 function getDecoysFor(targetRound, count){
   const others = ROUNDS.filter(r => r.id !== targetRound.id);
   return shuffleArr(others).slice(0, count);
 }
 
-/* ---------------- Draw the candidate river lines for a round ---------------- */
+/* ---------------- Draw candidate river lines ---------------- */
 const CANDIDATE_COLORS = ['#5B7FFF','#8B7CF6','#3AA0A0','#B4739E','#E08E45','#5C9BD1'];
 
 function renderCandidates(targetRound){
@@ -1178,7 +1201,7 @@ function renderCandidates(targetRound){
   selectedId = null;
   const decoyCount = Math.min(CANDIDATES_PER_ROUND - 1, ROUNDS.length - 1);
   const decoys = getDecoysFor(targetRound, decoyCount);
-  const pair = shuffleArr([targetRound, ...decoys]); // randomize which color/position is correct
+  const pair = shuffleArr([targetRound, ...decoys]);
 
   pair.forEach((round, i)=>{
     const color = CANDIDATE_COLORS[i % CANDIDATE_COLORS.length];
@@ -1231,7 +1254,6 @@ function loadRound(){
   renderCandidates(round);
 }
 
-/* ---------------- Scoring (binary: right river / wrong river) ---------------- */
 function scoreFor(correct){ return correct ? 100 : 0; }
 
 const VERDICT_ICONS = {
@@ -1292,7 +1314,6 @@ function lockGuess(){
 
   document.getElementById('lock-btn').style.display = 'none';
 
-  // Fly the map to fit all candidate courses so the player sees the full picture.
   const boundsPoints = [];
   candidates.forEach(c=> c.line.getLatLngs().forEach(pt=> boundsPoints.push(pt)));
   const bounds = L.latLngBounds(boundsPoints);
@@ -1305,10 +1326,10 @@ function lockGuess(){
   }
   map.once('moveend', fireReveal);
   map.flyToBounds(bounds, { padding:[80,80], maxZoom:8, duration:1.1, easeLinearity:0.25 });
-  setTimeout(fireReveal, 1600); // fallback in case flyToBounds doesn't fire moveend
+  setTimeout(fireReveal, 1600);
 }
 
-const LABEL_MIN_ZOOM = 4; // raise/lower this to tune when names appear
+const LABEL_MIN_ZOOM = 4;
 function updateWorldLabels(){
   const shouldShow = map.getZoom() >= LABEL_MIN_ZOOM;
   worldLabelMarkers.forEach(m=>{
@@ -1496,7 +1517,7 @@ function renderSoloBreakdown(){
 }
 
 /* ============================================================
-   API HELPERS — Cloudflare Worker (shared KV across all games)
+   API HELPERS — Cloudflare Worker
    ============================================================ */
 function randomCode(){
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -1559,7 +1580,7 @@ async function fetchGame(gameCode){
   return data;
 }
 const MY_CHALLENGES_KEY = 'my-challenges-' + GAME_TYPE;
-const CHALLENGE_MAX_AGE_MS = 60 * 24 * 60 * 60 * 1000; // matches your worker's 60-day TTL
+const CHALLENGE_MAX_AGE_MS = 60 * 24 * 60 * 60 * 1000;
 
 function myChallenges(){
   try{ return JSON.parse(localStorage.getItem(MY_CHALLENGES_KEY) || '{}'); }
@@ -1568,16 +1589,12 @@ function myChallenges(){
 
 function saveMyChallenge(gameCode, avg, scoreArr){
   const all = myChallenges();
-
-  // Prune anything past the worker's TTL before adding the new one, so the
-  // object can't grow unbounded across a player's history.
   const now = Date.now();
   Object.keys(all).forEach(key => {
     if (!all[key].savedAt || (now - all[key].savedAt) > CHALLENGE_MAX_AGE_MS) {
       delete all[key];
     }
   });
-
   all[gameCode] = { avg, scores: scoreArr, savedAt: now };
   try{
     localStorage.setItem(MY_CHALLENGES_KEY, JSON.stringify(all));
@@ -1627,7 +1644,6 @@ function showReplyComparison(data){
   document.getElementById('check-reply-btn').style.display = 'none';
 }
 
-/* ---------------- Challenge link build / share (on-demand) ---------------- */
 function resetChallengeLinkUI(){
   const linkInput = document.getElementById('challenge-link');
   const copyBtn = document.getElementById('copy-link-btn');
@@ -1703,7 +1719,6 @@ function showToast(msg){
   setTimeout(()=> t.classList.remove('show'), 1800);
 }
 
-/* ---------------- Accepting a challenge ---------------- */
 function parseChallengeString(raw){
   raw = (raw || '').trim();
   if(!raw) throw new Error('Paste a challenge link first.');
@@ -1808,7 +1823,6 @@ async function acceptPastedChallenge(){
   }catch(e){ /* ignore malformed links, fall back to start screen */ }
 })();
 
-/* ---------------- Confetti ---------------- */
 function fireConfetti(opts){
   opts = opts || {};
   const count = opts.count || 70;
@@ -1848,7 +1862,6 @@ function fireConfetti(opts){
   requestAnimationFrame(loop);
 }
 
-/* ---------------- Responsive resize handling ---------------- */
 let lastKnownWidth = window.innerWidth;
 let resizeSettleTimer = null;
 function handleViewportSettle(){
@@ -1864,7 +1877,6 @@ window.addEventListener('resize', handleViewportSettle);
 window.visualViewport && window.visualViewport.addEventListener('resize', handleViewportSettle);
 setTimeout(()=> { try { map.invalidateSize(); } catch(e){} }, 200);
 
-/* ---------------- AdSense: push once per real page load ---------------- */
 window.addEventListener('load', function() {
   try {
     document.querySelectorAll('.ad-slot .adsbygoogle').forEach(function() {
@@ -1872,9 +1884,6 @@ window.addEventListener('load', function() {
     });
   } catch (e) { console.warn('AdSense not ready yet:', e); }
 });
-  /* Reveal an ad slot's space only once Google actually fills it — keeps the
-   push() call (and thus the real ad request Google's reviewer sees) fully
-   intact, just avoids reserving visible space for a blank/unfilled slot. */
 document.querySelectorAll('.ad-slot').forEach(function(slot){
   const ins = slot.querySelector('.adsbygoogle');
   if(!ins) return;
