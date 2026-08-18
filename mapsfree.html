@@ -206,7 +206,6 @@ crossorigin="anonymous"></script>
     border:1px solid var(--glass-brd); box-shadow: var(--glass-shadow); isolation:isolate; z-index:0; }
   #map-viewport.screen-covered{visibility:hidden;}
   #map{ position:absolute;inset:0; }
-  #map .leaflet-tile-pane{filter:saturate(1.1) contrast(1.02);}
   #map .leaflet-control-attribution{ background:rgba(0,0,0,0.6)!important;color:#ccc!important;font-size:9px!important; backdrop-filter: blur(4px); }
   #map .leaflet-control-attribution a{color:var(--gold)!important;}
   #map .leaflet-control-zoom a{ background:var(--glass)!important;color:var(--ink)!important;border:1px solid var(--glass-brd)!important; }
@@ -911,7 +910,7 @@ const ROUNDS_PER_GAME = 10;
 const CANDIDATES_PER_ROUND = 4;
 
 /* ============================================================
-   MAP SETUP — Satellite Map + Country Border Overlay
+   MAP SETUP — FIXED LOADING (Google Satellite + Borders)
    ============================================================ */
 const map = L.map('map', {
   renderer: L.canvas(),
@@ -928,33 +927,29 @@ const map = L.map('map', {
   attributionControl:true
 }).setView([15, 10], 2.7);
 
-// 1. Load the Satellite / Physical map tiles
-L.tileLayer('https://tiles.versatiles.org/map/physical/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-    attribution: '&copy; <a href="https://www.versatiles.org/">Versatile Tiles</a>'
+// 1. Load RELIABLE Satellite Tiles (Google - no CORS errors)
+L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+    maxZoom: 20,
+    attribution: 'Google Satellite'
 }).addTo(map);
 
-// 2. Load Country Boundaries so players have map context
+// 2. Load Country Borders (so users know where they are)
 fetch('https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_admin_0_countries.geojson')
   .then(res => res.json())
   .then(geo => {
     L.geoJSON(geo, {
       style: {
-        color: '#8FB89C',      // Light green border color
-        weight: 0.8,           // Thin border
-        fillColor: 'transparent', // No fill, so satellite shows through
-        fillOpacity: 0,
-        opacity: 0.8
+        color: '#A8C9B3',   // Slightly darker green outline to show over satellite
+        weight: 1,
+        fillColor: 'transparent',
+        fillOpacity: 0
       }
     }).addTo(map);
   })
   .catch(err => console.warn('World boundaries failed to load:', err));
 
-// Remove loading indicator
+// Hide loading screen
 document.getElementById('map-loading').classList.add('hidden');
-map.on('load', function() {
-    document.getElementById('map-loading').classList.add('hidden');
-});
 
 /* ---------------- India boundary overlay (optional) ---------------- */
 async function loadIndiaBoundary(){
