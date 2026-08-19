@@ -41,10 +41,7 @@ crossorigin="anonymous"></script>
 <script src="theme.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-<link rel="preconnect" href="https://a.basemaps.cartocdn.com">
-<link rel="preconnect" href="https://b.basemaps.cartocdn.com">
-<link rel="preconnect" href="https://c.basemaps.cartocdn.com">
-<link rel="preconnect" href="https://d.basemaps.cartocdn.com">
+<link rel="preconnect" href="https://mapidesk-tile-cache.abhikr18996.workers.dev">
 
 <style>
   /* ============================================ */
@@ -1124,17 +1121,16 @@ const map = L.map('map', {
   attributionControl:true
 }).setView([5, 20], 2);
 
-const tiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> · India boundary: official depiction, Govt. of India',
-  subdomains:'abcd',
+const tiles = L.tileLayer('https://mapidesk-tile-cache.abhikr18996.workers.dev/light_nolabels/{z}/{x}/{y}{r}.png', {
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
   maxZoom:19,
   keepBuffer:4,
   updateWhenZooming:false,
   crossOrigin:true
 }).addTo(map);
 
-const labelTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-  subdomains:'abcd', minZoom:4, maxZoom:19, keepBuffer:4, updateWhenZooming:false, crossOrigin:true
+const labelTiles = L.tileLayer('https://mapidesk-tile-cache.abhikr18996.workers.dev/light_only_labels/{z}/{x}/{y}{r}.png', {
+  minZoom:4, maxZoom:19, keepBuffer:4, updateWhenZooming:false, crossOrigin:true
 }).addTo(map);
 
 let tilesLoaded = false;
