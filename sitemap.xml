@@ -1,348 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-    <!-- ========== HOME PAGE ========== -->
-    <url>
-        <loc>https://mapidesk.com/index.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <!-- ========== MAIN PAGES ========== -->
-    <url>
-        <loc>https://mapidesk.com/daily-challenge-quiz.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home -->
+    <url><loc>https://mapidesk.com/index.html</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+    <url><loc>https://mapidesk.com/daily-challenge-quiz.html</loc><priority>0.9</priority><changefreq>daily</changefreq></url>
     
-    <url>
-        <loc>https://mapidesk.com/about-us.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
+    <!-- Indian Geography -->
+    <url><loc>https://mapidesk.com/river-of-India.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/mountains-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/plateaus-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/dams-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/canals-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/lakes-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/islands-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/coastline-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/mountain-passes-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/Forests-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/biosphere-reserves-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/tiger-reserves-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/ramsar-sites-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/minerals-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/india-agriculture.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/state-schemes-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/census-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/heritage-sites-of-india.html</loc><priority>0.8</priority></url>
+    <url><loc>https://mapidesk.com/Major-Pilgrimage-Sites.html</loc><priority>0.8</priority></url>
     
-    <url>
-        <loc>https://mapidesk.com/contact-us.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
-    </url>
+    <!-- World Geography -->
+    <url><loc>https://mapidesk.com/river-of-world.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-mountains.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-volcanoes.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/major-world-deserts.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-forests.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-grasslands.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-lakes.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-seas.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-gulfs.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-straits.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-passes.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-glaciers.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-canals.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-ocean-currents.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-crop-production.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-mineral-locations.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-population-and-cities.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/world-organizations-headquarters.html</loc><priority>0.7</priority></url>
     
-    <url>
-        <loc>https://mapidesk.com/privacy-policy.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
+    <!-- General Knowledge -->
+    <url><loc>https://mapidesk.com/international-boundary-lines.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/latitude-lines-and-wind-belts.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/major-windbelts.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/major-world-deserts.html</loc><priority>0.7</priority></url>
+    <url><loc>https://mapidesk.com/places-in-news.html</loc><priority>0.7</priority></url>
     
-    <url>
-        <loc>https://mapidesk.com/terms-and-conditions.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-
-    <!-- ========== INDIAN GEOGRAPHY (18 Pages) ========== -->
-    <url>
-        <loc>https://mapidesk.com/river-of-India.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/mountains-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/plateaus-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/dams-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/canals-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/lakes-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/islands-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/coastline-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/mountain-passes-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/Forests-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/biosphere-reserves-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/tiger-reserves-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/ramsar-sites-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/minerals-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/india-agriculture.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/state-schemes-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/census-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/heritage-sites-of-india.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/Major-Pilgrimage-Sites.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- ========== WORLD GEOGRAPHY (19 Pages) ========== -->
-    <url>
-        <loc>https://mapidesk.com/river-of-world.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-mountains.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-volcanoes.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/major-world-deserts.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-forests.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-grasslands.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-lakes.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-seas.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-gulfs.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-straits.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-passes.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-glaciers.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-canals.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-ocean-currents.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-crop-production.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-mineral-locations.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-population-and-cities.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/world-organizations-headquarters.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- ========== GENERAL KNOWLEDGE (5 Pages) ========== -->
-    <url>
-        <loc>https://mapidesk.com/international-boundary-lines.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/latitude-lines-and-wind-belts.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/major-windbelts.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/major-world-deserts.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://mapidesk.com/places-in-news.html</loc>
-        <lastmod>2026-08-20</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
+    <!-- Static Pages -->
+    <url><loc>https://mapidesk.com/about-us.html</loc><priority>0.5</priority></url>
+    <url><loc>https://mapidesk.com/contact-us.html</loc><priority>0.5</priority></url>
+    <url><loc>https://mapidesk.com/privacy-policy.html</loc><priority>0.3</priority></url>
+    <url><loc>https://mapidesk.com/terms-and-conditions.html</loc><priority>0.3</priority></url>
 </urlset>
