@@ -10,6 +10,7 @@ crossorigin="anonymous"></script>
 <meta name="description" content="Test your knowledge of India's art and culture with an interactive geography map quiz. Locate major cultural sites, traditional art forms, heritage places, crafts, festivals, and more.">
 <link rel="icon" type="image/png" href="/images/Mapidesk_Icon-removebg-preview.png" />
 <link rel="apple-touch-icon" href="/images/Mapidesk_Icon-removebg-preview.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/Mapidesk_Icon-removebg-preview.png" />
 
 <meta property="og:title" content="Heritage Sites of India Quiz | MapiDesk" />
 <meta property="og:description" content="Test your knowledge of India's UNESCO World Heritage Sites, historical monuments, cultural landmarks, and natural heritage with this interactive mapping quiz." />
@@ -1429,8 +1430,8 @@ loadIndiaBoundary();
    GeoJSON. */
 let indiaStatesGeo = null;
 const INDIA_STATES_URLS = [
-  'https://gist.githubusercontent.com/jbrobst/56c13bbbf9d97d187fea01ca62ea5112/raw/e388c4cae20aa53cb5090210a42ebb9b765c0a36/india_states.geojson',
-  'https://raw.githubusercontent.com/Subhash9325/GeoJson-Data-of-Indian-States/master/Indian_States'
+  '/data/india-states-source-a.geojson',   // same-repo relative path, faster & no external dependency
+  '/data/india-states-source-b.geojson'
 ];
 async function loadIndiaStates(){
   for(const url of INDIA_STATES_URLS){
