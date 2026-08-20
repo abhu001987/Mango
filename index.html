@@ -2798,12 +2798,12 @@ const map = L.map('worldMap', {
 });
 map.createPane('baseTiles');  map.getPane('baseTiles').style.zIndex = 200;
 map.createPane('labelTiles'); map.getPane('labelTiles').style.zIndex = 400;
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+L.tileLayer('https://mapidesk-tile-cache.abhikr18996.workers.dev/light_nolabels/{z}/{x}/{y}{r}.png', {
   attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a> · India boundary: official depiction, Govt. of India',
-  subdomains:'abcd', maxZoom:19, pane:'baseTiles'
+  maxZoom:19, pane:'baseTiles'
 }).addTo(map);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
-  subdomains:'abcd', minZoom:4, maxZoom:19, pane:'labelTiles'
+L.tileLayer('https://mapidesk-tile-cache.abhikr18996.workers.dev/light_only_labels/{z}/{x}/{y}{r}.png', {
+  minZoom:4, maxZoom:19, pane:'labelTiles'
 }).addTo(map);
 
 const INDIA_BOUNDARY_URLS = [
