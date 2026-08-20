@@ -6,22 +6,21 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8353010289901005"
 crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>River Navigator — World Rivers Quiz | MapiDesk</title>
-<meta name="description" content="Test your knowledge of the world's great rivers with an interactive geography map quiz. Pick out the real course of the Nile, Amazon, Mississippi, Danube, Yangtze, Mekong and more, and sharpen your world geography skills.">
+<title>Mountains of the World Geography Quiz | MapiDesk</title>
+<meta name="description" content="Test your knowledge of the world's mountains with an interactive geography map quiz. Locate major mountain ranges, peaks, and mountain regions across the globe.">
 <link rel="icon" type="image/png" href="/images/Mapidesk_Icon-removebg-preview.png" />
 <link rel="apple-touch-icon" href="/images/Mapidesk_Icon-removebg-preview.png" />
 
-<meta property="og:title" content="Rivers of the World Quiz | MapiDesk" />
-<meta property="og:description" content="Test your knowledge of the world's major rivers and the countries they flow through with this interactive geography quiz." />
+<meta property="og:title" content="World Mountains Quiz | MapiDesk" />
+<meta property="og:description" content="Test your knowledge of the world's major mountains, mountain ranges, peaks, and their locations with this interactive mapping quiz." />
 <meta property="og:image" content="https://mapidesk.com/images/Mapidesk_Icon-removebg-preview.png" />
-<meta property="og:url" content="https://mapidesk.com/rivers-of-world.html" />
+<meta property="og:url" content="https://mapidesk.com/world-mountains.html" />
 <meta property="og:type" content="website" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Rivers of the World Quiz | MapiDesk" />
-<meta name="twitter:description" content="Test your knowledge of the world's major rivers and the countries they flow through with this interactive geography quiz." />
+<meta name="twitter:title" content="World Mountains Quiz | MapiDesk" />
+<meta name="twitter:description" content="Test your knowledge of the world's major mountains, mountain ranges, peaks, and their locations with this interactive mapping quiz." />
 <meta name="twitter:image" content="https://mapidesk.com/images/Mapidesk_Icon-removebg-preview.png" />
-  <!-- Theme: set instantly, before any CSS loads -->
 <script>
   (function() {
     try {
@@ -31,19 +30,16 @@ crossorigin="anonymous"></script>
   })();
 </script>
 
-<!-- Fonts (matches MapiDesk) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" />
 
-<!-- Shared CSS & JS (theme) -->
 <link rel="stylesheet" href="theme.css" />
 <script src="theme.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<link rel="preconnect" href="https://mapidesk-tile-cache.abhikr18996.workers.dev">
 
 <style>
-  /* ============================================ */
-  /* PALETTE — MapiDesk gold/deep-blue glass theme (same as Heritage / Gulf / Desert / Lake Navigator) */
   :root {
     --glass-bg: rgba(255, 255, 255, 0.55);
     --glass-border: rgba(255, 255, 255, 0.35);
@@ -117,8 +113,6 @@ crossorigin="anonymous"></script>
     --glass-brd: var(--border-light);
     --ink-dim: var(--muted);
   }
-  /* ============================================ */
-  /* HEADER */
   .nav { position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; padding: 16px clamp(16px,2.4vw,36px) 0; border-bottom: none; background: transparent; transition: border-color 0.3s ease; margin-bottom: 0; }
   .nav.header-hidden { display: none; }
   .wrap { max-width: 1400px; margin: 0 auto; }
@@ -148,8 +142,6 @@ crossorigin="anonymous"></script>
   [data-theme="light"] .theme-toggle .moon-icon { opacity: 0; transform: rotate(90deg) scale(0.4); }
   @media (max-width: 600px) { .nav { padding: 12px 14px 0; } .nav-inner { padding: 10px 14px; border-radius: 16px; } .logo { font-size: 22px; gap: 9px; } .logo .mark { width: 40px; height: 40px; } .logo .mark svg { width: 40px; height: 40px; } .nav-links { display: none; } .exit-btn { padding: 6px 12px; font-size: 12px; } .exit-btn span { display: none; } .theme-toggle { width: 34px; height: 34px; } }
 
-  /* ============================================ */
-  /* BASE */
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{ margin:0;padding:0; height:100%; height:100dvh; overscroll-behavior:none; background:var(--bg-0);
     font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--text);
@@ -159,7 +151,6 @@ crossorigin="anonymous"></script>
   #app{ position:relative;z-index:1; flex:1 1 auto;min-height:0; display:flex;flex-direction:column;
     padding-bottom:env(safe-area-inset-bottom); padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); }
 
-  /* ---------- HUD ---------- */
   #hud-top{ display:flex;align-items:center;justify-content:space-between;gap:8px; padding:8px 10px; background:transparent; z-index:500; flex-wrap:nowrap; position:relative; }
   .brand{ font-weight:700;letter-spacing:.1em;font-size:10px;color:var(--gold); text-transform:uppercase;opacity:.9;flex-shrink:0; font-family:'IBM Plex Mono',monospace; }
   .hud-back-btn{ display:flex;align-items:center;justify-content:center; width:34px;height:34px;border-radius:50%;flex-shrink:0;
@@ -201,38 +192,47 @@ crossorigin="anonymous"></script>
   #challenge-flag .dotpulse{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulseDot 1.4s ease-in-out infinite;}
   @keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:.25;}}
 
-  /* ---------- MAP ---------- */
   #map-viewport{ flex:1 1 auto;position:relative;overflow:hidden; margin:0 8px 8px; min-height:0; border-radius:18px;
     border:1px solid var(--glass-brd); box-shadow: var(--glass-shadow); isolation:isolate; z-index:0; }
   #map-viewport.screen-covered{visibility:hidden;}
-  #map{ position:absolute;inset:0; }
-  #map .leaflet-control-attribution{ background:rgba(0,0,0,0.6)!important;color:#ccc!important;font-size:9px!important; backdrop-filter: blur(4px); }
+  #map{ position:absolute;inset:0; background:#0e1f30; }
+  #map .leaflet-tile-pane{filter:saturate(1.1) contrast(1.02);}
+  #map .leaflet-container{background:#dfe6ea;}
+  #map-loading{ position:absolute;inset:0;z-index:400;display:flex;align-items:center;justify-content:center;
+    background:#0e1f30;color:var(--muted-light);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    pointer-events:none;transition:opacity .3s ease; }
+  #map-loading.hidden{opacity:0;}
+  #map .leaflet-control-attribution{ background:rgba(255,255,255,0.82)!important;color:#5C6B73!important;font-size:9px!important; }
   #map .leaflet-control-attribution a{color:var(--gold)!important;}
   #map .leaflet-control-zoom a{ background:var(--glass)!important;color:var(--ink)!important;border:1px solid var(--glass-brd)!important; }
 
-  /* Country Label Styling on Satellite - FIXED GHOSTING */
-  .world-label {
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 700;
-    font-size: 9px;
-    color: #000 !important;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 2px 4px;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    pointer-events: none;
-  }
   .line-label{ transform:translate(-50%,-150%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
     font-size:10.5px; padding:4px 9px; border-radius:20px; background:var(--gold); color:#1A2E3B; box-shadow:0 4px 12px rgba(0,0,0,0.18); }
-  .guess-label{ transform:translate(-50%,-150%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
-    font-size:10.5px; padding:4px 9px; border-radius:20px; background:var(--coral); color:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.18); }
   .country-label{ transform:translate(-50%,-50%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
     font-size:10px; padding:3px 9px; border-radius:20px; background:var(--clabel-color, var(--gold)); color:#fff;
     box-shadow:0 4px 12px rgba(0,0,0,0.22); letter-spacing:.02em; pointer-events:none; }
 
-  /* ---------- BOTTOM PANEL ---------- */
+  /* ---------- CHOICE PINS (multiple-choice answer markers) ---------- */
+  .choice-pin{
+    display:flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border-radius:50%;
+    background:var(--gold-bright);
+    border:3px solid #fff;
+    box-shadow:0 6px 16px rgba(0,0,0,0.32), 0 0 0 3px var(--gold-glow);
+    cursor:pointer;
+    transition:transform .18s var(--ease), box-shadow .18s ease, background .18s ease, opacity .25s ease;
+  }
+  .choice-pin svg{width:20px;height:20px;stroke:#1A2E3B;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;}
+  .choice-pin:hover{transform:scale(1.1);box-shadow:0 8px 22px rgba(0,0,0,0.4), 0 0 0 5px var(--gold-glow);}
+  .choice-pin.correct{background:var(--teal);box-shadow:0 8px 24px rgba(74,158,122,0.5), 0 0 0 6px rgba(74,158,122,0.22);}
+  .choice-pin.correct svg{stroke:#fff;}
+  .choice-pin.wrong{background:var(--coral);box-shadow:0 8px 24px rgba(242,84,95,0.5), 0 0 0 6px rgba(242,84,95,0.22);}
+  .choice-pin.wrong svg{stroke:#fff;}
+  .choice-pin.dim{opacity:.4;filter:grayscale(.4);cursor:default;transform:scale(.92);}
+  .choice-pin.locked{cursor:default;}
+  @keyframes choicePop{ 0%{transform:scale(0);opacity:0;} 60%{transform:scale(1.15);opacity:1;} 100%{transform:scale(1);opacity:1;} }
+  .choice-pin.pop{animation:choicePop .4s var(--ease) both;}
+
   #hud-bottom{ z-index:500;padding:8px 10px 12px; display:flex;flex-direction:column;align-items:center;gap:8px; }
   #feedback{ width:100%;max-width:640px; background:var(--glass);border:1px solid var(--glass-brd);backdrop-filter:blur(14px) saturate(160%);
     -webkit-backdrop-filter:blur(14px) saturate(160%); border-radius:16px;padding:10px 16px;text-align:center;
@@ -263,7 +263,6 @@ crossorigin="anonymous"></script>
   .hint-tap{font-size:11px;color:var(--ink-dim);letter-spacing:.05em;opacity:.85;text-align:center; display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:center;}
   .hint-tap svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 
-  /* ---------- OVERLAY SCREENS ---------- */
   .screen{ position:absolute;inset:0;z-index:5000;display:flex;align-items:flex-start;justify-content:center;
     background:var(--bg-0);
     background-image: radial-gradient(circle at 15% 0%, var(--glow-1), transparent 45%), radial-gradient(circle at 85% 20%, var(--glow-2), transparent 40%);
@@ -476,10 +475,6 @@ crossorigin="anonymous"></script>
   }
   .ad-slot{ max-height:0; overflow:hidden; margin:0 !important; transition:max-height .3s ease; }
 .ad-slot.ad-filled{ max-height:400px; }
-
-  /* ---------- RIVER CANDIDATE SELECT (river-specific) ---------- */
-  .river-dot-outer{ display:flex;align-items:center;justify-content:center;width:100%;height:100%; }
-  .river-dot-outer .core{ border-radius:50%; box-shadow:0 3px 10px rgba(0,0,0,0.3); border:2px solid #fff; }
 </style>
 </head>
 <body>
@@ -543,10 +538,10 @@ crossorigin="anonymous"></script>
         <div class="hero-copy">
           <div class="kicker">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l-5.5 2 2-5.5L17 5l3 3-11.5 11.5z"/><path d="M15 3l6 6"/></svg>
-            Chart the Waters
+            Map the World's Mountains
           </div>
-          <h1> River <span>Navigator</span></h1>
-<p class="sub">Test your knowledge of the world's great rivers. Four courses are drawn on the map — pick out the real path of the Nile, Amazon, Mississippi, Danube and more.</p>        </div>
+          <h1> Mountains <span>Navigator</span></h1>
+<p class="sub">Test your knowledge of the world's mountains — for each target, pick the correct location out of four marked options, from the Himalayas and Andes to the Rockies, Alps, Atlas, and more.</p>        </div>
       </div>
 
       <div class="info-cards">
@@ -557,14 +552,14 @@ crossorigin="anonymous"></script>
             </div>
             <div>
               <h3>Your Mission</h3>
-              <p>Pick the correct river line for each name you're given.</p>
+              <p>Choose the correct marker for each mountain, out of four options.</p>
             </div>
           </div>
           <div class="info-body">
             <div class="mini-stats">
               <div class="mini-stat">
                 <div class="icon-circle blue"><svg viewBox="0 0 24 24"><path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4"/></svg></div>
-                <div class="mini-stat-text"><span class="t" id="targets-count-label">4 targets</span><span class="d">Shuffled each run</span></div>
+                <div class="mini-stat-text"><span class="t">10 targets</span><span class="d">Shuffled each run</span></div>
               </div>
               <div class="mini-stat">
                 <div class="icon-circle violet"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></div>
@@ -603,15 +598,15 @@ crossorigin="anonymous"></script>
         <div class="steps-row">
           <div class="step">
             <div class="step-num">1</div>
-            <div class="step-text"><div class="t">Read the Name</div><div class="d">See which river you need to find</div></div>
+            <div class="step-text"><div class="t">See Four Pins</div><div class="d">One marks the real location — three are decoys</div></div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
-            <div class="step-text"><div class="t">Tap the Line</div><div class="d">Four river courses are drawn — pick the one you think is right</div></div>
+            <div class="step-text"><div class="t">Tap Your Answer</div><div class="d">Pick the pin you think is correct</div></div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
-            <div class="step-text"><div class="t">Compare Results</div><div class="d">See the real course, the countries it flows through, and share with friends</div></div>
+            <div class="step-text"><div class="t">Compare Results</div><div class="d">Share and see who read it closer</div></div>
           </div>
         </div>
       </div>
@@ -638,7 +633,7 @@ crossorigin="anonymous"></script>
     <div class="panel wide" style="max-width:900px;">
       <div class="mode-badge"><span class="dot"></span>Incoming Challenge</div>
       <h1 style="text-align:left;">You've Been <span>Challenged</span></h1>
-      <p class="sub" style="text-align:left;">A friend already picked all the rivers and dared you to beat them. Same targets, same order — their score stays hidden until you finish your own run.</p>
+      <p class="sub" style="text-align:left;">A friend already mapped all the mountains and dared you to beat them. Same targets, same order — their score stays hidden until you finish your own run.</p>
       <div class="info-cards">
         <div class="info-card accent">
           <div class="info-card-head">
@@ -651,7 +646,7 @@ crossorigin="anonymous"></script>
             </div>
           </div>
           <div class="info-body">
-            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Accept to take the exact same course and find out who knows the world's rivers better, site by site.</p>
+            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Accept to take the exact same course and find out who reads world geography closer.</p>
           </div>
         </div>
         <div class="info-card">
@@ -663,13 +658,21 @@ crossorigin="anonymous"></script>
             </div>
           </div>
           <div class="info-body">
-            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Four river courses are drawn for each round — tap the one that matches the name shown. At the end you'll get a full head-to-head breakdown.</p>
+            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Pick the correct pin out of four options for each mountain — every right answer scores points. At the end, you'll get a full head-to-head breakdown.</p>
           </div>
         </div>
       </div>
       <div class="btn-row" style="justify-content:flex-start;">
         <button class="btn btn-primary" onclick="acceptChallengeInvite()">Accept Challenge</button>
         <button class="btn btn-ghost" onclick="declineChallengeInvite()">Not Now</button>
+      </div>
+      <div class="ad-slot" style="margin:24px 0 8px; text-align:center;">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8353010289901005"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
       </div>
       <div class="ad-slot" style="margin:24px 0 8px; text-align:center;">
         <ins class="adsbygoogle"
@@ -699,7 +702,7 @@ crossorigin="anonymous"></script>
         <div class="score-meta">
           <div class="kicker" id="end-kicker" style="margin-bottom:4px;">Mission Complete</div>
           <div class="final-score" id="final-score">0%</div>
-          <div class="final-label">Rivers Identified Correctly</div>
+          <div class="final-label">Correct Answers</div>
         </div>
       </div>
       <p class="sub" id="final-msg" style="margin-bottom:16px;"></p>
@@ -729,7 +732,7 @@ crossorigin="anonymous"></script>
           <svg viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="1.8"/><path d="M12 6.3V20M5 13a7 7 0 0014 0M5 13H3M19 13h2M8.2 18l-3-2M15.8 18l3-2"/></svg>
           Challenge a Friend
         </div>
-        <div class="share-sub">Send them this exact run's targets and see if they can out-read your river score.</div>
+        <div class="share-sub">Send them this exact run's targets and see if they can out-pin your score.</div>
         <div class="link-box">
           <input id="challenge-link" readonly placeholder="Tap Copy to generate your link…">
           <button class="copy-btn" id="copy-link-btn" onclick="copyChallengeLink()">Copy</button>
@@ -749,14 +752,7 @@ crossorigin="anonymous"></script>
           Once they've played, come back and open this same link again — or tap "Check if they've replied" above — to see the head-to-head.
         </div>
       </div>
-      <div class="ad-slot" style="margin:24px 0 8px; text-align:center;">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8353010289901005"
-             data-ad-slot="1234567890"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-      </div>
+
       <div class="menu-footer">
         <a href="index.html" class="back-link">
           <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
@@ -772,15 +768,15 @@ crossorigin="anonymous"></script>
     <button class="hud-back-btn" onclick="showExitDialog()" aria-label="Back to menu" title="Back to menu">
       <svg class="ic" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>
     </button>
-    <div class="brand">◆ Rivers</div>
+    <div class="brand">◆ Mountains</div>
     <div class="strait-card" id="strait-card">
-      <div class="eyebrow" id="round-label">Round 1 of 4</div>
+      <div class="eyebrow" id="round-label">Round 1 of 10</div>
       <div class="title" id="strait-name">—</div>
-      <div class="subtitle" id="strait-region">Which line is this river?</div>
+      <div class="subtitle" id="strait-region"></div>
       <div id="dots"></div>
     </div>
     <div id="challenge-flag"><span class="dotpulse"></span><span class="flag-text">Challenge</span></div>
-    <div class="score-pill">Score <b id="score-live">0%</b></div>
+    <div class="score-pill">Correct <b id="score-live">0%</b></div>
   </div>
 
   <div id="map-viewport">
@@ -794,15 +790,14 @@ crossorigin="anonymous"></script>
       <div class="fact" id="fact-text"></div>
       <div class="detail-line" id="legend-line" style="display:none;">
         <svg viewBox="0 0 24 24"><path d="M9 20l-5.5 2 2-5.5L17 5l3 3-11.5 11.5z"/><path d="M15 3l6 6"/></svg>
-        Gold line = the real river · each highlighted region is a country it flows through
+        Green marker = correct answer
       </div>
       <div class="rival-line" id="rival-line" style="display:none;"></div>
     </div>
     <div class="hint-tap" id="tap-hint">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
-      Tap the river line you think is right to make your pick
+      Tap the marker where you think it is — one of the four is correct
     </div>
-    <button class="btn btn-teal" id="lock-btn" style="display:none" onclick="lockGuess()">Lock In Pick</button>
     <button class="btn btn-primary" id="next-btn" style="display:none" onclick="nextRound()">Next Target →</button>
   </div>
 
@@ -815,7 +810,7 @@ crossorigin="anonymous"></script>
 /* ============================================================
    GAME / API CONFIG
    ============================================================ */
-const GAME_TYPE = 'river-navigator-world';
+const GAME_TYPE = 'mountain-navigator';
 const API_BASE = 'https://game-api.abhikr18996.workers.dev';
 
 /* ---------------- Fixed header height sync ---------------- */
@@ -860,169 +855,367 @@ function setHeaderVisible(visible){
 }
 
 /* ============================================================
-   WORLD RIVERS DATA
+   MOUNTAIN DATA
+   Each entry is stored as a single summit coordinate wrapped in a
+   "paths" array (kept from the original data shape) — only
+   paths[0][0] is used now, as the correct-answer location.
+   Educational approximations, not survey-grade GIS data.
    ============================================================ */
 const ROUNDS = [
 
-  { id:'nile', name:'Nile', region:'',
-    fact:"The traditionally cited longest river on Earth, rising near Lake Victoria and flowing north through the Sahara for over 6,600 km before fanning out into its delta at the Mediterranean Sea — the lifeline of ancient and modern Egypt alike.",
-    countries:['Uganda','South Sudan','Sudan','Egypt'],
-    path:[
-      [-0.33,32.58],[2.28,31.36],[4.85,31.60],[9.51,31.66],[13.16,32.65],
-      [18.02,30.75],[21.98,31.13],[24.09,32.90],[25.68,32.64],[27.18,31.19],
-      [29.87,31.28],[31.21,30.02]
-    ]
+  { id:'everest', name:'Mount Everest', region:'',
+    fact:"The world's highest mountain above sea level, located in the Himalayas on the Nepal–China border.",
+    countries:['Nepal','China'],
+    paths:[[[27.9881,86.9250],[27.9881,86.9250]]]
   },
 
-  { id:'amazon', name:'Amazon', region:'',
-    fact:"The largest river by discharge in the world, gathering water from Peru, Colombia and Brazil and carrying roughly a fifth of all the fresh water that reaches Earth's oceans out through its vast mouth near Belém.",
-    countries:['Peru','Colombia','Brazil'],
-    path:[
-      [-4.50,-73.50],[-3.50,-70.00],[-3.05,-64.80],[-3.10,-60.00],
-      [-2.50,-56.10],[-1.50,-50.00],[-0.50,-48.50]
-    ]
+  { id:'k2', name:'K2', region:'',
+    fact:"The world's second-highest mountain, located in the Karakoram on the Pakistan–China border and known for its exceptionally difficult climbing conditions.",
+    countries:['Pakistan','China'],
+    paths:[[[35.8808,76.5156],[35.8808,76.5156]]]
   },
 
-  { id:'mississippi', name:'Mississippi', region:'',
-    fact:"The backbone of the North American heartland, rising at Lake Itasca in Minnesota and running the length of the United States past Minneapolis, St. Louis, Memphis and New Orleans before reaching the Gulf of Mexico.",
-    countries:['United States'],
-    path:[
-      [47.24,-95.21],[44.95,-93.09],[41.50,-90.50],[38.63,-90.20],
-      [35.15,-90.05],[32.30,-90.90],[29.95,-90.07],[29.15,-89.25]
-    ]
+  { id:'kangchenjunga', name:'Kangchenjunga', region:'',
+    fact:"The world's third-highest mountain, located on the India–Nepal border in the eastern Himalayas and traditionally regarded as sacred by local communities.",
+    countries:['India','Nepal'],
+    paths:[[[27.7025,88.1475],[27.7025,88.1475]]]
   },
 
-  { id:'danube', name:'Danube', region:'',
-    fact:"Europe's most international river, flowing from Germany's Black Forest through more capital cities — Vienna, Bratislava and Belgrade among them — than any other river on Earth before reaching the Black Sea via Romania's delta.",
-    countries:['Germany','Austria','Slovakia','Hungary','Croatia','Serbia','Bulgaria','Romania'],
-    path:[
-      [47.95,8.50],[48.37,10.90],[48.85,12.95],[48.21,16.37],[48.15,17.11],
-      [47.50,19.05],[45.80,18.68],[44.82,20.46],[43.82,25.97],[45.20,29.70]
-    ]
+  { id:'lhotse', name:'Lhotse', region:'',
+    fact:"The world's fourth-highest mountain, immediately south of Mount Everest and connected to it by the South Col.",
+    countries:['Nepal','China'],
+    paths:[[[27.9617,86.9330],[27.9617,86.9330]]]
   },
 
-  { id:'yangtze', name:'Yangtze', region:'',
-    fact:"Asia's longest river and the world's third-longest, running entirely within China from the Tibetan Plateau through the Three Gorges and past Wuhan and Nanjing before reaching the East China Sea near Shanghai.",
+  { id:'makalu', name:'Mount Makalu', region:'',
+    fact:"The world's fifth-highest mountain, a striking four-sided pyramid in the eastern Himalayas near the Nepal–China border.",
+    countries:['Nepal','China'],
+    paths:[[[27.8897,87.0889],[27.8897,87.0889]]]
+  },
+
+  { id:'cho_oyu', name:'Cho Oyu', region:'',
+    fact:"The world's sixth-highest mountain, located in the Himalayas on the Nepal–China border and considered one of the more accessible 8,000-metre peaks.",
+    countries:['Nepal','China'],
+    paths:[[[28.0942,86.6608],[28.0942,86.6608]]]
+  },
+
+  { id:'dhaulagiri', name:'Dhaulagiri I', region:'',
+    fact:"The world's seventh-highest mountain, located entirely in Nepal and forming one of the major peaks of the central Himalayas.",
+    countries:['Nepal'],
+    paths:[[[28.6967,83.4875],[28.6967,83.4875]]]
+  },
+
+  { id:'manaslu', name:'Manaslu', region:'',
+    fact:"The world's eighth-highest mountain, located in Nepal's Mansiri Himal and known as the 'Mountain of the Spirit'.",
+    countries:['Nepal'],
+    paths:[[[28.5497,84.5617],[28.5497,84.5617]]]
+  },
+
+  { id:'nanga_parbat', name:'Nanga Parbat', region:'',
+    fact:"The world's ninth-highest mountain, located in the western Himalayas of Pakistan and famous for its enormous vertical relief and challenging climbing routes.",
+    countries:['Pakistan'],
+    paths:[[[35.2372,74.5892],[35.2372,74.5892]]]
+  },
+
+  { id:'annapurna', name:'Annapurna I', region:'',
+    fact:"The world's tenth-highest mountain, located in north-central Nepal. Its surrounding massif is famous for dramatic mountain landscapes and deep valleys.",
+    countries:['Nepal'],
+    paths:[[[28.5958,84.5614],[28.5958,84.5614]]]
+  },
+
+  { id:'gasherbrum_i', name:'Gasherbrum I', region:'',
+    fact:"Also known as Hidden Peak, it is the world's eleventh-highest mountain and lies in the Karakoram on the Pakistan–China border.",
+    countries:['Pakistan','China'],
+    paths:[[[35.7242,76.6964],[35.7242,76.6964]]]
+  },
+
+  { id:'broad_peak', name:'Broad Peak', region:'',
+    fact:"The world's twelfth-highest mountain, located in the Karakoram near K2 on the Pakistan–China border.",
+    countries:['Pakistan','China'],
+    paths:[[[35.8119,76.5656],[35.8119,76.5656]]]
+  },
+
+  { id:'gasherbrum_ii', name:'Gasherbrum II', region:'',
+    fact:"The world's thirteenth-highest mountain and one of the major 8,000-metre peaks of the Karakoram, located on the Pakistan–China border.",
+    countries:['Pakistan','China'],
+    paths:[[[35.7580,76.6530],[35.7580,76.6530]]]
+  },
+
+  { id:'shishapangma', name:'Shishapangma', region:'',
+    fact:"The world's fourteenth-highest mountain and the only 8,000-metre peak located entirely within China, in the Himalayas of Tibet.",
     countries:['China'],
-    path:[
-      [33.00,91.00],[31.20,97.20],[29.60,102.50],[29.56,106.55],[30.55,111.28],
-      [30.58,114.30],[30.77,117.85],[32.06,118.80],[31.40,121.90]
-    ]
+    paths:[[[28.3520,85.7790],[28.3520,85.7790]]]
   },
 
-  { id:'mekong', name:'Mekong', region:'',
-    fact:"Southeast Asia's great lifeline, rising on the Tibetan Plateau and flowing through six countries — including the Golden Triangle and Vientiane — before splitting into the Mekong Delta's many channels in southern Vietnam.",
-    countries:['China','Myanmar','Laos','Thailand','Cambodia','Vietnam'],
-    path:[
-      [33.00,94.00],[27.50,99.00],[22.50,100.10],[20.00,100.50],[17.90,102.60],
-      [15.10,105.80],[13.40,103.90],[11.55,104.90],[10.00,105.80],[9.50,106.50]
-    ]
+  { id:'gyachung_kang', name:'Gyachung Kang', region:'',
+    fact:"The highest mountain between Mount Everest and Cho Oyu and the world's fifteenth-highest major peak, located on the Nepal–China border.",
+    countries:['Nepal','China'],
+    paths:[[[28.0900,86.7400],[28.0900,86.7400]]]
+  },
+
+  { id:'nanda_devi', name:'Nanda Devi', region:'',
+    fact:"The second-highest mountain in India and the highest mountain located entirely within India, rising in the Garhwal Himalayas of Uttarakhand.",
+    countries:['India'],
+    paths:[[[30.3750,79.9700],[30.3750,79.9700]]]
+  },
+
+  { id:'kamet', name:'Kamet', region:'',
+    fact:"One of the highest peaks of India, located in the Garhwal Himalayas of Uttarakhand near the Tibet border.",
+    countries:['India'],
+    paths:[[[30.9218,79.5947],[30.9218,79.5947]]]
+  },
+
+  { id:'saltoro_kangri', name:'Saltoro Kangri', region:'',
+    fact:"The highest peak of the Saltoro Mountains in the Karakoram, located in the disputed Siachen region near the India–Pakistan frontier.",
+    countries:['India','Pakistan'],
+    paths:[[[35.3970,76.8420],[35.3970,76.8420]]]
+  },
+
+  { id:'tirich_mir', name:'Tirich Mir', region:'',
+    fact:"The highest mountain of the Hindu Kush and the highest peak entirely within Pakistan, rising above the Chitral region.",
+    countries:['Pakistan'],
+    paths:[[[36.2550,71.8400],[36.2550,71.8400]]]
+  },
+
+  { id:'noshaq', name:'Noshaq', region:'',
+    fact:"The highest mountain in Afghanistan and the second-highest peak of the Hindu Kush, located on the Afghanistan–Pakistan border.",
+    countries:['Afghanistan','Pakistan'],
+    paths:[[[36.4350,71.8320],[36.4350,71.8320]]]
+  },
+
+  { id:'island_peak', name:'Island Peak', region:'',
+    fact:"A prominent trekking peak in Nepal's Khumbu region, located near Mount Everest and officially known as Imja Tse.",
+    countries:['Nepal'],
+    paths:[[[27.9247,86.9308],[27.9247,86.9308]]]
+  },
+
+  { id:'ama_dablam', name:'Ama Dablam', region:'',
+    fact:"One of the most recognizable peaks of the Everest region, famous for its steep pyramid shape and dramatic ridges above the Khumbu Valley.",
+    countries:['Nepal'],
+    paths:[[[27.8617,86.8610],[27.8617,86.8610]]]
+  },
+
+  { id:'mount_elbrus', name:'Mount Elbrus', region:'',
+    fact:"The highest mountain in Europe and a dormant volcano in the Caucasus Mountains, commonly included among the Seven Summits.",
+    countries:['Russia'],
+    paths:[[[43.3550,42.4420],[43.3550,42.4420]]]
+  },
+
+  { id:'mont_blanc', name:'Mont Blanc', region:'',
+    fact:"The highest mountain in the Alps and one of Europe's most famous peaks, situated on the France–Italy border.",
+    countries:['France','Italy'],
+    paths:[[[45.8326,6.8652],[45.8326,6.8652]]]
+  },
+
+  { id:'matterhorn', name:'Matterhorn', region:'',
+    fact:"One of the world's most recognizable mountains, a distinctive pyramid-shaped peak in the Alps on the Switzerland–Italy border.",
+    countries:['Switzerland','Italy'],
+    paths:[[[45.9763,7.6586],[45.9763,7.6586]]]
+  },
+
+  { id:'aconcagua', name:'Aconcagua', region:'',
+    fact:"The highest mountain in both the Western Hemisphere and the Southern Hemisphere and the highest peak outside Asia.",
+    countries:['Argentina'],
+    paths:[[[-32.6532,-70.0109],[-32.6532,-70.0109]]]
+  },
+
+  { id:'denali', name:'Denali', region:'',
+    fact:"The highest mountain in North America, located in Alaska and rising dramatically above the surrounding Alaska Range.",
+    countries:['United States of America'],
+    paths:[[[63.0695,-151.0074],[63.0695,-151.0074]]]
+  },
+
+  { id:'mount_logan', name:'Mount Logan', region:'',
+    fact:"The highest mountain in Canada and the second-highest peak in North America, located in the Saint Elias Mountains of Yukon.",
+    countries:['Canada'],
+    paths:[[[60.5670,-140.4050],[60.5670,-140.4050]]]
+  },
+
+  { id:'kilimanjaro', name:'Mount Kilimanjaro', region:'',
+    fact:"Africa's highest mountain and the world's highest free-standing mountain, consisting of three volcanic cones: Kibo, Mawenzi and Shira.",
+    countries:['Tanzania'],
+    paths:[[[-3.0674,37.3556],[-3.0674,37.3556]]]
+  },
+
+  { id:'mount_stanley', name:'Mount Stanley', region:'',
+    fact:"The highest mountain of Uganda and the Democratic Republic of the Congo and the third-highest mountain in Africa, located in the Rwenzori Mountains.",
+    countries:['Uganda','Democratic Republic of the Congo'],
+    paths:[[[0.3833,29.8719],[0.3833,29.8719]]]
+  },
+
+  { id:'mount_ararat', name:'Mount Ararat', region:'',
+    fact:"A dormant volcanic massif in eastern Turkey and the country's highest peak, traditionally associated with the biblical story of Noah's Ark.",
+    countries:['Turkey'],
+    paths:[[[39.7019,44.2986],[39.7019,44.2986]]]
+  },
+
+  { id:'damavand', name:'Mount Damavand', region:'',
+    fact:"The highest mountain in Iran and the highest volcano in Asia, rising from the Alborz Mountains south of the Caspian Sea.",
+    countries:['Iran'],
+    paths:[[[35.9550,52.1090],[35.9550,52.1090]]]
+  },
+
+  { id:'zhengshan', name:'Mount Gongga', region:'',
+    fact:"Also known as Minya Konka, it is the highest mountain in Sichuan and one of the highest peaks outside the main Himalayan-Karakoram ranges.",
+    countries:['China'],
+    paths:[[[29.5960,101.8790],[29.5960,101.8790]]]
+  },
+
+  { id:'mount_tai', name:'Mount Tai', region:'',
+    fact:"One of China's most sacred mountains and a major cultural and religious landmark associated with imperial pilgrimage and Taoism.",
+    countries:['China'],
+    paths:[[[36.2550,117.1000],[36.2550,117.1000]]]
+  },
+
+  { id:'mount_kinabalu', name:'Mount Kinabalu', region:'',
+    fact:"The highest mountain in Malaysia and on the island of Borneo, famous for exceptional plant diversity and granite formations.",
+    countries:['Malaysia'],
+    paths:[[[6.0750,116.5580],[6.0750,116.5580]]]
+  },
+
+  { id:'puncak_jaya', name:'Puncak Jaya', region:'',
+    fact:"The highest mountain in Indonesia, Oceania and the island of New Guinea, located in the Sudirman Range of Papua.",
+    countries:['Indonesia'],
+    paths:[[[-4.0589,137.1940],[-4.0589,137.1940]]]
+  },
+
+  { id:'mount_apo', name:'Mount Apo', region:'',
+    fact:"The highest mountain in the Philippines, a potentially active stratovolcano located on Mindanao.",
+    countries:['Philippines'],
+    paths:[[[7.0040,125.2700],[7.0040,125.2700]]]
+  },
+
+  { id:'mount_ruapehu', name:'Mount Ruapehu', region:'',
+    fact:"The highest mountain in New Zealand's North Island and an active stratovolcano within Tongariro National Park.",
+    countries:['New Zealand'],
+    paths:[[[-39.2820,175.5620],[-39.2820,175.5620]]]
+  },
+
+  { id:'mount_cook', name:'Aoraki / Mount Cook', region:'',
+    fact:"The highest mountain in New Zealand, located in the Southern Alps and surrounded by glaciers and spectacular alpine landscapes.",
+    countries:['New Zealand'],
+    paths:[[[-43.5950,170.1410],[-43.5950,170.1410]]]
+  },
+
+  { id:'kosciuszko', name:'Mount Kosciuszko', region:'',
+    fact:"The highest mountain on mainland Australia and the highest point of the Australian Alps.",
+    countries:['Australia'],
+    paths:[[[-36.4559,148.2632],[-36.4559,148.2632]]]
+  },
+
+  { id:'vinson', name:'Vinson Massif', region:'',
+    fact:"The highest mountain in Antarctica and one of the Seven Summits, located in the Sentinel Range of the Ellsworth Mountains.",
+    countries:['Antarctica'],
+    paths:[[[-78.5254,-85.6171],[-78.5254,-85.6171]]]
+  },
+
+  { id:'mauna_kea', name:'Mauna Kea', region:'',
+    fact:"A dormant volcano on Hawaii whose summit is the highest point in the Hawaiian Islands. Measured from its submarine base, it rises more than 10,000 metres.",
+    countries:['United States of America'],
+    paths:[[[19.8207,-155.4681],[19.8207,-155.4681]]]
+  },
+
+  { id:'mount_erebus', name:'Mount Erebus', region:'',
+    fact:"The southernmost active volcano on Earth, located on Ross Island in Antarctica and known for its persistent lava lake.",
+    countries:['Antarctica'],
+    paths:[[[-77.5280,167.1530],[-77.5280,167.1530]]]
+  },
+
+  { id:'mount_meru', name:'Mount Meru', region:'',
+    fact:"A prominent stratovolcano in northern Tanzania and the second-highest mountain in Tanzania after Kilimanjaro.",
+    countries:['Tanzania'],
+    paths:[[[-3.2460,36.7480],[-3.2460,36.7480]]]
+  },
+
+  { id:'mount_kenya', name:'Mount Kenya', region:'',
+    fact:"Africa's second-highest mountain, located near the equator in central Kenya and protected within Mount Kenya National Park.",
+    countries:['Kenya'],
+    paths:[[[-0.1521,37.3084],[-0.1521,37.3084]]]
+  },
+
+  { id:'ras_dashen', name:'Ras Dashen', region:'',
+    fact:"The highest mountain in Ethiopia and one of the highest peaks in Africa, located in the Simien Mountains.",
+    countries:['Ethiopia'],
+    paths:[[[13.2360,38.3700],[13.2360,38.3700]]]
+  },
+
+  { id:'toubkal', name:'Mount Toubkal', region:'',
+    fact:"The highest mountain in Morocco and North Africa, located in the High Atlas Mountains south of Marrakech.",
+    countries:['Morocco'],
+    paths:[[[31.0590,-7.9150],[31.0590,-7.9150]]]
+  },
+
+  { id:'mount_cameroon', name:'Mount Cameroon', region:'',
+    fact:"An active volcano and the highest mountain in Cameroon and West Africa, rising directly from the Gulf of Guinea coast.",
+    countries:['Cameroon'],
+    paths:[[[4.2030,9.1700],[4.2030,9.1700]]]
+  },
+
+  { id:'table_mountain', name:'Table Mountain', region:'',
+    fact:"The iconic flat-topped mountain overlooking Cape Town and one of South Africa's most recognizable natural landmarks.",
+    countries:['South Africa'],
+    paths:[[[-33.9628,18.4098],[-33.9628,18.4098]]]
   }
 
 ];
-const ROUNDS_PER_GAME = 10;
-const CANDIDATES_PER_ROUND = 4;
+const ROUNDS_PER_GAME = 10; // solo runs pick 10 at random each time. Challenge mode always uses the exact order sent by the challenger.
+const OPTIONS_PER_ROUND = 4; // one correct pin + this many minus one decoys
 
-/* ============================================================
-   MAP SETUP — Satellite + Borders + Labels (Clean fixed CSS)
-   ============================================================ */
+/* ---------------- Map setup ---------------- */
 const map = L.map('map', {
-  renderer: L.canvas(),
   worldCopyJump:false,
   dragging:true,
   touchZoom:true,
   doubleClickZoom:false,
   scrollWheelZoom:true,
-  minZoom:3,
-  maxZoom:9,
-  maxBounds: [[-85, -180], [85, 180]],
-  maxBoundsViscosity: 1.0,
+  minZoom:2,
+  maxZoom:8,
   zoomControl:true,
   attributionControl:true
-}).setView([15, 10], 2.7);
+}).setView([20, 30], 2);
 
-// 1. Load Satellite Tiles via Cloudflare Proxy
-L.tileLayer('https://maps.mapidesk.com/?z={z}&x={x}&y={y}', {
-    maxZoom: 20,
-    attribution: 'Google Satellite'
+const tiles = L.tileLayer('https://mapidesk-tile-cache.abhikr18996.workers.dev/light_nolabels/{z}/{x}/{y}{r}.png', {
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  maxZoom:19,
+  keepBuffer:4,
+  updateWhenZooming:false,
+  crossOrigin:true
 }).addTo(map);
 
-// 2. Load Country Borders + Labels (FIXED to look in /data/ folder)
-fetch('/data/ne_110m_admin_0_countries.geojson')
-  .then(res => res.json())
-  .then(geo => {
-    // Draw the borders
-    L.geoJSON(geo, {
-      style: {
-        color: '#A8C9B3',   // Visible green outline over satellite
-        weight: 1,
-        fillColor: 'transparent',
-        fillOpacity: 0
-      }
-    }).addTo(map);
+const labelTiles = L.tileLayer('https://mapidesk-tile-cache.abhikr18996.workers.dev/light_only_labels/{z}/{x}/{y}{r}.png', {
+  minZoom:4, maxZoom:19, keepBuffer:4, updateWhenZooming:false, crossOrigin:true
+}).addTo(map);
 
-    // Add Country Labels (With fixed readable CSS)
-    geo.features.forEach(f => {
-      const name = (f.properties && (f.properties.ADMIN || f.properties.NAME || f.properties.name)) || null;
-      if (!name) return;
-      try {
-        const layer = L.geoJSON(f);
-        const center = layer.getBounds().getCenter();
-        const marker = L.marker(center, {
-          icon: L.divIcon({ 
-            className: '', 
-            html: `<div class="world-label">${name}</div>`, 
-            iconSize: [0, 0] 
-          }),
-          interactive: false
-        });
-        worldLabelMarkers.push(marker);
-      } catch(e) { /* skip if geometry is malformed */ }
-    });
-    updateWorldLabels(); // Trigger initial visibility check
-  })
-  .catch(err => console.warn('World boundaries/labels failed to load:', err));
+let tilesLoaded = false;
+tiles.on('load', ()=>{ tilesLoaded = true; document.getElementById('map-loading').classList.add('hidden'); });
+setTimeout(()=>{ if(!tilesLoaded) document.getElementById('map-loading').classList.add('hidden'); }, 2500);
 
-// Handle showing/hiding country labels based on zoom level
-const LABEL_MIN_ZOOM = 4;
-function updateWorldLabels(){
-  const shouldShow = map.getZoom() >= LABEL_MIN_ZOOM;
-  worldLabelMarkers.forEach(m=>{
-    const onMap = map.hasLayer(m);
-    if(shouldShow && !onMap) m.addTo(map);
-    else if(!shouldShow && onMap) map.removeLayer(m);
-  });
-}
-map.on('zoomend', updateWorldLabels);
-
-// Hide loading screen
-document.getElementById('map-loading').classList.add('hidden');
-
-/* ---------------- India boundary overlay (optional) ---------------- */
+/* ---------------- India boundary overlay ---------------- */
+const INDIA_BOUNDARY_URLS = [
+  '/data/india-boundary.geojson'
+];
 async function loadIndiaBoundary(){
-  try{
-    const indiaRes = await fetch('/data/india-boundary.geojson');
-    const indiaGeo = indiaRes.ok ? await indiaRes.json() : null;
-    if(indiaGeo){
-      L.geoJSON(indiaGeo, {
-        interactive:false,
-        style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#FAFAF8', fillOpacity:0.1 }
-      }).addTo(map);
-    }
-  }catch(e){
-    console.warn('India boundary failed to load:', e);
+  for(const url of INDIA_BOUNDARY_URLS){
+    try{
+      const res = await fetch(url);
+      if(!res.ok) continue;
+      const geo = await res.json();
+      L.geoJSON(geo, { interactive:false, style:{ color:'#D4A853', weight:2.2, opacity:1, fillColor:'#D4A853', fillOpacity:0.06 } }).addTo(map);
+      return;
+    }catch(e){ console.warn('India boundary overlay source failed, trying next:', url, e); }
   }
+  console.warn('India boundary overlay: all sources failed — falling back to base tiles only.');
 }
 loadIndiaBoundary();
 
 /* ---------------- World countries overlay (for round-result highlighting) ---------------- */
 let worldCountriesGeo = null;
-const WORLD_COUNTRIES_URLS = [
-  '/data/world-boundaries1.geojson',
-  '/data/ne_110m_admin_0_countries.geojson'
+const WORLD_BOUNDARY_URLS = [
+  'https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json',
+  'https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json'
 ];
 async function loadWorldCountries(){
-  for(const url of WORLD_COUNTRIES_URLS){
+  for(const url of WORLD_BOUNDARY_URLS){
     try{
       const res = await fetch(url);
       if(!res.ok) continue;
@@ -1034,18 +1227,17 @@ async function loadWorldCountries(){
 }
 loadWorldCountries();
 
-/* Alias table for country name matching */
 const COUNTRY_NAME_ALIASES = {
-  'united states': ['united states', 'united states of america', 'usa', 'us'],
-  'south sudan': ['south sudan', 's. sudan'],
-  'myanmar': ['myanmar', 'burma'],
-  'vietnam': ['vietnam', 'viet nam'],
-  'laos': ['laos', "lao people's democratic republic", 'lao pdr'],
-  'serbia': ['serbia', 'republic of serbia']
+  'united states of america': ['united states of america','united states','usa','us'],
+  'south korea': ['south korea','republic of korea','korea, south'],
+  'north korea': ['north korea','democratic people\'s republic of korea','korea, north','dem. rep. korea'],
+  'russia': ['russia','russian federation'],
+  'taiwan': ['taiwan','republic of china'],
+  'democratic republic of the congo': ['democratic republic of the congo','dem. rep. congo','congo, dem. rep.','dr congo']
 };
 function countryFeatureMatches(feature, targetName){
   const props = (feature && feature.properties) || {};
-  const raw = props.ADMIN || props.NAME || props.name || props.name_long || props.NAME_EN || props.admin || '';
+  const raw = props.name || props.NAME || props.ADMIN || props.admin || '';
   const fn = String(raw).toLowerCase().trim();
   const tgt = targetName.toLowerCase().trim();
   if(fn === tgt) return true;
@@ -1054,12 +1246,12 @@ function countryFeatureMatches(feature, targetName){
   return false;
 }
 
-const COUNTRY_HIGHLIGHT_PALETTE = ['#4A9E7A','#5B7FFF','#8B7CF6','#D4A853','#F2545F','#EAC072','#3AA0A0','#B4739E'];
+const VERDICT_HIGHLIGHT_COLOR = { good:'#4A9E7A', mid:'#D4A853', bad:'#F2545F' };
 
-function highlightCountriesMulti(names){
+function highlightCountries(names, cls){
   if(!worldCountriesGeo || !Array.isArray(names) || !names.length) return;
-  names.forEach((name, i)=>{
-    const color = COUNTRY_HIGHLIGHT_PALETTE[i % COUNTRY_HIGHLIGHT_PALETTE.length];
+  const color = VERDICT_HIGHLIGHT_COLOR[cls] || '#D4A853';
+  names.forEach(name=>{
     const feature = worldCountriesGeo.features.find(f => countryFeatureMatches(f, name));
     if(!feature) return;
     let layer;
@@ -1070,27 +1262,30 @@ function highlightCountriesMulti(names){
       }).addTo(map);
     }catch(e){ return; }
     revealLayers.push(layer);
-    try{
-      const center = layer.getBounds().getCenter();
-      const label = L.marker(center, {
-        icon: L.divIcon({ className:'', html:`<div class="country-label" style="--clabel-color:${color}">${name}</div>`, iconSize:[0,0] }),
-        interactive:false
-      }).addTo(map);
-      revealLayers.push(label);
-    }catch(e){ /* bounds unavailable for this geometry; skip label */ }
+  });
+}
+
+/* ---------------- Choice pin icon (the 4 tappable answer markers) ---------------- */
+const MOUNTAIN_GLYPH = '<path d="M3 19h18L14 6l-3.5 5L9 9z"/><path d="M5.5 15.3L9 9l1.6 2.3"/>';
+function choicePinIcon(state){
+  // state: 'default' | 'correct' | 'wrong' | 'dim'
+  const cls = 'choice-pin' + (state && state !== 'default' ? ' ' + state : '') + (state === 'dim' ? '' : ' locked-ready');
+  return L.divIcon({
+    className:'',
+    html:`<div class="${cls} pop"><svg viewBox="0 0 24 24">${MOUNTAIN_GLYPH}</svg></div>`,
+    iconSize:[44,44],
+    iconAnchor:[22,22]
   });
 }
 
 /* ---------------- Game state ---------------- */
 let order = [];
-let worldLabelMarkers = [];
 let roundIdx = 0;
 let scores = [];
 let results = [];
 let guessed = false;
+let optionMarkers = [];  // {marker, isCorrect, roundRef}
 let revealLayers = [];
-let candidates = [];
-let selectedId = null;
 let mode = 'own';
 let rival = null;
 let currentGameCode = null;
@@ -1104,14 +1299,6 @@ function shuffleIdx(n, count){
     [a[i],a[j]]=[a[j],a[i]];
   }
   return typeof count === 'number' ? a.slice(0, count) : a;
-}
-function shuffleArr(arr){
-  const a = arr.slice();
-  for(let i=a.length-1;i>0;i--){
-    const j = Math.floor(Math.random()*(i+1));
-    [a[i],a[j]]=[a[j],a[i]];
-  }
-  return a;
 }
 
 function setupDots(){
@@ -1131,15 +1318,9 @@ function setMapVisible(visible){
 }
 setMapVisible(false);
 
-document.addEventListener('DOMContentLoaded', function(){
-  const n = Math.min(ROUNDS_PER_GAME, ROUNDS.length);
-  const el = document.getElementById('targets-count-label');
-  if(el) el.textContent = n + (n === 1 ? ' target' : ' targets');
-});
-
 function startFreshGame(){
   mode = 'own'; rival = null; currentGameCode = null; challengeCreated = false; resultPosted = false;
-  order = shuffleIdx(ROUNDS.length, Math.min(ROUNDS_PER_GAME, ROUNDS.length));
+  order = shuffleIdx(ROUNDS.length, ROUNDS_PER_GAME);
   beginRound();
 }
 
@@ -1159,77 +1340,61 @@ function clearRevealLayers(){
   revealLayers.forEach(l=>{ try{ map.removeLayer(l); }catch(e){} });
   revealLayers = [];
 }
-
-function findRound(id){ return ROUNDS.find(r=>r.id===id); }
-
-function getDecoysFor(targetRound, count){
-  const others = ROUNDS.filter(r => r.id !== targetRound.id);
-  return shuffleArr(others).slice(0, count);
+function clearOptionMarkers(){
+  optionMarkers.forEach(o=>{ try{ map.removeLayer(o.marker); }catch(e){} });
+  optionMarkers = [];
 }
 
-/* ---------------- Draw candidate river lines ---------------- */
-const CANDIDATE_COLORS = ['#5B7FFF','#8B7CF6','#3AA0A0','#B4739E','#E08E45','#5C9BD1'];
-
-function renderCandidates(targetRound){
-  candidates = [];
-  selectedId = null;
-  const decoyCount = Math.min(CANDIDATES_PER_ROUND - 1, ROUNDS.length - 1);
-  const decoys = getDecoysFor(targetRound, decoyCount);
-  const pair = shuffleArr([targetRound, ...decoys]);
-
-  pair.forEach((round, i)=>{
-    const color = CANDIDATE_COLORS[i % CANDIDATE_COLORS.length];
-    const latlngs = round.path;
-    const hit = L.polyline(latlngs, { color:color, weight:22, opacity:0 }).addTo(map);
-    const line = L.polyline(latlngs, { color:color, weight:5, opacity:0.85, lineCap:'round', lineJoin:'round' }).addTo(map);
-    const mid = latlngs[Math.floor(latlngs.length/2)];
-    const dot = L.marker(mid, {
-      icon: L.divIcon({
-        className:'',
-        html:`<div class="river-dot-outer"><div class="core" style="width:18px;height:18px;background:${color};"></div></div>`,
-        iconSize:[22,22], iconAnchor:[11,11]
-      })
-    }).addTo(map);
-    const pick = ()=> selectCandidate(round.id);
-    hit.on('click', pick); line.on('click', pick); dot.on('click', pick);
-    revealLayers.push(hit, line, dot);
-    candidates.push({ id:round.id, color, line, dot });
+/* Build 4 answer options for a round: the real summit + 3 decoys pulled
+   from other, different mountains so they're plausible but wrong. */
+function buildOptionsForRound(round){
+  const correctPt = round.paths[0][0];
+  const otherIdxs = ROUNDS.map((_,i)=>i).filter(i => ROUNDS[i].id !== round.id);
+  const decoyIdxs = shuffleIdx(otherIdxs.length, OPTIONS_PER_ROUND - 1).map(i => otherIdxs[i]);
+  const opts = [{ lat: correctPt[0], lng: correctPt[1], isCorrect:true }];
+  decoyIdxs.forEach(i=>{
+    const p = ROUNDS[i].paths[0][0];
+    opts.push({ lat:p[0], lng:p[1], isCorrect:false });
   });
-}
-
-function selectCandidate(rid){
-  if(guessed) return;
-  selectedId = rid;
-  candidates.forEach(c=>{
-    const isSel = c.id === rid;
-    c.line.setStyle({ weight: isSel ? 7 : 4, opacity: isSel ? 1 : 0.4 });
-  });
-  document.getElementById('tap-hint').style.display = 'none';
-  document.getElementById('lock-btn').style.display = 'inline-block';
+  // shuffle final order so the correct pin isn't always first
+  const shuffled = shuffleIdx(opts.length).map(i => opts[i]);
+  return shuffled;
 }
 
 function loadRound(){
   guessed = false;
   clearRevealLayers();
-  selectedId = null;
+  clearOptionMarkers();
   map.stop();
-  map.flyTo([15, 10], 2.3, { duration: 0.6, easeLinearity: 0.25 });
   document.getElementById('feedback').classList.remove('show');
   document.getElementById('legend-line').style.display = 'none';
   document.getElementById('rival-line').style.display = 'none';
-  document.getElementById('lock-btn').style.display = 'none';
   document.getElementById('next-btn').style.display = 'none';
   document.getElementById('tap-hint').style.display = 'flex';
   document.getElementById('round-label').textContent = `Round ${roundIdx+1} of ${order.length}`;
-  const round = ROUNDS[order[roundIdx]];
-  document.getElementById('strait-name').textContent = round.name;
-  document.getElementById('strait-region').textContent = 'Which line is this river?';
+  document.getElementById('strait-name').textContent = ROUNDS[order[roundIdx]].name;
+  document.getElementById('strait-region').textContent = ROUNDS[order[roundIdx]].region;
   updateDots();
-  renderCandidates(round);
+
+  const round = ROUNDS[order[roundIdx]];
+  const opts = buildOptionsForRound(round);
+  const boundsPoints = [];
+  opts.forEach(opt=>{
+    const marker = L.marker([opt.lat, opt.lng], { icon: choicePinIcon('default'), interactive:true, keyboard:false }).addTo(map);
+    marker.on('click', ()=> chooseOption(opt, marker, round));
+    optionMarkers.push({ marker, opt });
+    boundsPoints.push([opt.lat, opt.lng]);
+  });
+  const bounds = L.latLngBounds(boundsPoints);
+  map.flyToBounds(bounds, { padding:[70,70], maxZoom:6, duration:0.7, easeLinearity:0.25 });
 }
 
-function scoreFor(correct){ return correct ? 100 : 0; }
-
+/* ---------------- Scoring (binary: right pin = full points) ---------------- */
+function verdictForCorrect(isCorrect){
+  return isCorrect
+    ? {label:'Correct!', cls:'good', icon:'check'}
+    : {label:"Not quite — here's the right one.", cls:'bad', icon:'x'};
+}
 const VERDICT_ICONS = {
   target: '<svg class="v-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" style="fill:currentColor"/></svg>',
   check: '<svg class="v-ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>',
@@ -1276,68 +1441,31 @@ function triggerRoundEffect(cls){
   }
 }
 
-function lockGuess(){
-  if(guessed || !selectedId) return;
+/* Called when the player taps one of the 4 answer pins. */
+function chooseOption(opt, chosenMarker, round){
+  if(guessed) return;
   guessed = true;
 
-  const round = ROUNDS[order[roundIdx]];
-  const correct = selectedId === round.id;
-  const pts = scoreFor(correct);
+  const pts = opt.isCorrect ? 100 : 0;
   scores.push(pts);
-  results.push({ name:round.name, correct, pts });
+  results.push({name:round.name, correct:opt.isCorrect, pts, cls: opt.isCorrect ? 'good' : 'bad'});
 
-  document.getElementById('lock-btn').style.display = 'none';
+  document.getElementById('tap-hint').style.display = 'none';
 
-  const boundsPoints = [];
-  candidates.forEach(c=> c.line.getLatLngs().forEach(pt=> boundsPoints.push(pt)));
-  const bounds = L.latLngBounds(boundsPoints);
+  // Re-style every pin: correct = green, the one you tapped (if wrong) = red, others = dimmed.
+  optionMarkers.forEach(o=>{
+    let state = 'dim';
+    if(o.opt.isCorrect) state = 'correct';
+    else if(o.marker === chosenMarker) state = 'wrong';
+    o.marker.setIcon(choicePinIcon(state));
+  });
 
-  let revealed = false;
-  function fireReveal(){
-    if(revealed) return;
-    revealed = true;
-    revealResult(round, correct, pts, selectedId);
-  }
-  map.once('moveend', fireReveal);
-  map.flyToBounds(bounds, { padding:[80,80], maxZoom:8, duration:1.1, easeLinearity:0.25 });
-  setTimeout(fireReveal, 1600);
-}
-
-function revealResult(round, correct, pts, pickedId){
-  clearRevealLayers();
-
-  const line = L.polyline(round.path, { color:'#D4A853', weight:5, opacity:0.95, lineCap:'round', lineJoin:'round' }).addTo(map);
-  revealLayers.push(line);
-  const mid = round.path[Math.floor(round.path.length/2)];
-  const label = L.marker(mid, {
-    icon: L.divIcon({ className:'', html:`<div class="line-label">${round.name}</div>`, iconSize:[0,0] }),
-    interactive:false
-  }).addTo(map);
-  revealLayers.push(label);
-
-  if(!correct){
-    const wrongRound = findRound(pickedId);
-    if(wrongRound){
-      const wLine = L.polyline(wrongRound.path, { color:'#F2545F', weight:4, opacity:0.85, dashArray:'8,6' }).addTo(map);
-      revealLayers.push(wLine);
-      const wMid = wrongRound.path[Math.floor(wrongRound.path.length/2)];
-      const wLabel = L.marker(wMid, {
-        icon: L.divIcon({ className:'', html:`<div class="guess-label">${wrongRound.name} — your pick</div>`, iconSize:[0,0] }),
-        interactive:false
-      }).addTo(map);
-      revealLayers.push(wLabel);
-    }
-  }
-
-  highlightCountriesMulti(round.countries);
-
-  const v = correct
-    ? { label:'Correct — well navigated!', cls:'good', icon:'check' }
-    : { label:'Not quite — that was a different river.', cls:'bad', icon:'x' };
+  const v = verdictForCorrect(opt.isCorrect);
+  highlightCountries(round.countries, v.cls);
 
   document.getElementById('verdict-text').innerHTML = `${VERDICT_ICONS[v.icon]} ${v.label}  (+${pts} pts)`;
   document.getElementById('verdict-text').className = 'verdict ' + v.cls;
-  document.getElementById('fact-text').textContent = round.fact;
+  document.getElementById('fact-text').textContent = round.region + ' — ' + round.fact;
   document.getElementById('legend-line').style.display = 'flex';
 
   const rivalLine = document.getElementById('rival-line');
@@ -1381,9 +1509,9 @@ async function endGame(){
   }
 
   let msg;
-  if(avg >= 85) msg = "Master of world river geography — nothing on the atlas can catch you out.";
-  else if(avg >= 65) msg = "Sharp sense of the map — a well-travelled reading of the world's great rivers.";
-  else if(avg >= 40) msg = "Solid run. These rivers can look alike from a distance — chart again to sharpen your eye.";
+  if(avg >= 85) msg = "Master of world geography. You could pinpoint these mountains from memory.";
+  else if(avg >= 65) msg = "Sharp sense of the map — a seasoned reading of the world's peaks.";
+  else if(avg >= 40) msg = "Solid run. These mountains are tricky — chart again to sharpen your eye.";
   else msg = "";
   document.getElementById('final-msg').textContent = msg;
 
@@ -1419,7 +1547,7 @@ async function endGame(){
       fireConfetti({count:110, maxFrames:230, spread:1});
     }
     else if(avg < rival.score){
-      vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> Your rival read the rivers closer. Chart again!';
+      vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> Your rival read the mountains closer. Chart again!';
       vb.classList.add('lose');
     }
     else {
@@ -1473,14 +1601,14 @@ function renderSoloBreakdown(){
     row.style.animationDelay = (i * 0.05) + 's';
     row.innerHTML = `<span class="b-idx">${i+1}</span>
       <span class="b-name">${r.name}</span>
-      <span class="b-dist">${r.correct ? 'Correctly identified' : 'Missed'}</span>
-      <span class="b-pts ${r.correct ? 'good' : 'bad'}">+${r.pts}</span>`;
+      <span class="b-dist">${r.correct ? 'Correct' : 'Incorrect'}</span>
+      <span class="b-pts ${r.cls}">+${r.pts}</span>`;
     box.appendChild(row);
   });
 }
 
 /* ============================================================
-   API HELPERS — Cloudflare Worker
+   API HELPERS — Cloudflare Worker (shared KV across all games)
    ============================================================ */
 function randomCode(){
   const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -1543,7 +1671,7 @@ async function fetchGame(gameCode){
   return data;
 }
 const MY_CHALLENGES_KEY = 'my-challenges-' + GAME_TYPE;
-const CHALLENGE_MAX_AGE_MS = 60 * 24 * 60 * 60 * 1000;
+const CHALLENGE_MAX_AGE_MS = 60 * 24 * 60 * 60 * 1000; // matches your worker's 60-day TTL
 
 function myChallenges(){
   try{ return JSON.parse(localStorage.getItem(MY_CHALLENGES_KEY) || '{}'); }
@@ -1597,7 +1725,7 @@ function showReplyComparison(data){
     vb.classList.add('win'); vsCard.classList.add('fx-winner');
     fireConfetti({count:110, maxFrames:230, spread:1});
   } else if(currentAvgScore < rival.score){
-    vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> They read the rivers closer this time.';
+    vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> They read the mountains closer this time.';
     vb.classList.add('lose');
   } else {
     vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg> Dead even!';
@@ -1607,6 +1735,7 @@ function showReplyComparison(data){
   document.getElementById('check-reply-btn').style.display = 'none';
 }
 
+/* ---------------- Challenge link build / share (on-demand) ---------------- */
 function resetChallengeLinkUI(){
   const linkInput = document.getElementById('challenge-link');
   const copyBtn = document.getElementById('copy-link-btn');
@@ -1634,9 +1763,9 @@ async function ensureChallengeLinkReady(){
     document.getElementById('check-reply-btn').style.display = 'inline-block';
     const link = buildLinkFromGameCode(gameCode);
     linkInput.value = link;
-    const msg = `🏞️ I just charted the River Navigator (World) and scored ${currentAvgScore}%. Think you can read the rivers closer? Take the same targets: ${link}`;
+    const msg = `⛰️ I just charted the Mountains Navigator and scored ${currentAvgScore}%. Think you can pick the peaks closer? Take the same targets: ${link}`;
     document.getElementById('wa-share').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
-    document.getElementById('tg-share').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent(`🏞️ Think you can beat my River Navigator score of ${currentAvgScore}%?`);
+    document.getElementById('tg-share').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent(`⛰️ Think you can beat my Mountains Navigator score of ${currentAvgScore}%?`);
     ['wa-share','tg-share'].forEach(id=>{ document.getElementById(id).classList.remove('disabled'); });
     copyBtn.disabled = false;
     copyBtn.textContent = 'Copy';
@@ -1682,6 +1811,7 @@ function showToast(msg){
   setTimeout(()=> t.classList.remove('show'), 1800);
 }
 
+/* ---------------- Accepting a challenge ---------------- */
 function parseChallengeString(raw){
   raw = (raw || '').trim();
   if(!raw) throw new Error('Paste a challenge link first.');
@@ -1786,6 +1916,7 @@ async function acceptPastedChallenge(){
   }catch(e){ /* ignore malformed links, fall back to start screen */ }
 })();
 
+/* ---------------- Confetti ---------------- */
 function fireConfetti(opts){
   opts = opts || {};
   const count = opts.count || 70;
@@ -1825,6 +1956,7 @@ function fireConfetti(opts){
   requestAnimationFrame(loop);
 }
 
+/* ---------------- Responsive resize handling ---------------- */
 let lastKnownWidth = window.innerWidth;
 let resizeSettleTimer = null;
 function handleViewportSettle(){
@@ -1840,6 +1972,8 @@ window.addEventListener('resize', handleViewportSettle);
 window.visualViewport && window.visualViewport.addEventListener('resize', handleViewportSettle);
 setTimeout(()=> { try { map.invalidateSize(); } catch(e){} }, 200);
 
+
+/* ---------------- AdSense: push once per real page load ---------------- */
 window.addEventListener('load', function() {
   try {
     document.querySelectorAll('.ad-slot .adsbygoogle').forEach(function() {
