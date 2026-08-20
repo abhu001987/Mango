@@ -2106,23 +2106,28 @@
 .mock-close-btn:hover{ background: rgba(242,84,95,0.22); transform: translateY(-1px); }
 
 .hero-geomap{
-  position:absolute; inset:-70px -50px -40px -50px; z-index:-1;
-  display:flex; align-items:center; justify-content:center;
+  position:absolute;
+  top:-18px;
+  right:-230px;        /* pushes it OUT of the text column, into the gutter/map area */
+  width:260px;
+  z-index:-1;
   pointer-events:none;
-  -webkit-mask-image: radial-gradient(ellipse 85% 78% at 62% 34%, black 35%, transparent 82%);
-  mask-image: radial-gradient(ellipse 85% 78% at 62% 34%, black 35%, transparent 82%);
+  opacity:0.92;
+}
+@media (max-width:1180px){
+  .hero-geomap{ display:none; }   /* no room once layout stacks to 1 column */
 }
 
 .geo-card{
   position:relative;
-  width:min(400px, 92%);
-  padding:16px 18px 18px;
-  border-radius:18px;
+  width:100%;
+  padding:12px 14px 14px;
+  border-radius:16px;
   background: var(--card-bg);
   border:1px solid var(--border-light);
   backdrop-filter: blur(14px) saturate(150%);
   -webkit-backdrop-filter: blur(14px) saturate(150%);
-  box-shadow: 0 20px 50px rgba(0,20,40,0.12);
+  box-shadow: 0 20px 50px rgba(0,20,40,0.14);
   overflow:hidden;
   transform-style:preserve-3d;
   animation: geoFloat 6s ease-in-out infinite;
@@ -2153,7 +2158,7 @@
 .geo-pin-avatar svg{ width:19px; height:19px; fill:currentColor; stroke:none; }
 .geo-transcript{ flex:1; min-width:0; }
 .geo-q{ font-family:'Fraunces',serif; font-weight:600; font-size:12.5px; color:var(--deep-blue); margin-bottom:6px; line-height:1.35; }
-.geo-typed{ font-size:11.5px; line-height:1.6; color:var(--ink-soft); height:56px; overflow-y:auto; scrollbar-width:none; }
+.geo-typed{ font-size:11px; line-height:1.55; color:var(--ink-soft); height:44px; overflow-y:auto; scrollbar-width:none; }
 .geo-typed::-webkit-scrollbar{ display:none; }
 .geo-cursor{ display:inline-block; width:2px; height:12px; background:var(--gold); margin-left:1px; vertical-align:middle; animation: geoBlink .9s step-end infinite; }
 @keyframes geoBlink{ 50%{ opacity:0; } }
