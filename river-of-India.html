@@ -10,6 +10,7 @@ crossorigin="anonymous"></script>
 <meta name="description" content="Test your knowledge of India's rivers with an interactive geography map quiz. Pick out the real course of the Ganga, Yamuna, Brahmaputra, Godavari, Krishna, Narmada and more, and sharpen your Indian geography skills.">
 <link rel="icon" type="image/png" href="/images/Mapidesk_Icon-removebg-preview.png" />
 <link rel="apple-touch-icon" href="/images/Mapidesk_Icon-removebg-preview.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/Mapidesk_Icon-removebg-preview.png" />
 
 <meta property="og:title" content="Rivers of India Quiz | MapiDesk" />
 <meta property="og:description" content="Test your knowledge of India's major rivers and the states they flow through with this interactive geography quiz." />
@@ -919,7 +920,467 @@ const ROUNDS = [
       [22.72,81.75],[22.85,80.50],[22.90,79.50],[22.70,78.50],[22.35,77.50],
       [22.15,76.30],[22.00,75.30],[21.90,74.20],[21.85,73.50],[21.70,72.97],[21.60,72.60]
     ]
-  }
+  },
+  { id:'ramganga', name:'Ramganga', region:'',
+  fact:"An important tributary of the Ganga, originating in the Kumaon Himalayas of Uttarakhand and flowing through Uttar Pradesh before joining the Ganga near Kannauj.",
+  states:['Uttarakhand','Uttar Pradesh'],
+  path:[
+    [30.15,79.20],[29.80,79.05],[29.30,79.00],[28.80,79.20],[28.20,79.55],
+    [27.75,79.90],[27.35,80.20],[27.05,80.55],[26.78,80.85]
+  ]
+},
+
+{ id:'gomti', name:'Gomti', region:'',
+  fact:"A major tributary of the Ganga, rising near Pilibhit in Uttar Pradesh and flowing through Lucknow before joining the Ganga near Ghazipur.",
+  states:['Uttar Pradesh'],
+  path:[
+    [28.60,80.05],[28.15,80.45],[27.80,80.85],[27.45,81.10],[26.95,80.95],
+    [26.85,80.95],[26.50,81.30],[26.15,82.15],[25.95,83.35]
+  ]
+},
+
+{ id:'chambal', name:'Chambal', region:'',
+  fact:"A major right-bank tributary of the Yamuna, originating in the Vindhya Range near Mhow and famous for its deep ravines.",
+  states:['Madhya Pradesh','Rajasthan','Uttar Pradesh'],
+  path:[
+    [22.60,75.75],[23.15,75.95],[24.10,76.25],[24.95,76.95],[25.45,77.55],
+    [25.95,78.30],[26.35,79.10],[26.75,79.35]
+  ]
+},
+
+{ id:'betwa', name:'Betwa', region:'',
+  fact:"A major tributary of the Yamuna, rising in the Vindhya Range near Bhopal and flowing through Madhya Pradesh and Uttar Pradesh.",
+  states:['Madhya Pradesh','Uttar Pradesh'],
+  path:[
+    [23.25,77.45],[23.90,78.10],[24.55,78.55],[25.20,78.90],[25.75,79.25],
+    [26.15,79.60],[26.45,79.90]
+  ]
+},
+
+{ id:'ken', name:'Ken', region:'',
+  fact:"A tributary of the Yamuna, originating in Madhya Pradesh and flowing through the Panna Tiger Reserve before entering Uttar Pradesh.",
+  states:['Madhya Pradesh','Uttar Pradesh'],
+  path:[
+    [23.45,80.10],[24.10,80.00],[24.75,79.80],[25.15,79.60],[25.55,79.45],
+    [25.95,79.75]
+  ]
+},
+
+{ id:'tons', name:'Tons (Tamsa)', region:'',
+  fact:"An important tributary of the Ganga, rising in the Kaimur Hills and flowing through Madhya Pradesh and Uttar Pradesh.",
+  states:['Madhya Pradesh','Uttar Pradesh'],
+  path:[
+    [24.35,81.20],[24.60,81.55],[24.90,82.10],[25.15,82.55],[25.40,82.95]
+  ]
+},
+
+{ id:'punpun', name:'Punpun', region:'',
+  fact:"A tributary of the Ganga, originating in the Chota Nagpur Plateau and flowing through Jharkhand and Bihar.",
+  states:['Jharkhand','Bihar'],
+  path:[
+    [24.05,84.35],[24.35,84.70],[24.70,85.10],[25.05,85.30],[25.45,85.25]
+  ]
+},
+
+{ id:'burhi-gandak', name:'Burhi Gandak', region:'',
+  fact:"A significant tributary of the Ganga flowing entirely through Bihar after originating in the Someshwar Hills near the Nepal border.",
+  states:['Bihar'],
+  path:[
+    [27.05,84.95],[26.55,85.15],[26.10,85.35],[25.70,85.55],[25.25,85.75]
+  ]
+},
+
+{ id:'damodar', name:'Damodar', region:'',
+  fact:"Known as the 'Sorrow of Bengal' before the construction of dams, it rises in Jharkhand and joins the Hooghly River in West Bengal.",
+  states:['Jharkhand','West Bengal'],
+  path:[
+    [23.75,84.70],[23.60,85.30],[23.55,86.00],[23.45,86.70],[23.25,87.30],
+    [22.95,88.05]
+  ]
+},
+
+{ id:'bagmati', name:'Bagmati', region:'',
+  fact:"A Himalayan river originating in Nepal and flowing into Bihar, where it is an important tributary of the Kosi system.",
+  states:['Bihar'],
+  path:[
+    [27.75,85.45],[27.10,85.25],[26.60,85.55],[26.15,85.80],[25.70,86.05]
+  ]
+},
+
+{ id:'kamla-balan', name:'Kamla Balan', region:'',
+  fact:"An important river of north Bihar originating in Nepal and joining the Kosi basin after flowing through the Mithila region.",
+  states:['Bihar'],
+  path:[
+    [27.55,86.00],[27.00,86.05],[26.50,86.15],[26.05,86.30],[25.65,86.55]
+  ]
+},
+
+{ id:'falgu', name:'Falgu', region:'',
+  fact:"A sacred river formed by the confluence of the Lilajan and Mohana rivers at Bodh Gaya, associated with Hindu and Buddhist traditions.",
+  states:['Jharkhand','Bihar'],
+  path:[
+    [24.40,84.75],[24.60,84.95],[24.80,85.15],[24.98,85.00],[25.10,85.25]
+  ]
+},
+
+{ id:'kiul', name:'Kiul', region:'',
+  fact:"A tributary of the Ganga originating in the Chota Nagpur Plateau and flowing through south Bihar.",
+  states:['Jharkhand','Bihar'],
+  path:[
+    [24.15,85.70],[24.45,86.05],[24.75,86.30],[25.05,86.20],[25.35,86.15]
+  ]
+},
+
+{ id:'karmanasa', name:'Karmanasa', region:'',
+  fact:"A tributary of the Ganga rising in the Kaimur Hills and forming part of the boundary between Uttar Pradesh and Bihar.",
+  states:['Uttar Pradesh','Bihar'],
+  path:[
+    [24.95,83.15],[25.20,83.35],[25.45,83.65],[25.65,83.95],[25.82,84.25]
+  ]
+},
+
+{ id:'mahananda', name:'Mahananda', region:'',
+  fact:"A transboundary river originating in the Darjeeling Hills and flowing through Bihar and West Bengal before joining the Ganga in Bangladesh.",
+  states:['West Bengal','Bihar'],
+  path:[
+    [26.95,88.25],[26.45,88.20],[25.95,87.95],[25.55,87.65],[25.20,87.35]
+  ]
+},
+  { id:'shyok', name:'Shyok', region:'',
+  fact:"A major tributary of the Indus, originating from the Rimo Glacier in the Karakoram Range and flowing through Ladakh before joining the Indus in Baltistan.",
+  states:['Ladakh'],
+  path:[
+    [35.25,77.90],[35.05,77.55],[34.90,77.20],[34.70,76.90],[34.45,76.60],
+    [34.25,76.25],[34.10,76.00]
+  ]
+},
+
+{ id:'zanskar', name:'Zanskar', region:'',
+  fact:"One of the principal tributaries of the Indus, rising in the Zanskar Range and flowing through deep Himalayan gorges before joining the Indus near Nimmu.",
+  states:['Ladakh'],
+  path:[
+    [33.85,76.95],[33.95,76.70],[34.05,76.45],[34.12,76.25],[34.17,76.05],
+    [34.20,75.95]
+  ]
+},
+
+{ id:'kishanganga', name:'Kishanganga', region:'',
+  fact:"Known as the Neelum River in Pakistan, it originates near Sonamarg in Jammu and Kashmir and flows northwest before joining the Jhelum.",
+  states:['Jammu and Kashmir'],
+  path:[
+    [34.45,75.10],[34.55,74.80],[34.60,74.45],[34.55,74.10],[34.45,73.85]
+  ]
+},
+
+{ id:'chandra', name:'Chandra', region:'',
+  fact:"A headstream of the Chenab, originating from the Chandra Glacier near Baralacha La and flowing through the Lahaul Valley.",
+  states:['Himachal Pradesh'],
+  path:[
+    [32.72,77.55],[32.55,77.25],[32.40,76.95],[32.28,76.70],[32.18,76.50]
+  ]
+},
+
+{ id:'bhaga', name:'Bhaga', region:'',
+  fact:"A headstream of the Chenab, rising near Suraj Tal below Baralacha La and joining the Chandra River at Tandi to form the Chenab.",
+  states:['Himachal Pradesh'],
+  path:[
+    [32.82,77.38],[32.65,77.10],[32.48,76.90],[32.32,76.70],[32.18,76.50]
+  ]
+},
+
+{ id:'spiti', name:'Spiti', region:'',
+  fact:"An important tributary of the Sutlej, originating from the Kunzum Range and flowing through the cold desert of Spiti Valley.",
+  states:['Himachal Pradesh'],
+  path:[
+    [32.35,78.10],[32.15,78.00],[31.95,77.90],[31.75,77.75],[31.58,77.60]
+  ]
+},
+
+{ id:'baspa', name:'Baspa', region:'',
+  fact:"A Himalayan tributary of the Sutlej, originating near the Indo-Tibetan border and flowing through the scenic Sangla Valley.",
+  states:['Himachal Pradesh'],
+  path:[
+    [31.45,78.55],[31.35,78.25],[31.28,78.00],[31.22,77.80],[31.18,77.62]
+  ]
+},
+
+{ id:'ubin', name:'Ujh', region:'',
+  fact:"A tributary of the Ravi, originating in the Shivalik Hills of Jammu and Kashmir and flowing southwest into Punjab before joining the Ravi.",
+  states:['Jammu and Kashmir','Punjab'],
+  path:[
+    [32.75,75.45],[32.55,75.20],[32.30,75.05],[32.00,74.95],[31.75,74.88]
+  ]
+},
+  { id:'lohit', name:'Lohit', region:'',
+  fact:"A major eastern tributary of the Brahmaputra, originating in eastern Tibet and entering India through Arunachal Pradesh before joining the Brahmaputra in Assam.",
+  states:['Arunachal Pradesh','Assam'],
+  path:[
+    [28.20,97.75],[28.00,97.35],[27.82,96.95],[27.65,96.55],[27.45,96.15],
+    [27.28,95.80],[27.12,95.45]
+  ]
+},
+
+{ id:'dibang', name:'Dibang', region:'',
+  fact:"A major left-bank tributary of the Brahmaputra, originating in the Mishmi Hills of Arunachal Pradesh and joining the Lohit before forming the Brahmaputra.",
+  states:['Arunachal Pradesh','Assam'],
+  path:[
+    [29.10,95.95],[28.75,95.70],[28.35,95.55],[27.95,95.45],[27.60,95.35],
+    [27.30,95.28]
+  ]
+},
+
+{ id:'manas', name:'Manas', region:'',
+  fact:"A transboundary Himalayan river originating in Bhutan and flowing through the Manas National Park before joining the Brahmaputra in Assam.",
+  states:['Assam'],
+  path:[
+    [27.25,91.10],[26.95,91.00],[26.75,90.92],[26.55,90.88],[26.35,90.82],
+    [26.15,90.75]
+  ]
+},
+
+{ id:'dhansiri', name:'Dhansiri', region:'',
+  fact:"An important south-bank tributary of the Brahmaputra, rising in the Laisang Peak region of Nagaland and flowing through Assam.",
+  states:['Nagaland','Assam'],
+  path:[
+    [26.45,94.55],[26.20,94.35],[26.00,94.15],[25.85,93.98],[25.72,93.82],
+    [25.62,93.65]
+  ]
+},
+
+{ id:'jia-bharali', name:'Jia Bharali', region:'',
+  fact:"Also known as the Kameng River in Arunachal Pradesh, it originates in the Eastern Himalayas and joins the Brahmaputra near Tezpur.",
+  states:['Arunachal Pradesh','Assam'],
+  path:[
+    [27.85,92.65],[27.55,92.45],[27.20,92.25],[26.95,92.05],[26.75,91.90],
+    [26.55,91.82]
+  ]
+},
+
+{ id:'sankosh', name:'Sankosh', region:'',
+  fact:"A transboundary river originating in Bhutan and flowing along the Assam–West Bengal border before joining the Brahmaputra system in Bangladesh.",
+  states:['Assam','West Bengal'],
+  path:[
+    [27.10,89.95],[26.80,89.85],[26.50,89.75],[26.20,89.65],[25.95,89.55]
+  ]
+},
+
+{ id:'torsa', name:'Torsa', region:'',
+  fact:"A Himalayan river rising in Tibet, flowing through Bhutan and northern West Bengal before entering Bangladesh as a tributary of the Brahmaputra system.",
+  states:['West Bengal'],
+  path:[
+    [27.75,89.15],[27.35,89.05],[26.95,89.00],[26.60,89.05],[26.20,89.15]
+  ]
+},
+
+{ id:'raidak', name:'Raidak', region:'',
+  fact:"A transboundary river originating in Bhutan and flowing through the Dooars region of West Bengal before entering Bangladesh.",
+  states:['West Bengal'],
+  path:[
+    [27.45,89.65],[27.10,89.70],[26.75,89.78],[26.40,89.85],[26.10,89.92]
+  ]
+},
+  { id:'pranahita', name:'Pranahita', region:'',
+  fact:"The largest tributary of the Godavari, formed by the confluence of the Wardha and Wainganga rivers and flowing along the Maharashtra–Telangana border.",
+  states:['Maharashtra','Telangana'],
+  path:[
+    [19.85,79.85],[19.55,79.95],[19.20,80.05],[18.90,80.10],[18.60,80.15],
+    [18.35,80.20],[18.10,80.30]
+  ]
+},
+
+{ id:'manjira', name:'Manjira', region:'',
+  fact:"An important right-bank tributary of the Godavari, originating in the Balaghat Range of Maharashtra and flowing through Karnataka and Telangana.",
+  states:['Maharashtra','Karnataka','Telangana'],
+  path:[
+    [18.75,75.85],[18.35,76.40],[18.00,77.00],[17.75,77.50],[17.55,78.10],
+    [17.35,78.45],[17.15,78.90]
+  ]
+},
+
+{ id:'wardha', name:'Wardha', region:'',
+  fact:"A major tributary of the Godavari, rising in the Satpura Range of Madhya Pradesh and flowing through Maharashtra before joining the Wainganga to form the Pranahita.",
+  states:['Madhya Pradesh','Maharashtra'],
+  path:[
+    [21.55,78.45],[21.10,78.80],[20.70,79.05],[20.20,79.25],[19.75,79.40],
+    [19.30,79.60],[18.95,79.80]
+  ]
+},
+
+{ id:'wainganga', name:'Wainganga', region:'',
+  fact:"One of the principal tributaries of the Godavari, originating in the Mahadeo Hills of Madhya Pradesh and flowing through Maharashtra.",
+  states:['Madhya Pradesh','Maharashtra'],
+  path:[
+    [22.55,79.70],[22.05,79.95],[21.50,80.05],[20.95,80.00],[20.35,79.95],
+    [19.75,79.90],[18.95,79.80]
+  ]
+},
+
+{ id:'penganga', name:'Penganga', region:'',
+  fact:"A significant tributary of the Wardha River, originating in the Ajanta Range and forming part of the boundary between Maharashtra and Telangana.",
+  states:['Maharashtra','Telangana'],
+  path:[
+    [20.10,77.35],[19.85,77.80],[19.60,78.20],[19.35,78.60],[19.15,79.00],
+    [18.98,79.35]
+  ]
+},
+
+{ id:'indravati', name:'Indravati', region:'',
+  fact:"The largest left-bank tributary of the Godavari, rising in the Eastern Ghats of Odisha and flowing through Chhattisgarh before joining the Godavari in Telangana.",
+  states:['Odisha','Chhattisgarh','Telangana'],
+  path:[
+    [19.15,82.45],[19.00,81.85],[18.90,81.20],[18.75,80.70],[18.55,80.25],
+    [18.35,80.00],[18.15,80.05]
+  ]
+},
+
+{ id:'sabari', name:'Sabari', region:'',
+  fact:"A major tributary of the Godavari, originating in the Eastern Ghats of Odisha and flowing through Chhattisgarh and Andhra Pradesh.",
+  states:['Odisha','Chhattisgarh','Andhra Pradesh'],
+  path:[
+    [18.95,82.75],[18.70,82.30],[18.45,81.90],[18.15,81.55],[17.90,81.25],
+    [17.65,81.05]
+  ]
+},
+
+{ id:'purna', name:'Purna', region:'',
+  fact:"An important tributary of the Godavari, rising in the Ajanta Hills of Maharashtra and joining the Godavari near Nanded.",
+  states:['Maharashtra'],
+  path:[
+    [20.70,76.95],[20.40,77.20],[20.05,77.55],[19.75,77.90],[19.45,78.15],
+    [19.20,78.40]
+  ]
+},
+  { id:'bhima', name:'Bhima', region:'',
+  fact:"The largest tributary of the Krishna, originating in the Bhimashankar Hills of Maharashtra and flowing through Karnataka before joining the Krishna in Telangana.",
+  states:['Maharashtra','Karnataka','Telangana'],
+  path:[
+    [19.07,73.55],[18.65,74.10],[18.25,74.80],[17.90,75.45],[17.55,76.10],
+    [17.20,76.70],[16.90,77.25],[16.55,77.85]
+  ]
+},
+
+{ id:'tungabhadra', name:'Tungabhadra', region:'',
+  fact:"A major tributary of the Krishna formed by the confluence of the Tunga and Bhadra rivers at Kudli, flowing east through Karnataka and Andhra Pradesh.",
+  states:['Karnataka','Andhra Pradesh','Telangana'],
+  path:[
+    [13.82,75.55],[14.20,75.90],[14.55,76.35],[15.00,76.80],[15.35,77.20],
+    [15.70,77.70],[15.95,78.20],[16.20,78.75],[16.35,79.25]
+  ]
+},
+
+{ id:'koyna', name:'Koyna', region:'',
+  fact:"An important tributary of the Krishna, originating in the Western Ghats and renowned for the Koyna Dam and hydroelectric project.",
+  states:['Maharashtra'],
+  path:[
+    [17.40,73.80],[17.25,73.95],[17.10,74.15],[16.95,74.35],[16.85,74.55],
+    [16.75,74.80]
+  ]
+},
+
+{ id:'ghataprabha', name:'Ghataprabha', region:'',
+  fact:"A northern tributary of the Krishna, rising in the Western Ghats near Amboli and flowing east across Karnataka.",
+  states:['Maharashtra','Karnataka'],
+  path:[
+    [15.95,74.05],[15.85,74.45],[15.82,74.90],[15.82,75.45],[15.90,76.05],
+    [16.00,76.75],[16.10,77.20]
+  ]
+},
+
+{ id:'malaprabha', name:'Malaprabha', region:'',
+  fact:"A major tributary of the Krishna originating in the Western Ghats near Kankumbi and flowing through northern Karnataka.",
+  states:['Karnataka'],
+  path:[
+    [15.72,74.30],[15.68,74.75],[15.72,75.20],[15.80,75.75],[15.92,76.25],
+    [16.02,76.85],[16.10,77.20]
+  ]
+},
+
+{ id:'musi', name:'Musi', region:'',
+  fact:"An important tributary of the Krishna, originating in the Ananthagiri Hills and flowing through Hyderabad before joining the Krishna.",
+  states:['Telangana'],
+  path:[
+    [17.32,77.85],[17.38,78.05],[17.40,78.30],[17.39,78.50],[17.30,78.85],
+    [17.10,79.30],[16.82,79.75]
+  ]
+},
+
+{ id:'tunga', name:'Tunga', region:'',
+  fact:"One of the two headstreams of the Tungabhadra, rising in the Western Ghats at Gangamoola and flowing through Sringeri before meeting the Bhadra.",
+  states:['Karnataka'],
+  path:[
+    [13.25,75.15],[13.45,75.30],[13.65,75.45],[13.82,75.55]
+  ]
+},
+
+{ id:'bhadra', name:'Bhadra', region:'',
+  fact:"One of the two headstreams of the Tungabhadra, originating in the Western Ghats and joining the Tunga at Kudli.",
+  states:['Karnataka'],
+  path:[
+    [13.42,75.40],[13.55,75.52],[13.68,75.55],[13.82,75.55]
+  ]
+},
+  { id:'kabini', name:'Kabini', region:'',
+  fact:"The largest tributary of the Kaveri, originating in the Wayanad Hills of Kerala and flowing through Karnataka before joining the Kaveri at Tirumakudal Narasipura.",
+  states:['Kerala','Karnataka'],
+  path:[
+    [11.72,76.10],[11.82,76.28],[11.95,76.50],[12.05,76.72],[12.15,76.90],
+    [12.22,77.02],[12.30,77.10]
+  ]
+},
+
+{ id:'hemavati', name:'Hemavati', region:'',
+  fact:"A major tributary of the Kaveri, rising in the Western Ghats near Chikmagalur and flowing southeast through Karnataka before joining the Kaveri near Krishnarajasagara.",
+  states:['Karnataka'],
+  path:[
+    [13.15,75.70],[12.95,75.95],[12.78,76.25],[12.60,76.55],[12.45,76.80],
+    [12.32,76.98],[12.22,77.10]
+  ]
+},
+
+{ id:'bhavani', name:'Bhavani', region:'',
+  fact:"An important tributary of the Kaveri, originating in the Nilgiri Hills and flowing through Kerala and Tamil Nadu before joining the Kaveri at Bhavani.",
+  states:['Kerala','Tamil Nadu'],
+  path:[
+    [11.48,76.62],[11.35,76.82],[11.22,77.08],[11.12,77.32],[11.05,77.58],
+    [11.00,77.82]
+  ]
+},
+
+{ id:'amaravati', name:'Amaravati', region:'',
+  fact:"A major tributary of the Kaveri, rising in the Anamalai Hills of the Western Ghats and flowing east across Tamil Nadu.",
+  states:['Kerala','Tamil Nadu'],
+  path:[
+    [10.42,77.18],[10.55,77.48],[10.68,77.82],[10.78,78.15],[10.88,78.45],
+    [10.95,78.72]
+  ]
+},
+
+{ id:'noyyal', name:'Noyyal', region:'',
+  fact:"A tributary of the Kaveri originating in the Western Ghats near Vellingiri Hills and flowing through Coimbatore and Tiruppur districts.",
+  states:['Tamil Nadu'],
+  path:[
+    [10.98,76.72],[10.95,76.98],[10.92,77.22],[10.90,77.48],[10.92,77.72],
+    [10.95,77.95]
+  ]
+},
+
+{ id:'shimsha', name:'Shimsha', region:'',
+  fact:"A tributary of the Kaveri, rising in the Devarayanadurga Hills and known for the historic Shivanasamudra hydroelectric project.",
+  states:['Karnataka'],
+  path:[
+    [13.35,77.10],[13.05,77.12],[12.82,77.18],[12.58,77.15],[12.38,77.10],
+    [12.22,77.10]
+  ]
+},
+
+{ id:'arkavati', name:'Arkavati', region:'',
+  fact:"A tributary of the Kaveri, originating in the Nandi Hills of Karnataka and flowing through the Bengaluru region before joining the Kaveri near Kanakapura.",
+  states:['Karnataka'],
+  path:[
+    [13.42,77.68],[13.25,77.62],[13.05,77.58],[12.88,77.55],[12.70,77.45],
+    [12.48,77.30],[12.22,77.10]
+  ]
+}
 
 ];
 const ROUNDS_PER_GAME = 10; // solo runs pick up to 10 at random each time; with only a handful of rivers so far, every round gets used.
@@ -978,8 +1439,8 @@ loadIndiaBoundary();
    standard India-states GeoJSON. */
 let indiaStatesGeo = null;
 const INDIA_STATES_URLS = [
-  'https://gist.githubusercontent.com/jbrobst/56c13bbbf9d97d187fea01ca62ea5112/raw/e388c4cae20aa53cb5090210a42ebb9b765c0a36/india_states.geojson',
-  'https://raw.githubusercontent.com/Subhash9325/GeoJson-Data-of-Indian-States/master/Indian_States'
+  '/data/india-states-source-a.geojson',   // same-repo relative path, faster & no external dependency
+  '/data/india-states-source-b.geojson'
 ];
 async function loadIndiaStates(){
   for(const url of INDIA_STATES_URLS){
