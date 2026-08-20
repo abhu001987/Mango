@@ -20,8 +20,7 @@ crossorigin="anonymous"></script>
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="World Mountains Quiz | MapiDesk" />
 <meta name="twitter:description" content="Test your knowledge of the world's major mountains, mountain ranges, peaks, and their locations with this interactive mapping quiz." />
-<meta name="twitter:image" content="https://mapidesk.com/images/Mapidesk_Icon-removebg-preview.png" />  
-<!-- Theme: set instantly, before any CSS loads -->
+<meta name="twitter:image" content="https://mapidesk.com/images/Mapidesk_Icon-removebg-preview.png" />
 <script>
   (function() {
     try {
@@ -31,11 +30,9 @@ crossorigin="anonymous"></script>
   })();
 </script>
 
-<!-- Fonts (matches MapiDesk) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet" />
 
-<!-- Shared CSS & JS (theme) -->
 <link rel="stylesheet" href="theme.css" />
 <script src="theme.js"></script>
 
@@ -43,8 +40,6 @@ crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://mapidesk-tile-cache.abhikr18996.workers.dev">
 
 <style>
-  /* ============================================ */
-  /* PALETTE — MapiDesk gold/deep-blue glass theme (same as Lake / Gulf / Desert Navigator) */
   :root {
     --glass-bg: rgba(255, 255, 255, 0.55);
     --glass-border: rgba(255, 255, 255, 0.35);
@@ -118,8 +113,6 @@ crossorigin="anonymous"></script>
     --glass-brd: var(--border-light);
     --ink-dim: var(--muted);
   }
-  /* ============================================ */
-  /* HEADER */
   .nav { position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 1000; padding: 16px clamp(16px,2.4vw,36px) 0; border-bottom: none; background: transparent; transition: border-color 0.3s ease; margin-bottom: 0; }
   .nav.header-hidden { display: none; }
   .wrap { max-width: 1400px; margin: 0 auto; }
@@ -149,8 +142,6 @@ crossorigin="anonymous"></script>
   [data-theme="light"] .theme-toggle .moon-icon { opacity: 0; transform: rotate(90deg) scale(0.4); }
   @media (max-width: 600px) { .nav { padding: 12px 14px 0; } .nav-inner { padding: 10px 14px; border-radius: 16px; } .logo { font-size: 22px; gap: 9px; } .logo .mark { width: 40px; height: 40px; } .logo .mark svg { width: 40px; height: 40px; } .nav-links { display: none; } .exit-btn { padding: 6px 12px; font-size: 12px; } .exit-btn span { display: none; } .theme-toggle { width: 34px; height: 34px; } }
 
-  /* ============================================ */
-  /* BASE */
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
   html,body{ margin:0;padding:0; height:100%; height:100dvh; overscroll-behavior:none; background:var(--bg-0);
     font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--text);
@@ -160,7 +151,6 @@ crossorigin="anonymous"></script>
   #app{ position:relative;z-index:1; flex:1 1 auto;min-height:0; display:flex;flex-direction:column;
     padding-bottom:env(safe-area-inset-bottom); padding-left:env(safe-area-inset-left); padding-right:env(safe-area-inset-right); }
 
-  /* ---------- HUD ---------- */
   #hud-top{ display:flex;align-items:center;justify-content:space-between;gap:8px; padding:8px 10px; background:transparent; z-index:500; flex-wrap:nowrap; position:relative; }
   .brand{ font-weight:700;letter-spacing:.1em;font-size:10px;color:var(--gold); text-transform:uppercase;opacity:.9;flex-shrink:0; font-family:'IBM Plex Mono',monospace; }
   .hud-back-btn{ display:flex;align-items:center;justify-content:center; width:34px;height:34px;border-radius:50%;flex-shrink:0;
@@ -202,7 +192,6 @@ crossorigin="anonymous"></script>
   #challenge-flag .dotpulse{width:6px;height:6px;border-radius:50%;background:var(--coral);animation:pulseDot 1.4s ease-in-out infinite;}
   @keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:.25;}}
 
-  /* ---------- MAP ---------- */
   #map-viewport{ flex:1 1 auto;position:relative;overflow:hidden; margin:0 8px 8px; min-height:0; border-radius:18px;
     border:1px solid var(--glass-brd); box-shadow: var(--glass-shadow); isolation:isolate; z-index:0; }
   #map-viewport.screen-covered{visibility:hidden;}
@@ -219,13 +208,31 @@ crossorigin="anonymous"></script>
 
   .line-label{ transform:translate(-50%,-150%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
     font-size:10.5px; padding:4px 9px; border-radius:20px; background:var(--gold); color:#1A2E3B; box-shadow:0 4px 12px rgba(0,0,0,0.18); }
-  .guess-label{ transform:translate(-50%,-150%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
-    font-size:10.5px; padding:4px 9px; border-radius:20px; background:var(--coral); color:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.18); }
   .country-label{ transform:translate(-50%,-50%); white-space:nowrap; font-family:'IBM Plex Mono',monospace; font-weight:700;
     font-size:10px; padding:3px 9px; border-radius:20px; background:var(--clabel-color, var(--gold)); color:#fff;
     box-shadow:0 4px 12px rgba(0,0,0,0.22); letter-spacing:.02em; pointer-events:none; }
 
-  /* ---------- BOTTOM PANEL ---------- */
+  /* ---------- CHOICE PINS (multiple-choice answer markers) ---------- */
+  .choice-pin{
+    display:flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border-radius:50%;
+    background:var(--gold-bright);
+    border:3px solid #fff;
+    box-shadow:0 6px 16px rgba(0,0,0,0.32), 0 0 0 3px var(--gold-glow);
+    cursor:pointer;
+    transition:transform .18s var(--ease), box-shadow .18s ease, background .18s ease, opacity .25s ease;
+  }
+  .choice-pin svg{width:20px;height:20px;stroke:#1A2E3B;fill:none;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;}
+  .choice-pin:hover{transform:scale(1.1);box-shadow:0 8px 22px rgba(0,0,0,0.4), 0 0 0 5px var(--gold-glow);}
+  .choice-pin.correct{background:var(--teal);box-shadow:0 8px 24px rgba(74,158,122,0.5), 0 0 0 6px rgba(74,158,122,0.22);}
+  .choice-pin.correct svg{stroke:#fff;}
+  .choice-pin.wrong{background:var(--coral);box-shadow:0 8px 24px rgba(242,84,95,0.5), 0 0 0 6px rgba(242,84,95,0.22);}
+  .choice-pin.wrong svg{stroke:#fff;}
+  .choice-pin.dim{opacity:.4;filter:grayscale(.4);cursor:default;transform:scale(.92);}
+  .choice-pin.locked{cursor:default;}
+  @keyframes choicePop{ 0%{transform:scale(0);opacity:0;} 60%{transform:scale(1.15);opacity:1;} 100%{transform:scale(1);opacity:1;} }
+  .choice-pin.pop{animation:choicePop .4s var(--ease) both;}
+
   #hud-bottom{ z-index:500;padding:8px 10px 12px; display:flex;flex-direction:column;align-items:center;gap:8px; }
   #feedback{ width:100%;max-width:640px; background:var(--glass);border:1px solid var(--glass-brd);backdrop-filter:blur(14px) saturate(160%);
     -webkit-backdrop-filter:blur(14px) saturate(160%); border-radius:16px;padding:10px 16px;text-align:center;
@@ -256,7 +263,6 @@ crossorigin="anonymous"></script>
   .hint-tap{font-size:11px;color:var(--ink-dim);letter-spacing:.05em;opacity:.85;text-align:center; display:flex; align-items:center; gap:6px; flex-wrap:wrap; justify-content:center;}
   .hint-tap svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 
-  /* ---------- OVERLAY SCREENS ---------- */
   .screen{ position:absolute;inset:0;z-index:5000;display:flex;align-items:flex-start;justify-content:center;
     background:var(--bg-0);
     background-image: radial-gradient(circle at 15% 0%, var(--glow-1), transparent 45%), radial-gradient(circle at 85% 20%, var(--glow-2), transparent 40%);
@@ -535,7 +541,7 @@ crossorigin="anonymous"></script>
             Map the World's Mountains
           </div>
           <h1> Mountains <span>Navigator</span></h1>
-<p class="sub">Test your knowledge of the world's mountains by locating major mountain ranges and peaks on the map, from the Himalayas and Andes to the Rockies, Alps, Atlas, and more.</p>        </div>
+<p class="sub">Test your knowledge of the world's mountains — for each target, pick the correct location out of four marked options, from the Himalayas and Andes to the Rockies, Alps, Atlas, and more.</p>        </div>
       </div>
 
       <div class="info-cards">
@@ -546,7 +552,7 @@ crossorigin="anonymous"></script>
             </div>
             <div>
               <h3>Your Mission</h3>
-              <p>Pin each Mountains as close to its real summit as you can.</p>
+              <p>Choose the correct marker for each mountain, out of four options.</p>
             </div>
           </div>
           <div class="info-body">
@@ -592,11 +598,11 @@ crossorigin="anonymous"></script>
         <div class="steps-row">
           <div class="step">
             <div class="step-num">1</div>
-            <div class="step-text"><div class="t">Drop a Pin</div><div class="d">Tap where you think it lies — drag the pin to fine-tune, drag elsewhere to pan</div></div>
+            <div class="step-text"><div class="t">See Four Pins</div><div class="d">One marks the real location — three are decoys</div></div>
           </div>
           <div class="step">
             <div class="step-num">2</div>
-            <div class="step-text"><div class="t">Lock It In</div><div class="d">Watch the map fly to the real location</div></div>
+            <div class="step-text"><div class="t">Tap Your Answer</div><div class="d">Pick the pin you think is correct</div></div>
           </div>
           <div class="step">
             <div class="step-num">3</div>
@@ -652,7 +658,7 @@ crossorigin="anonymous"></script>
             </div>
           </div>
           <div class="info-body">
-            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Drop your pin as close to each mountain range or peak as you can — closer placements score higher. At the end, you'll get a full head-to-head breakdown.</p>
+            <p style="font-size:12.5px;color:var(--ink-dim);line-height:1.6;margin:2px 0 0;">Pick the correct pin out of four options for each mountain — every right answer scores points. At the end, you'll get a full head-to-head breakdown.</p>
           </div>
         </div>
       </div>
@@ -696,7 +702,7 @@ crossorigin="anonymous"></script>
         <div class="score-meta">
           <div class="kicker" id="end-kicker" style="margin-bottom:4px;">Mission Complete</div>
           <div class="final-score" id="final-score">0%</div>
-          <div class="final-label">Average Placement Accuracy</div>
+          <div class="final-label">Correct Answers</div>
         </div>
       </div>
       <p class="sub" id="final-msg" style="margin-bottom:16px;"></p>
@@ -770,7 +776,7 @@ crossorigin="anonymous"></script>
       <div id="dots"></div>
     </div>
     <div id="challenge-flag"><span class="dotpulse"></span><span class="flag-text">Challenge</span></div>
-    <div class="score-pill">Accuracy <b id="score-live">0%</b></div>
+    <div class="score-pill">Correct <b id="score-live">0%</b></div>
   </div>
 
   <div id="map-viewport">
@@ -784,15 +790,14 @@ crossorigin="anonymous"></script>
       <div class="fact" id="fact-text"></div>
       <div class="detail-line" id="legend-line" style="display:none;">
         <svg viewBox="0 0 24 24"><path d="M9 20l-5.5 2 2-5.5L17 5l3 3-11.5 11.5z"/><path d="M15 3l6 6"/></svg>
-        Red pin = your guess · Gold marker = the real location
+        Green marker = correct answer
       </div>
       <div class="rival-line" id="rival-line" style="display:none;"></div>
     </div>
     <div class="hint-tap" id="tap-hint">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
-      Tap to drop your pin, then drag it to fine-tune — drag elsewhere to pan the map
+      Tap the marker where you think it is — one of the four is correct
     </div>
-    <button class="btn btn-teal" id="lock-btn" style="display:none" onclick="lockGuess()">Lock In Pin</button>
     <button class="btn btn-primary" id="next-btn" style="display:none" onclick="nextRound()">Next Target →</button>
   </div>
 
@@ -850,12 +855,11 @@ function setHeaderVisible(visible){
 }
 
 /* ============================================================
-   VOLCANO DATA
-   Each volcano is stored as a single summit coordinate, wrapped in
-   the same "paths" shape used by the other Navigator games (a path
-   of two identical points) so the existing distance/scoring code
-   works unchanged — educational approximations, not survey-grade
-   GIS data.
+   MOUNTAIN DATA
+   Each entry is stored as a single summit coordinate wrapped in a
+   "paths" array (kept from the original data shape) — only
+   paths[0][0] is used now, as the correct-answer location.
+   Educational approximations, not survey-grade GIS data.
    ============================================================ */
 const ROUNDS = [
 
@@ -1155,6 +1159,7 @@ const ROUNDS = [
 
 ];
 const ROUNDS_PER_GAME = 10; // solo runs pick 10 at random each time. Challenge mode always uses the exact order sent by the challenger.
+const OPTIONS_PER_ROUND = 4; // one correct pin + this many minus one decoys
 
 /* ---------------- Map setup ---------------- */
 const map = L.map('map', {
@@ -1222,8 +1227,6 @@ async function loadWorldCountries(){
 }
 loadWorldCountries();
 
-/* Alias table for the few names that differ between our round data and the
-   Natural-Earth-derived dataset's `name` property. */
 const COUNTRY_NAME_ALIASES = {
   'united states of america': ['united states of america','united states','usa','us'],
   'south korea': ['south korea','republic of korea','korea, south'],
@@ -1243,8 +1246,6 @@ function countryFeatureMatches(feature, targetName){
   return false;
 }
 
-/* Colors mirror the same good/mid/bad verdict palette used for round feedback,
-   so the highlighted countries visually echo how close the guess was. */
 const VERDICT_HIGHLIGHT_COLOR = { good:'#4A9E7A', mid:'#D4A853', bad:'#F2545F' };
 
 function highlightCountries(names, cls){
@@ -1261,41 +1262,21 @@ function highlightCountries(names, cls){
       }).addTo(map);
     }catch(e){ return; }
     revealLayers.push(layer);
-    try{
-      const center = layer.getBounds().getCenter();
-      const label = L.marker(center, {
-        icon: L.divIcon({ className:'', html:`<div class="country-label" style="--clabel-color:${color}">${name}</div>`, iconSize:[0,0] }),
-        interactive:false
-      }).addTo(map);
-      revealLayers.push(label);
-    }catch(e){ /* bounds unavailable for this geometry; skip label */ }
   });
 }
 
-/* ---------------- Pin icons ---------------- */
-function pinIcon(color){
+/* ---------------- Choice pin icon (the 4 tappable answer markers) ---------------- */
+const MOUNTAIN_GLYPH = '<path d="M3 19h18L14 6l-3.5 5L9 9z"/><path d="M5.5 15.3L9 9l1.6 2.3"/>';
+function choicePinIcon(state){
+  // state: 'default' | 'correct' | 'wrong' | 'dim'
+  const cls = 'choice-pin' + (state && state !== 'default' ? ' ' + state : '') + (state === 'dim' ? '' : ' locked-ready');
   return L.divIcon({
     className:'',
-    html:`<svg width="26" height="34" viewBox="0 0 26 34" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.35));">
-      <path d="M13 0C5.8 0 0 5.8 0 13c0 9.5 13 21 13 21s13-11.5 13-21C26 5.8 20.2 0 13 0z" fill="${color}"/>
-      <circle cx="13" cy="13" r="5" fill="#fff"/>
-    </svg>`,
-    iconSize:[26,34],
-    iconAnchor:[13,34]
+    html:`<div class="${cls} pop"><svg viewBox="0 0 24 24">${MOUNTAIN_GLYPH}</svg></div>`,
+    iconSize:[44,44],
+    iconAnchor:[22,22]
   });
 }
-const GUESS_ICON = pinIcon('#F2545F');
-
-const VOLCANO_ICON = L.divIcon({
-  className:'',
-  html:`<svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.35));">
-    <circle cx="14" cy="14" r="12" fill="#D4A853" stroke="#1A2E3B" stroke-width="1.6"/>
-    <path d="M6 19 L12 9 L15 13 L18 6 L23 19 Z" fill="#1A2E3B"/>
-    <circle cx="18" cy="8.5" r="1.6" fill="#F2545F"/>
-  </svg>`,
-  iconSize:[28,28],
-  iconAnchor:[14,14]
-});
 
 /* ---------------- Game state ---------------- */
 let order = [];
@@ -1303,7 +1284,7 @@ let roundIdx = 0;
 let scores = [];
 let results = [];
 let guessed = false;
-let guessMarker = null;
+let optionMarkers = [];  // {marker, isCorrect, roundRef}
 let revealLayers = [];
 let mode = 'own';
 let rival = null;
@@ -1359,129 +1340,61 @@ function clearRevealLayers(){
   revealLayers.forEach(l=>{ try{ map.removeLayer(l); }catch(e){} });
   revealLayers = [];
 }
+function clearOptionMarkers(){
+  optionMarkers.forEach(o=>{ try{ map.removeLayer(o.marker); }catch(e){} });
+  optionMarkers = [];
+}
+
+/* Build 4 answer options for a round: the real summit + 3 decoys pulled
+   from other, different mountains so they're plausible but wrong. */
+function buildOptionsForRound(round){
+  const correctPt = round.paths[0][0];
+  const otherIdxs = ROUNDS.map((_,i)=>i).filter(i => ROUNDS[i].id !== round.id);
+  const decoyIdxs = shuffleIdx(otherIdxs.length, OPTIONS_PER_ROUND - 1).map(i => otherIdxs[i]);
+  const opts = [{ lat: correctPt[0], lng: correctPt[1], isCorrect:true }];
+  decoyIdxs.forEach(i=>{
+    const p = ROUNDS[i].paths[0][0];
+    opts.push({ lat:p[0], lng:p[1], isCorrect:false });
+  });
+  // shuffle final order so the correct pin isn't always first
+  const shuffled = shuffleIdx(opts.length).map(i => opts[i]);
+  return shuffled;
+}
 
 function loadRound(){
   guessed = false;
   clearRevealLayers();
-  if(guessMarker){ map.removeLayer(guessMarker); guessMarker = null; }
+  clearOptionMarkers();
   map.stop();
-  map.flyTo([20, 30], 2, { duration: 0.6, easeLinearity: 0.25 });
   document.getElementById('feedback').classList.remove('show');
   document.getElementById('legend-line').style.display = 'none';
   document.getElementById('rival-line').style.display = 'none';
-  document.getElementById('lock-btn').style.display = 'none';
   document.getElementById('next-btn').style.display = 'none';
   document.getElementById('tap-hint').style.display = 'flex';
   document.getElementById('round-label').textContent = `Round ${roundIdx+1} of ${order.length}`;
   document.getElementById('strait-name').textContent = ROUNDS[order[roundIdx]].name;
   document.getElementById('strait-region').textContent = ROUNDS[order[roundIdx]].region;
   updateDots();
-}
 
-/* ---------------- Tap-to-drop / drag-to-adjust pin (native Leaflet marker dragging keeps map panning conflict-free) ---------------- */
-function onMapClick(e){
-  if(guessed) return;
-  if(!guessMarker){
-    guessMarker = L.marker(e.latlng, { icon: GUESS_ICON, draggable: true, autoPan: true }).addTo(map);
-  } else {
-    guessMarker.setLatLng(e.latlng);
-  }
-  document.getElementById('tap-hint').style.display = 'none';
-  document.getElementById('lock-btn').style.display = 'inline-block';
-}
-map.on('click', onMapClick);
-
-/* ---------------- Distance math (equirectangular approximation, fine at this scale) ---------------- */
-function toXY(lat, lng, refLat){
-  const R = 6371;
-  const x = (lng * Math.PI/180) * R * Math.cos(refLat*Math.PI/180);
-  const y = (lat * Math.PI/180) * R;
-  return {x,y};
-}
-function nearestOnSegment(p, a, b){
-  const refLat = (p[0]+a[0]+b[0])/3;
-  const P = toXY(p[0], p[1], refLat), A = toXY(a[0], a[1], refLat), B = toXY(b[0], b[1], refLat);
-  const ABx = B.x-A.x, ABy = B.y-A.y, APx = P.x-A.x, APy = P.y-A.y;
-  const len2 = ABx*ABx+ABy*ABy;
-  let t = len2 === 0 ? 0 : (APx*ABx+APy*ABy)/len2;
-  t = Math.max(0, Math.min(1, t));
-  const Cx = A.x+t*ABx, Cy = A.y+t*ABy;
-  const dx = P.x-Cx, dy = P.y-Cy;
-  return { dist: Math.sqrt(dx*dx+dy*dy), latlng:[ a[0]+t*(b[0]-a[0]), a[1]+t*(b[1]-a[1]) ] };
-}
-/* Ray-casting point-in-polygon test on [lat,lng] pairs (kept for parity with other Navigator games; volcanoes are
-   modeled as single summit points, so this never triggers, but it's here for consistency with the shared code) */
-function pointInPolygon(point, vs){
-  const x = point[1], y = point[0];
-  let inside = false;
-  for(let i = 0, j = vs.length - 1; i < vs.length; j = i++){
-    const xi = vs[i][1], yi = vs[i][0];
-    const xj = vs[j][1], yj = vs[j][0];
-    const intersect = ((yi > y) !== (yj > y)) &&
-      (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-    if(intersect) inside = !inside;
-  }
-  return inside;
-}
-/* Point-in-polygon for real GeoJSON geometry (coords are [lng,lat], can have holes/multipolygons) */
-function pointInGeoJSONPolygon(lng, lat, geometry){
-  function ringContains(ring, x, y){
-    let inside = false;
-    for(let i=0, j=ring.length-1; i<ring.length; j=i++){
-      const xi = ring[i][0], yi = ring[i][1];
-      const xj = ring[j][0], yj = ring[j][1];
-      const intersect = ((yi>y)!==(yj>y)) && (x < (xj-xi)*(y-yi)/(yj-yi)+xi);
-      if(intersect) inside = !inside;
-    }
-    return inside;
-  }
-  function polygonContains(coords, x, y){
-    if(!ringContains(coords[0], x, y)) return false;
-    for(let k=1;k<coords.length;k++){ if(ringContains(coords[k], x, y)) return false; } // holes
-    return true;
-  }
-  if(geometry.type === 'Polygon') return polygonContains(geometry.coordinates, lng, lat);
-  if(geometry.type === 'MultiPolygon') return geometry.coordinates.some(poly => polygonContains(poly, lng, lat));
-  return false;
-}
-
-/* Is the guess anywhere inside one of the round's bordering countries? */
-function isInsideAnyCountry(gLatLng, countryNames){
-  if(!worldCountriesGeo) return false;
-  const [lat, lng] = gLatLng;
-  return countryNames.some(name=>{
-    const feature = worldCountriesGeo.features.find(f => countryFeatureMatches(f, name));
-    return feature ? pointInGeoJSONPolygon(lng, lat, feature.geometry) : false;
+  const round = ROUNDS[order[roundIdx]];
+  const opts = buildOptionsForRound(round);
+  const boundsPoints = [];
+  opts.forEach(opt=>{
+    const marker = L.marker([opt.lat, opt.lng], { icon: choicePinIcon('default'), interactive:true, keyboard:false }).addTo(map);
+    marker.on('click', ()=> chooseOption(opt, marker, round));
+    optionMarkers.push({ marker, opt });
+    boundsPoints.push([opt.lat, opt.lng]);
   });
-}
-function nearestOnPaths(p, paths){
-  // Exactly on the volcano's summit point? Full credit — distance 0.
-  for(const path of paths){
-    if(pointInPolygon(p, path)){
-      return { dist: 0, latlng: p };
-    }
-  }
-  // Otherwise, distance to the nearest point along the channel line.
-  let best = null;
-  paths.forEach(path=>{
-    for(let i=0;i<path.length-1;i++){
-      const r = nearestOnSegment(p, path[i], path[i+1]);
-      if(!best || r.dist < best.dist) best = r;
-    }
-  });
-  return best;
+  const bounds = L.latLngBounds(boundsPoints);
+  map.flyToBounds(bounds, { padding:[70,70], maxZoom:6, duration:0.7, easeLinearity:0.25 });
 }
 
-/* ---------------- Scoring ---------------- */
-function scoreFor(km){ return Math.max(0, Math.round(100 - km/5)); }
-function verdictFor(km){
-  if(km <= 15) return {label:'Bullseye — right on it!', cls:'good', icon:'target'};
-  if(km < 60) return {label:'Excellent placement!', cls:'good', icon:'check'};
-  if(km < 150) return {label:'Nearby — solid instinct.', cls:'mid', icon:'compass'};
-  if(km < 350) return {label:'Right general zone.', cls:'mid', icon:'compass'};
-  return {label:'Way off course — but noted.', cls:'bad', icon:'x'};
+/* ---------------- Scoring (binary: right pin = full points) ---------------- */
+function verdictForCorrect(isCorrect){
+  return isCorrect
+    ? {label:'Correct!', cls:'good', icon:'check'}
+    : {label:"Not quite — here's the right one.", cls:'bad', icon:'x'};
 }
-
 const VERDICT_ICONS = {
   target: '<svg class="v-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" style="fill:currentColor"/></svg>',
   check: '<svg class="v-ic" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>',
@@ -1525,76 +1438,32 @@ function triggerRoundEffect(cls){
     feedback.classList.remove('fx-flash-bad'); void feedback.offsetWidth;
     feedback.classList.add('fx-flash-bad');
     setTimeout(()=> feedback.classList.remove('fx-flash-bad'), 550);
-  } else {
-    if(feedback){
-      feedback.classList.remove('fx-pulse-mid'); void feedback.offsetWidth;
-      feedback.classList.add('fx-pulse-mid');
-      setTimeout(()=> feedback.classList.remove('fx-pulse-mid'), 700);
-    }
   }
 }
 
-function lockGuess(){
-  if(guessed || !guessMarker) return;
+/* Called when the player taps one of the 4 answer pins. */
+function chooseOption(opt, chosenMarker, round){
+  if(guessed) return;
   guessed = true;
 
-  const round = ROUNDS[order[roundIdx]];
-  const gll = guessMarker.getLatLng();
-  const gLatLng = [gll.lat, gll.lng];
-  const nearest = nearestOnPaths(gLatLng, round.paths);
-  const km = Math.round(nearest.dist);
-
-  // If you're off the exact summit but inside a country the volcano
-  // actually sits in, don't torch the score for it — cap the *scoring* distance.
-  const insideCountry = km > 0 && isInsideAnyCountry(gLatLng, round.countries);
-  const scoringKm = insideCountry ? Math.min(km, 100) : km;
-
-  const v = verdictFor(scoringKm);
-  const pts = scoreFor(scoringKm);
+  const pts = opt.isCorrect ? 100 : 0;
   scores.push(pts);
-  results.push({name:round.name, km, pts, cls:v.cls});
+  results.push({name:round.name, correct:opt.isCorrect, pts, cls: opt.isCorrect ? 'good' : 'bad'});
 
-  document.getElementById('lock-btn').style.display = 'none';
+  document.getElementById('tap-hint').style.display = 'none';
 
-  // Fly the map to fit both the guess and the real volcano's location, so the
-  // player actually sees where it lies — even if they'd panned elsewhere.
-  const boundsPoints = [gLatLng];
-  round.paths.forEach(path=> path.forEach(pt=> boundsPoints.push(pt)));
-  const bounds = L.latLngBounds(boundsPoints);
-
-  let revealed = false;
-  function fireReveal(){
-    if(revealed) return;
-    revealed = true;
-    revealResult(round, gLatLng, nearest, km, v, pts);
-  }
-  map.once('moveend', fireReveal);
-  map.flyToBounds(bounds, { padding:[60,60], maxZoom:6, duration:1.1, easeLinearity:0.25 });
-  setTimeout(fireReveal, 1600); // fallback in case flyToBounds doesn't fire moveend
-}
-
-function revealResult(round, gLatLng, nearest, km, v, pts){
-  clearRevealLayers();
-
-  round.paths.forEach((path, i)=>{
-    const pt = path[0];
-    const marker = L.marker(pt, { icon: VOLCANO_ICON, interactive:false }).addTo(map);
-    revealLayers.push(marker);
-    if(i === 0){
-      const label = L.marker(pt, {
-        icon: L.divIcon({ className:'', html:`<div class="line-label">${round.name}</div>`, iconSize:[0,0] }),
-        interactive:false
-      }).addTo(map);
-      revealLayers.push(label);
-    }
+  // Re-style every pin: correct = green, the one you tapped (if wrong) = red, others = dimmed.
+  optionMarkers.forEach(o=>{
+    let state = 'dim';
+    if(o.opt.isCorrect) state = 'correct';
+    else if(o.marker === chosenMarker) state = 'wrong';
+    o.marker.setIcon(choicePinIcon(state));
   });
 
+  const v = verdictForCorrect(opt.isCorrect);
   highlightCountries(round.countries, v.cls);
 
-  const connector = L.polyline([gLatLng, nearest.latlng], { color:'#F2545F', weight:2, opacity:0.85, dashArray:'6,6' }).addTo(map);
-  revealLayers.push(connector);
-
-  document.getElementById('verdict-text').innerHTML = `${VERDICT_ICONS[v.icon]} ${v.label}  (${km===0?'right on it':km+' km off'} · +${pts} pts)`;
+  document.getElementById('verdict-text').innerHTML = `${VERDICT_ICONS[v.icon]} ${v.label}  (+${pts} pts)`;
   document.getElementById('verdict-text').className = 'verdict ' + v.cls;
   document.getElementById('fact-text').textContent = round.region + ' — ' + round.fact;
   document.getElementById('legend-line').style.display = 'flex';
@@ -1640,9 +1509,9 @@ async function endGame(){
   }
 
   let msg;
-  if(avg >= 85) msg = "Master of world geography. You could pinpoint these volcanoes from memory.";
-  else if(avg >= 65) msg = "Sharp sense of the map — a seasoned reading of the world's active peaks.";
-  else if(avg >= 40) msg = "Solid run. These volcanoes are tricky — chart again to sharpen your eye.";
+  if(avg >= 85) msg = "Master of world geography. You could pinpoint these mountains from memory.";
+  else if(avg >= 65) msg = "Sharp sense of the map — a seasoned reading of the world's peaks.";
+  else if(avg >= 40) msg = "Solid run. These mountains are tricky — chart again to sharpen your eye.";
   else msg = "";
   document.getElementById('final-msg').textContent = msg;
 
@@ -1678,7 +1547,7 @@ async function endGame(){
       fireConfetti({count:110, maxFrames:230, spread:1});
     }
     else if(avg < rival.score){
-      vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> Your rival read the volcanoes closer. Chart again!';
+      vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> Your rival read the mountains closer. Chart again!';
       vb.classList.add('lose');
     }
     else {
@@ -1732,7 +1601,7 @@ function renderSoloBreakdown(){
     row.style.animationDelay = (i * 0.05) + 's';
     row.innerHTML = `<span class="b-idx">${i+1}</span>
       <span class="b-name">${r.name}</span>
-      <span class="b-dist">${r.km} km off</span>
+      <span class="b-dist">${r.correct ? 'Correct' : 'Incorrect'}</span>
       <span class="b-pts ${r.cls}">+${r.pts}</span>`;
     box.appendChild(row);
   });
@@ -1801,7 +1670,6 @@ async function fetchGame(gameCode){
   sessionStorage.setItem(cacheKey, JSON.stringify(data));
   return data;
 }
-// 🔧 FIX: namespaced per game (was 'hn-my-challenges' shared across all Navigator games)
 const MY_CHALLENGES_KEY = 'my-challenges-' + GAME_TYPE;
 const CHALLENGE_MAX_AGE_MS = 60 * 24 * 60 * 60 * 1000; // matches your worker's 60-day TTL
 
@@ -1812,21 +1680,16 @@ function myChallenges(){
 
 function saveMyChallenge(gameCode, avg, scoreArr){
   const all = myChallenges();
-
-  // 🔧 FIX: prune anything past the worker's TTL before adding the new one,
-  // so the object can't grow unbounded across a player's history.
   const now = Date.now();
   Object.keys(all).forEach(key => {
     if (!all[key].savedAt || (now - all[key].savedAt) > CHALLENGE_MAX_AGE_MS) {
       delete all[key];
     }
   });
-
   all[gameCode] = { avg, scores: scoreArr, savedAt: now };
   try{
     localStorage.setItem(MY_CHALLENGES_KEY, JSON.stringify(all));
   }catch(e){
-    // 🔧 FIX: quota errors no longer fail silently — at least surface it
     console.warn('Could not save challenge locally (storage quota?):', e);
   }
 }
@@ -1862,7 +1725,7 @@ function showReplyComparison(data){
     vb.classList.add('win'); vsCard.classList.add('fx-winner');
     fireConfetti({count:110, maxFrames:230, spread:1});
   } else if(currentAvgScore < rival.score){
-    vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> They read the volcanoes closer this time.';
+    vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M16 8l-5 3-1 5 5-3z"/><circle cx="12" cy="12" r="9"/></svg> They read the mountains closer this time.';
     vb.classList.add('lose');
   } else {
     vb.innerHTML = '<svg viewBox="0 0 24 24"><path d="M8 12h8M12 8v8"/><circle cx="12" cy="12" r="9"/></svg> Dead even!';
@@ -1900,9 +1763,9 @@ async function ensureChallengeLinkReady(){
     document.getElementById('check-reply-btn').style.display = 'inline-block';
     const link = buildLinkFromGameCode(gameCode);
     linkInput.value = link;
-    const msg = `🌋 I just charted the Volcano Navigator and scored ${currentAvgScore}%. Think you can pin the volcanoes closer? Take the same targets: ${link}`;
+    const msg = `⛰️ I just charted the Mountains Navigator and scored ${currentAvgScore}%. Think you can pick the peaks closer? Take the same targets: ${link}`;
     document.getElementById('wa-share').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
-    document.getElementById('tg-share').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent(`🌋 Think you can beat my Volcano Navigator score of ${currentAvgScore}%?`);
+    document.getElementById('tg-share').href = 'https://t.me/share/url?url=' + encodeURIComponent(link) + '&text=' + encodeURIComponent(`⛰️ Think you can beat my Mountains Navigator score of ${currentAvgScore}%?`);
     ['wa-share','tg-share'].forEach(id=>{ document.getElementById(id).classList.remove('disabled'); });
     copyBtn.disabled = false;
     copyBtn.textContent = 'Copy';
@@ -2118,9 +1981,6 @@ window.addEventListener('load', function() {
     });
   } catch (e) { console.warn('AdSense not ready yet:', e); }
 });
-  /* Reveal an ad slot's space only once Google actually fills it — keeps the
-   push() call (and thus the real ad request Google's reviewer sees) fully
-   intact, just avoids reserving visible space for a blank/unfilled slot. */
 document.querySelectorAll('.ad-slot').forEach(function(slot){
   const ins = slot.querySelector('.adsbygoogle');
   if(!ins) return;
