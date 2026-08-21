@@ -857,306 +857,306 @@ function setHeaderVisible(visible){
    GIS data.
    ============================================================ */
 const ROUNDS = [
-  { id:'vesuvius', name:'Mount Vesuvius', region:'Italy',
+  { id:'vesuvius', name:'Mount Vesuvius', region:'',
     fact:"The volcano that famously buried the Roman city of Pompeii in AD 79 and remains the only active volcano on mainland Europe.",
     countries:['Italy'],
     paths:[[[40.821,14.426],[40.821,14.426]]]
   },
 
-  { id:'fuji', name:'Mount Fuji', region:'Japan',
+  { id:'fuji', name:'Mount Fuji', region:'',
     fact:"Japan's tallest peak and an active stratovolcano considered a sacred symbol of the country, last erupting in the early 18th century.",
     countries:['Japan'],
     paths:[[[35.3606,138.7274],[35.3606,138.7274]]]
   },
 
-  { id:'kilimanjaro', name:'Mount Kilimanjaro', region:'Tanzania',
+  { id:'kilimanjaro', name:'Mount Kilimanjaro', region:'',
     fact:"Africa's tallest mountain and a dormant volcanic massif with three distinct volcanic cones, rising dramatically from the surrounding plains.",
     countries:['Tanzania'],
     paths:[[[-3.0674,37.3556],[-3.0674,37.3556]]]
   },
 
-  { id:'krakatoa', name:'Krakatoa', region:'Indonesia',
+  { id:'krakatoa', name:'Krakatoa', region:'',
     fact:"The site of one of the most catastrophic eruptions in recorded history in 1883, whose explosion was heard thousands of kilometers away.",
     countries:['Indonesia'],
     paths:[[[-6.102,105.423],[-6.102,105.423]]]
   },
 
-  { id:'sthelens', name:'Mount St. Helens', region:'Washington, United States',
+  { id:'sthelens', name:'Mount St. Helens', region:'',
     fact:"Erupted catastrophically in 1980 in one of the most closely studied volcanic events in U.S. history, reshaping the surrounding landscape.",
     countries:['United States of America'],
     paths:[[[46.1912,-122.1944],[46.1912,-122.1944]]]
   },
 
-  { id:'maunaloa', name:'Mauna Loa', region:'Hawaii, United States',
+  { id:'maunaloa', name:'Mauna Loa', region:'',
     fact:"The largest active volcano on Earth by volume, forming much of the island of Hawaii through countless slow-moving lava flows.",
     countries:['United States of America'],
     paths:[[[19.4721,-155.6083],[19.4721,-155.6083]]]
   },
 
-  { id:'etna', name:'Mount Etna', region:'Sicily, Italy',
+  { id:'etna', name:'Mount Etna', region:'',
     fact:"Europe's most active volcano, towering over eastern Sicily and erupting frequently enough to be almost continuously monitored.",
     countries:['Italy'],
     paths:[[[37.7510,14.9934],[37.7510,14.9934]]]
   },
 
-  { id:'popocatepetl', name:'Popocatépetl', region:'Mexico',
+  { id:'popocatepetl', name:'Popocatépetl', region:'',
     fact:"One of Mexico's most active volcanoes, looming near Mexico City and Puebla and regularly venting steam and ash.",
     countries:['Mexico'],
     paths:[[[19.0223,-98.6278],[19.0223,-98.6278]]]
   },
 
-  { id:'kilauea', name:'Kilauea', region:'Hawaii, United States',
+  { id:'kilauea', name:'Kilauea', region:'',
     fact:"One of the most active volcanoes on the planet, known for long-running lava flows and frequent eruptions on Hawaii's Big Island.",
     countries:['United States of America'],
     paths:[[[19.4069,-155.2834],[19.4069,-155.2834]]]
   },
 
-  { id:'cotopaxi', name:'Cotopaxi', region:'Ecuador',
+  { id:'cotopaxi', name:'Cotopaxi', region:'',
     fact:"One of the highest active volcanoes in the world, its near-perfect cone rising dramatically from the Ecuadorian Andes.",
     countries:['Ecuador'],
     paths:[[[-0.6774,-78.4378],[-0.6774,-78.4378]]]
   },
 
-  { id:'pinatubo', name:'Mount Pinatubo', region:'Philippines',
+  { id:'pinatubo', name:'Mount Pinatubo', region:'',
     fact:"Produced the second-largest volcanic eruption of the 20th century in 1991, cooling global temperatures for the following year.",
     countries:['Philippines'],
     paths:[[[15.1300,120.3500],[15.1300,120.3500]]]
   },
 
-  { id:'eyjafjallajokull', name:'Eyjafjallajökull', region:'Iceland',
+  { id:'eyjafjallajokull', name:'Eyjafjallajökull', region:'',
     fact:"Its 2010 eruption sent an ash cloud over Europe that grounded thousands of flights and became a household name overnight.",
     countries:['Iceland'],
     paths:[[[63.63,-19.6],[63.63,-19.6]]]
   },
 
-  { id:'rainier', name:'Mount Rainier', region:'Washington, United States',
+  { id:'rainier', name:'Mount Rainier', region:'',
     fact:"The most heavily glaciated peak in the contiguous United States and an active volcano closely watched due to nearby population centers.",
     countries:['United States of America'],
     paths:[[[46.8523,-121.7603],[46.8523,-121.7603]]]
   },
 
-  { id:'merapi', name:'Mount Merapi', region:'Indonesia',
+  { id:'merapi', name:'Mount Merapi', region:'',
     fact:"One of Indonesia's most active volcanoes, situated close to the densely populated city of Yogyakarta on the island of Java.",
     countries:['Indonesia'],
     paths:[[[-7.5407,110.4457],[-7.5407,110.4457]]]
   },
 
-  { id:'nyiragongo', name:'Mount Nyiragongo', region:'DR Congo',
+  { id:'nyiragongo', name:'Mount Nyiragongo', region:'',
     fact:"Home to one of the largest lava lakes on Earth within its crater, and one of the most active volcanoes in Africa.",
     countries:['Democratic Republic of the Congo'],
     paths:[[[-1.52,29.25],[-1.52,29.25]]]
   },
 
-  { id:'ojosdelsalado', name:'Ojos del Salado', region:'Chile – Argentina',
+  { id:'ojosdelsalado', name:'Ojos del Salado', region:'',
     fact:"The highest volcano on Earth, straddling the border high in the Andes between Chile and Argentina.",
     countries:['Chile','Argentina'],
     paths:[[[-27.1085,-68.5411],[-27.1085,-68.5411]]]
   },
-  { id:'tambora', name:'Mount Tambora', region:'Indonesia',
+  { id:'tambora', name:'Mount Tambora', region:'',
   fact:"Its colossal 1815 eruption was the largest in recorded history, triggering the 'Year Without a Summer' through global climate cooling.",
   countries:['Indonesia'],
   paths:[[[-8.2460,118.0000],[-8.2460,118.0000]]]
 },
 
-{ id:'yellowstone', name:'Yellowstone Caldera', region:'Wyoming, United States',
+{ id:'yellowstone', name:'Yellowstone Caldera', region:'',
   fact:"One of the world's largest active volcanic systems, famous for its geysers, hot springs and immense underground magma chamber.",
   countries:['United States of America'],
   paths:[[[44.4280,-110.5880],[44.4280,-110.5880]]]
 },
 
-{ id:'sakurajima', name:'Sakurajima', region:'Japan',
+{ id:'sakurajima', name:'Sakurajima', region:'',
   fact:"One of Japan's most active volcanoes, erupting frequently near the city of Kagoshima on Kyushu.",
   countries:['Japan'],
   paths:[[[31.5850,130.6570],[31.5850,130.6570]]]
 },
 
-{ id:'mayon', name:'Mayon', region:'Philippines',
+{ id:'mayon', name:'Mayon', region:'',
   fact:"Famous for its nearly perfect cone, Mayon is one of the Philippines' most active volcanoes.",
   countries:['Philippines'],
   paths:[[[13.2570,123.6850],[13.2570,123.6850]]]
 },
 
-{ id:'whakaari', name:'Whakaari / White Island', region:'New Zealand',
+{ id:'whakaari', name:'Whakaari / White Island', region:'',
   fact:"New Zealand's most active marine volcano, located offshore in the Bay of Plenty.",
   countries:['New Zealand'],
   paths:[[[-37.5210,177.1810],[-37.5210,177.1810]]]
 },
 
-{ id:'ruapehu', name:'Mount Ruapehu', region:'New Zealand',
+{ id:'ruapehu', name:'Mount Ruapehu', region:'',
   fact:"An active stratovolcano on New Zealand's North Island with a crater lake and the country's largest ski areas.",
   countries:['New Zealand'],
   paths:[[[-39.2810,175.5700],[-39.2810,175.5700]]]
 },
 
-{ id:'teide', name:'Mount Teide', region:'Canary Islands, Spain',
+{ id:'teide', name:'Mount Teide', region:'',
   fact:"Spain's highest mountain and an active volcano dominating the island of Tenerife.",
   countries:['Spain'],
   paths:[[[28.2720,-16.6420],[28.2720,-16.6420]]]
 },
 
-{ id:'elbrus', name:'Mount Elbrus', region:'Russia',
+{ id:'elbrus', name:'Mount Elbrus', region:'',
   fact:"Europe's highest mountain is a dormant volcano located in the Caucasus Mountains.",
   countries:['Russia'],
   paths:[[[43.3550,42.4370],[43.3550,42.4370]]]
 },
 
-{ id:'stromboli', name:'Stromboli', region:'Italy',
+{ id:'stromboli', name:'Stromboli', region:'',
   fact:"An almost continuously active volcano in the Aeolian Islands whose regular eruptions gave rise to the term 'Strombolian eruption.'",
   countries:['Italy'],
   paths:[[[38.7890,15.2130],[38.7890,15.2130]]]
 },
 
-{ id:'vulcano', name:'Vulcano', region:'Italy',
+{ id:'vulcano', name:'Vulcano', region:'',
   fact:"The island volcano from which the English word 'volcano' is derived, located in Italy's Aeolian Islands.",
   countries:['Italy'],
   paths:[[[38.4040,14.9620],[38.4040,14.9620]]]
 },
 
-{ id:'agung', name:'Mount Agung', region:'Indonesia',
+{ id:'agung', name:'Mount Agung', region:'',
   fact:"The highest volcano on Bali and one of Indonesia's holiest mountains, with major eruptions in 1963 and 2017.",
   countries:['Indonesia'],
   paths:[[[-8.3430,115.5080],[-8.3430,115.5080]]]
 },
 
-{ id:'bromo', name:'Mount Bromo', region:'Indonesia',
+{ id:'bromo', name:'Mount Bromo', region:'',
   fact:"An active volcano in East Java famous for its dramatic crater rising from the vast Tengger caldera.",
   countries:['Indonesia'],
   paths:[[[-7.9420,112.9530],[-7.9420,112.9530]]]
 },
 
-{ id:'semeru', name:'Mount Semeru', region:'Indonesia',
+{ id:'semeru', name:'Mount Semeru', region:'',
   fact:"Java's highest mountain and one of Indonesia's most active volcanoes, erupting frequently.",
   countries:['Indonesia'],
   paths:[[[-8.1080,112.9220],[-8.1080,112.9220]]]
 },
 
-{ id:'kelud', name:'Mount Kelud', region:'Indonesia',
+{ id:'kelud', name:'Mount Kelud', region:'',
   fact:"A highly active volcano in East Java known for its explosive eruptions and crater lake.",
   countries:['Indonesia'],
   paths:[[[-7.9300,112.3080],[-7.9300,112.3080]]]
 },
 
-{ id:'aso', name:'Mount Aso', region:'Japan',
+{ id:'aso', name:'Mount Aso', region:'',
   fact:"One of the world's largest active calderas, located on Japan's Kyushu island.",
   countries:['Japan'],
   paths:[[[32.8840,131.1040],[32.8840,131.1040]]]
 },
 
-{ id:'unzen', name:'Mount Unzen', region:'Japan',
+{ id:'unzen', name:'Mount Unzen', region:'',
   fact:"A volcanic complex on Kyushu remembered for its deadly 1991 eruption and pyroclastic flows.",
   countries:['Japan'],
   paths:[[[32.7610,130.2990],[32.7610,130.2990]]]
 },
 
-{ id:'ontake', name:'Mount Ontake', region:'Japan',
+{ id:'ontake', name:'Mount Ontake', region:'',
   fact:"Japan's second-highest volcano, whose unexpected 2014 eruption became one of the country's deadliest volcanic disasters.",
   countries:['Japan'],
   paths:[[[35.8930,137.4810],[35.8930,137.4810]]]
 },
 
-{ id:'hekla', name:'Hekla', region:'Iceland',
+{ id:'hekla', name:'Hekla', region:'',
   fact:"One of Iceland's best-known and most active volcanoes, historically nicknamed the 'Gateway to Hell.'",
   countries:['Iceland'],
   paths:[[[63.9830,-19.7000],[63.9830,-19.7000]]]
 },
 
-{ id:'katla', name:'Katla', region:'Iceland',
+{ id:'katla', name:'Katla', region:'',
   fact:"A large subglacial volcano beneath the Mýrdalsjökull ice cap, capable of producing massive glacial floods during eruptions.",
   countries:['Iceland'],
   paths:[[[63.6330,-19.0500],[63.6330,-19.0500]]]
 },
 
-{ id:'grimsvotn', name:'Grímsvötn', region:'Iceland',
+{ id:'grimsvotn', name:'Grímsvötn', region:'',
   fact:"Iceland's most frequently erupting volcano, located beneath the Vatnajökull ice sheet.",
   countries:['Iceland'],
   paths:[[[64.4170,-17.3330],[64.4170,-17.3330]]]
 },
 
-{ id:'askja', name:'Askja', region:'Iceland',
+{ id:'askja', name:'Askja', region:'',
   fact:"A volcanic caldera in Iceland's central highlands containing the deep crater lake Öskjuvatn.",
   countries:['Iceland'],
   paths:[[[65.0330,-16.7500],[65.0330,-16.7500]]]
 },
 
-{ id:'shasta', name:'Mount Shasta', region:'California, United States',
+{ id:'shasta', name:'Mount Shasta', region:'',
   fact:"A massive stratovolcano in northern California and one of the Cascade Range's most prominent peaks.",
   countries:['United States of America'],
   paths:[[[41.4090,-122.1940],[41.4090,-122.1940]]]
 },
 
-{ id:'lassen', name:'Lassen Peak', region:'California, United States',
+{ id:'lassen', name:'Lassen Peak', region:'',
   fact:"The southernmost active volcano in the Cascade Range, last erupting between 1914 and 1917.",
   countries:['United States of America'],
   paths:[[[40.4890,-121.5050],[40.4890,-121.5050]]]
 },
 
-{ id:'mazama', name:'Mount Mazama (Crater Lake)', region:'Oregon, United States',
+{ id:'mazama', name:'Mount Mazama (Crater Lake)', region:'',
   fact:"The collapsed volcano whose eruption nearly 7,700 years ago formed Crater Lake, the deepest lake in the United States.",
   countries:['United States of America'],
   paths:[[[42.9440,-122.1090],[42.9440,-122.1090]]]
 },
 
-{ id:'nevado_del_ruiz', name:'Nevado del Ruiz', region:'Colombia',
+{ id:'nevado_del_ruiz', name:'Nevado del Ruiz', region:'',
   fact:"Its 1985 eruption triggered deadly lahars that buried the town of Armero.",
   countries:['Colombia'],
   paths:[[[4.8950,-75.3220],[4.8950,-75.3220]]]
 },
 
-{ id:'fuego', name:'Volcán de Fuego', region:'Guatemala',
+{ id:'fuego', name:'Volcán de Fuego', region:'',
   fact:"One of Central America's most active volcanoes, erupting frequently near Antigua.",
   countries:['Guatemala'],
   paths:[[[14.4730,-90.8800],[14.4730,-90.8800]]]
 },
 
-{ id:'pacaya', name:'Pacaya', region:'Guatemala',
+{ id:'pacaya', name:'Pacaya', region:'',
   fact:"An active volcano near Guatemala City, known for frequent lava flows and accessible hiking trails.",
   countries:['Guatemala'],
   paths:[[[14.3820,-90.6010],[14.3820,-90.6010]]]
 },
 
-{ id:'santa_maria', name:'Santa María', region:'Guatemala',
+{ id:'santa_maria', name:'Santa María', region:'',
   fact:"Produced one of the twentieth century's largest eruptions in 1902 and now includes the active Santiaguito lava dome complex.",
   countries:['Guatemala'],
   paths:[[[14.7570,-91.5520],[14.7570,-91.5520]]]
 },
 
-{ id:'villarrica', name:'Villarrica', region:'Chile',
+{ id:'villarrica', name:'Villarrica', region:'',
   fact:"One of South America's most active volcanoes, famous for its persistent lava lake.",
   countries:['Chile'],
   paths:[[[-39.4210,-71.9390],[-39.4210,-71.9390]]]
 },
 
-{ id:'mount_cameroon', name:'Mount Cameroon', region:'Cameroon',
+{ id:'mount_cameroon', name:'Mount Cameroon', region:'',
   fact:"The highest mountain in West Africa and one of Africa's most active volcanoes.",
   countries:['Cameroon'],
   paths:[[[4.2030,9.1700],[4.2030,9.1700]]]
 },
 
-{ id:'ol_doinyo_lengai', name:'Ol Doinyo Lengai', region:'Tanzania',
+{ id:'ol_doinyo_lengai', name:'Ol Doinyo Lengai', region:'',
   fact:"The world's only volcano known to erupt rare carbonatite lava, which is much cooler than ordinary lava.",
   countries:['Tanzania'],
   paths:[[[-2.7640,35.9140],[-2.7640,35.9140]]]
 },
 
-{ id:'klyuchevskaya', name:'Klyuchevskaya Sopka', region:'Russia',
+{ id:'klyuchevskaya', name:'Klyuchevskaya Sopka', region:'',
   fact:"The highest active volcano in Eurasia, located on Russia's Kamchatka Peninsula.",
   countries:['Russia'],
   paths:[[[56.0560,160.6420],[56.0560,160.6420]]]
 },
 
-{ id:'shiveluch', name:'Shiveluch', region:'Russia',
+{ id:'shiveluch', name:'Shiveluch', region:'',
   fact:"One of Kamchatka's largest and most active volcanoes, producing frequent explosive eruptions.",
   countries:['Russia'],
   paths:[[[56.6530,161.3600],[56.6530,161.3600]]]
 },
 
-{ id:'avachinsky', name:'Avachinsky', region:'Russia',
+{ id:'avachinsky', name:'Avachinsky', region:'',
   fact:"An active stratovolcano overlooking Petropavlovsk-Kamchatsky on the Kamchatka Peninsula.",
   countries:['Russia'],
   paths:[[[53.2550,158.8360],[53.2550,158.8360]]]
 },
 
-{ id:'erebus', name:'Mount Erebus', region:'Antarctica',
+{ id:'erebus', name:'Mount Erebus', region:'',
   fact:"The southernmost active volcano on Earth, famous for its long-lived lava lake on Ross Island.",
   countries:['Antarctica'],
   paths:[[[-77.5300,167.1600],[-77.5300,167.1600]]]
