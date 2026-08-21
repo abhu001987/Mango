@@ -855,92 +855,92 @@ function setHeaderVisible(visible){
    GIS data.
    ============================================================ */
 const ROUNDS = [
-  { id:'un', name:'United Nations (UN)', region:'New York City, United States',
-    fact:"Founded in 1945, the UN's main headquarters sits along the East River in Manhattan, on land that is technically international territory.",
+  { id:'un', name:'United Nations (UN)', region:'',
+    fact:"New York City, United States - Founded in 1945, the UN's main headquarters sits along the East River in Manhattan, on land that is technically international territory.",
     countries:['United States of America'],
     paths:[[[40.7489,-73.9680],[40.7489,-73.9680]]]
   },
 
-  { id:'who', name:'World Health Organization (WHO)', region:'Geneva, Switzerland',
-    fact:"A specialized United Nations agency focused on international public health, headquartered in Geneva since its founding in 1948.",
+  { id:'who', name:'World Health Organization (WHO)', region:'',
+    fact:"Geneva, Switzerland - A specialized United Nations agency focused on international public health, headquartered in Geneva since its founding in 1948.",
     countries:['Switzerland'],
     paths:[[[46.2333,6.1414],[46.2333,6.1414]]]
   },
 
-  { id:'nato', name:'NATO', region:'Brussels, Belgium',
-    fact:"The North Atlantic Treaty Organization, a military alliance of North American and European countries, is headquartered near Brussels' airport.",
+  { id:'nato', name:'NATO', region:'',
+    fact:"Brussels, Belgium - The North Atlantic Treaty Organization, a military alliance of North American and European countries, is headquartered near Brussels' airport.",
     countries:['Belgium'],
     paths:[[[50.8776,4.4230],[50.8776,4.4230]]]
   },
 
-  { id:'imf', name:'International Monetary Fund (IMF)', region:'Washington, D.C., United States',
-    fact:"An organization of 190 member countries working on global monetary cooperation and financial stability, based in downtown Washington, D.C.",
+  { id:'imf', name:'International Monetary Fund (IMF)', region:'',
+    fact:"Washington, D.C., United States - An organization of 190 member countries working on global monetary cooperation and financial stability, based in downtown Washington, D.C.",
     countries:['United States of America'],
     paths:[[[38.8993,-77.0436],[38.8993,-77.0436]]]
   },
 
-  { id:'worldbank', name:'World Bank', region:'Washington, D.C., United States',
-    fact:"A group of international financial institutions that provides loans and grants to developing countries, headquartered a short walk from the IMF.",
+  { id:'worldbank', name:'World Bank', region:'',
+    fact:"Washington, D.C., United States - A group of international financial institutions that provides loans and grants to developing countries, headquartered a short walk from the IMF.",
     countries:['United States of America'],
     paths:[[[38.8994,-77.0438],[38.8994,-77.0438]]]
   },
 
-  { id:'wto', name:'World Trade Organization (WTO)', region:'Geneva, Switzerland',
-    fact:"Regulates international trade between member nations, headquartered in Geneva's Centre William Rappard since 1995.",
+  { id:'wto', name:'World Trade Organization (WTO)', region:'',
+    fact:"Geneva, Switzerland - Regulates international trade between member nations, headquartered in Geneva's Centre William Rappard since 1995.",
     countries:['Switzerland'],
     paths:[[[46.2196,6.1457],[46.2196,6.1457]]]
   },
 
-  { id:'eu', name:'European Union (EU)', region:'Brussels, Belgium',
-    fact:"The EU's main institutions, including the European Commission, are centered in Brussels' European Quarter.",
+  { id:'eu', name:'European Union (EU)', region:'',
+    fact:"Brussels, Belgium - The EU's main institutions, including the European Commission, are centered in Brussels' European Quarter.",
     countries:['Belgium'],
     paths:[[[50.8437,4.3813],[50.8437,4.3813]]]
   },
 
   { id:'unesco', name:'UNESCO', region:'Paris, France',
-    fact:"The UN's cultural and educational agency, known for its World Heritage Site program, is headquartered in a distinctive tripod-shaped building in Paris.",
+    fact:"Paris, France - The UN's cultural and educational agency, known for its World Heritage Site program, is headquartered in a distinctive tripod-shaped building in Paris.",
     countries:['France'],
     paths:[[[48.8493,2.3054],[48.8493,2.3054]]]
   },
 
-  { id:'interpol', name:'Interpol', region:'Lyon, France',
-    fact:"The world's largest international police organization, facilitating cooperation between police forces of member countries, is based in Lyon.",
+  { id:'interpol', name:'Interpol', region:'',
+    fact:"Lyon, France - The world's largest international police organization, facilitating cooperation between police forces of member countries, is based in Lyon.",
     countries:['France'],
     paths:[[[45.7699,4.8963],[45.7699,4.8963]]]
   },
 
-  { id:'icrc', name:'International Committee of the Red Cross (ICRC)', region:'Geneva, Switzerland',
-    fact:"A humanitarian organization providing protection and assistance for victims of armed conflict, headquartered in Geneva since 1863.",
+  { id:'icrc', name:'International Committee of the Red Cross (ICRC)', region:'',
+    fact:"Geneva, Switzerland - A humanitarian organization providing protection and assistance for victims of armed conflict, headquartered in Geneva since 1863.",
     countries:['Switzerland'],
     paths:[[[46.2244,6.1432],[46.2244,6.1432]]]
   },
 
-  { id:'au', name:'African Union (AU)', region:'Addis Ababa, Ethiopia',
-    fact:"A continental union of African states promoting unity and cooperation, headquartered in a tower gifted by China in Addis Ababa.",
+  { id:'au', name:'African Union (AU)', region:'',
+    fact:"Addis Ababa, Ethiopia - A continental union of African states promoting unity and cooperation, headquartered in a tower gifted by China in Addis Ababa.",
     countries:['Ethiopia'],
     paths:[[[9.0187,38.7613],[9.0187,38.7613]]]
   },
 
-  { id:'asean', name:'ASEAN', region:'Jakarta, Indonesia',
-    fact:"The Association of Southeast Asian Nations promotes regional political and economic cooperation, with its secretariat based in Jakarta.",
+  { id:'asean', name:'ASEAN', region:'',
+    fact:"Jakarta, Indonesia - The Association of Southeast Asian Nations promotes regional political and economic cooperation, with its secretariat based in Jakarta.",
     countries:['Indonesia'],
     paths:[[[-6.2245,106.7996],[-6.2245,106.7996]]]
   },
 
-  { id:'opec', name:'OPEC', region:'Vienna, Austria',
-    fact:"The Organization of the Petroleum Exporting Countries coordinates oil production policy among its member nations, headquartered in Vienna.",
+  { id:'opec', name:'OPEC', region:'',
+    fact:"Vienna, Austria - The Organization of the Petroleum Exporting Countries coordinates oil production policy among its member nations, headquartered in Vienna.",
     countries:['Austria'],
     paths:[[[48.2038,16.3707],[48.2038,16.3707]]]
   },
 
-  { id:'icj', name:'International Court of Justice (ICJ)', region:'The Hague, Netherlands',
-    fact:"The primary judicial body of the United Nations, settling disputes between states, sits in the Peace Palace in The Hague.",
+  { id:'icj', name:'International Court of Justice (ICJ)', region:'',
+    fact:"The Hague, Netherlands - The primary judicial body of the United Nations, settling disputes between states, sits in the Peace Palace in The Hague.",
     countries:['Netherlands'],
     paths:[[[52.0864,4.2892],[52.0864,4.2892]]]
   },
 
   { id:'iaea', name:'International Atomic Energy Agency (IAEA)', region:'Vienna, Austria',
-    fact:"Promotes the peaceful use of nuclear energy and works to prevent its use for military purposes, headquartered at the Vienna International Centre.",
+    fact:"Vienna, Austria - Promotes the peaceful use of nuclear energy and works to prevent its use for military purposes, headquartered at the Vienna International Centre.",
     countries:['Austria'],
     paths:[[[48.2350,16.4108],[48.2350,16.4108]]]
   },
