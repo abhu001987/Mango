@@ -972,7 +972,7 @@ const ROUNDS = [
   id:'gift_city',
   name:'GIFT City',
   scope:'economics',
-  question:'GIFT City',
+  question:'GIFT City is located in which state?',
   fact:"GIFT City, India's first operational International Financial Services Centre (IFSC), is located between Ahmedabad and Gandhinagar.",
   answerNames:['Gujarat'],
   paths:siteBox(23.164,72.683,0.25)
@@ -982,16 +982,17 @@ const ROUNDS = [
   id:'wayanad_landslide',
   name:'Wayanad',
   scope:'current',
-  question:'Wayanad',
+  question:'Wayanad is located in which state?',
   fact:"Wayanad, which was in the news after devastating landslides triggered by heavy rainfall, is a hilly district in the Western Ghats.",
   answerNames:['Kerala'],
   paths:siteBox(11.69,76.13,0.45)
 },
-  {
+
+{
   id:'lothal',
   name:'Lothal',
   scope:'history',
-  question:'Lothal',
+  question:'Lothal is located in which state?',
   fact:"Lothal, one of the most important cities of the Indus Valley Civilization and known for its ancient dockyard, is located in the state of Gujarat.",
   answerNames:['Gujarat'],
   paths:siteBox(22.52,72.25,0.3)
@@ -1001,7 +1002,7 @@ const ROUNDS = [
   id:'sarnath',
   name:'Sarnath',
   scope:'history',
-  question:'Sarnath',
+  question:'Sarnath is located in which state?',
   fact:"Sarnath, where Gautama Buddha delivered his first sermon after attaining enlightenment and established the Buddhist Sangha, is located in the state of Uttar Pradesh.",
   answerNames:['Uttar Pradesh'],
   paths:siteBox(25.38,83.02,0.3)
@@ -1011,8 +1012,8 @@ const ROUNDS = [
   id:'halebidu',
   name:'Halebidu',
   scope:'history',
-  question:'Halebidu',
-  fact:"Halebidu, the former capital of the Hoysala dynasty and famous for its intricately carved Hoysaleswara Temple, is located in the state of Karnataka.",
+  question:'Halebidu is located in which state?',
+  fact:"Halebidu, the former capital of the Hoysala dynasty and famous for its Hoysaleswara Temple, is located in Karnataka.",
   answerNames:['Karnataka'],
   paths:siteBox(13.21,75.99,0.3)
 },
@@ -1021,8 +1022,8 @@ const ROUNDS = [
   id:'article_371g',
   name:'Article 371G',
   scope:'polity',
-  question:'Article 371G of the Constitution',
-  fact:"Article 371G, which provides special constitutional provisions protecting the religious and social practices, customary law and land rights of a northeastern state, applies to Mizoram.",
+  question:'Article 371G applies to which state?',
+  fact:"Article 371G provides special constitutional provisions to Mizoram.",
   answerNames:['Mizoram'],
   paths:siteBox(23.16,92.94,0.6)
 },
@@ -1031,8 +1032,8 @@ const ROUNDS = [
   id:'36th_amendment',
   name:'36th Constitutional Amendment',
   scope:'polity',
-  question:'The 36th Constitutional Amendment Act, 1975',
-  fact:"The 36th Constitutional Amendment Act, 1975 admitted Sikkim as the 22nd state of India, ending its status as an associate state.",
+  question:'The 36th Constitutional Amendment admitted which state into India?',
+  fact:"The 36th Constitutional Amendment Act, 1975 admitted Sikkim as the 22nd state of India.",
   answerNames:['Sikkim'],
   paths:siteBox(27.53,88.51,0.5)
 },
@@ -1041,8 +1042,8 @@ const ROUNDS = [
   id:'puducherry_legislature',
   name:'Puducherry',
   scope:'polity',
-  question:'Puducherry',
-  fact:"Puducherry, one of the few Union Territories with an elected Legislative Assembly under Article 239A, consists of four geographically separated districts.",
+  question:'Puducherry is located in which Union Territory?',
+  fact:"Puducherry is a Union Territory with an elected Legislative Assembly under Article 239A.",
   answerNames:['Puducherry'],
   paths:siteBox(11.94,79.81,0.3)
 },
@@ -1051,8 +1052,8 @@ const ROUNDS = [
   id:'vizhinjam_port',
   name:'Vizhinjam International Seaport',
   scope:'economics',
-  question:'Vizhinjam International Seaport',
-  fact:"Vizhinjam International Seaport, India's first deep-water transshipment port developed to handle large container vessels, is located in the state of Kerala.",
+  question:'Vizhinjam International Seaport is located in which state?',
+  fact:"Vizhinjam International Seaport is India's first deep-water transshipment port, located in Kerala.",
   answerNames:['Kerala'],
   paths:siteBox(8.37,76.99,0.25)
 },
@@ -1061,8 +1062,8 @@ const ROUNDS = [
   id:'dholera_sir',
   name:'Dholera Special Investment Region',
   scope:'economics',
-  question:'Dholera Special Investment Region',
-  fact:"Dholera Special Investment Region, one of India's flagship smart industrial cities under the Delhi-Mumbai Industrial Corridor, is located in the state of Gujarat.",
+  question:'Dholera Special Investment Region is located in which state?',
+  fact:"Dholera SIR is a flagship smart industrial city under the Delhi–Mumbai Industrial Corridor in Gujarat.",
   answerNames:['Gujarat'],
   paths:siteBox(22.25,72.20,0.4)
 },
@@ -1071,8 +1072,8 @@ const ROUNDS = [
   id:'paradip_port',
   name:'Paradip Port',
   scope:'economics',
-  question:'Paradip Port',
-  fact:"Paradip Port, one of India's major ports and a leading exporter of iron ore and thermal coal, is located in the state of Odisha.",
+  question:'Paradip Port is located in which state?',
+  fact:"Paradip Port is one of India's major ports located in Odisha.",
   answerNames:['Odisha'],
   paths:siteBox(20.27,86.67,0.3)
 },
@@ -1081,12 +1082,210 @@ const ROUNDS = [
   id:'silkyara_tunnel',
   name:'Silkyara Tunnel',
   scope:'current',
-  question:'Silkyara Tunnel',
-  fact:"The Silkyara Tunnel, which was in the national spotlight after the successful rescue of 41 trapped workers in 2023, is located in the state of Uttarakhand.",
+  question:'Silkyara Tunnel is located in which state?',
+  fact:"The Silkyara Tunnel, known for the 2023 rescue operation, is located in Uttarakhand.",
   answerNames:['Uttarakhand'],
   paths:siteBox(30.88,78.34,0.3)
-}
+},
+{
+  id:'south_lhonak_lake',
+  name:'South Lhonak Lake',
+  scope:'current',
+  question:'South Lhonak Lake is located in which state?',
+  fact:"South Lhonak Lake came into the news after a Glacial Lake Outburst Flood (GLOF) triggered devastating floods in the Teesta basin.",
+  answerNames:['Sikkim'],
+  paths:siteBox(27.90,88.72,0.30)
+},
 
+{
+  id:'kuno_national_park',
+  name:'Kuno National Park',
+  scope:'environment',
+  question:'Kuno National Park is located in which state?',
+  fact:"Kuno National Park gained attention as the site of India's Cheetah Reintroduction Project.",
+  answerNames:['Madhya Pradesh'],
+  paths:siteBox(25.93,77.38,0.40)
+},
+
+{
+  id:'guneri_bhs',
+  name:'Guneri Inland Mangroves',
+  scope:'environment',
+  question:'Guneri Inland Mangroves are located in which state?',
+  fact:"Guneri Inland Mangroves were declared Gujarat's first Biodiversity Heritage Site.",
+  answerNames:['Gujarat'],
+  paths:siteBox(23.73,68.82,0.35)
+},
+
+{
+  id:'anchar_lake',
+  name:'Anchar Lake',
+  scope:'environment',
+  question:'Anchar Lake is located in which Union Territory?',
+  fact:"Anchar Lake was in the news over concerns regarding wetland degradation and restoration efforts.",
+  answerNames:['Jammu and Kashmir'],
+  paths:siteBox(34.15,74.82,0.30)
+},
+
+{
+  id:'bangus_valley',
+  name:'Bangus Valley',
+  scope:'current',
+  question:'Bangus Valley is located in which Union Territory?',
+  fact:"Bangus Valley has recently been promoted as an eco-tourism destination.",
+  answerNames:['Jammu and Kashmir'],
+  paths:siteBox(34.53,74.24,0.40)
+},
+
+{
+  id:'mhadei_sanctuary',
+  name:'Mhadei Wildlife Sanctuary',
+  scope:'environment',
+  question:'Mhadei Wildlife Sanctuary is located in which state?',
+  fact:"Mhadei Wildlife Sanctuary is frequently in the news due to the Mahadayi River water dispute.",
+  answerNames:['Goa'],
+  paths:siteBox(15.60,74.15,0.35)
+},
+
+{
+  id:'similipal_tiger_reserve',
+  name:'Similipal Tiger Reserve',
+  scope:'environment',
+  question:'Similipal Tiger Reserve is located in which state?',
+  fact:"Similipal Tiger Reserve is known for its melanistic tigers and UNESCO Biosphere Reserve status.",
+  answerNames:['Odisha'],
+  paths:siteBox(21.75,86.35,0.45)
+},
+
+{
+  id:'kolleru_lake',
+  name:'Kolleru Lake',
+  scope:'environment',
+  question:'Kolleru Lake is located in which state?',
+  fact:"Kolleru Lake is one of India's largest freshwater lakes and a Ramsar Site.",
+  answerNames:['Andhra Pradesh'],
+  paths:siteBox(16.62,81.30,0.45)
+},
+
+{
+  id:'d_ering_sanctuary',
+  name:'D’Ering Wildlife Sanctuary',
+  scope:'environment',
+  question:'D’Ering Wildlife Sanctuary is located in which state?',
+  fact:"D’Ering Wildlife Sanctuary was recently in the news following reports of tiger movement.",
+  answerNames:['Arunachal Pradesh'],
+  paths:siteBox(28.12,95.03,0.45)
+},
+
+{
+  id:'hemis_national_park',
+  name:'Hemis National Park',
+  scope:'environment',
+  question:'Hemis National Park is located in which Union Territory?',
+  fact:"Hemis National Park is India's largest national park and a major habitat of the snow leopard.",
+  answerNames:['Ladakh'],
+  paths:siteBox(33.75,77.60,0.60)
+},
+
+{
+  id:'dibang_valley',
+  name:'Dibang Valley',
+  scope:'current',
+  question:'Dibang Valley is located in which state?',
+  fact:"Dibang Valley was in the news due to the proposed Dibang Multipurpose Hydroelectric Project.",
+  answerNames:['Arunachal Pradesh'],
+  paths:siteBox(28.70,95.85,0.55)
+},
+
+{
+  id:'great_nicobar',
+  name:'Great Nicobar Island',
+  scope:'current',
+  question:'Great Nicobar Island belongs to which Union Territory?',
+  fact:"Great Nicobar Island was in the news because of the proposed mega infrastructure development project.",
+  answerNames:['Andaman and Nicobar Islands'],
+  paths:siteBox(7.00,93.80,0.55)
+},
+
+{
+  id:'teesta_basin',
+  name:'Teesta River',
+  scope:'current',
+  question:'The Teesta River primarily flows through which state before entering Bangladesh?',
+  fact:"The Teesta River was in the news after devastating flash floods caused by a GLOF in Sikkim.",
+  answerNames:['Sikkim'],
+  paths:siteBox(27.35,88.60,0.45)
+},
+
+{
+  id:'loktak_lake',
+  name:'Loktak Lake',
+  scope:'environment',
+  question:'Loktak Lake is located in which state?',
+  fact:"Loktak Lake is famous for its floating phumdis and Keibul Lamjao National Park.",
+  answerNames:['Manipur'],
+  paths:siteBox(24.55,93.80,0.45)
+},
+
+{
+  id:'keibul_lamjao',
+  name:'Keibul Lamjao National Park',
+  scope:'environment',
+  question:'Keibul Lamjao National Park is located in which state?',
+  fact:"Keibul Lamjao is the world's only floating national park and the natural habitat of the Sangai deer.",
+  answerNames:['Manipur'],
+  paths:siteBox(24.47,93.78,0.35)
+},
+
+{
+  id:'deocha_pachami',
+  name:'Deocha-Pachami Coal Block',
+  scope:'economics',
+  question:'Deocha-Pachami Coal Block is located in which state?',
+  fact:"Deocha-Pachami is one of India's largest coal mining projects.",
+  answerNames:['West Bengal'],
+  paths:siteBox(23.83,87.67,0.35)
+},
+
+{
+  id:'zojila_tunnel',
+  name:'Zojila Tunnel',
+  scope:'current',
+  question:'Zojila Tunnel is being constructed in which Union Territory?',
+  fact:"The Zojila Tunnel will provide all-weather connectivity between Srinagar and Leh.",
+  answerNames:['Ladakh'],
+  paths:siteBox(34.28,75.55,0.35)
+},
+
+{
+  id:'semicon_dholera',
+  name:'Dholera Semiconductor Park',
+  scope:'economics',
+  question:'Dholera Semiconductor Park is located in which state?',
+  fact:"Dholera Semiconductor Park is being developed as a major semiconductor manufacturing hub under the India Semiconductor Mission.",
+  answerNames:['Gujarat'],
+  paths:siteBox(22.25,72.20,0.40)
+},
+
+{
+  id:'bharat_mandapam',
+  name:'Bharat Mandapam',
+  scope:'current',
+  question:'Bharat Mandapam is located in which city?',
+  fact:"Bharat Mandapam hosted the G20 Leaders' Summit in 2023.",
+  answerNames:['Delhi'],
+  paths:siteBox(28.61,77.24,0.25)
+},
+
+{
+  id:'namdapha',
+  name:'Namdapha National Park',
+  scope:'environment',
+  question:'Namdapha National Park is located in which state?',
+  fact:"Namdapha National Park is one of India's richest biodiversity hotspots and was recently in the news for wildlife conservation.",
+  answerNames:['Arunachal Pradesh'],
+  paths:siteBox(27.52,96.38,0.55)
+}
 ];
 const ROUNDS_PER_GAME = 10; // solo runs pick min(this, ROUNDS.length) at random each time. Challenge mode always uses the exact order sent by the challenger.
 
