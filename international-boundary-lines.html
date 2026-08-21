@@ -856,12 +856,12 @@ function setHeaderVisible(visible){
    not survey-grade GIS data.
    ============================================================ */
 const ROUNDS = [
-  { id:'durand', name:'Durand Line', region:'Afghanistan – Pakistan',
+  { id:'durand', name:'Durand Line', region:'',
     fact:"Drawn in 1893 by Sir Mortimer Durand of British India and Amir Abdur Rahman Khan of Afghanistan, it has never been recognized by Afghanistan as a permanent international border.",
     countries:['Afghanistan','Pakistan'],
     paths:[[[36.9,71.85],[35.8,71.5],[34.7,71.1],[33.75,69.9],[31.9,66.45],[29.9,63.05]]] },
 
-  { id:'radcliffe', name:'Radcliffe Line', region:'India – Pakistan',
+  { id:'radcliffe', name:'Radcliffe Line', region:'',
     fact:"Drawn by Sir Cyril Radcliffe in just over a month in 1947 to partition British India, it split Punjab and Bengal into Indian and Pakistani halves and triggered one of history's largest mass migrations.",
     countries:['India','Pakistan'],
     paths:[
@@ -869,17 +869,17 @@ const ROUNDS = [
       [[26.4,88.9],[24.0,88.55],[22.9,89.15],[21.6,89.05]]
     ] },
 
-  { id:'mcmahon', name:'McMahon Line', region:'India – China (eastern sector)',
+  { id:'mcmahon', name:'McMahon Line', region:'',
     fact:"Agreed at the 1914 Simla Convention between British India and Tibet, it forms the boundary through Arunachal Pradesh — but China has never accepted it as valid.",
     countries:['India','China'],
     paths:[[[27.9,91.9],[28.3,93.4],[28.7,95.5],[29.0,97.2],[28.2,97.4]]] },
 
-  { id:'loc', name:'Line of Control (LoC)', region:'India – Pakistan, Jammu & Kashmir',
+  { id:'loc', name:'Line of Control (LoC)', region:'',
     fact:"Originally the 1949 ceasefire line from the first India-Pakistan war, it was renamed the LoC after the 1972 Simla Agreement and remains one of the most heavily militarized borders on Earth.",
     countries:['India','Pakistan'],
     paths:[[[34.75,73.9],[34.35,73.95],[33.7,74.2],[33.0,74.35],[32.35,74.6]]] },
 
-  { id:'lac', name:'Line of Actual Control (LAC)', region:'India – China',
+  { id:'lac', name:'Line of Actual Control (LAC)', region:'',
     fact:"An undemarcated, loosely defined boundary separating Indian and Chinese-held territory since the 1962 war, with both sides holding differing perceptions of exactly where it runs.",
     countries:['India','China'],
     paths:[
@@ -888,50 +888,140 @@ const ROUNDS = [
       [[27.9,91.9],[28.6,93.5],[29.0,96.9]]
     ] },
 
-  { id:'38th', name:'38th Parallel', region:'North Korea – South Korea',
+  { id:'38th', name:'38th Parallel', region:'',
     fact:"Chosen almost arbitrarily by American officials in August 1945 to divide Japanese-occupied Korea, it became the Cold War's most infamous dividing line and remains close to today's DMZ.",
     countries:['North Korea','South Korea'],
     paths:[[[38.0,124.4],[38.0,128.4]]] },
 
-  { id:'49th', name:'49th Parallel', region:'USA – Canada boundary',
+  { id:'49th', name:'49th Parallel', region:'',
     fact:"Set by the 1818 Treaty and extended west by the 1846 Oregon Treaty, it forms the world's longest straight international border, running unbroken for over 2,000 kilometers.",
     countries:['United States of America','Canada'],
     paths:[[[49.0,-122.8],[49.0,-110.0],[49.0,-95.15]]] },
 
-  { id:'oderneisse', name:'Oder–Neisse Line', region:'Germany – Poland',
+  { id:'oderneisse', name:'Oder–Neisse Line', region:'',
     fact:"Following the Oder and Lusatian Neisse rivers, this border was fixed after World War II at the 1945 Potsdam Conference and formally recognized by reunified Germany in 1990.",
     countries:['Germany','Poland'],
     paths:[[[54.5,14.2],[52.9,14.6],[51.9,14.75],[51.0,14.75],[50.85,14.6]]] },
 
-  { id:'hindenburg', name:'Hindenburg Line', region:'German WWI defensive line, northern France',
+  { id:'hindenburg', name:'Hindenburg Line', region:'',
     fact:"Built by Germany over the winter of 1916-17 in northern France, this heavily fortified line shortened the German front and forced Allied troops into some of the war's bloodiest set-piece assaults to break it.",
     countries:['France'],
     paths:[[[50.3,3.2],[50.0,3.15],[49.8,3.3],[49.7,3.6]]] },
 
-  { id:'maginot', name:'Maginot Line', region:'French defensive line facing Germany',
+  { id:'maginot', name:'Maginot Line', region:'',
     fact:"A vast concrete fortification system built through the 1930s along France's eastern frontier, it famously failed to stop the 1940 German invasion, which simply went around it through the Ardennes.",
     countries:['France'],
     paths:[[[49.5,5.8],[49.0,6.4],[48.6,7.6],[47.9,7.55],[47.6,7.3]]] },
 
-  { id:'siegfried', name:'Siegfried Line', region:'German defensive line (the Westwall)',
+  { id:'siegfried', name:'Siegfried Line', region:'',
     fact:"Known to Germans as the Westwall, this chain of bunkers and dragon's-teeth obstacles ran along Germany's western frontier and was the last major defensive barrier Allied troops breached in 1944-45.",
     countries:['Germany'],
     paths:[[[51.2,6.1],[50.4,6.4],[49.6,7.0],[49.0,7.9],[48.3,7.9]]] },
 
-  { id:'mannerheim', name:'Mannerheim Line', region:'Finland – Soviet frontier defensive line',
+  { id:'mannerheim', name:'Mannerheim Line', region:'',
     fact:"Built across the Karelian Isthmus in the 1920s-30s, this Finnish defensive line held off the much larger Soviet Red Army for weeks during the 1939-40 Winter War.",
     countries:['Finland','Russia'],
     paths:[[[60.7,28.7],[60.85,29.4],[61.05,30.0]]] },
 
-  { id:'17th', name:'17th Parallel', region:'Historical division of North and South Vietnam',
+  { id:'17th', name:'17th Parallel', region:'',
     fact:"Set by the 1954 Geneva Accords as a temporary military demarcation after the First Indochina War, it became the de facto border between North and South Vietnam until reunification in 1975.",
     countries:['Vietnam'],
     paths:[[[17.0,106.5],[17.0,107.1]]] },
 
-  { id:'24th', name:'24th Parallel', region:'Historically referenced in India – Pakistan boundary claims',
+  { id:'24th', name:'24th Parallel', region:'',
     fact:"Pakistan argued this latitude should define its border with India in the disputed Rann of Kutch; a 1968 international tribunal instead awarded India roughly 90% of the contested territory.",
     countries:['India','Pakistan'],
-    paths:[[[24.0,68.4],[24.0,70.5]]] }
+    paths:[[[24.0,68.4],[24.0,70.5]]] },
+
+  {
+  id:'zero_line',
+  name:'Zero Line',
+  region:'',
+  fact:"The Zero Line is the actual fence line along parts of the India–Pakistan international border, lying ahead of the official international boundary in several sectors.",
+  countries:['India','Pakistan'],
+  paths:[[[30.15,74.65],[29.60,74.45],[28.90,73.90]]]
+},
+
+{
+  id:'three_brothers',
+  name:'Three Brothers',
+  region:'',
+  fact:"The Three Brothers are mountain passes located near the tri-junction of India, China and Myanmar, and are strategically significant along India's eastern frontier.",
+  countries:['India','China','Myanmar'],
+  paths:[[[27.75,97.05],[27.85,97.15]]]
+},
+
+{
+  id:'eight_degree_channel',
+  name:'Eight Degree Channel',
+  region:'',
+  fact:"The Eight Degree Channel separates Minicoy Island of India from the Maldives in the Arabian Sea.",
+  countries:['India','Maldives'],
+  paths:[[[8.00,72.80],[8.00,73.60]]]
+},
+
+{
+  id:'nine_degree_channel',
+  name:'Nine Degree Channel',
+  region:'',
+  fact:"The Nine Degree Channel separates Minicoy Island from the main Lakshadweep Islands.",
+  countries:['India'],
+  paths:[[[9.00,72.45],[9.00,73.30]]]
+},
+
+{
+  id:'ten_degree_channel',
+  name:'Ten Degree Channel',
+  region:'',
+  fact:"The Ten Degree Channel separates the Andaman Islands from the Nicobar Islands.",
+  countries:['India'],
+  paths:[[[10.00,92.40],[10.00,93.50]]]
+},
+
+{
+  id:'green_line',
+  name:'Green Line',
+  region:'',
+  fact:"The Green Line is the armistice line established after the 1948 Arab–Israeli War and is widely regarded as the pre-1967 boundary between Israel and the West Bank.",
+  countries:['Israel','Palestine'],
+  paths:[[[31.78,34.97],[32.10,35.10],[32.50,35.35]]]
+},
+
+{
+  id:'blue_line',
+  name:'Blue Line',
+  region:'',
+  fact:"The Blue Line was identified by the United Nations in 2000 to confirm Israel's withdrawal from southern Lebanon.",
+  countries:['Israel','Lebanon'],
+  paths:[[[33.09,35.12],[33.25,35.45]]]
+},
+
+{
+  id:'purple_line',
+  name:'Purple Line',
+  region:'',
+  fact:"The Purple Line is the ceasefire line established after the 1967 Six-Day War between Israel and Syria on the Golan Heights.",
+  countries:['Israel','Syria'],
+  paths:[[[33.25,35.75],[32.90,35.88]]]
+},
+
+{
+  id:'curzon_line',
+  name:'Curzon Line',
+  region:'',
+  fact:"The Curzon Line was proposed after World War I as the boundary between Poland and Soviet Russia and later became the basis for much of Poland's eastern border.",
+  countries:['Poland','Belarus','Ukraine'],
+  paths:[[[54.20,23.60],[52.70,23.20],[51.20,24.00],[50.90,24.20]]]
+},
+
+{
+  id:'sykes_picot_line',
+  name:'Sykes–Picot Line',
+  region:'',
+  fact:"The Sykes–Picot Agreement of 1916 secretly divided much of the Ottoman Empire's Middle Eastern territories into British and French spheres of influence.",
+  countries:['Syria','Iraq'],
+  paths:[[[36.00,40.00],[35.20,40.80],[34.50,41.50]]]
+}
 ];
 const ROUNDS_PER_GAME = ROUNDS.length; // plays all 14, freshly shuffled every run. Challenge mode always uses the exact order sent by the challenger.
 
